@@ -1,18 +1,24 @@
-import React, {Component} from 'React';
+import React, {Component} from 'react';
 
 import Node from "../Node/Node";
 
 class Grid extends Component {
     state = {
-        grid = []
+        grid: []
     }
 
-    componentWillMount = () => {
-        //let grid = createInitialGrid();
-        //this.setState({grid: grid})
+    componentDidMount = () => {
+        let grid = this.createInitialGrid();
+        this.setState({grid})
     }
 
     render(){
+        //If there is something in our grid, console it
+        if(this.state.grid.length){
+            console.log(this.state.grid);
+        }
+
+
         return (
             <div>
                 This is the grid component
@@ -20,20 +26,26 @@ class Grid extends Component {
         )
     }
 
-    //Adding our functions down here
-    //We imported our nodes as well
-
     //Create nodes and push them into our grid above
 
     createInitialGrid = () => {
+
         let grid = [];
+        let currentNode;
         //We're going to create our grid here, and push in our node
-        for(var a = 0; a <= 20; a++){
+
+        for(var a = 0; a < 5; a++){
             let nodeRows = [];
-            for(var b = 0; b <= 20; b++){
+            for(var b = 0; b < 5; b++){
                 //create nodes here
+                currentNode = this.createNode(a, b);
+                nodeRows.push(currentNode);
             }
+            grid.push(nodeRows);
         }
+
+        return grid;
+        
     }
 
     //Create a node

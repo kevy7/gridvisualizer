@@ -1,4 +1,4 @@
-import React, {Component} from 'React';
+import React, {Component} from 'react';
 
 
 //This will be our nodes, and each node will be displayed via the Grid Component
