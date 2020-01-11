@@ -9,7 +9,7 @@ class Node extends Component {
     render(){
         return (
             <div className={styles.node}>
-
+                
             </div>
         )
     }

@@ -21,6 +21,7 @@ class Grid extends Component {
 
         return (
             <div>
+                {/* <Node /> */}
                 This is the grid component
             </div>
         )
