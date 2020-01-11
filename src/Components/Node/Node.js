@@ -9,15 +9,15 @@ class Node extends Component {
     render(){
         return (
             <div className={styles.node}>
-                
+
             </div>
         )
     }
 }
 
 Node.propTypes = {
-    column: PropTypes.number,
     row: PropTypes.number,
+    column: PropTypes.number,
     startRow: PropTypes.number,
     startColumn: PropTypes.number,
     isVisited: PropTypes.bool,
