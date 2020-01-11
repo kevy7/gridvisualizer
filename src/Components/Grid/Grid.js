@@ -60,6 +60,11 @@ class Grid extends Component {
             prevNode: undefined
         }
     }
+
+
+    //display grid
+
+
 }
 
 export default Grid;
