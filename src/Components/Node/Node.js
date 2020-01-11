@@ -32,7 +32,11 @@ row: row,
 
 Node.propTypes = {
     column: PropTypes.number,
-    row: PropTypes.number
+    row: PropTypes.number,
+    startRow: PropTypes.number,
+    startColumn: PropTypes.number,
+    isVisited: PropTypes.bool,
+    prevNode: PropTypes.object
 }
 
 export default Node;
