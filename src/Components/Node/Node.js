@@ -13,23 +13,6 @@ class Node extends Component {
     }
 }
 
-/*
-
-PropTypes example
-IngredientListContainer.propTypes = {
-    ingredients: PropTypes.array
-};
-
-
-row: row,
-            column: column,
-            startRow: undefined,
-            startColumn: undefined,
-            isVisited: false,
-            prevNode: undefined
-
-*/
-
 Node.propTypes = {
     column: PropTypes.number,
     row: PropTypes.number,
