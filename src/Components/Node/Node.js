@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-import Styles from './Node.module.css';
+import styles from './Node.module.css';
 
 
 //This will be our nodes, and each node will be displayed via the Grid Component
 class Node extends Component {
     render(){
         return (
-            <div className="Node">
+            <div className={styles.node}>
 
             </div>
         )
