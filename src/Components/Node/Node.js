@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
+import Styles from './Node.module.css';
+
 
 //This will be our nodes, and each node will be displayed via the Grid Component
 class Node extends Component {
