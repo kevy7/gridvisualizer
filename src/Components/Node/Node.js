@@ -6,9 +6,17 @@ import styles from './Node.module.css';
 
 //This will be our nodes, and each node will be displayed via the Grid Component
 class Node extends Component {
+
+    //This is just a test
+    clickButton = () => {
+        let message = "Row: " + this.props.row + " Column: " + this.props.column;
+
+        alert(message);
+    }
+
     render(){
         return (
-            <div className={styles.node}>
+            <div className={styles.node} onClick={this.clickButton}>
 
             </div>
         )

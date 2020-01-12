@@ -14,18 +14,11 @@ class Grid extends Component {
     }
 
     render(){
-        //If there is something in our grid, console it
-        /* if(this.state.grid.length){
-            console.log(this.state.grid);
-        } */
-
 
         return (
             <div>
                 {/* <Node /> */}
                 This is the grid component
-                {/*this.displayGrid()*/}
-
 
                 {
                     this.state.grid.map((nodeRows, rowidx) => {
@@ -88,34 +81,6 @@ class Grid extends Component {
             prevNode: undefined
         }
     }
-
-
-    //display grid
-    displayGrid = () => {
-        let grid = this.state.grid;
-
-        /* console.log("display grid is being called");
-        console.log(this.state.grid); */
-
-        /* grid.map((nodeRows, rowidx) => {
-            nodeRows.map((node, columnidx)=> {
-                //Each node will be in here
-                return <Node
-                    row = {node.row}
-                    column = {node.column}
-                    startRow = {node.startRow}
-                    startColumn = {node.startColumn}
-                    isVisited = {node.isVisited}
-                    prevNode = {node.prevNode}
-                />
-            })
-        }); */   
-
-    }
-
-
-
-
 
 }
 
