@@ -27,7 +27,17 @@ class Grid extends Component {
 
 
                 {
-                    console.log(this.state.grid)
+                    this.state.grid.map((nodeRows, rowidx) => {
+                        return (
+                            <div key={rowidx}>
+                                {
+                                    nodeRows.map((node, columnidx) => {
+                                        return <Node />
+                                    })
+                                }
+                            </div>
+                        )
+                    })
                 }
             </div>
         )
