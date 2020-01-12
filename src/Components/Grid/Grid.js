@@ -15,6 +15,18 @@ class Grid extends Component {
 
     render(){
 
+        //Testing to see if I can manipulate my grid
+        if(this.state.grid.length){
+            
+            console.log(this.state.grid[0][2]);
+
+            this.state.grid[0][2].isVisited =true;
+            console.log(this.state.grid[0][2]);
+        }
+
+        console.log(this.state.grid[0][2]);
+
+        
         return (
             <div>
                 {/* <Node /> */}
@@ -80,6 +92,11 @@ class Grid extends Component {
             isVisited: false,
             prevNode: undefined
         }
+    }
+
+
+    animateGrid = () => {
+        
     }
 
 }

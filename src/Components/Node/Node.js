@@ -10,8 +10,8 @@ class Node extends Component {
     //This is just a test
     clickButton = () => {
         let message = "Row: " + this.props.row + " Column: " + this.props.column;
-
         alert(message);
+        console.log(this.props.isVisited);
     }
 
     render(){
