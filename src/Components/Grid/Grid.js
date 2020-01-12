@@ -30,7 +30,7 @@ class Grid extends Component {
                 {
                     this.state.grid.map((nodeRows, rowidx) => {
                         return (
-                            <div key={rowidx}>
+                            <div key={rowidx} className={Styles.nodeRows}>
                                 {
                                     
                                     nodeRows.map((node, columnidx) => {
@@ -62,9 +62,9 @@ class Grid extends Component {
         let currentNode;
         //We're going to create our grid here, and push in our node
 
-        for(var a = 0; a < 5; a++){
+        for(var a = 0; a < 20; a++){
             let nodeRows = [];
-            for(var b = 0; b < 5; b++){
+            for(var b = 0; b < 20; b++){
                 //create nodes here
                 currentNode = this.createNode(a, b);
                 nodeRows.push(currentNode);
