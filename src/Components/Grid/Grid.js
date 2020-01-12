@@ -31,9 +31,19 @@ class Grid extends Component {
                         return (
                             <div key={rowidx}>
                                 {
+                                    
                                     nodeRows.map((node, columnidx) => {
-                                        return <Node />
+                                        return <Node 
+                                            key={columnidx}
+                                            row={node.row}
+                                            column={node.column}
+                                            startRow={node.startRow}
+                                            startColumn={node.startColumn}
+                                            isVisited={node.isVisited}
+                                            prevNode={node.prevNode}
+                                        />
                                     })
+
                                 }
                             </div>
                         )
