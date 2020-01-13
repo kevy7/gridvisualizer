@@ -16,7 +16,7 @@ class Grid extends Component {
     render(){
 
         //Testing to see if I can manipulate my grid
-        if(this.state.grid.length){
+        /* if(this.state.grid.length){
             
             console.log(this.state.grid[0][2]);
 
@@ -24,9 +24,11 @@ class Grid extends Component {
             console.log(this.state.grid[0][2]);
         }
 
-        console.log(this.state.grid[0][2]);
+        console.log(this.state.grid[0][2]); */
 
-        
+        this.animateGrid();
+
+
         return (
             <div>
                 {/* <Node /> */}
@@ -96,7 +98,9 @@ class Grid extends Component {
 
 
     animateGrid = () => {
-        
+        this.state.grid[0][5].isVisited = true;
+            
+        console.log(this.state.grid);
     }
 
 }

@@ -15,8 +15,17 @@ class Node extends Component {
     }
 
     render(){
+        let myStyle;
+        
+        if(this.props.isVisited === true){
+            myStyle = {
+                background: "blue"
+            }
+
+
+        }
         return (
-            <div className={styles.node} onClick={this.clickButton}>
+            <div className={styles.node} onClick={this.clickButton} style={myStyle}>
 
             </div>
         )
