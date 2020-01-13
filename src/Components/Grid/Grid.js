@@ -96,13 +96,13 @@ class Grid extends Component {
         }
     }
 
-
+    //this function will be used to animate the new grid when being returned from our BFS function
     animateGrid = () => {
         /* this.state.grid[0][5].isVisited = true;
 
         console.log(this.state.grid); */
 
-        
+
     }
 
 }
