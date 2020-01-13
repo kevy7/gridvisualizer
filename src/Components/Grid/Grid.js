@@ -98,9 +98,11 @@ class Grid extends Component {
 
 
     animateGrid = () => {
-        this.state.grid[0][5].isVisited = true;
-            
-        console.log(this.state.grid);
+        /* this.state.grid[0][5].isVisited = true;
+
+        console.log(this.state.grid); */
+
+        
     }
 
 }

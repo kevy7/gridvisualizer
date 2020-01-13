@@ -17,6 +17,7 @@ class Node extends Component {
     render(){
         let myStyle;
         
+        //if this node is visited, then set it's background to be color blue
         if(this.props.isVisited === true){
             myStyle = {
                 background: "blue"
