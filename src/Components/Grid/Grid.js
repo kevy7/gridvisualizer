@@ -3,6 +3,8 @@ import React, {Component} from 'react';
 import Styles from './Grid.module.css';
 import Node from "../Node/Node";
 
+import { BFS } from "../../Algorithms/BreadthFirstSearch";
+
 class Grid extends Component {
     state = {
         grid: []
