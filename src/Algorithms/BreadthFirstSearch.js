@@ -24,7 +24,11 @@ export function BFS(grid, startRow, startColumn, endRow, endColumn){
 
         current = queue.shift(); //remove first node from queue and assign it to the current variable
 
-        let children = getChildren(currentNode);
+        let childrens = getChildren(currentNode);
+
+        /*
+            What to do next, we need to test out this algorithm to see if it actually works
+        */
 
 
 

@@ -26,7 +26,11 @@ class Node extends Component {
 
         }
         return (
-            <div className={styles.node} onClick={this.clickButton} style={myStyle}>
+            <div 
+                className={styles.node} 
+                onClick={this.clickButton} 
+                style={myStyle}
+            >
 
             </div>
         )
