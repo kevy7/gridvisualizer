@@ -30,7 +30,7 @@ export function BFS(grid, startRow, startColumn, endRow, endColumn){
 
     let childrens = getChildren(grid, startingNode);
 
-    console.log(childrens);
+    
 
 
 
@@ -44,8 +44,6 @@ const getChildren = (grid, node) => {
     let row = node.row;
     let column = node.column;
     let children = []; //Empty array //We're going to push an object into here
-
-    console.log(grid.length);
 
     //grid.length gives us the number of rows
     //grid[0].length gives us the number of columns
