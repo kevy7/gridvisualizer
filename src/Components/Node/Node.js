@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './Node.module.css';
-
+import "./Node.css";
 
 //This will be our nodes, and each node will be displayed via the Grid Component
 class Node extends Component {
@@ -27,7 +26,7 @@ class Node extends Component {
         }
         return (
             <div 
-                className={styles.node} 
+                className="node" 
                 onClick={this.clickButton} 
                 style={myStyle}
             >

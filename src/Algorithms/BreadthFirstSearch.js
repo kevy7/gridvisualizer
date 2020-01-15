@@ -24,7 +24,7 @@ export function BFS(grid, startRow, startColumn, endRow, endColumn){
 
         current = queue.shift(); //remove first node from queue and assign it to the current variable
 
-        let childrens = getChildren(currentNode);
+        let childrens = getChildren(current);
 
         /*
             What to do next, we need to test out this algorithm to see if it actually works
@@ -40,6 +40,8 @@ export function BFS(grid, startRow, startColumn, endRow, endColumn){
 
 }
 
+
+//This function will take in a node, and it will return the rows and columns of it's childrens
 const getChildren = (grid, node) => {
     //We're going to get the children of this node
 
