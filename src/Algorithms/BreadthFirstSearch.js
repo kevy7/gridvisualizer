@@ -13,6 +13,7 @@ export function BFS(grid, startRow, startColumn, endRow, endColumn){
     let current;
 
     let queue = [];
+    let path = [];
     //let visited = []; //these would be used if our nodes are not objects
     //let prev = {}; //these would be used if our nodes are not objects
 
@@ -32,31 +33,41 @@ export function BFS(grid, startRow, startColumn, endRow, endColumn){
         let childrens = getChildren(current, maxRow, maxColumn);
 
         //loop through each children and mark them as visited
-        childrens.forEach(child => {
-            //child.row
-            //child.column
-            //grid[child.row][child.column].isVisited = true;
 
-            if(grid[child.row][child.column].isVisited !== true){
+        for (var a = 0; a < childrens.length; a++){
+            //children[a].row
+            //children[b].row
+            let row = childrens[a].row;
+            let column = childrens[a].column;
 
-                //Set isVisited of the current node to true
-                grid[child.row][child.column].isVisited = true;
-                console.log(grid[child.row][child.column]);
-
-
-                //Add node into the queue
-                queue.push(grid[child.row][child.column]);
-
-
+            if(grid[row][column].isVisited){
+                continue; //if 
             }
-        });
 
+            grid[row][column].isVisited = true;
+            grid[row][column].prevNode = {
+                row: current.row,
+                column: current.column
+            }
+
+            console.log(grid[row][column]);
+
+            //if statement here
+            if(endRow === childrens[a].row && endColumn === childrens[a].column){
+                console.log("there is a match")
+                //Create a function called find shortest path
+                
+                return;
+            }
+
+            queue.push(grid[row][column]);
+
+
+        }
 
     }
 
-    //getChildren(grid, startingNode);
     
-
 
 
 }
