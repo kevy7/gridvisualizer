@@ -20,21 +20,17 @@ export function BFS(grid, startRow, startColumn, endRow, endColumn){
     queue.push(startingNode);   //We're pushing our starting node into the queue
 
 
-    while(queue.length){ //While there is something in the queue, do something below
+    /* while(queue.length){ //While there is something in the queue, do something below
 
         current = queue.shift(); //remove first node from queue and assign it to the current variable
 
         let childrens = getChildren(current);
 
-        /*
-            What to do next, we need to test out this algorithm to see if it actually works
-        */
+    } */
 
+    let childrens = getChildren(grid, startingNode);
 
-
-    }
-
-
+    console.log(childrens);
 
 
 
@@ -47,18 +43,22 @@ const getChildren = (grid, node) => {
 
     let row = node.row;
     let column = node.column;
-
     let children = []; //Empty array //We're going to push an object into here
 
+    console.log(grid.length);
+
+    //grid.length gives us the number of rows
+    //grid[0].length gives us the number of columns
+
     //add left children
-    if(column-1 >= 0 ){
+    if(column-1 >= 0){
         children.push({
             row: row,
             column: column-1
         })
     }
     //add right children
-    if(column+1 < node.length){
+    if(column+1 < grid[row].length){
         children.push({
             row: row,
             column: column+1
@@ -72,7 +72,7 @@ const getChildren = (grid, node) => {
         })
     }
     //add bottom children
-    if(row+1 < node.length){
+    if(row+1 <grid.length){
         children.push({
             row: row+1,
             column: column
