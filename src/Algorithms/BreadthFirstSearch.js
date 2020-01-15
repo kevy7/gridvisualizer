@@ -25,7 +25,6 @@ export function BFS(grid, startRow, startColumn, endRow, endColumn){
 
     queue.push(startingNode);   //We're pushing our starting node into the queue
 
-
     while(queue.length){ //While there is something in the queue, do something below
 
         current = queue.shift(); //remove first node from queue and assign it to the current variable
@@ -41,7 +40,7 @@ export function BFS(grid, startRow, startColumn, endRow, endColumn){
             let column = childrens[a].column;
 
             if(grid[row][column].isVisited){
-                continue; //if 
+                continue; //skip any node that was already visited
             }
 
             grid[row][column].isVisited = true;
@@ -54,10 +53,14 @@ export function BFS(grid, startRow, startColumn, endRow, endColumn){
 
             //if statement here
             if(endRow === childrens[a].row && endColumn === childrens[a].column){
-                console.log("there is a match")
+                //console.log("there is a match")
                 //Create a function called find shortest path
-                
-                return;
+
+                let shortestPath = getShortestPath(grid, grid[row][column]);
+
+                console.log(shortestPath);
+
+                return shortestPath; //This will break the loop
             }
 
             queue.push(grid[row][column]);
@@ -114,4 +117,26 @@ const getChildren = (node, maxRow, maxColumn) => {
     }
 
     return children; //We will return an array of children nodes here
+}
+
+
+const getShortestPath = (grid, endingNode) => {
+    let current = grid[endingNode.row][endingNode.column];
+    let shortestPath = [];
+
+    shortestPath.push({
+        row: endingNode.row,
+        column: endingNode.column
+    });
+
+    while(current.prevNode !== undefined){
+
+        current = grid[current.prevNode.row][current.prevNode.column];
+        shortestPath.push({
+            row: current.row,
+            column: current.column
+        })
+    }
+
+    return shortestPath;
 }
