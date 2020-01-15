@@ -28,7 +28,7 @@ class Grid extends Component {
 
         console.log(this.state.grid[0][2]); */
 
-        BFS(this.state.grid, 0, 0, 1,1);
+        BFS(this.state.grid, 1, 1, 1,1);
 
         this.animateGrid();
 
