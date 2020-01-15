@@ -73,9 +73,9 @@ class Grid extends Component {
         let currentNode;
         //We're going to create our grid here, and push in our node
 
-        for(var a = 0; a < 20; a++){
+        for(var a = 0; a < 5; a++){
             let nodeRows = [];
-            for(var b = 0; b < 20; b++){
+            for(var b = 0; b < 5; b++){
                 //create nodes here
                 currentNode = this.createNode(a, b);
                 nodeRows.push(currentNode);
@@ -102,7 +102,7 @@ class Grid extends Component {
 
     //this function will be used to animate the new grid when being returned from our BFS function
     animateGrid = () => {
-        this.state.grid[0][5].isVisited = true;
+        //this.state.grid[0][5].isVisited = true;
 
         //console.log(this.state.grid);
 

@@ -2,6 +2,8 @@ import { unwatchFile } from "fs";
 
 //This is our breadth first search function
 export function BFS(grid, startRow, startColumn, endRow, endColumn){
+
+    let counter = 0;
     
     let maxRow = grid.length;
     let maxColumn = grid[0].length;
@@ -29,7 +31,25 @@ export function BFS(grid, startRow, startColumn, endRow, endColumn){
 
         let childrens = getChildren(current, maxRow, maxColumn);
 
-        console.log(childrens);
+        //loop through each children and mark them as visited
+        childrens.forEach(child => {
+            //child.row
+            //child.column
+            //grid[child.row][child.column].isVisited = true;
+
+            if(grid[child.row][child.column].isVisited !== true){
+
+                //Set isVisited of the current node to true
+                grid[child.row][child.column].isVisited = true;
+                console.log(grid[child.row][child.column]);
+
+
+                //Add node into the queue
+                queue.push(grid[child.row][child.column]);
+
+
+            }
+        });
 
 
     }
@@ -49,9 +69,6 @@ const getChildren = (node, maxRow, maxColumn) => {
     let row = node.row;
     let column = node.column;
     let children = []; //Empty array //We're going to push an object into here
-
-    console.log(row);
-    console.log(column);
 
     //grid.length gives us the number of rows
     //grid[0].length gives us the number of columns
