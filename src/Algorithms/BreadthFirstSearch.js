@@ -132,10 +132,11 @@ const getShortestPath = (grid, endingNode) => {
     while(current.prevNode !== undefined){
 
         current = grid[current.prevNode.row][current.prevNode.column];
+
         shortestPath.push({
             row: current.row,
             column: current.column
-        })
+        });
     }
 
     return shortestPath;
