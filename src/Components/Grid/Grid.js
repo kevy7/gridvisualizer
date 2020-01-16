@@ -15,9 +15,14 @@ class Grid extends Component {
         this.setState({grid})
     }
 
+    updateStateConstructor = (grid) => {
+        //this.setState({grid});
+        console.log("me")
+    }
+
     render(){
 
-        BFS(this.state.grid, 1, 1, 0, 0);
+        console.log(BFS(this.state.grid, 1, 1, 0, 0));
 
         this.animateGrid();
 
@@ -42,6 +47,7 @@ class Grid extends Component {
                                             startColumn={node.startColumn}
                                             isVisited={node.isVisited}
                                             prevNode={node.prevNode}
+                                            handlerFunction={this.updateStateConstructor}
                                         />
                                     })
 

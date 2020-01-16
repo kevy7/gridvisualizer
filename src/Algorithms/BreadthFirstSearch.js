@@ -1,4 +1,5 @@
 import { unwatchFile } from "fs";
+import { cloneWithoutLoc } from "@babel/types";
 
 //This is our breadth first search function
 export function BFS(grid, startRow, startColumn, endRow, endColumn){
@@ -12,6 +13,7 @@ export function BFS(grid, startRow, startColumn, endRow, endColumn){
     let current;
 
     let queue = [];
+    let visited = [];
     //let visited = []; //these would be used if our nodes are not objects
     //let prev = {}; //these would be used if our nodes are not objects
 
@@ -20,6 +22,7 @@ export function BFS(grid, startRow, startColumn, endRow, endColumn){
 
     //Set the startingNode isVisited to true
     startingNode.isVisited = true;
+
 
     queue.push(startingNode);   //We're pushing our starting node into the queue
 
@@ -32,24 +35,31 @@ export function BFS(grid, startRow, startColumn, endRow, endColumn){
         //loop through each children and mark them as visited
 
         for (var a = 0; a < childrens.length; a++){
-            //children[a].row
-            //children[b].row
             let row = childrens[a].row;
             let column = childrens[a].column;
+            //children[a].row
+            //children[b].row
 
             if(grid[row][column].isVisited){
                 continue; //skip any node that was already visited
             }
 
+            //console.log(grid);
+
             grid[row][column].isVisited = true;
+            visited.push({
+                row: row,
+                column: column
+            });
+
             grid[row][column].prevNode = {
                 row: current.row,
                 column: current.column
             }
 
-            console.log(grid[row][column]);
-
-            //if statement here
+            //console.log(counter);
+            //console.log(grid[row][column]);
+            
             if(endRow === childrens[a].row && endColumn === childrens[a].column){
                 //console.log("there is a match")
                 //Create a function called find shortest path
@@ -57,11 +67,16 @@ export function BFS(grid, startRow, startColumn, endRow, endColumn){
                 let shortestPath = getShortestPath(grid, grid[row][column]);
 
                 console.log(shortestPath);
+                console.log(visited);
 
-                return shortestPath; //This will break the loop
+                return {
+                    shortestPath: shortestPath,
+                    visited: visited
+                } //This will break the loop
             }
 
             queue.push(grid[row][column]);
+            
         }
     }
 }
