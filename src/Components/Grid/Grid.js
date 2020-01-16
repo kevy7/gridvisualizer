@@ -26,13 +26,28 @@ class Grid extends Component {
 
     animatePath = () => {
 
-        let { shortestPath, visited }= BFS(this.state.grid, 1, 1, 0, 0);
+        let { shortestPath, visited } = BFS(this.state.grid, 1, 1, 0, 0);
 
         /*
             row: rowNumber,
             column: columnNumber
         */
+        let index = 0;
 
+        shortestPath.forEach(node => {
+            index ++;
+
+            setTimeout(() => {
+                let copyGrid = this.state.grid;
+                
+                copyGrid[node.row][node.column].nodeVisted = true;
+                this.setState({grid: copyGrid});
+
+            }, index * 250);
+
+            //this.setState({grid: copyGrid});
+            //setTimeout
+        });
     }
 
     render(){
@@ -62,6 +77,7 @@ class Grid extends Component {
                                             startRow={node.startRow}
                                             startColumn={node.startColumn}
                                             isVisited={node.isVisited}
+                                            nodeVisted={node.nodeVisted}
                                             prevNode={node.prevNode}
                                             updateState={this.updateState}
                                         />
@@ -109,6 +125,7 @@ class Grid extends Component {
             startRow: undefined,
             startColumn: undefined,
             isVisited: false,
+            nodeVisted: false,
             prevNode: undefined
         }
     }

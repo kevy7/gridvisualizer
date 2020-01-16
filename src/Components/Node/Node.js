@@ -18,7 +18,7 @@ class Node extends Component {
         let myStyle;
         
         //if this node is visited, then set it's background to be color blue
-        if(this.props.isVisited === true){
+        if(this.props.nodeVisted === true){
             myStyle = {
                 background: "blue"
             }
@@ -29,7 +29,7 @@ class Node extends Component {
             <div 
                 className="node" 
                 onClick={this.clickButton} 
-                /* style={myStyle} */
+                style={myStyle}
             >
 
             </div>
@@ -42,7 +42,8 @@ Node.propTypes = {
     column: PropTypes.number,
     startRow: PropTypes.number,
     startColumn: PropTypes.number,
-    isVisited: PropTypes.bool,
+    isVisted: PropTypes.bool,
+    nodeVisited: PropTypes.bool,
     prevNode: PropTypes.object,
     updateState: PropTypes.func
 }
