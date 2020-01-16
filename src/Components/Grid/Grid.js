@@ -15,17 +15,18 @@ class Grid extends Component {
         this.setState({grid})
     }
 
-    updateStateConstructor = (grid) => {
+    updateState = () => {
         //this.setState({grid});
-        console.log("me")
+        console.log("This function is being called from the grid");
+    }
+
+    animatePath = () => {
+        alert("you clicked on me")
     }
 
     render(){
 
-        console.log(BFS(this.state.grid, 1, 1, 0, 0));
-
-        this.animateGrid();
-
+        //console.log(BFS(this.state.grid, 1, 1, 0, 0));
 
         return (
             <div>
@@ -47,7 +48,7 @@ class Grid extends Component {
                                             startColumn={node.startColumn}
                                             isVisited={node.isVisited}
                                             prevNode={node.prevNode}
-                                            handlerFunction={this.updateStateConstructor}
+                                            updateState={this.updateState}
                                         />
                                     })
 
@@ -56,6 +57,8 @@ class Grid extends Component {
                         )
                     })
                 }
+
+                <button type="button" onClick={this.animatePath}>Click me!</button>
             </div>
         )
     }
@@ -93,15 +96,6 @@ class Grid extends Component {
             isVisited: false,
             prevNode: undefined
         }
-    }
-
-    //this function will be used to animate the new grid when being returned from our BFS function
-    animateGrid = () => {
-        //this.state.grid[0][5].isVisited = true;
-
-        //console.log(this.state.grid);
-
-
     }
 
 }

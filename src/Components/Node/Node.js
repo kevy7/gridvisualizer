@@ -9,7 +9,8 @@ class Node extends Component {
     //This is just a test
     clickButton = () => {
         let message = "Row: " + this.props.row + " Column: " + this.props.column + " isVisited: " + this.props.isVisited;
-        alert(message);
+        this.props.updateState();
+        //alert(message);
         //console.log(this.props.isVisited);
     }
 
@@ -42,7 +43,8 @@ Node.propTypes = {
     startRow: PropTypes.number,
     startColumn: PropTypes.number,
     isVisited: PropTypes.bool,
-    prevNode: PropTypes.object
+    prevNode: PropTypes.object,
+    updateState: PropTypes.func
 }
 
 export default Node;
