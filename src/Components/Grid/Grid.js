@@ -7,7 +7,11 @@ import { BFS } from "../../Algorithms/BreadthFirstSearch";
 
 class Grid extends Component {
     state = {
-        grid: []
+        grid: [],
+        startRow: null,
+        startColumn: null,
+        endRow: null,
+        endColumn: null
     }
 
     componentWillMount = () => {
@@ -21,12 +25,23 @@ class Grid extends Component {
     }
 
     animatePath = () => {
-        alert("you clicked on me")
+
+        let { shortestPath, visited }= BFS(this.state.grid, 1, 1, 0, 0);
+
+        /*
+            row: rowNumber,
+            column: columnNumber
+        */
+
     }
 
     render(){
 
         //console.log(BFS(this.state.grid, 1, 1, 0, 0));
+
+        //let datapoint =  BFS(this.state.grid, 1, 1, 0, 0);
+
+        //console.log(datapoint);
 
         return (
             <div>
