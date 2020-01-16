@@ -9,11 +9,9 @@ export function BFS(grid, startRow, startColumn, endRow, endColumn){
     let maxColumn = grid[0].length;
 
     let startingNode = grid[startRow][startColumn]; //this will be our starting node
-    let endNode = grid[endRow][endColumn]; //This will be our end node
     let current;
 
     let queue = [];
-    let path = [];
     //let visited = []; //these would be used if our nodes are not objects
     //let prev = {}; //these would be used if our nodes are not objects
 
@@ -64,15 +62,8 @@ export function BFS(grid, startRow, startColumn, endRow, endColumn){
             }
 
             queue.push(grid[row][column]);
-
-
         }
-
     }
-
-    
-
-
 }
 
 
@@ -119,7 +110,7 @@ const getChildren = (node, maxRow, maxColumn) => {
     return children; //We will return an array of children nodes here
 }
 
-
+//This function will return the shortest path via BFS
 const getShortestPath = (grid, endingNode) => {
     let current = grid[endingNode.row][endingNode.column];
     let shortestPath = [];
