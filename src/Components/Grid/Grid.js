@@ -26,7 +26,7 @@ class Grid extends Component {
 
     animatePath = () => {
 
-        let { shortestPath, visited } = BFS(this.state.grid, 1, 1, 0, 0);
+        let { shortestPath, visited } = BFS(this.state.grid, 1, 1, 15, 12);
 
         /*
             row: rowNumber,
@@ -34,7 +34,7 @@ class Grid extends Component {
         */
         let index = 0;
 
-        shortestPath.forEach(node => {
+        visited.forEach(node => {
             index ++;
 
             setTimeout(() => {
@@ -43,7 +43,7 @@ class Grid extends Component {
                 copyGrid[node.row][node.column].nodeVisted = true;
                 this.setState({grid: copyGrid});
 
-            }, index * 250);
+            }, index * 15);
 
             //this.setState({grid: copyGrid});
             //setTimeout
@@ -102,9 +102,9 @@ class Grid extends Component {
         let currentNode;
         //We're going to create our grid here, and push in our node
 
-        for(var a = 0; a < 5; a++){
+        for(var a = 0; a < 20; a++){
             let nodeRows = [];
-            for(var b = 0; b < 5; b++){
+            for(var b = 0; b < 20; b++){
                 //create nodes here
                 currentNode = this.createNode(a, b);
                 nodeRows.push(currentNode);
