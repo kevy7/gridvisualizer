@@ -25,8 +25,7 @@ class Node extends Component {
             myStyle = {
                 background: "blue"
             }
-
-
+            //Work on pushing other styles such as startNode or endNode here as well
         }
         return (
             <div 

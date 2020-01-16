@@ -43,7 +43,7 @@ class Grid extends Component {
                 copyGrid[node.row][node.column].nodeVisted = true;
                 this.setState({grid: copyGrid});
 
-            }, index * 15);
+            }, index * 20);
 
             //this.setState({grid: copyGrid});
             //setTimeout
