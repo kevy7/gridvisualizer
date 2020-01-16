@@ -22,6 +22,10 @@ export function BFS(grid, startRow, startColumn, endRow, endColumn){
 
     //Set the startingNode isVisited to true
     startingNode.isVisited = true;
+    visited.push({
+        row: startRow,
+        column: startColumn
+    });
 
 
     queue.push(startingNode);   //We're pushing our starting node into the queue
@@ -56,9 +60,6 @@ export function BFS(grid, startRow, startColumn, endRow, endColumn){
                 row: current.row,
                 column: current.column
             }
-
-            //console.log(counter);
-            //console.log(grid[row][column]);
             
             if(endRow === childrens[a].row && endColumn === childrens[a].column){
                 //console.log("there is a match")
