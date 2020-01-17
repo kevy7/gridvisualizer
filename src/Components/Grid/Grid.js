@@ -28,7 +28,7 @@ class Grid extends Component {
     //How can I do this better?
     animatePath = () => {
 
-        let { shortestPath, visited } = BFS(this.state.grid, 13, 8, 20, 9);
+        let { shortestPath, visited } = BFS(this.state.grid, 17, 14, 20, 9);
         let gridPath = this.state.grid;
 
         /*
@@ -96,7 +96,6 @@ class Grid extends Component {
     }
 
     //Create nodes and push them into our grid above
-
     createInitialGrid = () => {
 
         let grid = [];
