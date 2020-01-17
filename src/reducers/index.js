@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import userSelectionsReducer from './userSelectionsReducer';
+import selectActionReducer from './selectActionReducer';
 
 export default combineReducers({
-    userSelections: userSelectionsReducer
+    selectActionReducer: selectActionReducer
 });
