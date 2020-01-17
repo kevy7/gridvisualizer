@@ -1,7 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+//import actions here
+import { selectAction } from '../../actions/index';
+
 class NavBar extends Component {
+
+    selectUserAction = () => {
+        //this.props.selectAction()
+
+        //Take the value of the html element and pass it into the selectAction function
+        //Look up how to use dom refs with react
+    }
+
     render(){
         return (
             <div className="NavBar">
@@ -77,4 +88,6 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(NavBar);
+export default connect(mapStateToProps, {
+    selectAction: selectAction
+})(NavBar);
