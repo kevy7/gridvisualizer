@@ -7,7 +7,8 @@ import "./Node.css";
 class Node extends Component {
 
     state = {
-        isNode: false
+        isNode: false,
+        isPath: false
     }
 
     //This is just a test
@@ -16,9 +17,6 @@ class Node extends Component {
         //this.props.updateState();
 
         console.log(message);
-
-        //alert(message);
-        //console.log(this.props.isVisited);
     }
 
     render(){

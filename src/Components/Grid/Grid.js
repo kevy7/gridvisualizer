@@ -6,6 +6,18 @@ import Node from "../Node/Node";
 import { BFS } from "../../Algorithms/BreadthFirstSearch";
 
 class Grid extends Component {
+    /*
+        //How to use constructor(props)
+
+        constructor(props) {
+        super(props);
+        // Don't call this.setState() here!
+        this.state = { counter: 0 };
+        this.handleClick = this.handleClick.bind(this);
+        }
+
+    */
+    
     state = {
         grid: [],
         startRow: null,
