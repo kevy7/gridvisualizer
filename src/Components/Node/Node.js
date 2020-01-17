@@ -6,11 +6,6 @@ import "./Node.css";
 //This will be our nodes, and each node will be displayed via the Grid Component
 class Node extends Component {
 
-    state = {
-        isNode: false,
-        isPath: false
-    }
-
     //This is just a test
     clickButton = () => {
         let message = "Row: " + this.props.row + " Column: " + this.props.column + " isVisited: " + this.props.isVisited;
@@ -23,11 +18,6 @@ class Node extends Component {
         let myStyle = {
             background: ""
         };
-        
-        //if this node is visited, then set it's background to be color blue
-        if(this.props.nodeVisted === true){
-            myStyle.background ="blue";
-        }
 
         if(this.props.isPath === true){
             myStyle.background = "orange";
@@ -35,6 +25,7 @@ class Node extends Component {
         
         return (
             <div 
+                id={`node-${this.props.row}-${this.props.column}`}
                 className="node" 
                 onClick={this.clickButton} 
                 style={myStyle}

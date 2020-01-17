@@ -6,17 +6,6 @@ import Node from "../Node/Node";
 import { BFS } from "../../Algorithms/BreadthFirstSearch";
 
 class Grid extends Component {
-    /*
-        //How to use constructor(props)
-
-        constructor(props) {
-        super(props);
-        // Don't call this.setState() here!
-        this.state = { counter: 0 };
-        this.handleClick = this.handleClick.bind(this);
-        }
-
-    */
     
     state = {
         grid: [],
@@ -49,14 +38,16 @@ class Grid extends Component {
 
         let index = 0;
 
-        /* visited.forEach(node => {
+        visited.forEach(node => {
             index +=1;
 
             setTimeout(() => {
-                let copyGrid = this.state.grid;
+                /* let copyGrid = this.state.grid;
                 
                 copyGrid[node.row][node.column].nodeVisted = true;
-                this.setState({grid: copyGrid});
+                this.setState({grid: copyGrid}); */
+
+                document.getElementById(`node-${node.row}-${node.column}`).className = "node node-visited";
 
             }, index * 25);
         });
@@ -66,11 +57,7 @@ class Grid extends Component {
                 gridPath[node.row][node.column].isPath = true;
             })
             this.setState({grid: gridPath});
-        }, index * 25); */
-
-
-
-        alert("yay");
+        }, index * 25);
 
     }
 
@@ -121,9 +108,9 @@ class Grid extends Component {
         let currentNode;
         //We're going to create our grid here, and push in our node
 
-        for(var a = 0; a < 20; a++){
+        for(var a = 0; a < 50; a++){
             let nodeRows = [];
-            for(var b = 0; b < 20; b++){
+            for(var b = 0; b < 50; b++){
                 //create nodes here
                 currentNode = this.createNode(a, b);
                 nodeRows.push(currentNode);

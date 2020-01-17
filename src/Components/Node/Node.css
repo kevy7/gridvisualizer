@@ -4,3 +4,6 @@
     border: .05px solid black;
 }
 
+.node-visited {
+    background: blue;
+}
