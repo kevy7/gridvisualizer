@@ -12,7 +12,8 @@ class Grid extends Component {
         startRow: null,
         startColumn: null,
         endRow: null,
-        endColumn: null
+        endColumn: null,
+        action: undefined
     }
 
     componentWillMount = () => {
@@ -20,7 +21,7 @@ class Grid extends Component {
         this.setState({grid})
     }
 
-    updateState = () => {
+    updateState = (startRow, startColumn, endRow, endColumn) => {
         //this.setState({grid});
         console.log("This function is being called from the grid");
     }
@@ -28,7 +29,7 @@ class Grid extends Component {
     //How can I do this better?
     animatePath = () => {
 
-        let { shortestPath, visited } = BFS(this.state.grid, 17, 14, 20, 9);
+        let { shortestPath, visited } = BFS(this.state.grid, 17, 14, 5, 40);
         let gridPath = this.state.grid;
 
         /*
@@ -45,7 +46,7 @@ class Grid extends Component {
 
                 document.getElementById(`node-${node.row}-${node.column}`).className = "node node-visited";
 
-            }, index * 25);
+            }, index * 10);
         });
 
         setTimeout(() => {
@@ -53,7 +54,7 @@ class Grid extends Component {
                 gridPath[node.row][node.column].isPath = true;
             })
             this.setState({grid: gridPath});
-        }, index * 25);
+        }, index * 10);
 
     }
 
@@ -104,7 +105,7 @@ class Grid extends Component {
 
         for(var a = 0; a < 30; a++){
             let nodeRows = [];
-            for(var b = 0; b < 30; b++){
+            for(var b = 0; b < 50; b++){
                 //create nodes here
                 currentNode = this.createNode(a, b);
                 nodeRows.push(currentNode);
