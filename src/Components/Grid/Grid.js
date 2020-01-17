@@ -24,6 +24,7 @@ class Grid extends Component {
         console.log("This function is being called from the grid");
     }
 
+    //How can I do this better?
     animatePath = () => {
 
         let { shortestPath, visited } = BFS(this.state.grid, 1, 1, 15, 19);
@@ -36,7 +37,7 @@ class Grid extends Component {
 
         let index = 0;
 
-        visited.forEach(node => {
+        /* visited.forEach(node => {
             index +=1;
 
             setTimeout(() => {
@@ -53,7 +54,11 @@ class Grid extends Component {
                 gridPath[node.row][node.column].isPath = true;
             })
             this.setState({grid: gridPath});
-        }, index * 25);
+        }, index * 25); */
+
+
+
+        alert("yay");
 
     }
 

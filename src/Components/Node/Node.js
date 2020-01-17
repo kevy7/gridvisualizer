@@ -6,6 +6,10 @@ import "./Node.css";
 //This will be our nodes, and each node will be displayed via the Grid Component
 class Node extends Component {
 
+    state = {
+        isNode: false
+    }
+
     //This is just a test
     clickButton = () => {
         let message = "Row: " + this.props.row + " Column: " + this.props.column + " isVisited: " + this.props.isVisited;
