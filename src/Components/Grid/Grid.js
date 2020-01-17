@@ -26,7 +26,7 @@ class Grid extends Component {
 
     animatePath = () => {
 
-        let { shortestPath, visited } = BFS(this.state.grid, 1, 1, 15, 12);
+        let { shortestPath, visited } = BFS(this.state.grid, 1, 1, 15, 19);
         let gridPath = this.state.grid;
 
         /*
