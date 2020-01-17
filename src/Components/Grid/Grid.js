@@ -28,7 +28,7 @@ class Grid extends Component {
     //How can I do this better?
     animatePath = () => {
 
-        let { shortestPath, visited } = BFS(this.state.grid, 13, 8, 15, 19);
+        let { shortestPath, visited } = BFS(this.state.grid, 13, 8, 20, 9);
         let gridPath = this.state.grid;
 
         /*
@@ -42,10 +42,6 @@ class Grid extends Component {
             index +=1;
 
             setTimeout(() => {
-                /* let copyGrid = this.state.grid;
-                
-                copyGrid[node.row][node.column].nodeVisted = true;
-                this.setState({grid: copyGrid}); */
 
                 document.getElementById(`node-${node.row}-${node.column}`).className = "node node-visited";
 
