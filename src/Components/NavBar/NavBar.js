@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class NavBar extends Component {
     render(){
@@ -70,4 +71,10 @@ class NavBar extends Component {
     }
 }
 
-export default NavBar;
+const mapStateToProps = (state) => {
+    return {
+        userAction: state.userAction.userAction
+    }
+}
+
+export default connect(mapStateToProps)(NavBar);
