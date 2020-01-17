@@ -5,15 +5,38 @@ import { connect } from 'react-redux';
 import { selectAction } from '../../actions/index';
 
 class NavBar extends Component {
+    /*
+        example of initializing state with constructor(props)
+
+        constructor(props) {
+        super(props);
+        // Don't call this.setState() here!
+        this.state = { counter: 0 };
+        this.handleClick = this.handleClick.bind(this);
+        }
+
+    */
+
+    constructor(props) {
+        super(props);
+    }
 
     selectUserAction = () => {
         //this.props.selectAction()
 
         //Take the value of the html element and pass it into the selectAction function
         //Look up how to use dom refs with react
+        let node = this.startAction;
+
+        console.log(node.innerHTML);
+        console.log(this.endAction.innerHTML);
+
     }
 
     render(){
+
+        
+        
         return (
             <div className="NavBar">
 
@@ -35,16 +58,21 @@ class NavBar extends Component {
                                 Home
                             </a>
                             <div className="navbar-item has-dropdown is-hoverable">
-                                <a className="navbar-link" href="https://bulma.io/documentation/overview/start/">
+                                <a className="navbar-link" >
                                     Action
                                 </a>
                                 <div className="navbar-dropdown is-boxed">
-                                    <a className="navbar-item" href="https://bulma.io/documentation/overview/start/">
+                                    <div ref={(input) => {
+                                        this.startAction = input
+                                    }} className="navbar-item" >
                                         Start
-                                    </a>
-                                    <a className="navbar-item" href="https://bulma.io/documentation/modifiers/syntax/">
+                                    </div>
+
+                                    <div ref={(input) => {
+                                        this.endAction = input
+                                    }} className="navbar-item" >
                                         End
-                                    </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -63,12 +91,9 @@ class NavBar extends Component {
                                 </a>
                             </p>
                             <p className="control">
-                                <a className="button is-primary" href="https://github.com/jgthms/bulma/releases/download/0.8.0/bulma-0.8.0.zip">
-                                <span className="icon">
-                                    <i className="fas fa-download"></i>
-                                </span>
-                                <span>Download</span>
-                                </a>
+                                
+                                <span className="button is-primary" onClick={this.selectUserAction}>Download</span>
+                                
                             </p>
                             </div>
                         </div>
