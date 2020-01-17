@@ -27,15 +27,17 @@ class Grid extends Component {
     animatePath = () => {
 
         let { shortestPath, visited } = BFS(this.state.grid, 1, 1, 15, 12);
+        let gridPath = this.state.grid;
 
         /*
             row: rowNumber,
             column: columnNumber
         */
+
         let index = 0;
 
         visited.forEach(node => {
-            index ++;
+            index +=1;
 
             setTimeout(() => {
                 let copyGrid = this.state.grid;
@@ -43,20 +45,19 @@ class Grid extends Component {
                 copyGrid[node.row][node.column].nodeVisted = true;
                 this.setState({grid: copyGrid});
 
-            }, index * 20);
-
-            //this.setState({grid: copyGrid});
-            //setTimeout
+            }, index * 25);
         });
+
+        setTimeout(() => {
+            shortestPath.forEach(node => {
+                gridPath[node.row][node.column].isPath = true;
+            })
+            this.setState({grid: gridPath});
+        }, index * 25);
+
     }
 
     render(){
-
-        //console.log(BFS(this.state.grid, 1, 1, 0, 0));
-
-        //let datapoint =  BFS(this.state.grid, 1, 1, 0, 0);
-
-        //console.log(datapoint);
 
         return (
             <div>
@@ -77,6 +78,7 @@ class Grid extends Component {
                                             startRow={node.startRow}
                                             startColumn={node.startColumn}
                                             isVisited={node.isVisited}
+                                            isPath={node.isPath}
                                             nodeVisted={node.nodeVisted}
                                             prevNode={node.prevNode}
                                             updateState={this.updateState}
@@ -125,6 +127,7 @@ class Grid extends Component {
             startRow: undefined,
             startColumn: undefined,
             isVisited: false,
+            isPath: false,
             nodeVisted: false,
             prevNode: undefined
         }

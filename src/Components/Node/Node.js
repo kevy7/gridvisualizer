@@ -18,15 +18,19 @@ class Node extends Component {
     }
 
     render(){
-        let myStyle;
+        let myStyle = {
+            background: ""
+        };
         
         //if this node is visited, then set it's background to be color blue
         if(this.props.nodeVisted === true){
-            myStyle = {
-                background: "blue"
-            }
-            //Work on pushing other styles such as startNode or endNode here as well
+            myStyle.background ="blue";
         }
+
+        if(this.props.isPath === true){
+            myStyle.background = "orange";
+        }
+        
         return (
             <div 
                 className="node" 
@@ -45,6 +49,7 @@ Node.propTypes = {
     startRow: PropTypes.number,
     startColumn: PropTypes.number,
     isVisted: PropTypes.bool,
+    isPath: PropTypes.bool,
     nodeVisited: PropTypes.bool,
     prevNode: PropTypes.object,
     updateState: PropTypes.func
