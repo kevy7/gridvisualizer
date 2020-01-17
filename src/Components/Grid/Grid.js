@@ -28,7 +28,7 @@ class Grid extends Component {
     //How can I do this better?
     animatePath = () => {
 
-        let { shortestPath, visited } = BFS(this.state.grid, 1, 1, 15, 19);
+        let { shortestPath, visited } = BFS(this.state.grid, 13, 8, 15, 19);
         let gridPath = this.state.grid;
 
         /*
@@ -83,7 +83,6 @@ class Grid extends Component {
                                             startColumn={node.startColumn}
                                             isVisited={node.isVisited}
                                             isPath={node.isPath}
-                                            nodeVisted={node.nodeVisted}
                                             prevNode={node.prevNode}
                                             updateState={this.updateState}
                                         />
@@ -108,9 +107,9 @@ class Grid extends Component {
         let currentNode;
         //We're going to create our grid here, and push in our node
 
-        for(var a = 0; a < 50; a++){
+        for(var a = 0; a < 30; a++){
             let nodeRows = [];
-            for(var b = 0; b < 50; b++){
+            for(var b = 0; b < 30; b++){
                 //create nodes here
                 currentNode = this.createNode(a, b);
                 nodeRows.push(currentNode);
@@ -132,7 +131,6 @@ class Grid extends Component {
             startColumn: undefined,
             isVisited: false,
             isPath: false,
-            nodeVisted: false,
             prevNode: undefined
         }
     }

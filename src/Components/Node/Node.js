@@ -43,7 +43,6 @@ Node.propTypes = {
     startColumn: PropTypes.number,
     isVisted: PropTypes.bool,
     isPath: PropTypes.bool,
-    nodeVisited: PropTypes.bool,
     prevNode: PropTypes.object,
     updateState: PropTypes.func
 }
