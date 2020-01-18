@@ -2,8 +2,14 @@
     width: 25px;
     height: 25px;
     border: .05px solid rgb(169,169,169);
+    display: flex;
 }
 
 .node-visited {
     background: blue;
+}
+
+.node-icon {
+    margin-left: auto;
+    margin-right: auto;
 }
