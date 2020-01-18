@@ -67,9 +67,7 @@ class Grid extends Component {
         } 
 
         return (
-            <div>
-                {/* <Node /> */}
-                This is the grid component
+            <div className="grid">
 
                 {
                     this.state.grid.map((nodeRows, rowidx) => {
