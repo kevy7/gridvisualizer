@@ -4,6 +4,7 @@ import Styles from './Grid.module.css';
 import Node from "../Node/Node";
 
 import { BFS } from "../../Algorithms/BreadthFirstSearch";
+import { func } from 'prop-types';
 
 class Grid extends Component {
     
@@ -58,6 +59,12 @@ class Grid extends Component {
     }
 
     render(){
+
+        window.onresize = () => {
+            //console.log(window.innerWidth);
+            let grid = this.createInitialGrid();
+            this.setState({grid})
+        } 
 
         return (
             <div>
