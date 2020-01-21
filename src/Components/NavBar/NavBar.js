@@ -65,14 +65,14 @@ class NavBar extends Component {
                                     <div ref={(input) => {
                                         this.startAction = input
                                     }} className="navbar-item" >
-                                        <i class="fa fa-play node-icon"></i>
+                                        <i class="fa fa-play node-icon-nav"></i>
                                         Start
                                     </div>
 
                                     <div ref={(input) => {
                                         this.endAction = input
                                     }} className="navbar-item" >
-                                        <i class="fa fa-stop node-icon"></i>
+                                        <i class="fa fa-stop node-icon-nav"></i>
                                         End
                                     </div>
                                 </div>

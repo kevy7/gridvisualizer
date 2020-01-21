@@ -10,5 +10,10 @@
 }
 
 .node-icon {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.node-icon-nav {
     margin-right: auto;
 }
