@@ -56,13 +56,16 @@ class NavBar extends Component {
                                 Home
                             </a>
                             <div className="navbar-item has-dropdown is-hoverable">
+                                
                                 <a className="navbar-link" >
+
                                     Action
                                 </a>
                                 <div className="navbar-dropdown is-boxed">
                                     <div ref={(input) => {
                                         this.startAction = input
                                     }} className="navbar-item" >
+                                        <i class="fas fa-play node-icon"></i>
                                         Start
                                     </div>
 
