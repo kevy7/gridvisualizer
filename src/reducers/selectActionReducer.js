@@ -1,4 +1,3 @@
-//import actions here
 import { SELECT_ACTION } from '../actions/types';
 
 const initialState = {
