@@ -30,9 +30,7 @@ class Node extends Component {
                 onClick={this.clickButton} 
                 style={myStyle}
             >
-                {/* <i class="fas fa-stop node-icon"></i> 
-                    Icon will be placed in here based on the user action
-                */}
+                {/* <i class="fa fa-play node-icon"></i> */}
             </div>
         )
     }
