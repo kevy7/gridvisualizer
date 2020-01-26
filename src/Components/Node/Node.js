@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import "./Node.css";
 
@@ -47,4 +48,10 @@ Node.propTypes = {
     updateState: PropTypes.func
 }
 
-export default Node;
+const mapStateToProps = (state) => {
+    return {
+        userAction: state.userAction.userAction
+    }
+}
+
+export default connect()(Node);

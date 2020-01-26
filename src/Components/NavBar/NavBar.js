@@ -26,12 +26,29 @@ class NavBar extends Component {
 
         //Take the value of the html element and pass it into the selectAction function
         //Look up how to use dom refs with react
+        //How to select this    
+
+        console.log(this.startAction.innerHTML);
+
         let node = this.startAction;
 
-        console.log(node.innerHTML);
-        console.log(this.endAction.innerHTML);
+
+
+        /* console.log(node.innerHTML);
+        console.log(this.endAction.innerHTML); */
 
     }
+
+    selectStartAction = () => {
+        //let node = this.startAction;
+
+
+        this.props.selectAction("Start");
+
+
+    }
+
+    
 
     render(){
         
@@ -64,14 +81,21 @@ class NavBar extends Component {
                                 <div className="navbar-dropdown is-boxed">
                                     <div ref={(input) => {
                                         this.startAction = input
-                                    }} className="navbar-item" >
+                                        }} 
+                                        className="navbar-item" 
+                                        onClick={this.selectStartAction}
+                                    >
                                         <i class="fa fa-play node-icon-nav"></i>
                                         Start
                                     </div>
 
                                     <div ref={(input) => {
                                         this.endAction = input
-                                    }} className="navbar-item" >
+                                        }} 
+                                        className="navbar-item" 
+                                        onClick={this.selectUserAction}
+
+                                    >
                                         <i class="fa fa-stop node-icon-nav"></i>
                                         End
                                     </div>
