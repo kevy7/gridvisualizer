@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
 import selectActionReducer from './selectActionReducer';
+import selectGridReducer from './selectGridReducer';
 
 export default combineReducers({
-    userAction: selectActionReducer
+    userAction: selectActionReducer,
+    selectedGrids: selectGridReducer
 });

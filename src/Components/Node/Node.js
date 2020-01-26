@@ -17,6 +17,10 @@ class Node extends Component {
 
         this.setState({iconName: this.props.userAction});
 
+        if(this.props.userAction === "fa fa-play node-icon"){
+            //Create an action for selecting a starting Grid
+        }
+
     }
 
     render(){
