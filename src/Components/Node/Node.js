@@ -7,12 +7,16 @@ import "./Node.css";
 //This will be our nodes, and each node will be displayed via the Grid Component
 class Node extends Component {
 
+    state = {
+        iconName: ""
+    }
+
     //This is just a test
     clickButton = () => {
-        let message = "Row: " + this.props.row + " Column: " + this.props.column + " isVisited: " + this.props.isVisited;
-        //this.props.updateState();
+        //let message = "Row: " + this.props.row + " Column: " + this.props.column + " isVisited: " + this.props.isVisited;
 
-        console.log(message);
+        this.setState({iconName: this.props.userAction});
+
     }
 
     render(){
@@ -23,6 +27,13 @@ class Node extends Component {
         if(this.props.isPath === true){
             myStyle.background = "orange";
         }
+
+        //let iconElement = <i class="fa fa-play node-icon"></i>;
+
+        let iconName = "";
+
+        iconName = this.state.iconName
+        
         
         return (
             <div 
@@ -32,6 +43,7 @@ class Node extends Component {
                 style={myStyle}
             >
                 {/* <i class="fa fa-play node-icon"></i> */}
+                <i className={iconName}></i>
             </div>
         )
     }
@@ -54,4 +66,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect()(Node);
+export default connect(mapStateToProps)(Node);

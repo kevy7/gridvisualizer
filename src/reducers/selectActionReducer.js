@@ -2,7 +2,7 @@
 import { SELECT_ACTION } from '../actions/types';
 
 const initialState = {
-    userAction: ""
+    userAction: "fa fa-play node-icon" //For now, this will be our default action
 }
 
 const selectActionReducer = (state = initialState, action) => {

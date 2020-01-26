@@ -43,7 +43,7 @@ class NavBar extends Component {
         //let node = this.startAction;
 
 
-        this.props.selectAction("Start");
+        this.props.selectAction("fa fa-play node-icon");
 
 
     }
