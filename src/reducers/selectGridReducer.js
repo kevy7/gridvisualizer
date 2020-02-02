@@ -1,4 +1,5 @@
 import { SELECT_START_GRID, SELECT_END_GRID } from '../actions/types';
+import { identifier } from '@babel/types';
 
 let initialState = {
     startingGrid: {},
@@ -6,7 +7,12 @@ let initialState = {
 }
 
 const selectGridReducer = (state=initialState, action) => {
-    
+    if(action.type === SELECT_START_GRID){
+        return {
+            ...state,
+            startingGrid: action.payload,
+        }
+    }
 }
 
 export default selectGridReducer;
