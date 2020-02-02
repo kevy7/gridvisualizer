@@ -13,3 +13,4 @@ export const selectAction = (userAction) => dispatch => {
     }
 }  
 
+//action used to select starting or end grid
