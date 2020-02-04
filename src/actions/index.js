@@ -29,7 +29,7 @@ export const selectGrid = (selectGridData) => dispatch => {
     */
 
     if(selectGridData.userAction === selectStartNode){
-
+        
     }
 
 
