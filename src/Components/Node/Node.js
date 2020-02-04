@@ -17,6 +17,16 @@ class Node extends Component {
 
         this.setState({iconName: this.props.userAction});
 
+        let selectGridData = {
+            userAction: this.props.userAction,
+            selectedGrid: {
+                row: this.props.row,
+                column: this.props.column
+            }
+        }
+
+        
+
     }
 
     render(){
