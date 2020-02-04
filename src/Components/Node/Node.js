@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+import { selectGrid } from '../../actions/index';
 import "./Node.css";
 
 //This will be our nodes, and each node will be displayed via the Grid Component
@@ -25,7 +26,7 @@ class Node extends Component {
             }
         }
 
-        
+
 
     }
 
