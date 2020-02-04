@@ -3,7 +3,9 @@ import { identifier } from '@babel/types';
 
 let initialState = {
     startingGrid: {},
-    endingGrid: {}
+    endingGrid: {},
+    startingSelected: false,
+    endingSelected: false
 }
 
 const selectGridReducer = (state=initialState, action) => {
