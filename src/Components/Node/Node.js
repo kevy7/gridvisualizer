@@ -26,6 +26,7 @@ class Node extends Component {
             }
         }
 
+        
 
 
     }
@@ -77,4 +78,6 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(Node);
+export default connect(mapStateToProps, {
+    selectGrid: selectGrid
+})(Node);
