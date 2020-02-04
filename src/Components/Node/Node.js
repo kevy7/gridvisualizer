@@ -26,7 +26,7 @@ class Node extends Component {
             }
         }
 
-        
+        this.props.selectGrid(selectGridData);
 
 
     }

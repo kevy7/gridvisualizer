@@ -28,14 +28,13 @@ export const selectGrid = (selectGridData) => dispatch => {
 
     */
 
-    console.log(selectGridData);
-
-    /* if(selectGridData.userAction === selectStartNode){
+    if(selectGridData.userAction === selectStartNode){
+        
         dispatch({
             type: SELECT_START_GRID,
             payload: selectGridData.selectedGrid
-        })
-    } */
+        });
+    }
 
 
 }
