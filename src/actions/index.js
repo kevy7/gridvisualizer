@@ -1,5 +1,7 @@
 import {
-    SELECT_ACTION
+    SELECT_ACTION,
+    SELECT_START_GRID,
+    SELECT_END_GRID
 } from './types';
 
 import { selectStartNode } from '../userActions/userActions'; //This is related to the user's actions
@@ -16,7 +18,7 @@ export const selectAction = (userAction) => dispatch => {
 }  
 
 //action used to select starting or end grid
-export const selectGrid = (selectGridAction) => dispatch => {
+export const selectGrid = (selectGridData) => dispatch => {
     /*  
 
         {
@@ -25,4 +27,10 @@ export const selectGrid = (selectGridAction) => dispatch => {
         }
 
     */
+
+    if(selectGridData.userAction === selectStartNode){
+
+    }
+
+
 }
