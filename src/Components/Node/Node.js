@@ -17,8 +17,6 @@ class Node extends Component {
     clickButton = () => {
         //let message = "Row: " + this.props.row + " Column: " + this.props.column + " isVisited: " + this.props.isVisited;
 
-        this.setState({iconName: this.props.userAction});
-
         let selectGridData = {
             userAction: this.props.userAction,
             selectedGrid: {
@@ -29,10 +27,17 @@ class Node extends Component {
 
         if(this.props.userAction === selectStartNode){
             //Push isSelected into the SelectGridData object
+            //selectGridData.isSelected = this.props.selectedGrids.startingSelected;
+
+            if(this.props.selectedGrids.startingSelected !== true){
+                console.log("this is not true");
+                this.props.selectGrid(selectGridData);
+                this.setState({iconName: this.props.userAction});
+            }
+            else if(this.props.selectedGrids.startingSelected === true){
+                console.log("this is true, do not execute your action here")
+            }
         }
-
-        this.props.selectGrid(selectGridData);
-
 
     }
 
