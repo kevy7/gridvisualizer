@@ -74,7 +74,8 @@ Node.propTypes = {
 
 const mapStateToProps = (state) => {
     return {
-        userAction: state.userAction.userAction
+        userAction: state.userAction.userAction,
+        selectedGrids: state.selectedGrids
     }
 }
 

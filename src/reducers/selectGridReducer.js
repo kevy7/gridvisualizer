@@ -13,12 +13,14 @@ const selectGridReducer = (state=initialState, action) => {
         return {
             ...state,
             startingGrid: action.payload,
+            startingSelected: true
         }
     }
     else if (action.type === SELECT_END_GRID){
         return {
             ...state,
-            endingGrid: action.payload
+            endingGrid: action.payload,
+            endingSelected: true
         }
     }
     else {

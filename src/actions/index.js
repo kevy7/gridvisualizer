@@ -23,7 +23,8 @@ export const selectGrid = (selectGridData) => dispatch => {
 
         {
             userAction: 
-            selectedGrid: //This is either the starting or end grid
+            selectedGrid: //This is either the starting or end grid,
+            isSelected: boolean
         }
 
     */
