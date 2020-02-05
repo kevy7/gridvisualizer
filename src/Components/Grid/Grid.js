@@ -30,6 +30,8 @@ class Grid extends Component {
 
     animatePath = () => {
 
+        
+
         let { shortestPath, visited } = BFS(this.state.grid, 25, 30, 10, 8);
         let gridPath = this.state.grid;
 
@@ -142,7 +144,7 @@ class Grid extends Component {
 
 const mapStateToProps = (state) => {
     return {
-
+        selectedGrids: state.selectedGrids
     }
 }
 
