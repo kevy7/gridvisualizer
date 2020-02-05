@@ -33,11 +33,16 @@ export const selectGrid = (selectGridData) => dispatch => {
     */
 
     if(selectGridData.userAction === selectStartNode){
-        
         dispatch({
             type: SELECT_START_GRID,
             payload: selectGridData.selectedGrid
         });
+    }
+    else if (selectGridData.userAction === selectEndNode){
+        dispatch({
+            type: SELECT_END_GRID,
+            payload: selectGridData.selectedGrid
+        })
     }
 
 
