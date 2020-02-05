@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 
 import Styles from './Grid.module.css';
 import Node from "../Node/Node";
@@ -139,4 +140,10 @@ class Grid extends Component {
 
 }
 
-export default Grid;
+const mapStateToProps = (state) => {
+    return {
+
+    }
+}
+
+export default connect(mapStateToProps)(Grid);
