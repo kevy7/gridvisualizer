@@ -38,6 +38,15 @@ class Node extends Component {
                 console.log("this is true, do not execute your action here")
             }
         }
+        else if(this.props.userAction === selectEndNode){
+            if(this.props.selectedGrids.endingSelected !== true){
+                this.props.selectGrid(selectGridData);
+                this.setState({iconName: this.props.userAction});
+            }
+            else if(this.props.selectedGrids.startingSelected === true){
+                console.log("this is true, do not execute your action here")
+            }
+        }
 
     }
 

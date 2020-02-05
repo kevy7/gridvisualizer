@@ -4,7 +4,10 @@ import {
     SELECT_END_GRID
 } from './types';
 
-import { selectStartNode } from '../userActions/userActions'; //This is related to the user's actions
+import { 
+    selectStartNode, 
+    selectEndNode 
+} from '../userActions/userActions'; //This is related to the user's actions
 
 //select the type of action that the user wants
 export const selectAction = (userAction) => dispatch => {
