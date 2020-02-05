@@ -15,7 +15,9 @@ class Grid extends Component {
         startColumn: null,
         endRow: null,
         endColumn: null,
-        action: undefined
+        action: undefined,
+        shortestPath: [],
+        visited: []
     }
 
     componentWillMount = () => {
@@ -42,6 +44,8 @@ class Grid extends Component {
             let endColumn = this.props.selectedGrids.endingGrid.column;
 
             let { shortestPath, visited } = BFS(this.state.grid, startRow, startColumn, endRow, endColumn);
+            this.setState({shortestPath: shortestPath});
+            this.setState({visited: visited});
             let gridPath = this.state.grid;
 
             /*
@@ -70,6 +74,15 @@ class Grid extends Component {
         }
     }
 
+    resetGrid = () => {
+        let grid = this.createInitialGrid();
+        this.setState({grid})
+        
+        this.state.visited.forEach(node => {
+            document.getElementById(`node-${node.row}-${node.column}`).className = "node";
+        })
+    }
+
     render(){
 
         window.onresize = () => {
@@ -80,7 +93,8 @@ class Grid extends Component {
 
         return (
             <div className="grid">
-
+                <button className="button" type="button" onClick={this.animatePath}>Run Algorithm</button>
+                <button className="button" type="button" onClick={this.resetGrid}>Reset Grid</button>
                 {
                     this.state.grid.map((nodeRows, rowidx) => {
                         return (
@@ -106,8 +120,6 @@ class Grid extends Component {
                         )
                     })
                 }
-
-                <button className="button" type="button" onClick={this.animatePath}>Click me!</button>
             </div>
         )
     }
