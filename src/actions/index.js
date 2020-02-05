@@ -42,7 +42,7 @@ export const selectGrid = (selectGridData) => dispatch => {
         dispatch({
             type: SELECT_END_GRID,
             payload: selectGridData.selectedGrid
-        })
+        });
     }
 
 
