@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import { selectEndNode } from '../../userActions/userActions';
 //import actions here
 import { selectAction } from '../../actions/index';
 
@@ -41,14 +42,12 @@ class NavBar extends Component {
 
     selectStartAction = () => {
         //let node = this.startAction;
-
-
         this.props.selectAction("fa fa-play node-icon");
-
-
     }
 
-    
+    selectEndAction = () => {
+        this.props.selectAction(selectEndNode);
+    }
 
     render(){
         
