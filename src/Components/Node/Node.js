@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { selectGrid } from '../../actions/index';
+import { selectGrid, selectAction } from '../../actions/index';
 import { selectStartNode } from '../../userActions/userActions';
 import { selectEndNode } from '../../userActions/userActions';
 import "./Node.css";

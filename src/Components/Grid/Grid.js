@@ -30,35 +30,44 @@ class Grid extends Component {
 
     animatePath = () => {
 
+        if(!this.props.selectedGrids.startingGrid.row){
+            alert("No Starting or End Nodes were selected. Please select a start and end node.")
+        }
         
+        else {
 
-        let { shortestPath, visited } = BFS(this.state.grid, 25, 30, 10, 8);
-        let gridPath = this.state.grid;
+            let startRow = this.props.selectedGrids.startingGrid.row;
+            let startColumn = this.props.selectedGrids.startingGrid.column;
+            let endRow = this.props.selectedGrids.endingGrid.row;
+            let endColumn = this.props.selectedGrids.endingGrid.column;
 
-        /*
-            row: rowNumber,
-            column: columnNumber
-        */
+            let { shortestPath, visited } = BFS(this.state.grid, startRow, startColumn, endRow, endColumn);
+            let gridPath = this.state.grid;
 
-        let index = 0;
+            /*
+                row: rowNumber,
+                column: columnNumber
+            */
 
-        visited.forEach(node => {
-            index +=1;
+            let index = 0;
+
+            visited.forEach(node => {
+                index +=1;
+
+                setTimeout(() => {
+
+                    document.getElementById(`node-${node.row}-${node.column}`).className = "node node-visited";
+
+                }, index * 10);
+            });
 
             setTimeout(() => {
-
-                document.getElementById(`node-${node.row}-${node.column}`).className = "node node-visited";
-
+                shortestPath.forEach(node => {
+                    gridPath[node.row][node.column].isPath = true;
+                })
+                this.setState({grid: gridPath});
             }, index * 10);
-        });
-
-        setTimeout(() => {
-            shortestPath.forEach(node => {
-                gridPath[node.row][node.column].isPath = true;
-            })
-            this.setState({grid: gridPath});
-        }, index * 10);
-
+        }
     }
 
     render(){
