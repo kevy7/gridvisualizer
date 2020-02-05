@@ -92,7 +92,7 @@ class NavBar extends Component {
                                         this.endAction = input
                                         }} 
                                         className="navbar-item" 
-                                        onClick={this.selectUserAction}
+                                        onClick={this.selectEndAction}
 
                                     >
                                         <i class="fa fa-stop node-icon-nav"></i>

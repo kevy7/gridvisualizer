@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import { selectGrid } from '../../actions/index';
 import { selectStartNode } from '../../userActions/userActions';
+import { selectEndNode } from '../../userActions/userActions';
 import "./Node.css";
 
 //This will be our nodes, and each node will be displayed via the Grid Component
@@ -30,7 +31,6 @@ class Node extends Component {
             //selectGridData.isSelected = this.props.selectedGrids.startingSelected;
 
             if(this.props.selectedGrids.startingSelected !== true){
-                console.log("this is not true");
                 this.props.selectGrid(selectGridData);
                 this.setState({iconName: this.props.userAction});
             }
