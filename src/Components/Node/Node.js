@@ -32,6 +32,7 @@ class Node extends Component {
             if(this.props.selectedGrids.startingSelected !== true){
                 this.props.selectGrid(selectGridData);
                 this.setState({iconName: this.props.userAction});
+                this.props.selectAction(selectEndNode);
             }
         }
         else if(this.props.userAction === selectEndNode){
@@ -93,5 +94,6 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps, {
-    selectGrid: selectGrid
+    selectGrid: selectGrid,
+    selectAction: selectAction
 })(Node);

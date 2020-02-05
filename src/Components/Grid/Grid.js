@@ -107,7 +107,7 @@ class Grid extends Component {
                     })
                 }
 
-                <button type="button" onClick={this.animatePath}>Click me!</button>
+                <button className="button" type="button" onClick={this.animatePath}>Click me!</button>
             </div>
         )
     }
