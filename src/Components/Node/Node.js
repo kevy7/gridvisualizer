@@ -57,7 +57,6 @@ class Node extends Component {
         //let iconElement = <i class="fa fa-play node-icon"></i>;
 
         let iconName = "";
-
         iconName = this.state.iconName
         
         
