@@ -31,14 +31,14 @@ class Node extends Component {
             //selectGridData.isSelected = this.props.selectedGrids.startingSelected;
             if(this.props.selectedGrids.startingSelected !== true){
                 this.props.selectGrid(selectGridData);
-                this.setState({iconName: this.props.userAction});
+                //this.setState({iconName: this.props.userAction});
                 this.props.selectAction(selectEndNode);
             }
         }
         else if(this.props.userAction === selectEndNode){
             if(this.props.selectedGrids.endingSelected !== true){
                 this.props.selectGrid(selectGridData);
-                this.setState({iconName: this.props.userAction});
+                //this.setState({iconName: this.props.userAction});
             }
         }
 
@@ -58,6 +58,7 @@ class Node extends Component {
 
         let iconName = "";
         iconName = this.state.iconName
+        //iconName = this.props.userAction;
         
         
         return (
