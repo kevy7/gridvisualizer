@@ -25,6 +25,7 @@ class Grid extends Component {
         this.setState({grid})
     }
 
+    //This function will be used to update the grid
     updateState = (startRow, startColumn, endRow, endColumn) => {
         //this.setState({grid});
         //console.log("This function is being called from the grid");
@@ -112,6 +113,8 @@ class Grid extends Component {
                                             isPath={node.isPath}
                                             prevNode={node.prevNode}
                                             updateState={this.updateState}
+                                            isStart={this.isStart}
+                                            isEnd={this.isEnd}
                                         />
                                     })
 
@@ -157,7 +160,9 @@ class Grid extends Component {
             startColumn: undefined,
             isVisited: false,
             isPath: false,
-            prevNode: undefined
+            prevNode: undefined,
+            isStart: false,
+            isEnd: false,
         }
     }
 
