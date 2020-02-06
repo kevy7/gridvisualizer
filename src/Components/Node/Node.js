@@ -28,29 +28,17 @@ class Node extends Component {
         if(this.props.userAction === selectStartNode){
             if(this.props.selectedGrids.startingSelected !== true){
                 this.props.selectGrid(selectGridData);
-                //this.setState({iconName: this.props.userAction});
-
-
                 this.props.updateState(this.props.row, this.props.column, this.props.userAction);
-
-
                 this.props.selectAction(selectEndNode);
             }
         }
         else if(this.props.userAction === selectEndNode){
             if(this.props.selectedGrids.endingSelected !== true){
                 this.props.selectGrid(selectGridData);
-
-
                 this.props.updateState(this.props.row, this.props.column, this.props.userAction);
-
-
-                //this.setState({iconName: this.props.userAction});
+                this.props.selectAction(selectStartNode);
             }
         }
-
-        //this.props.updateState(this.props.row, this.props.column, this.props.userAction);
-        //console.log(this.props.isStart);
 
     }
 
@@ -71,11 +59,6 @@ class Node extends Component {
         else if(this.props.isEnd === true){
             iconName = selectEndNode;
         }
-
-        //let iconName = "";
-        //iconName = this.state.iconName
-        //iconName = this.props.userAction;
-
         
         return (
             <div 

@@ -1,7 +1,8 @@
 import {
     SELECT_ACTION,
     SELECT_START_GRID,
-    SELECT_END_GRID
+    SELECT_END_GRID,
+    RESET_SELECTED_GRIDS
 } from './types';
 
 import { 
@@ -46,4 +47,11 @@ export const selectGrid = (selectGridData) => dispatch => {
     }
 
 
+}
+
+//action used to reset selected starting and ending grids
+export const resetSelectedGrids = () => dispatch => {
+    dispatch({
+        type: RESET_SELECTED_GRIDS
+    })
 }
