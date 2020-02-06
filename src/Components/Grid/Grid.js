@@ -26,9 +26,8 @@ class Grid extends Component {
     }
 
     //This function will be used to update the grid
-    updateState = (startRow, startColumn, endRow, endColumn) => {
-        //this.setState({grid});
-        //console.log("This function is being called from the grid");
+    updateState = () => {
+        
     }
 
     animatePath = () => {
