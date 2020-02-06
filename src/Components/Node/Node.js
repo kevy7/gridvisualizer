@@ -83,7 +83,9 @@ Node.propTypes = {
     isVisted: PropTypes.bool,
     isPath: PropTypes.bool,
     prevNode: PropTypes.object,
-    updateState: PropTypes.func
+    updateState: PropTypes.func,
+    isStart: PropTypes.bool,
+    isEnd: PropTypes.bool
 }
 
 const mapStateToProps = (state) => {
