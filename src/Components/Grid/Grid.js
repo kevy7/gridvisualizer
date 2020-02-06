@@ -31,6 +31,14 @@ class Grid extends Component {
         let grid = this.state.grid;
 
         //grid[row][column]
+        if(userAction === selectStartNode){
+            grid[row][column].isStart = true;
+        }
+        else if(userAction === selectEndNode){
+            grid[row][column].isEnd = true;
+        }
+
+        this.setState({grid: grid});
     }
 
     animatePath = () => {
@@ -88,7 +96,7 @@ class Grid extends Component {
 
     render(){
 
-        console.log(this.state.grid);
+        //console.log(this.state.grid);
 
         window.onresize = () => {
             //console.log(window.innerWidth);
@@ -117,8 +125,8 @@ class Grid extends Component {
                                             isPath={node.isPath}
                                             prevNode={node.prevNode}
                                             updateState={this.updateState}
-                                            isStart={this.isStart}
-                                            isEnd={this.isEnd}
+                                            isStart={node.isStart}
+                                            isEnd={node.isEnd}
                                         />
                                     })
 

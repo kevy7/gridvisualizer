@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { selectGrid, selectAction } from '../../actions/index';
-import { selectStartNode } from '../../userActions/userActions';
-import { selectEndNode } from '../../userActions/userActions';
+import { selectStartNode, selectEndNode } from '../../userActions/userActions';
 import "./Node.css";
 
 //This will be our nodes, and each node will be displayed via the Grid Component
@@ -18,7 +17,7 @@ class Node extends Component {
     clickButton = () => {
         //let message = "Row: " + this.props.row + " Column: " + this.props.column + " isVisited: " + this.props.isVisited;
 
-        let selectGridData = {
+        /* let selectGridData = {
             userAction: this.props.userAction,
             selectedGrid: {
                 row: this.props.row,
@@ -27,8 +26,6 @@ class Node extends Component {
         }
 
         if(this.props.userAction === selectStartNode){
-            //Push isSelected into the SelectGridData object
-            //selectGridData.isSelected = this.props.selectedGrids.startingSelected;
             if(this.props.selectedGrids.startingSelected !== true){
                 this.props.selectGrid(selectGridData);
                 this.setState({iconName: this.props.userAction});
@@ -40,7 +37,10 @@ class Node extends Component {
                 this.props.selectGrid(selectGridData);
                 this.setState({iconName: this.props.userAction});
             }
-        }
+        } */
+
+        this.props.updateState(this.props.row, this.props.column, this.props.userAction);
+        //console.log(this.props.isStart);
 
     }
 
@@ -49,17 +49,20 @@ class Node extends Component {
         let myStyle = {
             background: ""
         };
+        let iconName = "";
 
         if(this.props.isPath === true){
             myStyle.background = "orange";
         }
 
-        //let iconElement = <i class="fa fa-play node-icon"></i>;
+        if(this.props.isStart === true){
+            iconName = this.props.userAction;
+        }
 
-        let iconName = "";
-        iconName = this.state.iconName
+        //let iconName = "";
+        //iconName = this.state.iconName
         //iconName = this.props.userAction;
-        
+
         
         return (
             <div 
