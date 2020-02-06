@@ -55,7 +55,10 @@ class Grid extends Component {
             let endRow = this.props.selectedGrids.endingGrid.row;
             let endColumn = this.props.selectedGrids.endingGrid.column;
 
+            //Create an if else statement here
+            //Based on which algorithm was selected by the user, run that algorithm
             let { shortestPath, visited } = BFS(this.state.grid, startRow, startColumn, endRow, endColumn);
+
             this.setState({shortestPath: shortestPath});
             this.setState({visited: visited});
             let gridPath = this.state.grid;

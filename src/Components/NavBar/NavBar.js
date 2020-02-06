@@ -84,7 +84,7 @@ class NavBar extends Component {
                                         className="navbar-item" 
                                         onClick={this.selectStartAction}
                                     >
-                                        <i class="fa fa-play node-icon-nav"></i>
+                                        <i className="fa fa-play node-icon-nav"></i>
                                         Start
                                     </div>
 
