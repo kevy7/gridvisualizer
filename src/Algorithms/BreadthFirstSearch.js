@@ -67,9 +67,6 @@ export function BFS(grid, startRow, startColumn, endRow, endColumn){
 
                 let shortestPath = getShortestPath(grid, grid[row][column]);
 
-                console.log(shortestPath);
-                console.log(visited);
-
                 return {
                     shortestPath: shortestPath,
                     visited: visited
