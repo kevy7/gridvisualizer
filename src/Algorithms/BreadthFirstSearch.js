@@ -28,7 +28,7 @@ export function BFS(grid, startRow, startColumn, endRow, endColumn){
     });
 
 
-    queue.push(startingNode);   //We're pushing our starting node into the queue
+    queue.push(startingNode); //We're pushing our starting node into the queue
 
     while(queue.length){ //While there is something in the queue, do something below
 
