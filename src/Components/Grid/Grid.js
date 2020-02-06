@@ -6,7 +6,7 @@ import Node from "../Node/Node";
 
 import { BFS } from "../../Algorithms/BreadthFirstSearch";
 import { selectStartNode, selectEndNode } from '../../userActions/userActions';
-import { resetSelectedGrids } from '../../actions/index';
+import { selectAction, resetSelectedGrids } from '../../actions/index';
 import { func } from 'prop-types';
 
 class Grid extends Component {
@@ -95,6 +95,7 @@ class Grid extends Component {
         })
 
         this.props.resetSelectedGrids();
+        this.props.selectAction(selectStartNode);
         //Create an action to reset the selectGrids state
     }
 
@@ -191,5 +192,6 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps, {
-    resetSelectedGrids: resetSelectedGrids
+    resetSelectedGrids: resetSelectedGrids,
+    selectAction: selectAction
 })(Grid);
