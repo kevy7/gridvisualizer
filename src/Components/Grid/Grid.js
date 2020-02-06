@@ -92,6 +92,8 @@ class Grid extends Component {
         this.state.visited.forEach(node => {
             document.getElementById(`node-${node.row}-${node.column}`).className = "node";
         })
+
+        //Create an action to reset the selectGrids state
     }
 
     render(){
