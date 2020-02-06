@@ -5,6 +5,7 @@ import Styles from './Grid.module.css';
 import Node from "../Node/Node";
 
 import { BFS } from "../../Algorithms/BreadthFirstSearch";
+import { selectStartNode, selectEndNode } from '../../userActions/userActions';
 import { func } from 'prop-types';
 
 class Grid extends Component {
@@ -26,8 +27,10 @@ class Grid extends Component {
     }
 
     //This function will be used to update the grid
-    updateState = () => {
-        
+    updateState = (row, column, userAction) => {
+        let grid = this.state.grid;
+
+        //grid[row][column]
     }
 
     animatePath = () => {
@@ -84,6 +87,8 @@ class Grid extends Component {
     }
 
     render(){
+
+        console.log(this.state.grid);
 
         window.onresize = () => {
             //console.log(window.innerWidth);
