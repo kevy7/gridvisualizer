@@ -6,7 +6,7 @@
 }
 
 .node-visited {
-    background: blue;
+    background: hsl(204, 86%, 53%);
 }
 
 .node-icon {

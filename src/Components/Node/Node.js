@@ -50,7 +50,7 @@ class Node extends Component {
         let iconName = "";
 
         if(this.props.isPath === true){
-            myStyle.background = "orange";
+            myStyle.background = "hsl(171, 100%, 41%)";
         }
 
         if(this.props.isStart === true){
