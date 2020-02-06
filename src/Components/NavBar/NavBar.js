@@ -95,7 +95,7 @@ class NavBar extends Component {
                                         onClick={this.selectEndAction}
 
                                     >
-                                        <i class="fa fa-stop node-icon-nav"></i>
+                                        <i className="fa fa-stop node-icon-nav"></i>
                                         End
                                     </div>
                                 </div>
