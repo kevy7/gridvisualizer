@@ -73,6 +73,7 @@ export function DFS(grid, startRow, startCol, endRow, endCol){
             if(endRow === row && endCol === column){
                 //Then there is a match
 
+                //This function does not work with DFS to find the shortest path
                 let shortestPath = getShortestPath(grid, grid[row][column]);
 
                 return {
