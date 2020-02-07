@@ -104,7 +104,7 @@ class Grid extends Component {
     }
 
     testFunction = () => {
-        
+
     }
 
     render(){
@@ -121,7 +121,7 @@ class Grid extends Component {
             <div className="grid">
                 <button className="button" type="button" onClick={this.animatePath}>Run Algorithm</button>
                 <button className="button" type="button" onClick={this.resetGrid}>Reset Grid</button>
-                <button className="button" type="button" onClick={}>Test Button</button>
+                <button className="button" type="button" onClick={this.testFunction}>Test Button</button>
                 {
                     this.state.grid.map((nodeRows, rowidx) => {
                         return (
