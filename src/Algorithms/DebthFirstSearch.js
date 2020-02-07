@@ -80,17 +80,6 @@ export function DFS(grid, startRow, startCol, endRow, endCol){
                 column: currentNode.column
             }
 
-            /* if(endRow === row && endCol === column){
-
-                //This function does not work with DFS to find the shortest path
-                let shortestPath = getShortestPath(grid, grid[row][column]);
-
-                return {
-                    shortestPath: shortestPath,
-                    visited: visited
-                }
-            } */
-
         }
 
 
