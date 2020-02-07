@@ -5,6 +5,7 @@ import Styles from './Grid.module.css';
 import Node from "../Node/Node";
 
 import { BFS } from "../../Algorithms/BreadthFirstSearch";
+import { DFS } from "../../Algorithms/DebthFirstSearch";
 import { selectStartNode, selectEndNode } from '../../userActions/userActions';
 import { selectAction, resetSelectedGrids } from '../../actions/index';
 import { func } from 'prop-types';
@@ -102,6 +103,10 @@ class Grid extends Component {
         //Create an action to reset the selectGrids state
     }
 
+    testFunction = () => {
+        
+    }
+
     render(){
 
         //console.log(this.state.grid);
@@ -116,6 +121,7 @@ class Grid extends Component {
             <div className="grid">
                 <button className="button" type="button" onClick={this.animatePath}>Run Algorithm</button>
                 <button className="button" type="button" onClick={this.resetGrid}>Reset Grid</button>
+                <button className="button" type="button" onClick={}>Test Button</button>
                 {
                     this.state.grid.map((nodeRows, rowidx) => {
                         return (
