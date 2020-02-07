@@ -30,7 +30,7 @@ export function getChildrens(node, maxRow, maxColumn){
         })
     }
     //add bottom children
-    if(row+1 <maxRow){
+    if(row+1 < maxRow){
         children.push({
             row: row+1,
             column: column

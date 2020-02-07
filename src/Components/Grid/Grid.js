@@ -113,6 +113,8 @@ class Grid extends Component {
         //Create an if else statement here
         //Based on which algorithm was selected by the user, run that algorithm
         let { shortestPath, visited } = DFS(this.state.grid, startRow, startColumn, endRow, endColumn);
+        this.setState({shortestPath: shortestPath});
+        this.setState({visited: visited});
 
         let index = 0;
 
@@ -137,8 +139,6 @@ class Grid extends Component {
     }
 
     render(){
-
-        //console.log(this.state.grid);
 
         window.onresize = () => {
             //console.log(window.innerWidth);

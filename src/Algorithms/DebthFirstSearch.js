@@ -67,7 +67,7 @@ export function DFS(grid, startRow, startCol, endRow, endCol){
                 column: column
             }); */
             
-            stack.push(grid[row][column]);
+            //stack.push(grid[row][column]);
 
             grid[row][column].prevNode = {
                 row: currentNode.row,
@@ -88,7 +88,7 @@ export function DFS(grid, startRow, startCol, endRow, endCol){
 
 
             //push your current children component into the stack
-            //stack.push(grid[row][column]);
+            stack.push(grid[row][column]);
 
         }
 
