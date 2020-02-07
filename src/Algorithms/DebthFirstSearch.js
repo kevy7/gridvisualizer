@@ -39,7 +39,7 @@ export function DFS(grid, startRow, startCol, endRow, endCol){
 
         let currentNode = stack.pop(); //Remove last element of your stack and assign it to the currentNode variable
 
-        
+        //Create a function to retrieve childrens
 
     }
 
