@@ -108,10 +108,11 @@ class Grid extends Component {
         let startColumn = this.props.selectedGrids.startingGrid.column;
         let endRow = this.props.selectedGrids.endingGrid.row;
         let endColumn = this.props.selectedGrids.endingGrid.column;
+        let gridPath = this.state.grid;
 
         //Create an if else statement here
         //Based on which algorithm was selected by the user, run that algorithm
-        let { shortestPath, visited } = BFS(this.state.grid, startRow, startColumn, endRow, endColumn);
+        let { shortestPath, visited } = DFS(this.state.grid, startRow, startColumn, endRow, endColumn);
 
         let index = 0;
 
@@ -122,10 +123,17 @@ class Grid extends Component {
 
                     document.getElementById(`node-${node.row}-${node.column}`).className = "node node-visited";
 
-                }, index * 10);
+                }, index * 20);
             });
 
-        console.log(visited);
+            setTimeout(() => {
+                shortestPath.forEach(node => {
+                    gridPath[node.row][node.column].isPath = true;
+                })
+                this.setState({grid: gridPath});
+            }, index * 20);
+
+        //console.log(visited);
     }
 
     render(){
