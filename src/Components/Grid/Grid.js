@@ -104,7 +104,28 @@ class Grid extends Component {
     }
 
     testFunction = () => {
+        let startRow = this.props.selectedGrids.startingGrid.row;
+        let startColumn = this.props.selectedGrids.startingGrid.column;
+        let endRow = this.props.selectedGrids.endingGrid.row;
+        let endColumn = this.props.selectedGrids.endingGrid.column;
 
+        //Create an if else statement here
+        //Based on which algorithm was selected by the user, run that algorithm
+        let { shortestPath, visited } = BFS(this.state.grid, startRow, startColumn, endRow, endColumn);
+
+        let index = 0;
+
+            visited.forEach(node => {
+                index +=1;
+
+                setTimeout(() => {
+
+                    document.getElementById(`node-${node.row}-${node.column}`).className = "node node-visited";
+
+                }, index * 10);
+            });
+
+        console.log(visited);
     }
 
     render(){
