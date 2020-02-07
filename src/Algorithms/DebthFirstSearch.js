@@ -44,11 +44,22 @@ export function DFS(grid, startRow, startCol, endRow, endCol){
 
         let currentNode = stack.pop(); //Remove last element of your stack and assign it to the currentNode variable
         if(currentNode.isVisited === false){
-        currentNode.isVisited = true;
-        visited.push({
-            row: currentNode.row,
-            column: currentNode.column
-        });
+            currentNode.isVisited = true;
+            visited.push({
+                row: currentNode.row,
+                column: currentNode.column
+            });
+        }
+
+        if(endRow === currentNode.row && endCol === currentNode.column){
+
+            //This function does not work with DFS to find the shortest path
+            let shortestPath = getShortestPath(grid, grid[currentNode.row][currentNode.column]);
+
+            return {
+                shortestPath: shortestPath,
+                visited: visited
+            }
         }
 
         //Create a function to retrieve childrens
@@ -69,9 +80,7 @@ export function DFS(grid, startRow, startCol, endRow, endCol){
                 column: currentNode.column
             }
 
-            //Set condition to check if the currentNode matches the end Node
-            if(endRow === row && endCol === column){
-                //Then there is a match
+            /* if(endRow === row && endCol === column){
 
                 //This function does not work with DFS to find the shortest path
                 let shortestPath = getShortestPath(grid, grid[row][column]);
@@ -80,9 +89,12 @@ export function DFS(grid, startRow, startCol, endRow, endCol){
                     shortestPath: shortestPath,
                     visited: visited
                 }
-            }
+            } */
 
         }
+
+
+
 
     }
 
