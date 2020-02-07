@@ -43,12 +43,13 @@ export function DFS(grid, startRow, startCol, endRow, endCol){
     while(stack.length){
 
         let currentNode = stack.pop(); //Remove last element of your stack and assign it to the currentNode variable
+        if(currentNode.isVisited === false){
         currentNode.isVisited = true;
         visited.push({
             row: currentNode.row,
             column: currentNode.column
         });
-
+        }
 
         //Create a function to retrieve childrens
         let childrens = getChildrens(currentNode, maxRow, maxCol);
@@ -60,14 +61,8 @@ export function DFS(grid, startRow, startCol, endRow, endCol){
             if(grid[row][column].isVisited === true){
                 continue;
             }
-
-            /* grid[row][column].isVisited = true;
-            visited.push({
-                row: row,
-                column: column
-            }); */
             
-            //stack.push(grid[row][column]);
+            stack.push(grid[row][column]);
 
             grid[row][column].prevNode = {
                 row: currentNode.row,
@@ -85,10 +80,6 @@ export function DFS(grid, startRow, startCol, endRow, endCol){
                     visited: visited
                 }
             }
-
-
-            //push your current children component into the stack
-            stack.push(grid[row][column]);
 
         }
 

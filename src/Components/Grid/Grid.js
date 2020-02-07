@@ -125,7 +125,7 @@ class Grid extends Component {
 
                     document.getElementById(`node-${node.row}-${node.column}`).className = "node node-visited";
 
-                }, index * 20);
+                }, index * 10);
             });
 
             setTimeout(() => {
@@ -133,7 +133,7 @@ class Grid extends Component {
                     gridPath[node.row][node.column].isPath = true;
                 })
                 this.setState({grid: gridPath});
-            }, index * 20);
+            }, index * 10);
 
         //console.log(visited);
     }
