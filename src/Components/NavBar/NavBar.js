@@ -23,11 +23,6 @@ class NavBar extends Component {
     }
 
     selectUserAction = () => {
-        //this.props.selectAction()
-
-        //Take the value of the html element and pass it into the selectAction function
-        //Look up how to use dom refs with react
-        //How to select this    
 
         console.log(this.startAction.innerHTML);
 
