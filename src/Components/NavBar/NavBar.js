@@ -102,25 +102,18 @@ class NavBar extends Component {
                                     Algorithm
                                 </a>
                                 <div className="navbar-dropdown is-boxed">
-                                    <div ref={(input) => {
-                                        this.startAction = input
-                                        }} 
+                                    <div 
                                         className="navbar-item" 
-                                        onClick={this.selectStartAction}
+                                        //onClick={}
                                     >
-                                        <i className="fa fa-play node-icon-nav"></i>
-                                        Start
+                                        Breadth-First-Search
                                     </div>
 
-                                    <div ref={(input) => {
-                                        this.endAction = input
-                                        }} 
+                                    <div
                                         className="navbar-item" 
-                                        onClick={this.selectEndAction}
-
+                                        //onClick={}
                                     >
-                                        <i className="fa fa-stop node-icon-nav"></i>
-                                        End
+                                        Debth-First-Search
                                     </div>
                                 </div>
                             </div>
