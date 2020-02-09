@@ -91,7 +91,7 @@ class Grid extends Component {
             }, index * 10);
         });
 
-        let shortestPath = algoResult.shortestPath.reverse(); //to reverse the shortestPath
+        algoResult.shortestPath.reverse(); //to reverse the shortestPath
 
         algoResult.shortestPath.forEach(node => {
             index+=1;
