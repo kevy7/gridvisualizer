@@ -56,20 +56,11 @@ class Grid extends Component {
             let startColumn = this.props.selectedGrids.startingGrid.column;
             let endRow = this.props.selectedGrids.endingGrid.row;
             let endColumn = this.props.selectedGrids.endingGrid.column;
-
-            //Create an if else statement here
-            //Based on which algorithm was selected by the user, run that algorithm
+            
             let { shortestPath, visited } = BFS(this.state.grid, startRow, startColumn, endRow, endColumn);
 
             this.setState({shortestPath: shortestPath});
             this.setState({visited: visited});
-            let gridPath = this.state.grid;
-
-            /*
-                row: rowNumber,
-                column: columnNumber
-            */
-
             let index = 0;
 
             visited.forEach(node => {
@@ -145,8 +136,15 @@ class Grid extends Component {
             this.setState({grid})
         } 
 
+        let algoButton;
+
+        if(this.props.selectedAlgo.selectedAlgo){
+            algoButton = <button className="button" type="button" onClick={this.animatePath}>Run {this.props.selectedAlgo.selectedAlgo}</button>
+        }
+
         return (
             <div className="grid">
+                {algoButton}
                 <button className="button" type="button" onClick={this.animatePath}>Run Algorithm</button>
                 <button className="button" type="button" onClick={this.resetGrid}>Reset Grid</button>
                 <button className="button" type="button" onClick={this.testFunction}>Test Button</button>
@@ -224,7 +222,8 @@ class Grid extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        selectedGrids: state.selectedGrids
+        selectedGrids: state.selectedGrids,
+        selectedAlgo: state.selectedAlgo
     }
 }
 
