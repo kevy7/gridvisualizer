@@ -28,11 +28,6 @@ class NavBar extends Component {
 
         let node = this.startAction;
 
-
-
-        /* console.log(node.innerHTML);
-        console.log(this.endAction.innerHTML); */
-
     }
 
     selectStartAction = () => {
@@ -42,6 +37,10 @@ class NavBar extends Component {
 
     selectEndAction = () => {
         this.props.selectAction(selectEndNode);
+    }
+
+    selectAlgorithm = () => {
+        
     }
 
     render(){
