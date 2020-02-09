@@ -2,7 +2,8 @@ import {
     SELECT_ACTION,
     SELECT_START_GRID,
     SELECT_END_GRID,
-    RESET_SELECTED_GRIDS
+    RESET_SELECTED_GRIDS,
+    SELECT_ALGO
 } from './types';
 
 import { 
@@ -58,6 +59,9 @@ export const resetSelectedGrids = () => dispatch => {
 
 
 //action used to select Algorithm
-export const selectAlgorithm = () => dispatch => {
-    
+export const selectAlgorithm = (algorithm) => dispatch => {
+    dispatch({
+        type: SELECT_ALGO,
+        payload: algorithm
+    })
 }
