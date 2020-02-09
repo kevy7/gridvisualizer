@@ -1,6 +1,6 @@
 import { SELECT_ALGO } from '../actions/types';
 
-initialState = {
+let initialState = {
     selectedAlgo: ""
 }
 
