@@ -109,7 +109,6 @@ class Grid extends Component {
     render(){
 
         window.onresize = () => {
-            //console.log(window.innerWidth);
             let grid = this.createInitialGrid();
             this.setState({grid})
         } 
