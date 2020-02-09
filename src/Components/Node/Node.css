@@ -9,6 +9,10 @@
     background: hsl(204, 86%, 53%);
 }
 
+.node-path {
+    background: hsl(171, 100%, 41%);
+}
+
 .node-icon {
     margin-left: auto;
     margin-right: auto;
