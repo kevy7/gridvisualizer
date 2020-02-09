@@ -128,25 +128,12 @@ class Grid extends Component {
                 }, index * 10);
             });
 
-            /* setTimeout(() => {
-                shortestPath.forEach(node => {
-                    //gridPath[node.row][node.column].isPath = true;
-
-                    document.getElementById(`node-${node.row}-${node.column}`).className = "node node-path";
-
-
-                })
-                //this.setState({grid: gridPath});
-            }, index * 20); */
-
             shortestPath.forEach(node => {
                 index+=1;
                 setTimeout(() => {
                     document.getElementById(`node-${node.row}-${node.column}`).className = "node node-path";
                 }, index *10);
             })
-
-        //console.log(visited);
     }
 
     render(){
