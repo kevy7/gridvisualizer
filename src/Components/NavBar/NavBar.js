@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import "./NavBar.css";
 import { selectEndNode } from '../../userActions/userActions';
-import { selectAction } from '../../actions/index';
+import { selectAction, selectAlgorithm } from '../../actions/index';
 
 class NavBar extends Component {
     /*
