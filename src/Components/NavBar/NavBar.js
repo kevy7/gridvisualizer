@@ -95,6 +95,38 @@ class NavBar extends Component {
                                     </div>
                                 </div>
                             </div>
+
+                            <div className="navbar-item has-dropdown is-hoverable">
+
+                                <a className="navbar-link" >
+                                    Algorithm
+                                </a>
+                                <div className="navbar-dropdown is-boxed">
+                                    <div ref={(input) => {
+                                        this.startAction = input
+                                        }} 
+                                        className="navbar-item" 
+                                        onClick={this.selectStartAction}
+                                    >
+                                        <i className="fa fa-play node-icon-nav"></i>
+                                        Start
+                                    </div>
+
+                                    <div ref={(input) => {
+                                        this.endAction = input
+                                        }} 
+                                        className="navbar-item" 
+                                        onClick={this.selectEndAction}
+
+                                    >
+                                        <i className="fa fa-stop node-icon-nav"></i>
+                                        End
+                                    </div>
+                                </div>
+                            </div>
+
+
+
                         </div>
 
                         <div className="navbar-end">
