@@ -7,7 +7,7 @@ import Node from "../Node/Node";
 import { BFS } from "../../Algorithms/BreadthFirstSearch";
 import { DFS } from "../../Algorithms/DebthFirstSearch";
 import { selectStartNode, selectEndNode } from '../../userActions/userActions';
-//import { BFS, DFS } from '../../userAlgo/userAlgo';
+import { BreadthFS, DebthFS } from '../../userAlgo/userAlgo';
 import { selectAction, resetSelectedGrids } from '../../actions/index';
 import { func } from 'prop-types';
 
@@ -44,44 +44,6 @@ class Grid extends Component {
         this.setState({grid: grid});
     }
 
-    animatePath = () => {
-
-        if(!this.props.selectedGrids.startingGrid.row){
-            alert("No Starting or End Nodes were selected. Please select a start and end node.")
-        }
-        
-        else {
-
-            let startRow = this.props.selectedGrids.startingGrid.row;
-            let startColumn = this.props.selectedGrids.startingGrid.column;
-            let endRow = this.props.selectedGrids.endingGrid.row;
-            let endColumn = this.props.selectedGrids.endingGrid.column;
-            
-            let { shortestPath, visited } = BFS(this.state.grid, startRow, startColumn, endRow, endColumn);
-
-            this.setState({shortestPath: shortestPath});
-            this.setState({visited: visited});
-            let index = 0;
-
-            visited.forEach(node => {
-                index +=1;
-
-                setTimeout(() => {
-
-                    document.getElementById(`node-${node.row}-${node.column}`).className = "node node-visited";
-
-                }, index * 10);
-            });
-
-            shortestPath.forEach(node => {
-                index+=1;
-                setTimeout(() => {
-                    document.getElementById(`node-${node.row}-${node.column}`).className = "node node-path";
-                }, index * 10);
-            })
-        }
-    }
-
     resetGrid = () => {
         let grid = this.createInitialGrid();
         this.setState({grid})
@@ -95,37 +57,51 @@ class Grid extends Component {
         //Create an action to reset the selectGrids state
     }
 
-    testFunction = () => {
+    animatePath = () => {
         let startRow = this.props.selectedGrids.startingGrid.row;
         let startColumn = this.props.selectedGrids.startingGrid.column;
         let endRow = this.props.selectedGrids.endingGrid.row;
         let endColumn = this.props.selectedGrids.endingGrid.column;
-        let gridPath = this.state.grid;
-
-        //Create an if else statement here
-        //Based on which algorithm was selected by the user, run that algorithm
-        let { shortestPath, visited } = DFS(this.state.grid, startRow, startColumn, endRow, endColumn);
-        this.setState({shortestPath: shortestPath});
-        this.setState({visited: visited});
-
+        let algoResult;
         let index = 0;
 
-            visited.forEach(node => {
-                index +=1;
+        if(!this.props.selectedGrids.startingGrid.row || !this.props.selectedGrids.endingGrid.row){
+            alert("No Starting or End Nodes were selected. Please select a start and end node.")
+        }
+        else {
 
-                setTimeout(() => {
+        if(this.props.selectedAlgo.selectedAlgo === BreadthFS){
+            algoResult = BFS(this.state.grid, startRow, startColumn, endRow, endColumn);
+            this.setState({shortestPath: algoResult.shortestPath});
+            this.setState({visited: algoResult.visited});
+        }
+        else if(this.props.selectedAlgo.selectedAlgo === DebthFS){
+            algoResult = DFS(this.state.grid, startRow, startColumn, endRow, endColumn);
+            this.setState({shortestPath: algoResult.shortestPath});
+            this.setState({visited: algoResult.visited});
+        }
 
-                    document.getElementById(`node-${node.row}-${node.column}`).className = "node node-visited";
+        algoResult.visited.forEach(node => {
+            index +=1;
 
-                }, index * 10);
-            });
+            setTimeout(() => {
 
-            shortestPath.forEach(node => {
-                index+=1;
-                setTimeout(() => {
-                    document.getElementById(`node-${node.row}-${node.column}`).className = "node node-path";
-                }, index * 10);
-            })
+                document.getElementById(`node-${node.row}-${node.column}`).className = "node node-visited";
+
+            }, index * 10);
+        });
+
+        algoResult.shortestPath.forEach(node => {
+            index+=1;
+            setTimeout(() => {
+                document.getElementById(`node-${node.row}-${node.column}`).className = "node node-path";
+            }, index * 10);
+        })
+        }
+    }
+
+    testFunction = () => {
+        
     }
 
     render(){
@@ -145,9 +121,9 @@ class Grid extends Component {
         return (
             <div className="grid">
                 {algoButton}
-                <button className="button" type="button" onClick={this.animatePath}>Run Algorithm</button>
+                {/* <button className="button" type="button" onClick={this.animatePath}>Run Algorithm</button> */}
                 <button className="button" type="button" onClick={this.resetGrid}>Reset Grid</button>
-                <button className="button" type="button" onClick={this.testFunction}>Test Button</button>
+                {/* <button className="button" type="button" onClick={this.testFunction}>Test Button</button> */}
                 {
                     this.state.grid.map((nodeRows, rowidx) => {
                         return (
