@@ -4,9 +4,11 @@ import { connect } from 'react-redux';
 import "./NavBar.css";
 import { selectEndNode } from '../../userActions/userActions';
 import { selectAction, selectAlgorithm } from '../../actions/index';
+import { BFS, DFS } from '../../userAlgo/userAlgo';
 
 class NavBar extends Component {
     /*
+        
         example of initializing state with constructor(props)
 
         constructor(props) {
@@ -39,8 +41,12 @@ class NavBar extends Component {
         this.props.selectAction(selectEndNode);
     }
 
-    selectAlgorithm = () => {
-        
+    selectBFSAlgo = () => {
+        this.props.selectAlgorithm(BFS);
+    }
+
+    selectDFSAlgo = () => {
+        this.props.selectAlgorithm(DFS);
     }
 
     render(){
@@ -101,16 +107,16 @@ class NavBar extends Component {
                                     Algorithm
                                 </a>
                                 <div className="navbar-dropdown is-boxed">
-                                    <div 
+                                    <div
                                         className="navbar-item navItem-hover" 
-                                        //onClick={}
+                                        onClick={this.selectBFSAlgo}
                                     >
                                         Breadth-First-Search
                                     </div>
 
                                     <div
                                         className="navbar-item navItem-hover" 
-                                        //onClick={}
+                                        onClick={this.selectDFSAlgo}
                                     >
                                         Debth-First-Search
                                     </div>
@@ -158,5 +164,6 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps, {
-    selectAction: selectAction
+    selectAction: selectAction,
+    selectAlgorithm: selectAlgorithm
 })(NavBar);

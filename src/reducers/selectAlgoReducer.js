@@ -1,7 +1,8 @@
 import { SELECT_ALGO } from '../actions/types';
+import { BFS } from '../userAlgo/userAlgo';
 
 let initialState = {
-    selectedAlgo: ""
+    selectedAlgo: BFS
 }
 
 const selectAlgoReducer = (state=initialState, action) => {
