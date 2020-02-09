@@ -15,18 +15,18 @@ export function getChildrens(node, maxRow, maxColumn){
             column: column-1
         })
     }
-    //add right children
-    if(column+1 < maxColumn){
-        children.push({
-            row: row,
-            column: column+1
-        })
-    }
     //add top children
     if(row-1 >= 0){
         children.push({
             row: row-1,
             column: column
+        })
+    }
+    //add right children
+    if(column+1 < maxColumn){
+        children.push({
+            row: row,
+            column: column+1
         })
     }
     //add bottom children
