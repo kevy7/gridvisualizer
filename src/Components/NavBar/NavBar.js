@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import "./NavBar.css";
 import { selectEndNode } from '../../userActions/userActions';
-//import actions here
 import { selectAction } from '../../actions/index';
 
 class NavBar extends Component {
@@ -37,7 +37,7 @@ class NavBar extends Component {
 
     selectStartAction = () => {
         //let node = this.startAction;
-        this.props.selectAction("fa fa-play node-icon");
+        this.props.selectAction("fa fa-play node-icon"); //replace this with the selectStartNode user action
     }
 
     selectEndAction = () => {
@@ -76,7 +76,7 @@ class NavBar extends Component {
                                     <div ref={(input) => {
                                         this.startAction = input
                                         }} 
-                                        className="navbar-item" 
+                                        className="navbar-item navItem-hover" 
                                         onClick={this.selectStartAction}
                                     >
                                         <i className="fa fa-play node-icon-nav"></i>
@@ -86,7 +86,7 @@ class NavBar extends Component {
                                     <div ref={(input) => {
                                         this.endAction = input
                                         }} 
-                                        className="navbar-item" 
+                                        className="navbar-item navItem-hover" 
                                         onClick={this.selectEndAction}
 
                                     >
@@ -103,14 +103,14 @@ class NavBar extends Component {
                                 </a>
                                 <div className="navbar-dropdown is-boxed">
                                     <div 
-                                        className="navbar-item" 
+                                        className="navbar-item navItem-hover" 
                                         //onClick={}
                                     >
                                         Breadth-First-Search
                                     </div>
 
                                     <div
-                                        className="navbar-item" 
+                                        className="navbar-item navItem-hover" 
                                         //onClick={}
                                     >
                                         Debth-First-Search
