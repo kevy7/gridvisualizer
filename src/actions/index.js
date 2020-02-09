@@ -57,7 +57,6 @@ export const resetSelectedGrids = () => dispatch => {
     })
 }
 
-
 //action used to select Algorithm
 export const selectAlgorithm = (algorithm) => dispatch => {
     dispatch({
