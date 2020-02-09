@@ -1,2 +1,2 @@
-export const BFS = "Breadth-First-Search";
-export const DFS = "Debth-First-Search";
+export const BreadthFS = "Breadth-First-Search";
+export const DebthFS = "Debth-First-Search";

@@ -4,11 +4,11 @@ import { connect } from 'react-redux';
 import "./NavBar.css";
 import { selectEndNode } from '../../userActions/userActions';
 import { selectAction, selectAlgorithm } from '../../actions/index';
-import { BFS, DFS } from '../../userAlgo/userAlgo';
+import { BreadthFS, DebthFS } from '../../userAlgo/userAlgo';
 
 class NavBar extends Component {
     /*
-        
+
         example of initializing state with constructor(props)
 
         constructor(props) {
@@ -42,11 +42,11 @@ class NavBar extends Component {
     }
 
     selectBFSAlgo = () => {
-        this.props.selectAlgorithm(BFS);
+        this.props.selectAlgorithm(BreadthFS);
     }
 
     selectDFSAlgo = () => {
-        this.props.selectAlgorithm(DFS);
+        this.props.selectAlgorithm(DebthFS);
     }
 
     render(){
