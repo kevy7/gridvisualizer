@@ -138,9 +138,7 @@ class NavBar extends Component {
                                 </a>
                             </p>
                             <p className="control">
-                                
                                 <span className="button is-primary" onClick={this.selectUserAction}>Download</span>
-                                
                             </p>
                             </div>
                         </div>
