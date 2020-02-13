@@ -103,7 +103,7 @@ class Grid extends Component {
     }
 
     testFunction = () => {
-        
+
     }
 
     render(){
@@ -143,6 +143,8 @@ class Grid extends Component {
                                             updateState={this.updateState}
                                             isStart={node.isStart}
                                             isEnd={node.isEnd}
+                                            isWall={node.isWall}
+                                            distance={node.distance}
                                         />
                                     })
 
@@ -191,6 +193,8 @@ class Grid extends Component {
             prevNode: undefined,
             isStart: false,
             isEnd: false,
+            isWall: false,
+            distance: Infinity
         }
     }
 
