@@ -7,7 +7,8 @@ const Dijkstra = (grid, startRow, startColoumn, endRow, endColumn) => {
     //let stack = [];
     let visited = []; //This will be an array of objects
 
-    
+    //First, we need to create some kind of data structure to order our nodes based on priority
+
 }
 
 export default Dijkstra;
