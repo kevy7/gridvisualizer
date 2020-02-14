@@ -19,9 +19,11 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
     });
     grid[0][0].distance = 15;
     grid[0][1].distance = 2;
+    grid[0][3].distance = 5;
     queue.addQueue(startingNode);
     queue.addQueue(grid[0][0]);
     queue.addQueue(grid[0][1]);
+    queue.addQueue(grid[0][3]);
 
     console.log(queue.queue);
 

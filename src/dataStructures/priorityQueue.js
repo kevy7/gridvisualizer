@@ -11,10 +11,11 @@ class priorityQueue {
         let currentNode = this.queue[currentIdx];
 
         while(currentIdx > 0){
+            //console.log(currentIdx);
             let parentIdx = Math.floor((currentIdx-1)/2);
             let parent = this.queue[parentIdx];
 
-            if(currentNode.distance >= parent.distance) break;
+            if(currentNode.distance > parent.distance) break;
             this.queue[parentIdx] = currentNode;
             this.queue[currentIdx] = parent;
 
