@@ -8,29 +8,12 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
     //let priorityQueue = []; //using a binary heap instead
     let queue = new priorityQueue();
     let visited = [];
-
-
-    //console.log("yay");
     startingNode.distance = 0;
     startingNode.isVisited = true;
     visited.push({
         row: startingNode.row,
         column: startingNode.column
     });
-    grid[0][0].distance = 15;
-    grid[0][1].distance = 2;
-    grid[0][3].distance = 5;
-    queue.addQueue(startingNode);
-    queue.addQueue(grid[0][0]);
-    queue.addQueue(grid[0][1]);
-    queue.addQueue(grid[0][3]);
-    //console.log(queue.queue);
-
-    queue.deQueue();
-    queue.deQueue();
-
-
-    //console.log(queue.queue);
 
 
 
