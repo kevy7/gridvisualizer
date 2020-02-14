@@ -8,7 +8,7 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
     let priorityQueue = [];
     let visited = []; //This will be an array of objects
 
-
+    
 
 
 
