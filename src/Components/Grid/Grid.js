@@ -104,7 +104,16 @@ class Grid extends Component {
     }
 
     testFunction = () => {
-        Dijstra();
+        let startRow = this.props.selectedGrids.startingGrid.row;
+        let startColumn = this.props.selectedGrids.startingGrid.column;
+        let endRow = this.props.selectedGrids.endingGrid.row;
+        let endColumn = this.props.selectedGrids.endingGrid.column;
+        try {
+            Dijstra(this.state.grid, startRow, startColumn, endRow, endColumn);
+        }
+        catch {
+            alert("select an end and starting node");
+        }
     }
 
     render(){
