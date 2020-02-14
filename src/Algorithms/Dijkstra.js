@@ -24,8 +24,13 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
     queue.addQueue(grid[0][0]);
     queue.addQueue(grid[0][1]);
     queue.addQueue(grid[0][3]);
+    //console.log(queue.queue);
 
-    console.log(queue.queue);
+    queue.deQueue();
+    queue.deQueue();
+
+
+    //console.log(queue.queue);
 
 
 

@@ -21,7 +21,7 @@ class priorityQueue {
 
             currentIdx = parentIdx;
         }
-        
+        console.log(this.queue);
     }
 
     deQueue = () => {
@@ -34,6 +34,8 @@ class priorityQueue {
             //Trickle down
             this.sinkDown();
         }
+        console.log(this.queue);
+        return firstPriority;
     }
 
     sinkDown = () => {
@@ -50,7 +52,7 @@ class priorityQueue {
 
             if(leftidx < length){
                 left = this.queue[leftidx];
-                if(currentNode.distance > left){
+                if(currentNode.distance > left.distance){
                     swap = leftidx;
                 }
             }
@@ -60,9 +62,15 @@ class priorityQueue {
                     (currentNode.distance > right.distance && swap === null) 
                     || 
                     (swap !== null && right.distance < left.distance )){
-                        
+                        swap = rightidx;
                 }
             }
+
+            if(swap === null) break;
+            let childNode = this.queue[swap];
+            this.queue[currentIdx] = childNode;
+            this.queue[swap] = currentNode;
+            currentIdx = swap;
 
         }
     }
