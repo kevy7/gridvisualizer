@@ -1,6 +1,8 @@
 class priorityQueue {
     constructor(){
-        this.queue = []
+        this.queue = [] //We'll push our nodes into this queue
     }
+
+    
 }
 

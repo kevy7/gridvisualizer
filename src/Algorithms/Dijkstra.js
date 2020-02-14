@@ -9,7 +9,7 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
     let visited = []; //This will be an array of objects
 
 
-    
+    console.log("yay");
 
 
 
