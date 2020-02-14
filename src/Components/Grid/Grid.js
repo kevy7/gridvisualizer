@@ -124,7 +124,7 @@ class Grid extends Component {
             <div className="grid">
                 {algoButton}
                 <button className="button" type="button" onClick={this.resetGrid}>Reset Grid</button>
-                {/* <button className="button" type="button" onClick={this.testFunction}>Test Button</button> */}
+                <button className="button" type="button" onClick={this.testFunction}>Test Button</button>
                 {
                     this.state.grid.map((nodeRows, rowidx) => {
                         return (
