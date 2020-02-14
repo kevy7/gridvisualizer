@@ -3,6 +3,13 @@ class priorityQueue {
         this.queue = [] //We'll push our nodes into this queue
     }
 
+    addQueue = () => {
+
+    }
+
+    deQueue = () => {
+
+    }
     
 }
 

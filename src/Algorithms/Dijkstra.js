@@ -7,8 +7,7 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
     let priorityQueue = [];
     let visited = [];
 
-
-    console.log("yay");
+    //console.log("yay");
 
 
 
