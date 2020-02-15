@@ -9,39 +9,38 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
     let queue = new priorityQueue();
     let visited = [];
     startingNode.distance = 0;
-    startingNode.isVisited = true;
+    /* startingNode.isVisited = true;
     visited.push({
         row: startingNode.row,
         column: startingNode.column
-    });
+    }); */
     queue.addQueue(startingNode);
 
     while(queue.queue.length){
         let childrens = getChildrens(startingNode, maxRow, maxCol);
         let currentNode = queue.deQueue(); //Remove first priority from your array
+        currentNode.isVisited = true;
+        visited.push({
+            row: currentNode.row,
+            column: currentNode.column
+        });
 
         for(var a = 0; a < childrens.length; a++){
             /*
                 children returns row and column
             */
 
-            let prevRow;
-            let prevCol;
-            let prevDistance;
+            let prevRow = currentNode.row;
+            let prevCol = currentNode.column;
+            let prevDistance = grid[prevRow][prevCol].distance;
 
-            //console.log(grid[childrens[a].row][childrens[a].column].distance);
             grid[childrens[a].row][childrens[a].column].prevNode = {
                 row: currentNode.row,
                 column: currentNode.column
             }
+            grid[childrens[a].row][childrens[a].column].distance = 1 + prevDistance;
 
-            prevRow = grid[childrens[a].row][childrens[a].column].prevNode.row;
-            prevCol = grid[childrens[a].row][childrens[a].column].prevNode.column;
-
-
-            console.log(prevNodeRow);
-
-            console.log(grid[childrens[a].row][childrens[a].column].prevNode);
+            console.log(grid[childrens[a].row][childrens[a].column]);
         }
 
 
