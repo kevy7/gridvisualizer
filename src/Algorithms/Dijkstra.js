@@ -41,8 +41,8 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
             grid[childrens[a].row][childrens[a].column].distance = 1 + prevDistance;
 
             console.log(grid[childrens[a].row][childrens[a].column]);
+            //Add Queue here
         }
-
 
 
     }
