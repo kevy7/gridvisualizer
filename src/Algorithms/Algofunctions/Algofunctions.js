@@ -88,5 +88,5 @@ export function getChildrensDijkstra(grid, node) {
         
     }
 
-    return children; //We will return an array of children nodes here
+    return childrens; //We will return an array of children nodes here
 }
