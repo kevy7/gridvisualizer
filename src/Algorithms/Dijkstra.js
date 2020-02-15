@@ -15,13 +15,12 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
         column: startingNode.column
     });
 
-    returnNodesArray(grid);
+    
 
 }
 
 const returnNodesArray = (grid) => {
-    grid[0][0].distance = 100;
-    console.log(grid);
+    
 }
 
 const returnNodeInOrder = (grid) => {

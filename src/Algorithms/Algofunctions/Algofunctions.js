@@ -63,3 +63,8 @@ export const getShortestPath = (grid, endingNode) => {
 
     return shortestPath;
 }
+
+export function getChildrensDijkstra(grid, node) {
+    let maxRow = grid.length;
+    let maxCol = grid[0].length;
+}
