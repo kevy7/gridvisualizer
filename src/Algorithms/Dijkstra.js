@@ -15,7 +15,11 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
         column: startingNode.column
     });
 
-    
+    while(queue.length){
+        let childrens = getChildrens(startingNode, maxRow, maxCol);
+
+        
+    }
 
 }
 
