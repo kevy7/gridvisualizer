@@ -65,6 +65,28 @@ export const getShortestPath = (grid, endingNode) => {
 }
 
 export function getChildrensDijkstra(grid, node) {
+    let row = node.row;
+    let column = node.column;
     let maxRow = grid.length;
     let maxCol = grid[0].length;
+    let childrens = [];
+
+    //add left children
+    if(column-1 >= 0){
+        
+    }
+    //add top children
+    if(row-1 >= 0){
+        
+    }
+    //add right children
+    if(column+1 < maxCol){
+        
+    }
+    //add bottom children
+    if(row+1 < maxRow){
+        
+    }
+
+    return children; //We will return an array of children nodes here
 }
