@@ -21,7 +21,7 @@ class priorityQueue {
 
             currentIdx = parentIdx;
         }
-        console.log(this.queue);
+        //console.log(this.queue);
     }
 
     deQueue = () => {
@@ -34,7 +34,7 @@ class priorityQueue {
             //Trickle down
             this.sinkDown();
         }
-        console.log(this.queue);
+        //console.log(this.queue);
         return firstPriority;
     }
 
