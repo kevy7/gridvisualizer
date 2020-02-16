@@ -21,10 +21,21 @@ class priorityQueue {
 
             currentIdx = parentIdx;
         }
-        //console.log(this.queue);
+
+        let fake = [];
+        
+        this.queue.forEach(element => {
+            fake.push(element);
+        })
+
+        /* console.log("enQueue");
+        console.log(fake);
+        console.log("new node");
+        console.log(node); */
     }
 
     deQueue = () => {
+        //console.log("deQueue initialized");
         let firstPriority = this.queue[0];
         let lastPriority = this.queue.pop(); //This should be trickled down
 
@@ -35,6 +46,10 @@ class priorityQueue {
             this.sinkDown();
         }
         //console.log(this.queue);
+
+        /* console.log("deQueue");
+        console.log(firstPriority); */
+        
         return firstPriority;
     }
 

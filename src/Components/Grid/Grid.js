@@ -108,7 +108,7 @@ class Grid extends Component {
         let startColumn = this.props.selectedGrids.startingGrid.column;
         let endRow = this.props.selectedGrids.endingGrid.row;
         let endColumn = this.props.selectedGrids.endingGrid.column;
-        Dijstra(this.state.grid, startRow, startColumn, endRow, endColumn);
+        console.log(Dijstra(this.state.grid, startRow, startColumn, endRow, endColumn));
         
     }
 
@@ -172,9 +172,9 @@ class Grid extends Component {
         
         //We're going to create our grid here, and push in our node
 
-        for(var a = 0; a < 30; a++){
+        for(var a = 0; a < 3; a++){
             let nodeRows = [];
-            for(var b = 0; b < width; b++){
+            for(var b = 0; b < 3; b++){
                 //create nodes here
                 currentNode = this.createNode(a, b);
                 nodeRows.push(currentNode);
