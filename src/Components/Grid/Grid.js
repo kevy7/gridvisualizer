@@ -172,9 +172,9 @@ class Grid extends Component {
         
         //We're going to create our grid here, and push in our node
 
-        for(var a = 0; a < 3; a++){
+        for(var a = 0; a < 30; a++){
             let nodeRows = [];
-            for(var b = 0; b < 3; b++){
+            for(var b = 0; b < width; b++){
                 //create nodes here
                 currentNode = this.createNode(a, b);
                 nodeRows.push(currentNode);
