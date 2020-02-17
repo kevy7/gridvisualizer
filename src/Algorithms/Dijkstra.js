@@ -3,7 +3,11 @@ import priorityQueue from '../dataStructures/priorityQueue';
 
 const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
 
-    grid[1][1].isWall = true;
+    //grid[0][2].isWall = true;
+    grid[1][0].isWall = true;
+    grid[2][0].isWall = true;
+    //grid[2][1].isWall = true;
+
     console.log(grid);
 
     let maxRow = grid.length;
@@ -32,13 +36,14 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
             });
         }
 
-        if(currentNode.row === endRow && currentNode.column === endColumn){
+        //Moving this code to below the loop
+        /* if(currentNode.row === endRow && currentNode.column === endColumn){
             let shortestPath = getShortestPath(grid, grid[endRow][endColumn]);
             return {
                 visited: visited,
                 shortestPath: shortestPath
             }
-        }
+        } */
 
         for(var a = 0; a < childrens.length; a++){
 
@@ -66,10 +71,10 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
 
 
 
-            grid[childrens[a].row][childrens[a].column].prevNode = {
+            /* grid[childrens[a].row][childrens[a].column].prevNode = {
                 row: currentNode.row,
                 column: currentNode.column
-            } 
+            } */
 
             //This code needs to be changed
             if(grid[childrens[a].row][childrens[a].column].prevNode !== undefined){
@@ -81,8 +86,12 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
                 let prevNodeCol = grid[childrens[a].row][childrens[a].column].prevNode.column;
                 let prevDistance = grid[prevNodeRow][prevNodeCol].distance;
 
+                console.log("children: " + JSON.stringify(childrens[a]));
                 console.log("prevDistance: " + prevDistance);
+                console.log("prevNode: " + JSON.stringify(grid[prevNodeRow][prevNodeCol]));
                 console.log("currentDistance: " + currentDistance);
+                console.log("currentNode: " + JSON.stringify(currentNode));
+                //console.log(" ");
 
                 //Get the lower of prevDistance or currentNode's distance
                 //If the current node's distance is lower than what's in this child's prevNode's distance, set its' prevnode to the current node
@@ -99,14 +108,18 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
                         column: prevNodeCol
                     }
                 }
+
+                console.log("New Prev Node: " + JSON.stringify(grid[childrens[a].row][childrens[a].column].prevNode));
+                console.log(" ");
             }
 
-            //console.log(grid[childrens[a].row][childrens[a].column].prevNode);
+            /* console.log(grid[childrens[a].row][childrens[a].column].prevNode);
+            console.log(" "); */
 
-            /* grid[childrens[a].row][childrens[a].column].prevNode = {
+            grid[childrens[a].row][childrens[a].column].prevNode = {
                 row: currentNode.row,
                 column: currentNode.column
-            } */
+            }
 
             if(grid[childrens[a].row][childrens[a].column].isWall){
                 grid[childrens[a].row][childrens[a].column].distance = 15 + prevDistance;
@@ -115,8 +128,20 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
                 grid[childrens[a].row][childrens[a].column].distance = 1 + prevDistance;
             }
 
+            /* console.log(" ");
+            console.log("new Prev Node");
+            console.log(grid[childrens[a].row][childrens[a].column]); */
+
             
-            queue.addQueue(children);
+            queue.addQueue(grid[childrens[a].row][childrens[a].column]);
+        }
+
+        if(currentNode.row === endRow && currentNode.column === endColumn){
+            let shortestPath = getShortestPath(grid, grid[endRow][endColumn]);
+            return {
+                visited: visited,
+                shortestPath: shortestPath
+            }
         }
 
 
