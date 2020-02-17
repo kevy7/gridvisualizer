@@ -3,16 +3,9 @@ import priorityQueue from '../dataStructures/priorityQueue';
 
 const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
 
-    // grid[0][1].isWall = true;
-    // grid[1][0].isWall = true;
-    // grid[1][1].isWall = true;
-    // grid[2][0].isWall = true;
-    //grid[2][1].isWall = true;
-
     let maxRow = grid.length;
     let maxCol = grid[0].length;
     let startingNode = grid[startRow][startColumn]; 
-    //let priorityQueue = []; //using a binary heap instead
     let queue = new priorityQueue();
     let visited = [];
     startingNode.distance = 0;
@@ -96,14 +89,6 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
 
 
     }
-
-}
-
-const returnNodesArray = (grid) => {
-    
-}
-
-const returnNodeInOrder = (grid) => {
 
 }
 
