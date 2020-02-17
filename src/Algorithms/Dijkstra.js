@@ -57,18 +57,33 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
             let prevCol = currentNode.column;
             let prevDistance = grid[prevRow][prevCol].distance;
             let children = grid[childrens[a].row][childrens[a].column];
+            let distance;
             //Add Queue here
             if(children.isVisited){continue}
+
+
+
 
 
 
             //This code needs to be changed
             if(grid[childrens[a].row][childrens[a].column].prevNode !== undefined){
                 console.log("this is not undefined!!!");
+                
+                //compare current node's distances with the children's preNode
+                let currentDistance = currentNode.distance;
+                let prevNodeRow = grid[childrens[a].row][childrens[a].column].prevNode.row;
+                let prevNodeCol = grid[childrens[a].row][childrens[a].column].prevNode.column;
+                let prevDistance = grid[prevNodeRow][prevNodeCol].distance;
+
+                console.log("prevDistance: " + prevDistance);
+                console.log("currentDistance: " + currentDistance);
+
+                //Get the lower of prevDistance or currentNode's distance
+                
+
+                
             }
-
-
-            
 
             grid[childrens[a].row][childrens[a].column].prevNode = {
                 row: currentNode.row,
@@ -78,14 +93,14 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
 
 
 
+
+
             if(grid[childrens[a].row][childrens[a].column].isWall){
                 grid[childrens[a].row][childrens[a].column].distance = 15 + prevDistance;
-                //console.log("this is true");
             }
             else {
                 grid[childrens[a].row][childrens[a].column].distance = 1 + prevDistance;
             }
-            //grid[childrens[a].row][childrens[a].column].distance = 1 + prevDistance;
 
             
             queue.addQueue(children);
