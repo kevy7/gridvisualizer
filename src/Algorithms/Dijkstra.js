@@ -80,15 +80,25 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
                 console.log("currentDistance: " + currentDistance);
 
                 //Get the lower of prevDistance or currentNode's distance
+                //If the current node's distance is lower than what's in this child's prevNode's distance, set its' prevnode to the current node
+                if(currentDistance < prevDistance){
+                    grid[childrens[a].row][childrens[a].column].prevNode = {
+                        row: currentNode.row,
+                        column: currentNode.column
+                    }
+                }
+                else if(currentDistance > prevDistance){
+                    
+                }
                 
 
                 
             }
 
-            grid[childrens[a].row][childrens[a].column].prevNode = {
+            /* grid[childrens[a].row][childrens[a].column].prevNode = {
                 row: currentNode.row,
                 column: currentNode.column
-            }
+            } */
 
 
 
