@@ -3,12 +3,11 @@ import priorityQueue from '../dataStructures/priorityQueue';
 
 const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
 
-    //grid[0][2].isWall = true;
-    grid[1][0].isWall = true;
-    grid[2][0].isWall = true;
-    //grid[2][1].isWall = true;
-
-    console.log(grid);
+    // grid[0][2].isWall = true;
+    // grid[1][0].isWall = true;
+    // grid[2][0].isWall = true;
+    grid[1][1].isWall = true;
+    // grid[2][2].isWall = true;
 
     let maxRow = grid.length;
     let maxCol = grid[0].length;
@@ -45,29 +44,97 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
             }
         } */
 
+
+        
         for(var a = 0; a < childrens.length; a++){
-
-            /* console.log(" ");
-            console.log("current")
-            console.log(currentNode);
-
-            
-            console.log(" ");
-            console.log("Child");
-            console.log(childrens[a]); */
-
-            
 
             let prevRow = currentNode.row;
             let prevCol = currentNode.column;
             let prevDistance = grid[prevRow][prevCol].distance;
             let children = grid[childrens[a].row][childrens[a].column];
-            let distance;
+            let toAdd;
             //Add Queue here
             if(children.isVisited){continue}
 
+            /* grid[childrens[a].row][childrens[a].column].prevNode = {
+                row: currentNode.row,
+                column: currentNode.column
+            } */
+            console.log("Current Parent Node: " + JSON.stringify(currentNode));
+
+            //This code needs to be changed
+            if(children.prevNode !== undefined){
+
+                console.log("this is not undefined!!!");
+                console.log("Current Children Node: " + JSON.stringify(grid[childrens[a].row][childrens[a].column]));
+                //console.log(" ");
+                
+                //compare current node's distances with the children's preNode
+                let currentDistance = currentNode.distance;
+                let prevNodeRow = grid[childrens[a].row][childrens[a].column].prevNode.row;
+                let prevNodeCol = grid[childrens[a].row][childrens[a].column].prevNode.column;
+                let prevNodeDistance = grid[prevNodeRow][prevNodeCol].distance;
+
+                console.log("children: " + JSON.stringify(childrens[a]));
+                console.log("prevDistance: " + prevNodeDistance);
+                console.log("prevNode: " + JSON.stringify(grid[prevNodeRow][prevNodeCol]));
+                console.log("currentDistance: " + currentDistance);
+                console.log("currentNode: " + JSON.stringify(currentNode));
+                //console.log(" ");
+
+                //Get the lower of prevDistance or currentNode's distance
+                //If the current node's distance is lower than what's in this child's prevNode's distance, set its' prevnode to the current node
+
+                if(currentDistance <= prevNodeDistance){
+
+                    grid[childrens[a].row][childrens[a].column].prevNode = {
+                        row: currentNode.row,
+                        column: currentNode.column
+                    }
+                    prevDistance = currentDistance;
+                }
+                else if(currentDistance > prevNodeDistance){
+                    grid[childrens[a].row][childrens[a].column].prevNode = {
+                        row: prevNodeRow,
+                        column: prevNodeCol
+                    }
+                    prevDistance = prevNodeDistance;
+                }
+
+                
+                console.log("New Node: " + JSON.stringify(grid[childrens[a].row][childrens[a].column]));
+                //console.log(" ");
+            }
+            else if(children.prevNode === undefined){
+                grid[childrens[a].row][childrens[a].column].prevNode = {
+                    row: currentNode.row,
+                    column: currentNode.column
+                }
+            }
 
 
+            
+
+            /* console.log(grid[childrens[a].row][childrens[a].column].prevNode);
+            console.log(" "); */
+
+            console.log("New Node 2: " + JSON.stringify(grid[childrens[a].row][childrens[a].column]));
+
+            //console.log("prevDistance: " + prevDistance);
+
+
+
+
+            if(grid[childrens[a].row][childrens[a].column].isWall){
+                grid[childrens[a].row][childrens[a].column].distance = 15 + prevDistance
+            }
+            else {
+                grid[childrens[a].row][childrens[a].column].distance = 1 + prevDistance
+            }
+
+
+            //queue.addQueue(grid[childrens[a].row][childrens[a].column]);
+            //console.log("EnQueue: " + JSON.stringify(grid[childrens[a].row][childrens[a].column]));
 
 
 
@@ -76,64 +143,21 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
                 column: currentNode.column
             } */
 
-            //This code needs to be changed
-            if(grid[childrens[a].row][childrens[a].column].prevNode !== undefined){
-                console.log("this is not undefined!!!");
-                
-                //compare current node's distances with the children's preNode
-                let currentDistance = currentNode.distance;
-                let prevNodeRow = grid[childrens[a].row][childrens[a].column].prevNode.row;
-                let prevNodeCol = grid[childrens[a].row][childrens[a].column].prevNode.column;
-                let prevDistance = grid[prevNodeRow][prevNodeCol].distance;
+            queue.addQueue(grid[childrens[a].row][childrens[a].column]);
+            console.log("EnQueue: " + JSON.stringify(grid[childrens[a].row][childrens[a].column]));
 
-                console.log("children: " + JSON.stringify(childrens[a]));
-                console.log("prevDistance: " + prevDistance);
-                console.log("prevNode: " + JSON.stringify(grid[prevNodeRow][prevNodeCol]));
-                console.log("currentDistance: " + currentDistance);
-                console.log("currentNode: " + JSON.stringify(currentNode));
-                //console.log(" ");
+            //console.log("After EnQueue: " + JSON.stringify(grid[childrens[a].row][childrens[a].column]));
+            console.log(" ");
 
-                //Get the lower of prevDistance or currentNode's distance
-                //If the current node's distance is lower than what's in this child's prevNode's distance, set its' prevnode to the current node
-                if(currentDistance <= prevDistance){
 
-                    grid[childrens[a].row][childrens[a].column].prevNode = {
-                        row: currentNode.row,
-                        column: currentNode.column
-                    }
-                }
-                else if(currentDistance > prevDistance){
-                    grid[childrens[a].row][childrens[a].column].prevNode = {
-                        row: prevNodeRow,
-                        column: prevNodeCol
-                    }
-                }
-
-                console.log("New Prev Node: " + JSON.stringify(grid[childrens[a].row][childrens[a].column].prevNode));
-                console.log(" ");
-            }
-
-            /* console.log(grid[childrens[a].row][childrens[a].column].prevNode);
-            console.log(" "); */
-
-            grid[childrens[a].row][childrens[a].column].prevNode = {
-                row: currentNode.row,
-                column: currentNode.column
-            }
-
-            if(grid[childrens[a].row][childrens[a].column].isWall){
-                grid[childrens[a].row][childrens[a].column].distance = 15 + prevDistance;
-            }
-            else {
-                grid[childrens[a].row][childrens[a].column].distance = 1 + prevDistance;
-            }
 
             /* console.log(" ");
             console.log("new Prev Node");
             console.log(grid[childrens[a].row][childrens[a].column]); */
 
             
-            queue.addQueue(grid[childrens[a].row][childrens[a].column]);
+            //queue.addQueue(grid[childrens[a].row][childrens[a].column]);
+            //queue.addQueue(toAdd);
         }
 
         if(currentNode.row === endRow && currentNode.column === endColumn){
