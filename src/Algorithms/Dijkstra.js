@@ -13,6 +13,8 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
     let currentNode;
     let childrens
 
+    //grid[1][1].isWall = true;
+
     while(queue.queue.length){
         currentNode =  queue.deQueue(); //Remove first priority from your array
         childrens = getChildrens(currentNode, maxRow, maxCol);
@@ -27,6 +29,7 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
 
         if(currentNode.row === endRow && currentNode.column === endColumn){
             let shortestPath = getShortestPath(grid, grid[endRow][endColumn]);
+            //console.log(queue.queue);
             return {
                 visited: visited,
                 shortestPath: shortestPath
@@ -35,63 +38,60 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
         
         for(var a = 0; a < childrens.length; a++){
 
-            let prevRow = currentNode.row;
-            let prevCol = currentNode.column;
-            let prevDistance = grid[prevRow][prevCol].distance;
-            let children = grid[childrens[a].row][childrens[a].column];
-            let toAdd;
-            //Add Queue here
-            if(children.isVisited){continue}
+            //let prevDistance = grid[currentNode.row][currentNode.column].distance;
+            if(grid[childrens[a].row][childrens[a].column].isVisited){continue}
 
             //This code needs to be changed
-            if(children.prevNode !== undefined){
+            if(grid[childrens[a].row][childrens[a].column].prevNode !== undefined){
                 
                 //compare current node's distances with the children's preNode
-                let currentDistance = currentNode.distance;
-                let prevNodeRow = grid[childrens[a].row][childrens[a].column].prevNode.row;
-                let prevNodeCol = grid[childrens[a].row][childrens[a].column].prevNode.column;
-                let prevNodeDistance = grid[prevNodeRow][prevNodeCol].distance;
+                //let prevNodeRow = grid[childrens[a].row][childrens[a].column].prevNode.row;
+                //let prevNodeCol = grid[childrens[a].row][childrens[a].column].prevNode.column;
+                let prevNodeDistance = grid[grid[childrens[a].row][childrens[a].column].prevNode.row][grid[childrens[a].row][childrens[a].column].prevNode.column].distance;
 
                 //Get the lower of prevDistance or currentNode's distance
                 //If the current node's distance is lower than what's in this child's prevNode's distance, set its' prevnode to the current node
 
-                if(currentDistance <= prevNodeDistance){
+                if(currentNode.distance <= prevNodeDistance){
 
                     grid[childrens[a].row][childrens[a].column].prevNode = {
                         row: currentNode.row,
                         column: currentNode.column
                     }
-                    prevDistance = currentDistance;
+                    grid[currentNode.row][currentNode.column].distance = currentNode.distance;
                 }
-                else if(currentDistance > prevNodeDistance){
+                else if(currentNode.distance > prevNodeDistance){
                     grid[childrens[a].row][childrens[a].column].prevNode = {
-                        row: prevNodeRow,
-                        column: prevNodeCol
+                        row: grid[childrens[a].row][childrens[a].column].prevNode.row,
+                        column: grid[childrens[a].row][childrens[a].column].prevNode.column
                     }
-                    prevDistance = prevNodeDistance;
+                    grid[currentNode.row][currentNode.column].distance = prevNodeDistance;
                 }
 
             }
-            else if(children.prevNode === undefined){
+            else if(grid[childrens[a].row][childrens[a].column].prevNode === undefined){
                 grid[childrens[a].row][childrens[a].column].prevNode = {
                     row: currentNode.row,
                     column: currentNode.column
                 }
-            }
+            } 
+
+            /* grid[childrens[a].row][childrens[a].column].prevNode = {
+                row: currentNode.row,
+                column: currentNode.column
+            } */
 
             if(grid[childrens[a].row][childrens[a].column].isWall){
-                grid[childrens[a].row][childrens[a].column].distance = 15 + prevDistance
+                grid[childrens[a].row][childrens[a].column].distance = 15 + grid[currentNode.row][currentNode.column].distance
             }
             else {
-                grid[childrens[a].row][childrens[a].column].distance = 1 + prevDistance
+                grid[childrens[a].row][childrens[a].column].distance = 1 + grid[currentNode.row][currentNode.column].distance
             }
+
+            
+
 
             queue.addQueue(grid[childrens[a].row][childrens[a].column]);
-
-            if(grid[childrens[a].row] === endRow && grid[childrens[a].column] === endColumn){
-                console.log("match");
-                break;
-            }
 
         }
 

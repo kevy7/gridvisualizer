@@ -4,7 +4,12 @@ class priorityQueue {
     }
 
     addQueue = (node) => {
-        this.queue.push(node);
+        if(!this.queue.includes(node)){
+            //console.log("this is true");
+            //Only add to the queue if the node is not already there
+            this.queue.push(node);
+        }
+        //this.queue.push(node);
 
         //Bubble the node up based on priority, meaning distance
         let currentIdx = this.queue.length - 1;
@@ -21,18 +26,6 @@ class priorityQueue {
 
             currentIdx = parentIdx;
         }
-
-        let fake = [];
-        
-        this.queue.forEach(element => {
-            fake.push(element);
-        })
-
-        /* console.log("enQueue");
-        console.log(fake);
-        console.log("new node");
-        console.log(node); */
-        //console.log("add");
     }
 
     deQueue = () => {
