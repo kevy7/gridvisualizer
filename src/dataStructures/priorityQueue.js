@@ -32,6 +32,7 @@ class priorityQueue {
         console.log(fake);
         console.log("new node");
         console.log(node); */
+        //console.log("add");
     }
 
     deQueue = () => {
@@ -41,15 +42,9 @@ class priorityQueue {
 
         if(this.queue.length > 0){
             this.queue[0] = lastPriority;
-
-            //Trickle down
             this.sinkDown();
         }
-        //console.log(this.queue);
 
-        /* console.log("deQueue");
-        console.log(firstPriority); */
-        
         return firstPriority;
     }
 

@@ -10,16 +10,27 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
     let visited = [];
     startingNode.distance = 0;
     queue.addQueue(startingNode);
+    let currentNode;
+    let childrens
 
     while(queue.queue.length){
-        let currentNode =  queue.deQueue(); //Remove first priority from your array
-        let childrens = getChildrens(currentNode, maxRow, maxCol);
+        currentNode =  queue.deQueue(); //Remove first priority from your array
+        childrens = getChildrens(currentNode, maxRow, maxCol);
         if(currentNode.isVisited === false){
             currentNode.isVisited = true;
             visited.push({
                 row: currentNode.row,
                 column: currentNode.column
             });
+        }
+        //console.log(currentNode);
+
+        if(currentNode.row === endRow && currentNode.column === endColumn){
+            let shortestPath = getShortestPath(grid, grid[endRow][endColumn]);
+            return {
+                visited: visited,
+                shortestPath: shortestPath
+            }
         }
         
         for(var a = 0; a < childrens.length; a++){
@@ -77,15 +88,20 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
 
             queue.addQueue(grid[childrens[a].row][childrens[a].column]);
 
+            if(grid[childrens[a].row] === endRow && grid[childrens[a].column] === endColumn){
+                console.log("match");
+                break;
+            }
+
         }
 
-        if(currentNode.row === endRow && currentNode.column === endColumn){
+        /* if(currentNode.row === endRow && currentNode.column === endColumn){
             let shortestPath = getShortestPath(grid, grid[endRow][endColumn]);
             return {
                 visited: visited,
                 shortestPath: shortestPath
             }
-        }
+        } */
 
 
     }
