@@ -66,6 +66,11 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
 
 
 
+            grid[childrens[a].row][childrens[a].column].prevNode = {
+                row: currentNode.row,
+                column: currentNode.column
+            } 
+
             //This code needs to be changed
             if(grid[childrens[a].row][childrens[a].column].prevNode !== undefined){
                 console.log("this is not undefined!!!");
@@ -81,29 +86,27 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
 
                 //Get the lower of prevDistance or currentNode's distance
                 //If the current node's distance is lower than what's in this child's prevNode's distance, set its' prevnode to the current node
-                if(currentDistance < prevDistance){
+                if(currentDistance <= prevDistance){
+
                     grid[childrens[a].row][childrens[a].column].prevNode = {
                         row: currentNode.row,
                         column: currentNode.column
                     }
                 }
                 else if(currentDistance > prevDistance){
-                    
+                    grid[childrens[a].row][childrens[a].column].prevNode = {
+                        row: prevNodeRow,
+                        column: prevNodeCol
+                    }
                 }
-                
-
-                
             }
+
+            //console.log(grid[childrens[a].row][childrens[a].column].prevNode);
 
             /* grid[childrens[a].row][childrens[a].column].prevNode = {
                 row: currentNode.row,
                 column: currentNode.column
             } */
-
-
-
-
-
 
             if(grid[childrens[a].row][childrens[a].column].isWall){
                 grid[childrens[a].row][childrens[a].column].distance = 15 + prevDistance;
