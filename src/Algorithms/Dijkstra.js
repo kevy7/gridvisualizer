@@ -3,11 +3,11 @@ import priorityQueue from '../dataStructures/priorityQueue';
 
 const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
 
-    // grid[0][2].isWall = true;
+    // grid[0][1].isWall = true;
     // grid[1][0].isWall = true;
+    // grid[1][1].isWall = true;
     // grid[2][0].isWall = true;
-    grid[1][1].isWall = true;
-    // grid[2][2].isWall = true;
+    //grid[2][1].isWall = true;
 
     let maxRow = grid.length;
     let maxCol = grid[0].length;
@@ -16,11 +16,6 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
     let queue = new priorityQueue();
     let visited = [];
     startingNode.distance = 0;
-    /* startingNode.isVisited = true;
-    visited.push({
-        row: startingNode.row,
-        column: startingNode.column
-    }); */
     queue.addQueue(startingNode);
     //console.log(queue.queue);
 
@@ -34,17 +29,6 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
                 column: currentNode.column
             });
         }
-
-        //Moving this code to below the loop
-        /* if(currentNode.row === endRow && currentNode.column === endColumn){
-            let shortestPath = getShortestPath(grid, grid[endRow][endColumn]);
-            return {
-                visited: visited,
-                shortestPath: shortestPath
-            }
-        } */
-
-
         
         for(var a = 0; a < childrens.length; a++){
 
@@ -55,12 +39,6 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
             let toAdd;
             //Add Queue here
             if(children.isVisited){continue}
-
-            /* grid[childrens[a].row][childrens[a].column].prevNode = {
-                row: currentNode.row,
-                column: currentNode.column
-            } */
-            console.log("Current Parent Node: " + JSON.stringify(currentNode));
 
             //This code needs to be changed
             if(children.prevNode !== undefined){
@@ -112,19 +90,6 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
                 }
             }
 
-
-            
-
-            /* console.log(grid[childrens[a].row][childrens[a].column].prevNode);
-            console.log(" "); */
-
-            console.log("New Node 2: " + JSON.stringify(grid[childrens[a].row][childrens[a].column]));
-
-            //console.log("prevDistance: " + prevDistance);
-
-
-
-
             if(grid[childrens[a].row][childrens[a].column].isWall){
                 grid[childrens[a].row][childrens[a].column].distance = 15 + prevDistance
             }
@@ -132,32 +97,8 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
                 grid[childrens[a].row][childrens[a].column].distance = 1 + prevDistance
             }
 
-
-            //queue.addQueue(grid[childrens[a].row][childrens[a].column]);
-            //console.log("EnQueue: " + JSON.stringify(grid[childrens[a].row][childrens[a].column]));
-
-
-
-            /* grid[childrens[a].row][childrens[a].column].prevNode = {
-                row: currentNode.row,
-                column: currentNode.column
-            } */
-
             queue.addQueue(grid[childrens[a].row][childrens[a].column]);
-            console.log("EnQueue: " + JSON.stringify(grid[childrens[a].row][childrens[a].column]));
 
-            //console.log("After EnQueue: " + JSON.stringify(grid[childrens[a].row][childrens[a].column]));
-            console.log(" ");
-
-
-
-            /* console.log(" ");
-            console.log("new Prev Node");
-            console.log(grid[childrens[a].row][childrens[a].column]); */
-
-            
-            //queue.addQueue(grid[childrens[a].row][childrens[a].column]);
-            //queue.addQueue(toAdd);
         }
 
         if(currentNode.row === endRow && currentNode.column === endColumn){
