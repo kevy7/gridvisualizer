@@ -131,11 +131,7 @@ class NavBar extends Component {
                                     </div>
                                 </div>
                             </div>
-
-
-
                         </div>
-
                         <div className="navbar-end">
                         <div className="navbar-item">
                             <div className="field is-grouped">
