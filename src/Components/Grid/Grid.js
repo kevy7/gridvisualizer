@@ -8,7 +8,7 @@ import { BFS } from "../../Algorithms/BreadthFirstSearch";
 import { DFS } from "../../Algorithms/DebthFirstSearch";
 import Dijstra from "../../Algorithms/Dijkstra";
 import { selectStartNode, selectEndNode } from '../../userActions/userActions';
-import { BreadthFS, DebthFS } from '../../userAlgo/userAlgo';
+import { BreadthFS, DebthFS, DijkstraAlgo } from '../../userAlgo/userAlgo';
 import { selectAction, resetSelectedGrids } from '../../actions/index';
 import { func } from 'prop-types';
 
