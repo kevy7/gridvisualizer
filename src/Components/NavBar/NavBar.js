@@ -104,7 +104,6 @@ class NavBar extends Component {
                                     </div>
                                 </div>
                             </div>
-
                             <div className="navbar-item has-dropdown is-hoverable">
                                 <a className="navbar-link" >
                                     Algorithm
