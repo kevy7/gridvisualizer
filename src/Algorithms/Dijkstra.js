@@ -13,8 +13,6 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
     let currentNode;
     let childrens
 
-    //grid[1][1].isWall = true;
-
     while(queue.queue.length){
         currentNode =  queue.deQueue(); //Remove first priority from your array
         childrens = getChildrens(currentNode, maxRow, maxCol);
