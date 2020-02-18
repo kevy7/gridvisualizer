@@ -151,6 +151,7 @@ class Grid extends Component {
                                             isEnd={node.isEnd}
                                             isWall={node.isWall}
                                             distance={node.distance}
+                                            isWeight={node.isWeight}
                                         />
                                     })
 
@@ -200,7 +201,8 @@ class Grid extends Component {
             isStart: false,
             isEnd: false,
             isWall: false,
-            distance: Infinity
+            distance: Infinity,
+            isWeight: false
         }
     }
 

@@ -74,12 +74,8 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
                 }
             } 
 
-            /* grid[childrens[a].row][childrens[a].column].prevNode = {
-                row: currentNode.row,
-                column: currentNode.column
-            } */
-
-            if(grid[childrens[a].row][childrens[a].column].isWall){
+            //Add distance
+            if(grid[childrens[a].row][childrens[a].column].isWeight){
                 grid[childrens[a].row][childrens[a].column].distance = 15 + grid[currentNode.row][currentNode.column].distance
             }
             else {
@@ -92,15 +88,6 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
             queue.addQueue(grid[childrens[a].row][childrens[a].column]);
 
         }
-
-        /* if(currentNode.row === endRow && currentNode.column === endColumn){
-            let shortestPath = getShortestPath(grid, grid[endRow][endColumn]);
-            return {
-                visited: visited,
-                shortestPath: shortestPath
-            }
-        } */
-
 
     }
 
