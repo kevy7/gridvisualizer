@@ -114,8 +114,8 @@ class NavBar extends Component {
                                         onClick={this.selectEndAction}
 
                                     >
-                                        <i className="fa fa-clock node-icon-nav"></i>
-                                        Weight
+                                        <i className="fa fa-car node-icon-nav"></i>
+                                        Traffic
                                     </div>
                                 </div>
                             </div>
