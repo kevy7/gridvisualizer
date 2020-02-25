@@ -6,7 +6,7 @@ import Node from "../Node/Node";
 
 import { BFS } from "../../Algorithms/BreadthFirstSearch";
 import { DFS } from "../../Algorithms/DebthFirstSearch";
-import Dijstra from "../../Algorithms/Dijkstra";
+import Dijkstra from "../../Algorithms/Dijkstra";
 import { selectStartNode, selectEndNode } from '../../userActions/userActions';
 import { BreadthFS, DebthFS, DijkstraAlgo } from '../../userAlgo/userAlgo';
 import { selectAction, resetSelectedGrids } from '../../actions/index';
@@ -108,7 +108,7 @@ class Grid extends Component {
         let startColumn = this.props.selectedGrids.startingGrid.column;
         let endRow = this.props.selectedGrids.endingGrid.row;
         let endColumn = this.props.selectedGrids.endingGrid.column;
-        console.log(Dijstra(this.state.grid, startRow, startColumn, endRow, endColumn));
+        console.log(Dijkstra(this.state.grid, startRow, startColumn, endRow, endColumn));
         
     }
 
