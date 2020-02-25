@@ -42,7 +42,7 @@ class NavBar extends Component {
     }
 
     selectWeightAction = () => {
-        
+        this.props.selectAction(selectWeight);
     }
 
     selectBFSAlgo = () => {
@@ -105,6 +105,17 @@ class NavBar extends Component {
                                     >
                                         <i className="fa fa-stop node-icon-nav"></i>
                                         End
+                                    </div>
+
+                                    <div ref={(input) => {
+                                        this.endAction = input
+                                        }} 
+                                        className="navbar-item navItem-hover" 
+                                        onClick={this.selectEndAction}
+
+                                    >
+                                        <i className="fa fa-clock node-icon-nav"></i>
+                                        Weight
                                     </div>
                                 </div>
                             </div>
