@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import "./NavBar.css";
-import { selectEndNode } from '../../userActions/userActions';
+import { selectEndNode, selectWeight } from '../../userActions/userActions';
 import { selectAction, selectAlgorithm } from '../../actions/index';
 import { BreadthFS, DebthFS, DijkstraAlgo } from '../../userAlgo/userAlgo';
 
@@ -39,6 +39,10 @@ class NavBar extends Component {
 
     selectEndAction = () => {
         this.props.selectAction(selectEndNode);
+    }
+
+    selectWeightAction = () => {
+        
     }
 
     selectBFSAlgo = () => {
