@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import "./NavBar.css";
-import { selectEndNode, selectWeight } from '../../userActions/userActions';
+import { selectEndNode, selectTraffic } from '../../userActions/userActions';
 import { selectAction, selectAlgorithm } from '../../actions/index';
 import { BreadthFS, DebthFS, DijkstraAlgo } from '../../userAlgo/userAlgo';
 
@@ -41,8 +41,8 @@ class NavBar extends Component {
         this.props.selectAction(selectEndNode);
     }
 
-    selectWeightAction = () => {
-        this.props.selectAction(selectWeight);
+    selectTrafficAction = () => {
+        this.props.selectAction(selectTraffic);
     }
 
     selectBFSAlgo = () => {
@@ -107,12 +107,9 @@ class NavBar extends Component {
                                         End
                                     </div>
 
-                                    <div ref={(input) => {
-                                        this.endAction = input
-                                        }} 
+                                    <div
                                         className="navbar-item navItem-hover" 
-                                        onClick={this.selectEndAction}
-
+                                        onClick={this.selectTrafficAction}
                                     >
                                         <i className="fa fa-car node-icon-nav"></i>
                                         Traffic
