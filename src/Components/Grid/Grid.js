@@ -81,6 +81,11 @@ class Grid extends Component {
             this.setState({shortestPath: algoResult.shortestPath});
             this.setState({visited: algoResult.visited});
         }
+        else if(this.props.selectedAlgo.selectedAlgo === DijkstraAlgo){
+            algoResult = Dijkstra(this.state.grid, startRow, startColumn, endRow, endColumn);
+            this.setState({shortestPath: algoResult.shortestPath});
+            this.setState({visited: algoResult.visited});
+        }
 
         algoResult.visited.forEach(node => {
             index +=1;
