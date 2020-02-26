@@ -36,7 +36,7 @@ class Node extends Component {
             if(this.props.selectedGrids.endingSelected !== true){
                 this.props.selectGrid(selectGridData);
                 this.props.updateState(this.props.row, this.props.column, this.props.userAction);
-                this.props.selectAction(selectStartNode);
+                this.props.selectAction(selectStartNode); //switch action to select end node
             }
         }
         else if(this.props.userAction === selectTraffic){

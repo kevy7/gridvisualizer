@@ -137,7 +137,7 @@ class NavBar extends Component {
                                         className="navbar-item navItem-hover" 
                                         onClick={this.selectDijkstraAlgo}
                                     >
-                                        Dijstra's Algorithm
+                                        Dijkstra's Algorithm
                                     </div>
                                 </div>
                             </div>
