@@ -62,6 +62,9 @@ class Node extends Component {
         else if(this.props.isEnd === true){
             iconName = selectEndNode;
         }
+        else if(this.props.isWeight === true){
+            iconName = selectTraffic;
+        }
         
         return (
             <div 
