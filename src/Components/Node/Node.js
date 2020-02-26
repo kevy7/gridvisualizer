@@ -46,7 +46,9 @@ class Node extends Component {
     }
 
     //check out the event listener on mousemove or onmouseenter
-    mouseDownButton = () => {
+    mouseDownButton = (e) => {
+        //e is our event
+        //we can do e.preventDefault()
         if(this.props.userAction === selectTraffic){
             this.props.updateState(this.props.row, this.props.column, this.props.userAction);
         }
@@ -78,7 +80,7 @@ class Node extends Component {
                 id={`node-${this.props.row}-${this.props.column}`}
                 className="node" 
                 onClick={this.clickButton} 
-                onMouseDown={this.mouseDownButton}
+                onMouseEnter={this.mouseDownButton}
                 style={myStyle}
             >
                 {/* <i class="fa fa-play node-icon"></i> */}
