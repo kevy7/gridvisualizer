@@ -8,7 +8,8 @@ import {
 
 import { 
     selectStartNode, 
-    selectEndNode 
+    selectEndNode,
+    selectTraffic
 } from '../userActions/userActions'; //This is related to the user's actions
 
 //select the type of action that the user wants
