@@ -40,7 +40,7 @@ class Node extends Component {
             }
         }
         else if(this.props.userAction === selectTraffic){
-            
+            this.props.updateState(this.props.row, this.props.column, this.props.userAction);
         }
 
     }
