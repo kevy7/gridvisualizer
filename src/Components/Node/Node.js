@@ -45,6 +45,10 @@ class Node extends Component {
 
     }
 
+    mouseDownButton = () => {
+        
+    }
+
     render(){
         
         let myStyle = {
