@@ -14,7 +14,7 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
     let childrens
 
     while(queue.queue.length){
-        currentNode =  queue.deQueue(); //Remove first priority from your array
+        currentNode = queue.deQueue(); //Remove first priority from your array
         childrens = getChildrens(currentNode, maxRow, maxCol);
         if(currentNode.isVisited === false){
             currentNode.isVisited = true;
