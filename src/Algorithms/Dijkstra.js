@@ -33,6 +33,7 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
                 shortestPath: shortestPath
             }
         }
+
         
         for(var a = 0; a < childrens.length; a++){
 
