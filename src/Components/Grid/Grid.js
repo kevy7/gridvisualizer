@@ -11,6 +11,7 @@ import { selectStartNode, selectEndNode, selectTraffic } from '../../userActions
 import { BreadthFS, DebthFS, DijkstraAlgo } from '../../userAlgo/userAlgo';
 import { selectAction, resetSelectedGrids } from '../../actions/index';
 import { func } from 'prop-types';
+import { writeFile } from 'fs';
 
 class Grid extends Component {
     
@@ -54,7 +55,7 @@ class Grid extends Component {
 
         this.setState({grid: grid});
 
-        console.log(this.state.grid);
+        //console.log(this.state.grid);
     }
 
     resetGrid = () => {

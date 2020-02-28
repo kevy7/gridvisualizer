@@ -45,6 +45,7 @@ class Node extends Component {
         else if(this.props.userAction === testAction){
             //alert("you clicked on me");
             console.log(this.props.distance);
+            console.log("Prev Node: ", this.props.prevNode);
 
         }
 

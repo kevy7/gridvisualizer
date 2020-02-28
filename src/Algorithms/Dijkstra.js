@@ -76,9 +76,11 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
                 }
             }  */
 
-            grid[childrens[a].row][childrens[a].column].prevNode = {
-                row: currentNode.row,
-                column: currentNode.column
+            if(grid[childrens[a].row][childrens[a].column].prevNode === undefined){
+                grid[childrens[a].row][childrens[a].column].prevNode = {
+                    row: currentNode.row,
+                    column: currentNode.column
+                }
             }
 
             //Add distance
