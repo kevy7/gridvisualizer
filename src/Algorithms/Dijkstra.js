@@ -39,8 +39,9 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
             //let prevDistance = grid[currentNode.row][currentNode.column].distance;
             if(grid[childrens[a].row][childrens[a].column].isVisited){continue}
 
+            //Not sure if the code below is needed anymore
             //This code needs to be changed
-            if(grid[childrens[a].row][childrens[a].column].prevNode !== undefined){
+            /* if(grid[childrens[a].row][childrens[a].column].prevNode !== undefined){
                 
                 //compare current node's distances with the children's preNode
                 //let prevNodeRow = grid[childrens[a].row][childrens[a].column].prevNode.row;
@@ -72,7 +73,12 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
                     row: currentNode.row,
                     column: currentNode.column
                 }
-            } 
+            }  */
+
+            grid[childrens[a].row][childrens[a].column].prevNode = {
+                row: currentNode.row,
+                column: currentNode.column
+            }
 
             //Add distance
             if(grid[childrens[a].row][childrens[a].column].isWeight){

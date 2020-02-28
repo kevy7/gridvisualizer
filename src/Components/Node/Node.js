@@ -43,7 +43,9 @@ class Node extends Component {
             this.props.updateState(this.props.row, this.props.column, this.props.userAction);
         }
         else if(this.props.userAction === testAction){
-            alert("you clicked on me");
+            //alert("you clicked on me");
+            console.log(this.props.distance);
+
         }
 
     }
@@ -83,7 +85,7 @@ class Node extends Component {
                 id={`node-${this.props.row}-${this.props.column}`}
                 className="node" 
                 onClick={this.clickButton} 
-                //onMouseEnter={this.mouseDownButton}
+                onMouseEnter={this.mouseDownButton}
                 style={myStyle}
             >
                 {/* <i class="fa fa-play node-icon"></i> */}
