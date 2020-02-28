@@ -187,12 +187,13 @@ class Grid extends Component {
         let grid = [];
         let currentNode;
         let width = Math.round(window.innerWidth / 25); //How do you change this as the width changes?
+        let height = 5;
         
         //We're going to create our grid here, and push in our node
 
-        for(var a = 0; a < 30; a++){
+        for(var a = 0; a < height; a++){
             let nodeRows = [];
-            for(var b = 0; b < width; b++){
+            for(var b = 0; b < 5; b++){
                 //create nodes here
                 currentNode = this.createNode(a, b);
                 nodeRows.push(currentNode);

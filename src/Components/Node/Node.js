@@ -39,9 +39,9 @@ class Node extends Component {
                 this.props.selectAction(selectStartNode); //switch action to select end node
             }
         }
-        /* else if(this.props.userAction === selectTraffic){
+        else if(this.props.userAction === selectTraffic){
             this.props.updateState(this.props.row, this.props.column, this.props.userAction);
-        } */
+        }
 
     }
 
@@ -80,7 +80,7 @@ class Node extends Component {
                 id={`node-${this.props.row}-${this.props.column}`}
                 className="node" 
                 onClick={this.clickButton} 
-                onMouseEnter={this.mouseDownButton}
+                //onMouseEnter={this.mouseDownButton}
                 style={myStyle}
             >
                 {/* <i class="fa fa-play node-icon"></i> */}
