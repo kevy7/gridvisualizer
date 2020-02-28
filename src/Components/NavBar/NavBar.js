@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import "./NavBar.css";
-import { selectEndNode, selectTraffic } from '../../userActions/userActions';
+import { selectEndNode, selectTraffic, testAction } from '../../userActions/userActions';
 import { selectAction, selectAlgorithm } from '../../actions/index';
 import { BreadthFS, DebthFS, DijkstraAlgo } from '../../userAlgo/userAlgo';
 
@@ -55,6 +55,10 @@ class NavBar extends Component {
 
     selectDijkstraAlgo = () => {
         this.props.selectAlgorithm(DijkstraAlgo);
+    }
+
+    selectTest = () => {
+        this.props.selectAction(testAction);
     }
 
     render(){
@@ -113,6 +117,13 @@ class NavBar extends Component {
                                     >
                                         <i className="fa fa-car node-icon-nav"></i>
                                         Traffic
+                                    </div>
+                                    <div
+                                        className="navbar-item navItem-hover" 
+                                        onClick={this.selectTest}
+                                    >
+                                        <i className="fa fa-car node-icon-nav"></i>
+                                        Test Action
                                     </div>
                                 </div>
                             </div>

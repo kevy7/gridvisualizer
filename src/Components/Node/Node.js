@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { selectGrid, selectAction } from '../../actions/index';
-import { selectStartNode, selectEndNode, selectTraffic } from '../../userActions/userActions';
+import { selectStartNode, selectEndNode, selectTraffic, testAction } from '../../userActions/userActions';
 import "./Node.css";
 
 //This will be our nodes, and each node will be displayed via the Grid Component
@@ -41,6 +41,9 @@ class Node extends Component {
         }
         else if(this.props.userAction === selectTraffic){
             this.props.updateState(this.props.row, this.props.column, this.props.userAction);
+        }
+        else if(this.props.userAction === testAction){
+            alert("you clicked on me");
         }
 
     }
