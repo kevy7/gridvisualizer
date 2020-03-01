@@ -84,7 +84,7 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
 
             //Add distance
             if(grid[childrens[a].row][childrens[a].column].isWeight){
-                grid[childrens[a].row][childrens[a].column].distance = 15 + grid[currentNode.row][currentNode.column].distance
+                grid[childrens[a].row][childrens[a].column].distance = 10 + grid[currentNode.row][currentNode.column].distance
             }
             else {
                 grid[childrens[a].row][childrens[a].column].distance = 1 + grid[currentNode.row][currentNode.column].distance
