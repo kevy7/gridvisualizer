@@ -85,15 +85,37 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
             if(grid[childrens[a].row][childrens[a].column].prevNode.row !== currentNode.row 
                 && grid[childrens[a].row][childrens[a].column].prevNode.column !== currentNode.column
             ){
-                console.log("these do not equal");
-                console.log("Assigned Previous Node")
-                console.log(grid[childrens[a].row][childrens[a].column].prevNode);
-                console.log("Current Node");
-                console.log(currentNode);
-                console.log(" ");
+                // console.log("these do not equal");
+                // console.log("Assigned Previous Node");
+                // console.log(grid[childrens[a].row][childrens[a].column].prevNode);
+                // console.log("Current Node");
+                // console.log(currentNode);
+                // console.log(" ");
 
 
-                console.lpog("");
+                let prevRow = grid[childrens[a].row][childrens[a].column].prevNode.row;
+                let prevColumn = grid[childrens[a].row][childrens[a].column].prevNode.column;
+                let prevNode = grid[prevRow][prevColumn];
+
+                if(prevNode.distance !== currentNode.distance){
+
+                    console.log("Assigned Previous Node");
+                    console.log(grid[childrens[a].row][childrens[a].column].prevNode);
+                    console.log("PrevNode Distance");
+                    console.log(prevNode.distance);
+
+                    console.log("Current Node");
+                    console.log(currentNode);
+                    console.log("CurrentNode Distance");
+                    console.log(currentNode.distance);
+                    
+                    //Let's compare the distances between the prevNode and the currentNode
+                    console.log(" ");
+
+                    //Create a function to find the less of two variables
+
+                }
+                
             }
 
             //Add distance
