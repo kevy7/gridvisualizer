@@ -90,11 +90,3 @@ export function getChildrensDijkstra(grid, node) {
 
     return childrens; //We will return an array of children nodes here
 }
-
-export function getLowestValue(valueA, valueB){
-    let lowestValue;
-
-    if(valueA < valueB){
-        
-    }
-}  

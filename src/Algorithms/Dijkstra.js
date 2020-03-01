@@ -59,7 +59,6 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
 
                     //Create a function to find the less of two variables
                     if(prevNode.distance < currentNode.distance){
-                        console.log("this is lower");
                         grid[childrens[a].row][childrens[a].column].prevNode = {
                             row: prevRow,
                             column: prevColumn
