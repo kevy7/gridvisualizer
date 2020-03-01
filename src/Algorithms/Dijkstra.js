@@ -82,6 +82,20 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
                 }
             }
 
+            if(grid[childrens[a].row][childrens[a].column].prevNode.row !== currentNode.row 
+                && grid[childrens[a].row][childrens[a].column].prevNode.column !== currentNode.column
+            ){
+                console.log("these do not equal");
+                console.log("Assigned Previous Node")
+                console.log(grid[childrens[a].row][childrens[a].column].prevNode);
+                console.log("Current Node");
+                console.log(currentNode);
+                console.log(" ");
+
+
+                console.lpog("");
+            }
+
             //Add distance
             if(grid[childrens[a].row][childrens[a].column].isWeight){
                 grid[childrens[a].row][childrens[a].column].distance = 10 + grid[currentNode.row][currentNode.column].distance
