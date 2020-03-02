@@ -62,7 +62,10 @@ class Node extends Component {
     }
 
     pressDownKey = (e) => {
-        alert("you pressed a key")
+        e.preventDefault();
+        console.log("You pressed on this key");
+        console.log(this.props.row);
+        console.log(this.props.column);
     }
 
     render(){
