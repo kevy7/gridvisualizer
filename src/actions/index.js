@@ -3,7 +3,8 @@ import {
     SELECT_START_GRID,
     SELECT_END_GRID,
     RESET_SELECTED_GRIDS,
-    SELECT_ALGO
+    SELECT_ALGO,
+    IS_HOVER
 } from './types';
 
 import { 
@@ -11,6 +12,7 @@ import {
     selectEndNode,
     selectTraffic
 } from '../userActions/userActions'; //This is related to the user's actions
+import { bool } from 'prop-types';
 
 //select the type of action that the user wants
 export const selectAction = (userAction) => dispatch => {
@@ -63,5 +65,12 @@ export const selectAlgorithm = (algorithm) => dispatch => {
     dispatch({
         type: SELECT_ALGO,
         payload: algorithm
+    })
+}
+
+export const isHoverAction = (boolValue) => dispatch => {
+    dispatch({
+        type: IS_HOVER,
+        payload: boolValue
     })
 }
