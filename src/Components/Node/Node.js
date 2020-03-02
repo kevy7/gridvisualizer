@@ -56,10 +56,6 @@ class Node extends Component {
         //e is our event
         //we can do e.preventDefault()
 
-        if(e.key === 87){
-            console.log("you pressed w");
-        }
-
         if(this.props.userAction === selectTraffic){
             this.props.updateState(this.props.row, this.props.column, this.props.userAction);
         }
