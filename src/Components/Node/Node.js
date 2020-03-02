@@ -61,6 +61,10 @@ class Node extends Component {
         }
     }
 
+    pressDownKey = (e) => {
+        alert("you pressed a key")
+    }
+
     render(){
         
         let myStyle = {
@@ -88,6 +92,8 @@ class Node extends Component {
                 className="node" 
                 onClick={this.clickButton} 
                 onMouseEnter={this.mouseDownButton}
+                onKeyDown={this.pressDownKey}
+                tabIndex="0"
                 style={myStyle}
             >
                 {/* <i class="fa fa-play node-icon"></i> */}
