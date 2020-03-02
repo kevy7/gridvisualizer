@@ -122,11 +122,12 @@ class Grid extends Component {
     }
 
     testFunction = () => {
-        let startRow = this.props.selectedGrids.startingGrid.row;
+        /* let startRow = this.props.selectedGrids.startingGrid.row;
         let startColumn = this.props.selectedGrids.startingGrid.column;
         let endRow = this.props.selectedGrids.endingGrid.row;
         let endColumn = this.props.selectedGrids.endingGrid.column;
-        console.log(Dijkstra(this.state.grid, startRow, startColumn, endRow, endColumn));
+        console.log(Dijkstra(this.state.grid, startRow, startColumn, endRow, endColumn)); */
+        
         
     }
 
