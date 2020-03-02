@@ -68,6 +68,7 @@ export const selectAlgorithm = (algorithm) => dispatch => {
     })
 }
 
+//Action is used to trigger and determine if a current node is being hovered over by the mouse or not being hovered over by the mouse
 export const isHoverAction = (boolValue) => dispatch => {
     dispatch({
         type: IS_HOVER,
