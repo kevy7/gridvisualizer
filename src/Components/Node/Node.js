@@ -54,14 +54,7 @@ class Node extends Component {
 
     //check out the event listener on mousemove or onmouseenter
     mouseDownEvent = (e) => {
-        //e is our event
-        //we can do e.preventDefault()
 
-        /* if(this.props.userAction === selectTraffic){
-            this.props.updateState(this.props.row, this.props.column, this.props.userAction);
-        } */
-
-        
         this.setState({isHovered: true}); //Set isHovered to true
         //Set focus to be on the current element that the user is hovering on top of with their mouse
         document.getElementById(`node-${this.props.row}-${this.props.column}`).focus();
@@ -76,23 +69,11 @@ class Node extends Component {
 
     pressDownKey = (e) => {
         //e.preventDefault();
-        
         if(this.state.isHovered && e.key.toLowerCase() === 'w'){
             if(this.props.userAction === selectTraffic){
                 this.props.updateState(this.props.row, this.props.column, this.props.userAction);
             }
         }
-
-        /* console.log(this.props.row);
-        console.log(this.props.column); */
-
-        /*
-
-            The keydown event for react will only work on an element if it is selected or "focused" on. It will not,
-            worker if I just hover over any element. If I hover over a focused/selected element, that is when the keydown event will work.
-
-
-        */
     }
 
     render(){
