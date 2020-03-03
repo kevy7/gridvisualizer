@@ -61,7 +61,10 @@ class Node extends Component {
             this.props.updateState(this.props.row, this.props.column, this.props.userAction);
         } */
 
+        
         this.setState({isHovered: true}); //Set isHovered to true
+        //Set focus to be on the current element that the user is hovering on top of with their mouse
+        document.getElementById(`node-${this.props.row}-${this.props.column}`).focus();
         //console.log(this.state.isHovered);
 
     }
@@ -74,10 +77,12 @@ class Node extends Component {
     pressDownKey = (e) => {
         //e.preventDefault();
         
-        if(this.state.isHovered){
-            console.log("You pressed on this key");
-            console.log(e.key);
+        if(this.state.isHovered && e.key.toLowerCase() === 'w'){
+            if(this.props.userAction === selectTraffic){
+                this.props.updateState(this.props.row, this.props.column, this.props.userAction);
+            }
         }
+
         /* console.log(this.props.row);
         console.log(this.props.column); */
 
@@ -115,7 +120,7 @@ class Node extends Component {
             <div 
                 id={`node-${this.props.row}-${this.props.column}`}
                 className="node" 
-                //onClick={this.clickButton}
+                onClick={this.clickButton}
                 onMouseEnter={this.mouseDownEvent}
                 onMouseLeave={this.mouseOutEvent}
                 onKeyDown={this.pressDownKey}
