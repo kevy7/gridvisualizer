@@ -80,6 +80,14 @@ class Node extends Component {
         }
         /* console.log(this.props.row);
         console.log(this.props.column); */
+
+        /*
+
+            The keydown event for react will only work on an element if it is selected or "focused" on. It will not,
+            worker if I just hover over any element. If I hover over a focused/selected element, that is when the keydown event will work.
+
+
+        */
     }
 
     render(){
@@ -107,7 +115,7 @@ class Node extends Component {
             <div 
                 id={`node-${this.props.row}-${this.props.column}`}
                 className="node" 
-                onClick={this.clickButton} 
+                //onClick={this.clickButton}
                 onMouseEnter={this.mouseDownEvent}
                 onMouseLeave={this.mouseOutEvent}
                 onKeyDown={this.pressDownKey}
