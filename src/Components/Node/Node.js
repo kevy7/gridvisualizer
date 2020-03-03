@@ -40,9 +40,9 @@ class Node extends Component {
                 this.props.selectAction(selectStartNode); //switch action to select end node
             }
         }
-        else if(this.props.userAction === selectTraffic){
+        /* else if(this.props.userAction === selectTraffic){
             this.props.updateState(this.props.row, this.props.column, this.props.userAction);
-        }
+        } */
         else if(this.props.userAction === testAction){
             //alert("you clicked on me");
             console.log(this.props.distance);
@@ -53,7 +53,7 @@ class Node extends Component {
     }
 
     //check out the event listener on mousemove or onmouseenter
-    mouseDownButton = (e) => {
+    mouseDownEvent = (e) => {
         //e is our event
         //we can do e.preventDefault()
 
@@ -62,6 +62,7 @@ class Node extends Component {
         } */
 
         this.setState({isHovered: true}); //Set isHovered to true
+        //console.log(this.state.isHovered);
 
     }
 
@@ -71,7 +72,8 @@ class Node extends Component {
     }
 
     pressDownKey = (e) => {
-        e.preventDefault();
+        //e.preventDefault();
+        
         if(this.state.isHovered){
             console.log("You pressed on this key");
             console.log(e.key);
@@ -106,7 +108,7 @@ class Node extends Component {
                 id={`node-${this.props.row}-${this.props.column}`}
                 className="node" 
                 onClick={this.clickButton} 
-                onMouseEnter={this.mouseDownButton}
+                onMouseEnter={this.mouseDownEvent}
                 onMouseLeave={this.mouseOutEvent}
                 onKeyDown={this.pressDownKey}
                 tabIndex="0"
@@ -114,6 +116,7 @@ class Node extends Component {
             >
                 {/* <i class="fa fa-play node-icon"></i> */}
                 <i className={iconName}></i>
+                <span></span>
             </div>
         )
     }
