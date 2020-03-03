@@ -10,7 +10,8 @@ import "./Node.css";
 class Node extends Component {
 
     state = {
-        iconName: ""
+        iconName: "",
+        isHovered: false
     }
 
     //This is just a test
@@ -56,16 +57,27 @@ class Node extends Component {
         //e is our event
         //we can do e.preventDefault()
 
-        if(this.props.userAction === selectTraffic){
+        /* if(this.props.userAction === selectTraffic){
             this.props.updateState(this.props.row, this.props.column, this.props.userAction);
-        }
+        } */
+
+        this.setState({isHovered: true}); //Set isHovered to true
+
+    }
+
+    mouseOutEvent = (e) => {
+        this.setState({isHovered: false});
+        //console.log(this.state.isHovered);
     }
 
     pressDownKey = (e) => {
         e.preventDefault();
-        console.log("You pressed on this key");
-        console.log(this.props.row);
-        console.log(this.props.column);
+        if(this.state.isHovered){
+            console.log("You pressed on this key");
+            console.log(e.key);
+        }
+        /* console.log(this.props.row);
+        console.log(this.props.column); */
     }
 
     render(){
@@ -95,6 +107,7 @@ class Node extends Component {
                 className="node" 
                 onClick={this.clickButton} 
                 onMouseEnter={this.mouseDownButton}
+                onMouseLeave={this.mouseOutEvent}
                 onKeyDown={this.pressDownKey}
                 tabIndex="0"
                 style={myStyle}
