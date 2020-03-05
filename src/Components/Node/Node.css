@@ -9,12 +9,14 @@
     background: hsl(204, 86%, 53%);
     animation-name: nodeAnimation;
     animation-duration: 1s;
+    animation-timing-function: ease-in;
 }
 
 .node-path {
     background: hsl(171, 100%, 41%);
     animation-name: nodePathAnimation;
     animation-duration: 1s;
+    animation-timing-function: ease-in;
 }
 
 .node-icon {
@@ -28,7 +30,10 @@
 }
 
 @keyframes nodeAnimation {
-    from {background-color: white;}
+    from {
+        background-color: white;
+    }
+    /*hsl(234, 80%, 60%)*/
     to {background-color: hsl(204, 86%, 53%);}
 }
 

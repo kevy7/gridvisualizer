@@ -107,7 +107,7 @@ class Grid extends Component {
 
                 document.getElementById(`node-${node.row}-${node.column}`).className = "node node-visited";
 
-            }, index * 5);
+            }, index * 10);
         });
 
         algoResult.shortestPath.reverse(); //to reverse the shortestPath
@@ -116,13 +116,13 @@ class Grid extends Component {
             index+=1;
             setTimeout(() => {
                 document.getElementById(`node-${node.row}-${node.column}`).className = "node node-path";
-            }, index * 5);
+            }, index * 10);
         })
         }
     }
 
     testFunction = () => {
-        
+
     }
 
     render(){
