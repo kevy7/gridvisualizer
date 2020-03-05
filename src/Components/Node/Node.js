@@ -59,14 +59,20 @@ class Node extends Component {
         //Set focus to be on the current element that the user is hovering on top of with their mouse
         document.getElementById(`node-${this.props.row}-${this.props.column}`).focus();
 
-        //Set a conditional statement here
-        document.getElementById(`icon-${this.props.row}-${this.props.column}`).className = this.props.userAction;
-
+        //Set the hovered over node icon to whatever the current action is
+        if(this.props.isWall === false && this.props.isStart === false && this.props.isEnd === false && this.props.isWeight === false){
+            document.getElementById(`icon-${this.props.row}-${this.props.column}`).className = this.props.userAction;
+        }
     }
 
     mouseOutEvent = (e) => {
         this.setState({isHovered: false});
-        //console.log(this.state.isHovered);
+
+        //Remove the node icon if you're not hovering over a node icon
+        if(this.props.isWall === false && this.props.isStart === false && this.props.isEnd === false && this.props.isWeight === false){
+            document.getElementById(`icon-${this.props.row}-${this.props.column}`).className = "";
+        }
+
     }
 
     pressDownKey = (e) => {
