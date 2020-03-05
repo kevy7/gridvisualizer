@@ -23,15 +23,6 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
                 column: currentNode.column
             });
         }
-        //console.log(currentNode);
-
-        /* if(currentNode.row === endRow && currentNode.column === endColumn){
-            let shortestPath = getShortestPath(grid, grid[endRow][endColumn]);
-            return {
-                visited: visited,
-                shortestPath: shortestPath
-            }
-        } */
         
         for(var a = 0; a < childrens.length; a++){
 
