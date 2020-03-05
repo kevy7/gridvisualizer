@@ -8,7 +8,7 @@
 .node-visited {
     background: hsl(204, 86%, 53%);
     animation-name: nodeAnimation;
-    animation-duration: 1s;
+    animation-duration: 1.5s;
     animation-timing-function: ease-in;
 }
 
@@ -30,13 +30,18 @@
 }
 
 @keyframes nodeAnimation {
-    from {
-        /* transform: scale(.3); */
+    0% {
+        transform: scale(.1);
         background-color: white;
-        /*border-radius: 100%*/
+        /*border-radius: 100%;*/
     }
+    /* 50% {
+        background-color: aqua;
+    } */
     /*hsl(234, 80%, 60%)*/
-    to {background-color: hsl(204, 86%, 53%);}
+    100% {
+        background-color: hsl(204, 86%, 53%);
+    }
 }
 
 @keyframes nodePathAnimation {

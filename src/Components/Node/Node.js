@@ -57,7 +57,7 @@ class Node extends Component {
 
         this.setState({isHovered: true}); //Set isHovered to true
         //Set focus to be on the current element that the user is hovering on top of with their mouse
-        document.getElementById(`node-${this.props.row}-${this.props.column}`).focus();
+        document.getElementById(`nodeParent-${this.props.row}-${this.props.column}`).focus();
 
         //Set the hovered over node icon to whatever the current action is
         if(this.props.isWall === false && this.props.isStart === false && this.props.isEnd === false && this.props.isWeight === false){
@@ -109,7 +109,7 @@ class Node extends Component {
         //Consider adding another div component within this one for css styling purposes
         return (
             <div 
-                id={`node-${this.props.row}-${this.props.column}`}
+                id={`nodeParent-${this.props.row}-${this.props.column}`}
                 className="node" 
                 onClick={this.clickButton}
                 onMouseEnter={this.mouseDownEvent}
@@ -118,10 +118,15 @@ class Node extends Component {
                 tabIndex="0"
                 style={myStyle}
             >
-                <i
-                    id={`icon-${this.props.row}-${this.props.column}`}
-                    className={iconName}
-                ></i>
+                <div 
+                    id={`node-${this.props.row}-${this.props.column}`}
+                    className="node"
+                >
+                    <i
+                        id={`icon-${this.props.row}-${this.props.column}`}
+                        className={iconName}
+                    ></i>
+                </div>
             </div>
         )
     }
