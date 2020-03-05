@@ -31,7 +31,9 @@
 
 @keyframes nodeAnimation {
     from {
+        /* transform: scale(.3); */
         background-color: white;
+        /*border-radius: 100%*/
     }
     /*hsl(234, 80%, 60%)*/
     to {background-color: hsl(204, 86%, 53%);}
