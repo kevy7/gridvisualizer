@@ -116,7 +116,7 @@ class Grid extends Component {
             index+=1;
             setTimeout(() => {
                 document.getElementById(`node-${node.row}-${node.column}`).className = "node node-path";
-            }, index * 10);
+            }, index * 10.5);
         })
         }
     }

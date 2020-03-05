@@ -123,7 +123,6 @@ class Node extends Component {
                     id={`icon-${this.props.row}-${this.props.column}`}
                     className={iconName}
                 ></i>
-                <span></span>
             </div>
         )
     }
