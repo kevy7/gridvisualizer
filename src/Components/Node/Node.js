@@ -106,6 +106,7 @@ class Node extends Component {
             iconName = selectTraffic;
         }
         
+        //Consider adding another div component within this one for css styling purposes
         return (
             <div 
                 id={`node-${this.props.row}-${this.props.column}`}
