@@ -7,10 +7,14 @@
 
 .node-visited {
     background: hsl(204, 86%, 53%);
+    animation-name: nodeAnimation;
+    animation-duration: 1s;
 }
 
 .node-path {
     background: hsl(171, 100%, 41%);
+    animation-name: nodePathAnimation;
+    animation-duration: 1s;
 }
 
 .node-icon {
@@ -21,4 +25,14 @@
 
 .node-icon-nav {
     margin-right: auto;
+}
+
+@keyframes nodeAnimation {
+    from {background-color: white;}
+    to {background-color: hsl(204, 86%, 53%);}
+}
+
+@keyframes nodePathAnimation {
+    from {background-color: hsl(204, 86%, 53%);}
+    to {background-color: hsl(171, 100%, 41%);}
 }
