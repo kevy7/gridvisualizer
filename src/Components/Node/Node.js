@@ -118,7 +118,6 @@ class Node extends Component {
                 tabIndex="0"
                 style={myStyle}
             >
-                {/* <i class="fa fa-play node-icon"></i> */}
                 <i
                     id={`icon-${this.props.row}-${this.props.column}`}
                     className={iconName}
