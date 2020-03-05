@@ -58,7 +58,9 @@ class Node extends Component {
         this.setState({isHovered: true}); //Set isHovered to true
         //Set focus to be on the current element that the user is hovering on top of with their mouse
         document.getElementById(`node-${this.props.row}-${this.props.column}`).focus();
-        //console.log(this.state.isHovered);
+
+        //Set a conditional statement here
+        document.getElementById(`icon-${this.props.row}-${this.props.column}`).className = this.props.userAction;
 
     }
 
@@ -81,6 +83,7 @@ class Node extends Component {
         let myStyle = {
             background: ""
         };
+
         let iconName = "";
 
         if(this.props.isPath === true){
@@ -109,7 +112,10 @@ class Node extends Component {
                 style={myStyle}
             >
                 {/* <i class="fa fa-play node-icon"></i> */}
-                <i className={iconName}></i>
+                <i
+                    id={`icon-${this.props.row}-${this.props.column}`}
+                    className={iconName}
+                ></i>
                 <span></span>
             </div>
         )
