@@ -38,7 +38,6 @@
     /* 50% {
         background-color: aqua;
     } */
-    /*hsl(234, 80%, 60%)*/
     100% {
         background-color: hsl(204, 86%, 53%);
     }
