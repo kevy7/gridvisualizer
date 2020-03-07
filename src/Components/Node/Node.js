@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { selectGrid, selectAction } from '../../actions/index';
-import { selectStartNode, selectEndNode, selectTraffic, testAction } from '../../userActions/userActions';
+import { selectStartNode, selectEndNode, selectTraffic, testAction, selectWall } from '../../userActions/userActions';
 import "./Node.css";
 
 //This will be our nodes, and each node will be displayed via the Grid Component
@@ -77,8 +77,15 @@ class Node extends Component {
 
     pressDownKey = (e) => {
         //e.preventDefault();
+        //Add traffic/weight for the user
         if(this.state.isHovered && e.key.toLowerCase() === 'w'){
             if(this.props.userAction === selectTraffic){
+                this.props.updateState(this.props.row, this.props.column, this.props.userAction);
+            }
+        }
+        //add wall for the user
+        else if(this.state.isHovered && e.key.toLowerCase() === 'e'){
+            if(this.props.userAction === selectWall){
                 this.props.updateState(this.props.row, this.props.column, this.props.userAction);
             }
         }
