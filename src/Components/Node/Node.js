@@ -95,7 +95,6 @@ class Node extends Component {
         if(this.props.isPath === true){
             myStyle.background = "hsl(171, 100%, 41%)";
         }
-
         if(this.props.isStart === true){
             iconName = selectStartNode;
         }
@@ -104,6 +103,9 @@ class Node extends Component {
         }
         else if(this.props.isWeight === true){
             iconName = selectTraffic;
+        }
+        else if(this.props.isWall === true){
+            document.getElementById(`node-${this.props.row}-${this.props.column}`).className = "node node-wall"
         }
         
         //Consider adding another div component within this one for css styling purposes
