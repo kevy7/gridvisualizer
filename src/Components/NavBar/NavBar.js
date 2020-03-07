@@ -120,6 +120,13 @@ class NavBar extends Component {
                                     </div>
                                     <div
                                         className="navbar-item navItem-hover" 
+                                        onClick={this.selectTrafficAction}
+                                    >
+                                        <i className="fa fa-ban node-icon-nav"></i>
+                                        Wall
+                                    </div>
+                                    <div
+                                        className="navbar-item navItem-hover" 
                                         onClick={this.selectTest}
                                     >
                                         <i className="fa fa-car node-icon-nav"></i>
