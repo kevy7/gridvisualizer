@@ -25,6 +25,10 @@
     margin-top: 10%;
 }
 
+.node-wall{
+    background: black;
+}
+
 .node-icon-nav {
     margin-right: auto;
 }
