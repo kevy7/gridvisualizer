@@ -7,7 +7,7 @@ import Node from "../Node/Node";
 import { BFS } from "../../Algorithms/BreadthFirstSearch";
 import { DFS } from "../../Algorithms/DebthFirstSearch";
 import Dijkstra from "../../Algorithms/Dijkstra";
-import { selectStartNode, selectEndNode, selectTraffic } from '../../userActions/userActions';
+import { selectStartNode, selectEndNode, selectTraffic, selectWall } from '../../userActions/userActions';
 import { BreadthFS, DebthFS, DijkstraAlgo } from '../../userAlgo/userAlgo';
 import { selectAction, resetSelectedGrids } from '../../actions/index';
 import { func } from 'prop-types';
@@ -44,13 +44,12 @@ class Grid extends Component {
         }
         //If this action is selected, assign the current node as your weight
         else if(userAction === selectTraffic){
-            /* if(grid[row][column].isWall !== true){
-
-            } */
-
             grid[row][column].isWall = false;
             grid[row][column].isWeight = true;
-
+        }
+        else if(userAction === selectWall){
+            grid[row][column].isWall = true;
+            grid[row][column].isWeight = false;
         }
 
         this.setState({grid: grid});

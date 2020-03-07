@@ -57,6 +57,7 @@ class Node extends Component {
 
         this.setState({isHovered: true}); //Set isHovered to true
         //Set focus to be on the current element that the user is hovering on top of with their mouse
+        console.log(this.props.isWall);
         document.getElementById(`nodeParent-${this.props.row}-${this.props.column}`).focus();
 
         //Set the hovered over node icon to whatever the current action is
@@ -79,14 +80,17 @@ class Node extends Component {
         //e.preventDefault();
         //Add traffic/weight for the user
         if(this.state.isHovered && e.key.toLowerCase() === 'w'){
+            console.log("from if")
             if(this.props.userAction === selectTraffic){
                 this.props.updateState(this.props.row, this.props.column, this.props.userAction);
             }
         }
         //add wall for the user
         else if(this.state.isHovered && e.key.toLowerCase() === 'e'){
+            console.log("from else if")
             if(this.props.userAction === selectWall){
                 this.props.updateState(this.props.row, this.props.column, this.props.userAction);
+                //document.getElementById(`icon-${this.props.row}-${this.props.column}`).className = "";
             }
         }
     }
@@ -112,8 +116,10 @@ class Node extends Component {
             iconName = selectTraffic;
         }
         else if(this.props.isWall === true){
-            document.getElementById(`node-${this.props.row}-${this.props.column}`).className = "node node-wall"
+            iconName = "node-wall";
+            //document.getElementById(`node-${this.props.row}-${this.props.column}`).className = "node node-wall";
         }
+        
         
         //Consider adding another div component within this one for css styling purposes
         return (
