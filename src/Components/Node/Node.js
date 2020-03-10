@@ -79,14 +79,12 @@ class Node extends Component {
         //e.preventDefault();
         //Add traffic/weight for the user
         if(this.state.isHovered && e.key.toLowerCase() === 'w'){
-            console.log("from if")
             if(this.props.userAction === selectTraffic){
                 this.props.updateState(this.props.row, this.props.column, this.props.userAction);
             }
         }
         //add wall for the user
         else if(this.state.isHovered && e.key.toLowerCase() === 'e'){
-            console.log("from else if")
             if(this.props.userAction === selectWall){
                 this.props.updateState(this.props.row, this.props.column, this.props.userAction);
                 //document.getElementById(`icon-${this.props.row}-${this.props.column}`).className = "";
