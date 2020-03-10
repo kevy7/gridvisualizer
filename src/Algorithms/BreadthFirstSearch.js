@@ -14,8 +14,6 @@ export function BFS(grid, startRow, startColumn, endRow, endColumn){
 
     let queue = [];
     let visited = [];
-    //let visited = []; //these would be used if our nodes are not objects
-    //let prev = {}; //these would be used if our nodes are not objects
 
     //array.push -> push an element in front of an array
     //array.shift -> remove an element in front of an array
