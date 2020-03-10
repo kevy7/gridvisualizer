@@ -56,7 +56,6 @@ class Node extends Component {
 
         this.setState({isHovered: true}); //Set isHovered to true
         //Set focus to be on the current element that the user is hovering on top of with their mouse
-        console.log(this.props.isWall);
         document.getElementById(`nodeParent-${this.props.row}-${this.props.column}`).focus();
 
         //Set the hovered over node icon to whatever the current action is
