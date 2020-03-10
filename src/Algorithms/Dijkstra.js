@@ -15,8 +15,6 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
 
     while(queue.queue.length){
         currentNode = queue.deQueue(); //Remove first priority from your array
-
-        //CODE BELOW CURRENTLY DOES NOT WORK
         if(currentNode.isWall){continue}
 
         childrens = getChildrens(currentNode, maxRow, maxCol);
@@ -32,8 +30,6 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
 
             //let prevDistance = grid[currentNode.row][currentNode.column].distance;
             if(grid[childrens[a].row][childrens[a].column].isVisited){continue}
-            
-            //CODE BELOW CURRENTLY DOES NOT WORK
             //If current child node is a wall, then skip the current node
             if(grid[childrens[a].row][childrens[a].column].isWall){continue}
 
