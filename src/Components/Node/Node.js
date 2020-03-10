@@ -6,7 +6,6 @@ import { selectGrid, selectAction } from '../../actions/index';
 import { selectStartNode, selectEndNode, selectTraffic, testAction, selectWall } from '../../userActions/userActions';
 import "./Node.css";
 
-//This will be our nodes, and each node will be displayed via the Grid Component
 class Node extends Component {
 
     state = {
