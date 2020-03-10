@@ -48,6 +48,7 @@ class Node extends Component {
             console.log("Prev Node: ", this.props.prevNode);
 
         }
+        console.log(this.props.isWall);
 
     }
 
