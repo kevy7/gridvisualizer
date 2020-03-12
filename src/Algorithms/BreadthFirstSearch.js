@@ -46,6 +46,11 @@ export function BFS(grid, startRow, startColumn, endRow, endColumn){
                 continue; //skip any node that was already visited
             }
 
+            if(grid[row][column].isWall){
+                continue;
+            }
+
+
             //console.log(grid);
 
             grid[row][column].isVisited = true;
