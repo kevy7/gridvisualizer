@@ -16,7 +16,6 @@ export function DFS(grid, startRow, startCol, endRow, endCol){
             column: columnHere
         }
     */
-    //let shortestPath = []
 
     /*
         Data that each node contains    
