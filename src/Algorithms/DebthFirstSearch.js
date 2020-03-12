@@ -69,7 +69,10 @@ export function DFS(grid, startRow, startCol, endRow, endCol){
             let row = childrens[a].row;
             let column = childrens[a].column;
 
-            if(grid[row][column].isVisited === true){
+            if(grid[row][column].isVisited){
+                continue;
+            }
+            if(grid[row][column].isWall){
                 continue;
             }
             
