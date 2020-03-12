@@ -39,8 +39,6 @@ export function BFS(grid, startRow, startColumn, endRow, endColumn){
         for (var a = 0; a < childrens.length; a++){
             let row = childrens[a].row;
             let column = childrens[a].column;
-            //children[a].row
-            //children[b].row
 
             if(grid[row][column].isVisited){
                 continue; //skip any node that was already visited
