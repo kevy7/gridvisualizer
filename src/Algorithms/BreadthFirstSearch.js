@@ -50,9 +50,6 @@ export function BFS(grid, startRow, startColumn, endRow, endColumn){
                 continue;
             }
 
-
-            //console.log(grid);
-
             grid[row][column].isVisited = true;
             visited.push({
                 row: row,
