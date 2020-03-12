@@ -81,14 +81,5 @@ export function DFS(grid, startRow, startCol, endRow, endCol){
             }
 
         }
-
-
-
-
     }
-
-
-
-
-
 }
