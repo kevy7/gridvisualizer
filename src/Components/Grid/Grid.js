@@ -81,6 +81,16 @@ class Grid extends Component {
 
     animatePath = () => {
 
+        /******
+         * 
+         * 
+         * 
+         * Work on the code here. Create some way to re-animate your algorithms for the user
+         * 
+         * 
+         * 
+         ******/
+
         let startRow = this.props.selectedGrids.startingGrid.row;
         let startColumn = this.props.selectedGrids.startingGrid.column;
         let endRow = this.props.selectedGrids.endingGrid.row;
