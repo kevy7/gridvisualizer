@@ -41,7 +41,7 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
             }
 
             //Purpose of the code below
-            //This will compare the distance between the current node and this child's preNode
+            //This will compare the distance between the current node and this child's prevNode
             //Which ever is the lowest, will be assigned as the child's previous node
             if(grid[childrens[a].row][childrens[a].column].prevNode.row !== currentNode.row 
                 && grid[childrens[a].row][childrens[a].column].prevNode.column !== currentNode.column
