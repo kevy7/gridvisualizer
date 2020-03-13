@@ -53,15 +53,13 @@ class Grid extends Component {
         }
 
         this.setState({grid: grid});
-
-        //console.log(this.state.grid);
     }
 
     resetGrid = () => {
         let grid = this.createInitialGrid();
         this.setState({grid})
         let nodes = this.state.visited;
-        
+
         for(var a =  0; a < this.state.visited.length; a++){
             if(nodes[a].isStart){continue}
             if(nodes[a].isEnd){continue}
