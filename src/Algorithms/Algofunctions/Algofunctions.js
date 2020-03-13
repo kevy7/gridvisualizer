@@ -1,4 +1,3 @@
-
 //Function used to return childrens of a node
 export function getChildrens(node, maxRow, maxColumn){
     let row = node.row;
