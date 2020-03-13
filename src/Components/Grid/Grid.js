@@ -60,15 +60,13 @@ class Grid extends Component {
         this.setState({grid})
         let nodes = this.state.visited;
 
-        for(var a =  0; a < this.state.visited.length; a++){
-            if(nodes[a].isStart){continue}
-            if(nodes[a].isEnd){continue}
+        /* for(var a =  0; a < this.state.visited.length; a++){
             document.getElementById(`node-${nodes[a].row}-${nodes[a].column}`).className = "node";
-        }
+        } */
 
-        /* this.state.visited.forEach(node => {
+        this.state.visited.forEach(node => {
             document.getElementById(`node-${node.row}-${node.column}`).className = "node";
-        }) */
+        })
 
         this.props.resetSelectedGrids();
         this.props.selectAction(selectStartNode);
@@ -77,16 +75,8 @@ class Grid extends Component {
 
     animatePath = () => {
 
-        /******
-         * 
-         * 
-         * 
-         * Work on the code here. Create some way to re-animate your algorithms for the user
-         * 
-         * 
-         * 
-         ******/
-
+        let grid = this.createInitialGrid(); //This may be inefficient. We don't always want to re-create our grid
+        let nodes = this.state.visited;
         let startRow = this.props.selectedGrids.startingGrid.row;
         let startColumn = this.props.selectedGrids.startingGrid.column;
         let endRow = this.props.selectedGrids.endingGrid.row;
@@ -94,11 +84,29 @@ class Grid extends Component {
         let algoResult;
         let index = 0;
 
+        //The following code below is used for when the user want's to re-run the alogrithm
+        for(var a =  0; a < this.state.visited.length; a++){
+            document.getElementById(`node-${nodes[a].row}-${nodes[a].column}`).className = "node";
+        }
+
+        if(this.props.selectedGrids.startingSelected){
+            grid[startRow][startColumn].isStart = true;
+        }
+
+        if(this.props.selectedGrids.endingSelected){
+            grid[endRow][endColumn].isEnd = true;
+        }
+
+        this.setState({grid});
+
+
+        //The following code is used to run our algorithms
         if(!this.props.selectedGrids.startingGrid.row || !this.props.selectedGrids.endingGrid.row){
             alert("No Starting or End Nodes were selected. Please select a start and end node.")
         }
         else {
 
+        //These codes break if the algo button is pressed twice
         if(this.props.selectedAlgo.selectedAlgo === BreadthFS){
             algoResult = BFS(this.state.grid, startRow, startColumn, endRow, endColumn);
             this.setState({shortestPath: algoResult.shortestPath});
