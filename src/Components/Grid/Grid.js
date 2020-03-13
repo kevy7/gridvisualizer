@@ -61,9 +61,18 @@ class Grid extends Component {
         let grid = this.createInitialGrid();
         this.setState({grid})
         
-        this.state.visited.forEach(node => {
+        //convert this from a forEach to a for loop
+
+        let nodes = this.state.visited;
+        for(var a =  0; a < this.state.visited.length; a++){
+            if(nodes[a].isStart){continue}
+            if(nodes[a].isEnd){continue}
+            document.getElementById(`node-${nodes[a].row}-${nodes[a].column}`).className = "node";
+        }
+
+        /* this.state.visited.forEach(node => {
             document.getElementById(`node-${node.row}-${node.column}`).className = "node";
-        })
+        }) */
 
         this.props.resetSelectedGrids();
         this.props.selectAction(selectStartNode);
