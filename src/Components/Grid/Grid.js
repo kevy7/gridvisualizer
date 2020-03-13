@@ -60,10 +60,8 @@ class Grid extends Component {
     resetGrid = () => {
         let grid = this.createInitialGrid();
         this.setState({grid})
-        
-        //convert this from a forEach to a for loop
-
         let nodes = this.state.visited;
+        
         for(var a =  0; a < this.state.visited.length; a++){
             if(nodes[a].isStart){continue}
             if(nodes[a].isEnd){continue}
