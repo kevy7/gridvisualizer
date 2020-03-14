@@ -109,7 +109,7 @@ class Grid extends Component {
         }
         else {
 
-            //try{
+            try{
             //These codes break if the algo button is pressed twice
 
             if(this.props.selectedAlgo.selectedAlgo === BreadthFS){
@@ -149,12 +149,10 @@ class Grid extends Component {
 
 
 
-            /* }//try
+            }//try
             catch{
-                console.log("catched an error");
-                console.log(startRow);
-                console.log(startColumn);
-            } */
+                alert("Please reset the grid");
+            }
 
 
         }
