@@ -75,8 +75,10 @@ class Grid extends Component {
 
     animatePath = () => {
 
-        let grid = this.createInitialGrid(); //This may be inefficient. We don't always want to re-create our grid
-        let nodes = this.state.visited;
+        //let grid = this.createInitialGrid(); //This may be inefficient. We don't always want to re-create our grid
+        //let nodes = this.state.visited;
+
+
         let startRow = this.props.selectedGrids.startingGrid.row;
         let startColumn = this.props.selectedGrids.startingGrid.column;
         let endRow = this.props.selectedGrids.endingGrid.row;
@@ -85,7 +87,8 @@ class Grid extends Component {
         let index = 0;
 
         //The following code below is used for when the user want's to re-run the alogrithm
-        for(var a =  0; a < this.state.visited.length; a++){
+
+        /* for(var a =  0; a < this.state.visited.length; a++){
             document.getElementById(`node-${nodes[a].row}-${nodes[a].column}`).className = "node";
         }
 
@@ -97,7 +100,7 @@ class Grid extends Component {
             grid[endRow][endColumn].isEnd = true;
         }
 
-        this.setState({grid});
+        this.setState({grid}); */
 
 
         //The following code is used to run our algorithms
@@ -106,41 +109,46 @@ class Grid extends Component {
         }
         else {
 
-        //These codes break if the algo button is pressed twice
-        if(this.props.selectedAlgo.selectedAlgo === BreadthFS){
-            algoResult = BFS(this.state.grid, startRow, startColumn, endRow, endColumn);
-            this.setState({shortestPath: algoResult.shortestPath});
-            this.setState({visited: algoResult.visited});
-        }
-        else if(this.props.selectedAlgo.selectedAlgo === DebthFS){
-            algoResult = DFS(this.state.grid, startRow, startColumn, endRow, endColumn);
-            this.setState({shortestPath: algoResult.shortestPath});
-            this.setState({visited: algoResult.visited});
-        }
-        else if(this.props.selectedAlgo.selectedAlgo === DijkstraAlgo){
-            algoResult = Dijkstra(this.state.grid, startRow, startColumn, endRow, endColumn);
-            this.setState({shortestPath: algoResult.shortestPath});
-            this.setState({visited: algoResult.visited});
-        }
+            //These codes break if the algo button is pressed twice
 
-        algoResult.visited.forEach(node => {
-            index +=1;
+            if(this.props.selectedAlgo.selectedAlgo === BreadthFS){
+                algoResult = BFS(this.state.grid, startRow, startColumn, endRow, endColumn);
+                this.setState({shortestPath: algoResult.shortestPath});
+                this.setState({visited: algoResult.visited});
+            }
+            else if(this.props.selectedAlgo.selectedAlgo === DebthFS){
+                algoResult = DFS(this.state.grid, startRow, startColumn, endRow, endColumn);
+                this.setState({shortestPath: algoResult.shortestPath});
+                this.setState({visited: algoResult.visited});
+            }
+            else if(this.props.selectedAlgo.selectedAlgo === DijkstraAlgo){
+                algoResult = Dijkstra(this.state.grid, startRow, startColumn, endRow, endColumn);
+                this.setState({shortestPath: algoResult.shortestPath});
+                this.setState({visited: algoResult.visited});
+            }
 
-            setTimeout(() => {
+            algoResult.visited.forEach(node => {
+                index +=1;
 
-                document.getElementById(`node-${node.row}-${node.column}`).className = "node node-visited";
+                setTimeout(() => {
 
-            }, index * 10);
-        });
+                    document.getElementById(`node-${node.row}-${node.column}`).className = "node node-visited";
 
-        algoResult.shortestPath.reverse(); //to reverse the shortestPath
+                }, index * 10);
+            });
 
-        algoResult.shortestPath.forEach(node => {
-            index+=1;
-            setTimeout(() => {
-                document.getElementById(`node-${node.row}-${node.column}`).className = "node node-path";
-            }, index * 10.5);
-        })
+            algoResult.shortestPath.reverse(); //to reverse the shortestPath
+
+            algoResult.shortestPath.forEach(node => {
+                index+=1;
+                setTimeout(() => {
+                    document.getElementById(`node-${node.row}-${node.column}`).className = "node node-path";
+                }, index * 10.5);
+            })
+
+
+
+
         }
     }
 
