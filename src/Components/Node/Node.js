@@ -117,7 +117,6 @@ class Node extends Component {
             //document.getElementById(`node-${this.props.row}-${this.props.column}`).className = "node node-wall";
         }
         
-        
         //Consider adding another div component within this one for css styling purposes
         return (
             <div 
