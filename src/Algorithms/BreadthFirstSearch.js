@@ -5,13 +5,10 @@ import { cloneWithoutLoc } from "@babel/types";
 export function BFS(grid, startRow, startColumn, endRow, endColumn){
 
     let counter = 0;
-    
     let maxRow = grid.length;
     let maxColumn = grid[0].length;
-
     let startingNode = grid[startRow][startColumn]; //this will be our starting node
     let current;
-
     let queue = [];
     let visited = [];
 
@@ -65,8 +62,10 @@ export function BFS(grid, startRow, startColumn, endRow, endColumn){
 
                 let shortestPath = getShortestPath(grid, grid[row][column]);
 
-                console.log({shortestPath: shortestPath,
-                    visited: visited})
+                /* console.log({shortestPath: shortestPath,
+                    visited: visited}) */
+
+                console.log(shortestPath);
 
                 return {
                     shortestPath: shortestPath,
