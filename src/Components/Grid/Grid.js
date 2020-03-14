@@ -147,8 +147,6 @@ class Grid extends Component {
                 }, index * 10.5);
             })
 
-
-
             }//try
             catch{
                 alert("Please reset the grid");
