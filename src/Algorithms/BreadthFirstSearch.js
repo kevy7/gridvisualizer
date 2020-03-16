@@ -59,7 +59,6 @@ export function BFS(grid, startRow, startColumn, endRow, endColumn){
             if(endRow === childrens[a].row && endColumn === childrens[a].column){
 
                 let shortestPath = getShortestPath(grid, grid[row][column]);
-                console.log(shortestPath);
 
                 return {
                     shortestPath: shortestPath,
