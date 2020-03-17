@@ -19,7 +19,31 @@ const GreedyBestFirstSearch = (grid, startRow, startColumn, endRow, endColumn) =
     let visited = [];
 
     //set starting nodes distance to 0 since we want to remove it from our queue first
-    
+    startingNode.distance = 0;
+    priorityQueue.addQueue(startingNode);
+
+    while(priorityQueue.queue.length){
+        currentNode = priorityQueue.deQueue();
+        if(currentNode.isVisited !== true){
+            currentNode.isVisited = true;
+            visited.push({
+                row: currentNode.row,
+                column: currentNode.column
+            });
+        }
+
+        let childrens = getChildrens(currentNode, maxRow, maxColumn);
+
+        for(var a = 0; a < childrens.length; a++){
+            //loop through each of the current node's children
+
+            //Work on this section
+        }
+
+
+
+
+    }
 
 
 
