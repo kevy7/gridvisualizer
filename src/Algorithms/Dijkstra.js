@@ -11,7 +11,7 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
     startingNode.distance = 0;
     queue.addQueue(startingNode);
     let currentNode;
-    let childrens
+    let childrens;
 
     while(queue.queue.length){
         currentNode = queue.deQueue(); //Remove first priority from your array

@@ -13,7 +13,23 @@ const GreedyBestFirstSearch = (grid, startRow, startColumn, endRow, endColumn) =
     //Row = Y coordinates
 
     
+
     
+}
+
+//This is our heuristic, this function will calculate the estimate distance between a node and our selected end node
+const manhattanDistance = (row, column, endRow, endColumn) => {
+    /*
+        (x1, x2)
+        (y1, y2)
+
+        manHattanDistance formula = | x1- y1 | + | x2 - y2 |
+
+    */
+
+    let estDistance = (Math.abs(row - endRow) + Math.abs(column - endColumn));
+
+    return estDistance;
 }
 
 export default GreedyBestFirstSearch;
