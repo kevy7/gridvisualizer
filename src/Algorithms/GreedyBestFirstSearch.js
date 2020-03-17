@@ -12,8 +12,18 @@ const GreedyBestFirstSearch = (grid, startRow, startColumn, endRow, endColumn) =
     //Column = X coordinates
     //Row = Y coordinates
 
+    let maxRow = grid.length; //used on the getChildrens algorithm
+    let maxColumn = grid[0].length; //used on the getChildrens algorithm
+    let startingNode = grid[startRow][startColumn];
+    let currentNode;
+    let visited = [];
+
+    //set starting nodes distance to 0 since we want to remove it from our queue first
     
 
+
+
+    
     
 }
 
