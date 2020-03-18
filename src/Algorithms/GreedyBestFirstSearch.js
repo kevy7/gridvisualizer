@@ -38,6 +38,8 @@ const GreedyBestFirstSearch = (grid, startRow, startColumn, endRow, endColumn) =
             //loop through each of the current node's children
 
             //Work on this section
+
+            //Issue with this program, how will it work if we apply weights to our grids?
         }
 
 
