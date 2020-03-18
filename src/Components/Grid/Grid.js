@@ -7,6 +7,7 @@ import Node from "../Node/Node";
 import { BFS } from "../../Algorithms/BreadthFirstSearch";
 import { DFS } from "../../Algorithms/DebthFirstSearch";
 import Dijkstra from "../../Algorithms/Dijkstra";
+import GreedyBestFirstSearch from "../../Algorithms/GreedyBestFirstSearch";
 import { selectStartNode, selectEndNode, selectTraffic, selectWall } from '../../userActions/userActions';
 import { BreadthFS, DebthFS, DijkstraAlgo } from '../../userAlgo/userAlgo';
 import { selectAction, resetSelectedGrids } from '../../actions/index';
@@ -157,7 +158,11 @@ class Grid extends Component {
     }
 
     testFunction = () => {
-
+        let startRow = this.props.selectedGrids.startingGrid.row;
+        let startColumn = this.props.selectedGrids.startingGrid.column;
+        let endRow = this.props.selectedGrids.endingGrid.row;
+        let endColumn = this.props.selectedGrids.endingGrid.column;
+        GreedyBestFirstSearch(this.state.grid, startRow, startColumn, endRow, endColumn);
     }
 
     render(){
