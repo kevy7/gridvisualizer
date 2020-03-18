@@ -36,8 +36,6 @@ const GreedyBestFirstSearch = (grid, startRow, startColumn, endRow, endColumn) =
 
         for(var a = 0; a < childrens.length; a++){
             //loop through each of the current node's children
-
-            //Work on this section
             let childRow = childrens[a].row;
             let childCol = childrens[a].column;
             let distance = manhattanDistance(childRow, childCol, endRow, endColumn);
