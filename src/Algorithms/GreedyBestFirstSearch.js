@@ -40,10 +40,37 @@ const GreedyBestFirstSearch = (grid, startRow, startColumn, endRow, endColumn) =
             //Work on this section
             let childRow = childrens[a].row;
             let childCol = childrens[a].column;
-
             let distance = manhattanDistance(childRow, childCol, endRow, endColumn);
 
-            console.log(distance);
+            //Don't do anything with this node if it is a wall or already visited
+            if(grid[childRow][childCol].isWall){continue}
+            if(grid[childRow][childCol].isVisited){continue}
+
+            //assign current child's previous node
+            grid[childRow][childCol].prevNode = {
+                row: currentNode.row,
+                column: currentNode.column
+            };
+
+            //assign the current child's distance
+            if(grid[childRow][childCol].isWeight){
+                grid[childRow][childCol].distance = distance + 14;
+            }
+            else {
+                grid[childRow][childCol].distance = distance 
+            }
+
+            if(currentNode.row === endRow && currentNode.column === endColumn){
+                let shortestPath = getShortestPath(grid, grid[endRow][endColumn]);
+                return {
+                    visited: visited,
+                    shortestPath: shortestPath
+                }
+            }
+
+            //add current child node into the queue after it has been assigned a previous node and distance
+            queue.addQueue(grid[childRow][childCol]);
+
         }
 
 
