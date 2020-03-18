@@ -5,7 +5,7 @@ import priorityQueue from '../dataStructures/priorityQueue';
 //lower estimated distance to the end
 
 const GreedyBestFirstSearch = (grid, startRow, startColumn, endRow, endColumn) => {
-    let priorityQueue = new priorityQueue(); //Created an instance of priorityQueue class
+    let queue = new priorityQueue(); //Created an instance of priorityQueue class
 
     //For our Greedy BFS, our heuristic (an estimate measure of how far something is to an endpoint) is going to be based on Manhattan Distance
 
@@ -20,10 +20,10 @@ const GreedyBestFirstSearch = (grid, startRow, startColumn, endRow, endColumn) =
 
     //set starting nodes distance to 0 since we want to remove it from our queue first
     startingNode.distance = 0;
-    priorityQueue.addQueue(startingNode);
+    queue.addQueue(startingNode);
 
-    while(priorityQueue.queue.length){
-        currentNode = priorityQueue.deQueue();
+    while(queue.queue.length){
+        currentNode = queue.deQueue();
         if(currentNode.isVisited !== true){
             currentNode.isVisited = true;
             visited.push({
@@ -39,7 +39,7 @@ const GreedyBestFirstSearch = (grid, startRow, startColumn, endRow, endColumn) =
 
             //Work on this section
             let childRow = childrens[a].row;
-            let childCol = childrend[a].column;
+            let childCol = childrens[a].column;
 
             let distance = manhattanDistance(childRow, childCol, endRow, endColumn);
 
