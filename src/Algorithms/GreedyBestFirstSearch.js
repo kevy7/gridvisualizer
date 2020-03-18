@@ -38,8 +38,12 @@ const GreedyBestFirstSearch = (grid, startRow, startColumn, endRow, endColumn) =
             //loop through each of the current node's children
 
             //Work on this section
+            let childRow = childrens[a].row;
+            let childCol = childrend[a].column;
 
-            //Issue with this program, how will it work if we apply weights to our grids?
+            let distance = manhattanDistance(childRow, childCol, endRow, endColumn);
+
+            console.log(distance);
         }
 
 
