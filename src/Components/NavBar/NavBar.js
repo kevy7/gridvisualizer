@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import "./NavBar.css";
 import { selectEndNode, selectTraffic, selectWall,  testAction } from '../../userActions/userActions';
 import { selectAction, selectAlgorithm } from '../../actions/index';
-import { BreadthFS, DebthFS, DijkstraAlgo } from '../../userAlgo/userAlgo';
+import { BreadthFS, DebthFS, DijkstraAlgo, GreedyBFS } from '../../userAlgo/userAlgo';
 
 class NavBar extends Component {
     /*
@@ -59,6 +59,10 @@ class NavBar extends Component {
 
     selectDijkstraAlgo = () => {
         this.props.selectAlgorithm(DijkstraAlgo);
+    }
+
+    selectGreedyBFS = () => {
+        this.props.selectAlgorithm(GreedyBFS);
     }
 
     selectTest = () => {
@@ -160,6 +164,12 @@ class NavBar extends Component {
                                         onClick={this.selectDijkstraAlgo}
                                     >
                                         Dijkstra's Algorithm
+                                    </div>
+                                    <div
+                                        className="navbar-item navItem-hover" 
+                                        onClick={this.selectGreedyBFS}
+                                    >
+                                        Greedy Best-First-Search
                                     </div>
                                 </div>
                             </div>
