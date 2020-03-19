@@ -9,7 +9,7 @@ import { DFS } from "../../Algorithms/DebthFirstSearch";
 import Dijkstra from "../../Algorithms/Dijkstra";
 import GreedyBestFirstSearch from "../../Algorithms/GreedyBestFirstSearch";
 import { selectStartNode, selectEndNode, selectTraffic, selectWall } from '../../userActions/userActions';
-import { BreadthFS, DebthFS, DijkstraAlgo } from '../../userAlgo/userAlgo';
+import { BreadthFS, DebthFS, DijkstraAlgo, GreedyBFS } from '../../userAlgo/userAlgo';
 import { selectAction, resetSelectedGrids } from '../../actions/index';
 import { func } from 'prop-types';
 import { writeFile } from 'fs';
