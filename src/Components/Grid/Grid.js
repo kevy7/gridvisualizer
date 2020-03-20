@@ -23,6 +23,7 @@ class Grid extends Component {
         action: undefined,
         shortestPath: [], //We probably don't need this anymore
         visited: [],
+        traffic: [],
         walls: [],
 
     }
@@ -32,8 +33,24 @@ class Grid extends Component {
         this.setState({grid})
     }
 
-    addTraffic = () => {
-        
+    addTraffic = (row, column) => {
+        let traffic = this.state.traffic;
+        let selectedNode = {
+            row: row,
+            column: column
+        }
+
+        //use .includes to check if the array already contains your object
+        if(!traffic.includes(selectedNode)){
+            //if the traffic array doesn't contain the your object, add it into the object
+            //For this reason, this won't allow us to add multiple of the same objects
+            traffic.push(selectedNode);
+            
+        }
+
+
+        return traffic;
+
     }
 
     addWall = () => {
