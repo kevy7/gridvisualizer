@@ -35,6 +35,7 @@ class Grid extends Component {
 
     addTraffic = (row, column) => {
         let traffic = this.state.traffic;
+        let walls = this.state.walls;
         let selectedNode = {
             row: row,
             column: column
@@ -46,10 +47,15 @@ class Grid extends Component {
             //if the traffic array doesn't contain the your object, add it into the object
             //For this reason, this won't allow us to add multiple of the same objects
             traffic.push(selectedNode);
+            this.setState({traffic: traffic});
+        }
+
+        if(walls.includes(selectedNode)){
+
         }
 
 
-        return traffic;
+
 
     }
 
@@ -196,11 +202,30 @@ class Grid extends Component {
     }
 
     testFunction = () => {
-        let startRow = this.props.selectedGrids.startingGrid.row;
+        /* let startRow = this.props.selectedGrids.startingGrid.row;
         let startColumn = this.props.selectedGrids.startingGrid.column;
         let endRow = this.props.selectedGrids.endingGrid.row;
         let endColumn = this.props.selectedGrids.endingGrid.column;
-        console.log(GreedyBestFirstSearch(this.state.grid, startRow, startColumn, endRow, endColumn));
+        console.log(GreedyBestFirstSearch(this.state.grid, startRow, startColumn, endRow, endColumn)); */
+
+        let object1 = {
+            row: 1,
+            column: 1
+        }
+        let object2 = {
+            row: 1,
+            column: 1
+        }
+
+        //Example of how to filter out arrays
+        //const result = words.filter(word => word.length > 6);
+
+        //Currently identifying if there is a way to compare objects
+        console.log("you're running this code");
+
+        if(object1 === object2){
+            console.log("these two match!");
+        }
     }
 
     render(){
