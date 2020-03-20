@@ -60,7 +60,7 @@ class Grid extends Component {
             /*
                 Example of how to filter something out of an array
 
-                let poop = testArray.filter(test =>
+                let testing = testArray.filter(test =>
                     test !== object4
                 )
             */
