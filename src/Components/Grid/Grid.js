@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-
 import Styles from './Grid.module.css';
 import Node from "../Node/Node";
-
 import { BFS } from "../../Algorithms/BreadthFirstSearch";
 import { DFS } from "../../Algorithms/DebthFirstSearch";
 import Dijkstra from "../../Algorithms/Dijkstra";
