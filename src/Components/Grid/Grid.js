@@ -41,17 +41,31 @@ class Grid extends Component {
             column: column
         }
 
+        //console.log(traffic);
+
+        //THE .includes function is not working the way it's suppsoed to
+
         //This code won't work at the moment!!!!
         //use .includes to check if the array already contains your object
         if(!traffic.includes(selectedNode)){
             //if the traffic array doesn't contain the your object, add it into the object
             //For this reason, this won't allow us to add multiple of the same objects
+
             traffic.push(selectedNode);
-            this.setState({traffic: traffic});
+            // this.setState({traffic: traffic});
+            console.log("this function will execute")
         }
 
         if(walls.includes(selectedNode)){
+            /*
+                Example of how to filter something out of an array
 
+                let poop = testArray.filter(test =>
+                    test !== object4
+                )
+            */
+            let newWalls = walls.filter(wall => wall !== selectedNode);
+            this.setState({walls: newWalls});
         }
 
 
@@ -66,8 +80,6 @@ class Grid extends Component {
     //This function will be used to update the grid
     updateState = (row, column, userAction) => {
         let grid = this.state.grid;
-        let traffic;
-        let walls;
 
         //grid[row][column]
         if(userAction === selectStartNode){
@@ -80,7 +92,7 @@ class Grid extends Component {
         else if(userAction === selectTraffic){
             grid[row][column].isWall = false;
             grid[row][column].isWeight = true;
-            
+            this.addTraffic(row, column);
 
             //Everytime this code gets executed, we want to push it into an array
         }
@@ -208,24 +220,9 @@ class Grid extends Component {
         let endColumn = this.props.selectedGrids.endingGrid.column;
         console.log(GreedyBestFirstSearch(this.state.grid, startRow, startColumn, endRow, endColumn)); */
 
-        let object1 = {
-            row: 1,
-            column: 1
-        }
-        let object2 = {
-            row: 1,
-            column: 1
-        }
+        let array = [{row: 1, column: 2}, {row: 1, column: 3}, {row: 1, column: 7}];
 
-        //Example of how to filter out arrays
-        //const result = words.filter(word => word.length > 6);
-
-        //Currently identifying if there is a way to compare objects
-        console.log("you're running this code");
-
-        if(object1 === object2){
-            console.log("these two match!");
-        }
+        
     }
 
     render(){
