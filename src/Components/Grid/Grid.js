@@ -125,8 +125,10 @@ class Grid extends Component {
     animatePath = () => {
 
         //used to re-run algorithm
-        let grid = this.createInitialGrid(); //This may be inefficient. We don't always want to re-create our grid
-        let nodes = this.state.visited;
+
+        /* let grid = this.createInitialGrid(); //This may be inefficient. We don't always want to re-create our grid
+        let nodes = this.state.visited; */
+
         //used to re-run algorithm
 
 
@@ -139,7 +141,10 @@ class Grid extends Component {
 
         //The following code below is used for when the user want's to re-run the alogrithm
         //reset all nodes
-        for(var a =  0; a < this.state.visited.length; a++){
+
+
+
+        /* for(var a =  0; a < this.state.visited.length; a++){
             document.getElementById(`node-${nodes[a].row}-${nodes[a].column}`).className = "node";
         }
 
@@ -150,7 +155,9 @@ class Grid extends Component {
         if(this.props.selectedGrids.endingSelected){
             grid[endRow][endColumn].isEnd = true;
         }
-        this.setState({grid});
+        this.setState({grid}); */
+
+
 
 
 
