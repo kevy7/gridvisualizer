@@ -21,13 +21,23 @@ class Grid extends Component {
         endRow: null,
         endColumn: null,
         action: undefined,
-        shortestPath: [],
-        visited: []
+        shortestPath: [], //We probably don't need this anymore
+        visited: [],
+        walls: [],
+
     }
 
     componentWillMount = () => {
         let grid = this.createInitialGrid();
         this.setState({grid})
+    }
+
+    addTraffic = () => {
+        
+    }
+
+    addWall = () => {
+        
     }
 
     //This function will be used to update the grid
@@ -45,6 +55,9 @@ class Grid extends Component {
         else if(userAction === selectTraffic){
             grid[row][column].isWall = false;
             grid[row][column].isWeight = true;
+            
+
+            //Everytime this code gets executed, we want to push it into an array
         }
         else if(userAction === selectWall){
             grid[row][column].isWall = true;
@@ -74,8 +87,10 @@ class Grid extends Component {
 
     animatePath = () => {
 
-        //let grid = this.createInitialGrid(); //This may be inefficient. We don't always want to re-create our grid
-        //let nodes = this.state.visited;
+        //used to re-run algorithm
+        let grid = this.createInitialGrid(); //This may be inefficient. We don't always want to re-create our grid
+        let nodes = this.state.visited;
+        //used to re-run algorithm
 
 
         let startRow = this.props.selectedGrids.startingGrid.row;
@@ -86,8 +101,8 @@ class Grid extends Component {
         let index = 0;
 
         //The following code below is used for when the user want's to re-run the alogrithm
-
-        /* for(var a =  0; a < this.state.visited.length; a++){
+        //reset all nodes
+        for(var a =  0; a < this.state.visited.length; a++){
             document.getElementById(`node-${nodes[a].row}-${nodes[a].column}`).className = "node";
         }
 
@@ -98,8 +113,9 @@ class Grid extends Component {
         if(this.props.selectedGrids.endingSelected){
             grid[endRow][endColumn].isEnd = true;
         }
+        this.setState({grid});
 
-        this.setState({grid}); */
+
 
 
         //The following code is used to run our algorithms
@@ -113,22 +129,22 @@ class Grid extends Component {
 
             if(this.props.selectedAlgo.selectedAlgo === BreadthFS){
                 algoResult = BFS(this.state.grid, startRow, startColumn, endRow, endColumn);
-                this.setState({shortestPath: algoResult.shortestPath});
+                //this.setState({shortestPath: algoResult.shortestPath});
                 this.setState({visited: algoResult.visited});
             }
             else if(this.props.selectedAlgo.selectedAlgo === DebthFS){
                 algoResult = DFS(this.state.grid, startRow, startColumn, endRow, endColumn);
-                this.setState({shortestPath: algoResult.shortestPath});
+                //this.setState({shortestPath: algoResult.shortestPath});
                 this.setState({visited: algoResult.visited});
             }
             else if(this.props.selectedAlgo.selectedAlgo === DijkstraAlgo){
                 algoResult = Dijkstra(this.state.grid, startRow, startColumn, endRow, endColumn);
-                this.setState({shortestPath: algoResult.shortestPath});
+                //this.setState({shortestPath: algoResult.shortestPath});
                 this.setState({visited: algoResult.visited});
             }
             else if(this.props.selectedAlgo.selectedAlgo === GreedyBFS){
                 algoResult = GreedyBestFirstSearch(this.state.grid, startRow, startColumn, endRow, endColumn);
-                this.setState({shortestPath: algoResult.shortestPath});
+                //this.setState({shortestPath: algoResult.shortestPath});
                 this.setState({visited: algoResult.visited});
             }
 
