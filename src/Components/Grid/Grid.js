@@ -40,12 +40,12 @@ class Grid extends Component {
             column: column
         }
 
+        //This code won't work at the moment!!!!
         //use .includes to check if the array already contains your object
         if(!traffic.includes(selectedNode)){
             //if the traffic array doesn't contain the your object, add it into the object
             //For this reason, this won't allow us to add multiple of the same objects
             traffic.push(selectedNode);
-            
         }
 
 
@@ -60,6 +60,8 @@ class Grid extends Component {
     //This function will be used to update the grid
     updateState = (row, column, userAction) => {
         let grid = this.state.grid;
+        let traffic;
+        let walls;
 
         //grid[row][column]
         if(userAction === selectStartNode){
