@@ -160,9 +160,6 @@ class Grid extends Component {
 
         //The following code below is used for when the user want's to re-run the alogrithm
         //reset all nodes
-
-
-
         for(var a =  0; a < this.state.visited.length; a++){
             document.getElementById(`node-${nodes[a].row}-${nodes[a].column}`).className = "node";
         }
@@ -190,6 +187,7 @@ class Grid extends Component {
         }
 
         this.setState({grid});
+        
 
         //The following code is used to run our algorithms
         if(!this.props.selectedGrids.startingGrid.row || !this.props.selectedGrids.endingGrid.row){
