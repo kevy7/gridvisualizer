@@ -264,10 +264,6 @@ class Grid extends Component {
 
         console.log(newArray);
 
-
-
-
-        
     }
 
     render(){
