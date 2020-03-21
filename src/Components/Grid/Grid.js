@@ -42,22 +42,15 @@ class Grid extends Component {
             column: column
         }
 
-        //console.log(traffic);
-
-        //THE .includes function is not working the way it's suppsoed to
-
-        //This code won't work at the moment!!!!
-        //use .includes to check if the array already contains your object
-        if(!traffic.includes(selectedNode)){
+        if(ifContainsObject(traffic, selectedNode) === false){
             //if the traffic array doesn't contain the your object, add it into the object
             //For this reason, this won't allow us to add multiple of the same objects
 
             traffic.push(selectedNode);
-            // this.setState({traffic: traffic});
-            console.log("this function will execute")
+            // this.setState({traffic: traffic}); //Looks like this is not needed?
         }
 
-        if(walls.includes(selectedNode)){
+        if(ifContainsObject(traffic, selectedNode) === true){
             /*
                 Example of how to filter something out of an array
 
@@ -68,8 +61,6 @@ class Grid extends Component {
             let newWalls = walls.filter(wall => wall !== selectedNode);
             this.setState({walls: newWalls});
         }
-
-
 
 
     }
@@ -228,15 +219,7 @@ class Grid extends Component {
         let endColumn = this.props.selectedGrids.endingGrid.column;
         console.log(GreedyBestFirstSearch(this.state.grid, startRow, startColumn, endRow, endColumn)); */
 
-        let array = [{row: 1, column: 2}, {row: 1, column: 3}, {row: 1, column: 7}];
-
-        let testObject = {
-            row: 1, column: 2
-        }
-
-        let value = ifContainsObject(array, testObject);
-
-        console.log(value);
+        console.log(this.state.traffic);
 
         
     }
