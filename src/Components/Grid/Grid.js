@@ -251,13 +251,6 @@ class Grid extends Component {
         //console.log(this.state.walls);
 
 
-        /* if(ifContainsObject(traffic, selectedNode) === true){
-            let newTraffic = traffic.filter(trafficComp => trafficComp !== selectedNode);
-            this.setState({traffic: newTraffic});
-        } */
-
-
-
         //Filter function currently doesn't work!!!
         //Look into the link below
         //https://stackoverflow.com/questions/31831651/javascript-filter-array-multiple-conditions
