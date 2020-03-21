@@ -51,6 +51,7 @@ class Grid extends Component {
         }
 
         if(ifContainsObject(walls, selectedNode) === true){
+            console.log("this is executed");
             /*
                 Example of how to filter something out of an array
 
@@ -59,6 +60,7 @@ class Grid extends Component {
                 )
             */
             let newWalls = walls.filter(wall => wall !== selectedNode);
+            console.log(newWalls);
             this.setState({walls: newWalls});
         }
 
@@ -105,6 +107,7 @@ class Grid extends Component {
         else if(userAction === selectWall){
             grid[row][column].isWall = true;
             grid[row][column].isWeight = false;
+            this.addWall(row, column);
         }
 
         this.setState({grid: grid});
@@ -243,8 +246,28 @@ class Grid extends Component {
         let endColumn = this.props.selectedGrids.endingGrid.column;
         console.log(GreedyBestFirstSearch(this.state.grid, startRow, startColumn, endRow, endColumn)); */
 
-        console.log(this.state.traffic);
-        console.log(this.state.walls);
+        
+        //console.log(this.state.traffic);
+        //console.log(this.state.walls);
+
+
+        /* if(ifContainsObject(traffic, selectedNode) === true){
+            let newTraffic = traffic.filter(trafficComp => trafficComp !== selectedNode);
+            this.setState({traffic: newTraffic});
+        } */
+
+        let testArray = [{row: 1, column: 2}, {row: 1, column: 3}, {row: 1, column: 4}, {row: 1, column: 5}];
+        let object1 = {
+            row: 1,
+            column: 2
+        }
+
+        let newArray = testArray.filter(value => value !== object1);
+
+        console.log(newArray);
+
+
+
 
         
     }
