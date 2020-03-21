@@ -231,7 +231,7 @@ class Grid extends Component {
         let array = [{row: 1, column: 2}, {row: 1, column: 3}, {row: 1, column: 7}];
 
         let testObject = {
-            row: 1, column: 1
+            row: 1, column: 2
         }
 
         let value = ifContainsObject(array, testObject);

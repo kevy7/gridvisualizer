@@ -3,7 +3,7 @@
     then output it as true and stop the function.
 */
 const ifContainsObject = (arrayObjects, objectVal) => {
-    let ifContains = false;
+    var ifContains = false;
 
     /*
 
@@ -16,16 +16,16 @@ const ifContainsObject = (arrayObjects, objectVal) => {
 
     */
 
-    for(var a = 0; a < arrayObjects; a++){
+    for(var a = 0; a < arrayObjects.length; a++){
         if(arrayObjects[a].row === objectVal.row 
         && arrayObjects[a].column === objectVal.column){
-            console.log("this returns as true");
             ifContains = true;
-            break;
         }
     }
 
+    //return true if array contains the object
     return ifContains;
+
 }
 
 export default ifContainsObject;
