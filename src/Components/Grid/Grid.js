@@ -53,14 +53,19 @@ class Grid extends Component {
         if(ifContainsObject(walls, selectedNode) === true){
             console.log("this is executed");
             /*
-                Example of how to filter something out of an array
-
-                let testing = testArray.filter(test =>
-                    test !== object4
-                )
+                New example of how to filter an array
+                
+                let newArray = testArray.filter(function (el) {
+                    return el.row !== object1.row ||
+                    el.column !== object1.column
+                });
             */
-            let newWalls = walls.filter(wall => wall !== selectedNode);
-            console.log(newWalls);
+
+            //The code below will filter out and remove the 
+            let newWalls = walls.filter(function (wall){
+                return wall.row !== selectedNode.row ||
+                wall.column !== selectedNode.column
+            });
             this.setState({walls: newWalls});
         }
 
@@ -79,7 +84,10 @@ class Grid extends Component {
             walls.push(selectedNode);
         }
         if(ifContainsObject(traffic, selectedNode) === true){
-            let newTraffic = traffic.filter(trafficComp => trafficComp !== selectedNode);
+            let newTraffic = traffic.filter(function (trafficVal){
+                return trafficVal.row !== selectedNode.row ||
+                trafficVal.column !== selectedNode.column
+            });
             this.setState({traffic: newTraffic});
         }
 
@@ -247,22 +255,25 @@ class Grid extends Component {
         console.log(GreedyBestFirstSearch(this.state.grid, startRow, startColumn, endRow, endColumn)); */
 
 
-        //console.log(this.state.traffic);
-        //console.log(this.state.walls);
+        console.log(this.state.traffic);
+        console.log(this.state.walls);
 
 
         //Filter function currently doesn't work!!!
         //Look into the link below
         //https://stackoverflow.com/questions/31831651/javascript-filter-array-multiple-conditions
-        let testArray = [{row: 1, column: 2}, {row: 1, column: 3}, {row: 1, column: 4}, {row: 1, column: 5}];
+        /* let testArray = [{row: 1, column: 2}, {row: 1, column: 3}, {row: 1, column: 4}, {row: 1, column: 5}];
         let object1 = {
             row: 1,
-            column: 2
+            column: 3
         }
 
-        let newArray = testArray.filter(value => value.column !== 2 && value.row !== 1);
+        let newArray = testArray.filter(function (el) {
+            return el.row !== object1.row ||
+            el.column !== object1.column
+        });
 
-        console.log(newArray);
+        console.log(newArray); */
 
     }
 
