@@ -230,9 +230,13 @@ class Grid extends Component {
 
         let array = [{row: 1, column: 2}, {row: 1, column: 3}, {row: 1, column: 7}];
 
-        let testObjcet = {
+        let testObject = {
             row: 1, column: 1
         }
+
+        let value = ifContainsObject(array, testObject);
+
+        console.log(value);
 
         
     }

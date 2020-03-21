@@ -16,7 +16,7 @@ const ifContainsObject = (arrayObjects, objectVal) => {
 
     */
 
-    for(var a = 0; a < ArrayObjects; a++){
+    for(var a = 0; a < arrayObjects; a++){
         if(arrayObjects[a].row === objectVal.row 
         && arrayObjects[a].column === objectVal.column){
             console.log("this returns as true");
