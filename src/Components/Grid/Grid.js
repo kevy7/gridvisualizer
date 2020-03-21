@@ -229,6 +229,10 @@ class Grid extends Component {
 
         let array = [{row: 1, column: 2}, {row: 1, column: 3}, {row: 1, column: 7}];
 
+        let testObjcet = {
+            row: 1, column: 1
+        }
+
         
     }
 

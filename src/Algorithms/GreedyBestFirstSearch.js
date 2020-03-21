@@ -38,7 +38,7 @@ const GreedyBestFirstSearch = (grid, startRow, startColumn, endRow, endColumn) =
             //loop through each of the current node's children
             let childRow = childrens[a].row;
             let childCol = childrens[a].column;
-            let distance = manhattanDistance(childRow, childCol, endRow, endColumn);
+            let distance = manhattanDistance(childRow, childCol, endRow, endColumn); //This is our hueristic
 
             //Don't do anything with this node if it is a wall or already visited
             if(grid[childRow][childCol].isWall){continue}
