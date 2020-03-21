@@ -246,7 +246,7 @@ class Grid extends Component {
         let endColumn = this.props.selectedGrids.endingGrid.column;
         console.log(GreedyBestFirstSearch(this.state.grid, startRow, startColumn, endRow, endColumn)); */
 
-        
+
         //console.log(this.state.traffic);
         //console.log(this.state.walls);
 
@@ -256,13 +256,18 @@ class Grid extends Component {
             this.setState({traffic: newTraffic});
         } */
 
+
+
+        //Filter function currently doesn't work!!!
+        //Look into the link below
+        //https://stackoverflow.com/questions/31831651/javascript-filter-array-multiple-conditions
         let testArray = [{row: 1, column: 2}, {row: 1, column: 3}, {row: 1, column: 4}, {row: 1, column: 5}];
         let object1 = {
             row: 1,
             column: 2
         }
 
-        let newArray = testArray.filter(value => value !== object1);
+        let newArray = testArray.filter(value => value.column !== 2 && value.row !== 1);
 
         console.log(newArray);
 
