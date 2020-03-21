@@ -175,19 +175,21 @@ class Grid extends Component {
             grid[endRow][endColumn].isEnd = true;
         }
 
-        //If any traffic was already pre-selected, re-select them
+        //If any traffic was already pre-selected, re-select them for animation.
         if(this.state.traffic.length > 0){
             for(var a = 0; a < this.state.traffic.length; a++){
                 grid[this.state.traffic[a].row][this.state.traffic[a].column].isWeight = true;
             }
         }
 
+        //If any walls was already pre-selected, re-select them for animation.
+        if(this.state.walls.length > 0){
+            for(var b = 0; b < this.state.walls.length; b++){
+                grid[this.state.walls[b].row][this.state.walls[b].column].isWall = true;
+            }
+        }
+
         this.setState({grid});
-
-
-
-
-
 
         //The following code is used to run our algorithms
         if(!this.props.selectedGrids.startingGrid.row || !this.props.selectedGrids.endingGrid.row){
