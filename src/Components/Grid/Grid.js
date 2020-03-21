@@ -50,7 +50,7 @@ class Grid extends Component {
             // this.setState({traffic: traffic}); //Looks like this is not needed?
         }
 
-        if(ifContainsObject(traffic, selectedNode) === true){
+        if(ifContainsObject(walls, selectedNode) === true){
             /*
                 Example of how to filter something out of an array
 
@@ -65,8 +65,22 @@ class Grid extends Component {
 
     }
 
-    addWall = () => {
-        
+    addWall = (row, column) => {
+        let traffic = this.state.traffic;
+        let walls = this.state.walls;
+        let selectedNode = {
+            row: row,
+            column: column
+        }
+
+        if(ifContainsObject(walls, selectedNode) === false){
+            walls.push(selectedNode);
+        }
+        if(ifContainsObject(traffic, selectedNode) === true){
+            let newTraffic = traffic.filter(trafficComp => trafficComp !== selectedNode);
+            this.setState({traffic: newTraffic});
+        }
+
     }
 
     //This function will be used to update the grid
@@ -99,6 +113,8 @@ class Grid extends Component {
     resetGrid = () => {
         let grid = this.createInitialGrid();
         this.setState({grid})
+        this.setState({traffic: []})
+        this.setState({walls: []});
         let nodes = this.state.visited;
 
         /* for(var a =  0; a < this.state.visited.length; a++){
@@ -118,8 +134,8 @@ class Grid extends Component {
 
         //used to re-run algorithm
 
-        /* let grid = this.createInitialGrid(); //This may be inefficient. We don't always want to re-create our grid
-        let nodes = this.state.visited; */
+        let grid = this.createInitialGrid(); //This may be inefficient. We don't always want to re-create our grid
+        let nodes = this.state.visited;
 
         //used to re-run algorithm
 
@@ -136,7 +152,7 @@ class Grid extends Component {
 
 
 
-        /* for(var a =  0; a < this.state.visited.length; a++){
+        for(var a =  0; a < this.state.visited.length; a++){
             document.getElementById(`node-${nodes[a].row}-${nodes[a].column}`).className = "node";
         }
 
@@ -147,7 +163,15 @@ class Grid extends Component {
         if(this.props.selectedGrids.endingSelected){
             grid[endRow][endColumn].isEnd = true;
         }
-        this.setState({grid}); */
+
+        //If any traffic was already pre-selected, re-select them
+        if(this.state.traffic.length > 0){
+            for(var a = 0; a < this.state.traffic.length; a++){
+                grid[this.state.traffic[a].row][this.state.traffic[a].column].isWeight = true;
+            }
+        }
+
+        this.setState({grid});
 
 
 
@@ -220,6 +244,7 @@ class Grid extends Component {
         console.log(GreedyBestFirstSearch(this.state.grid, startRow, startColumn, endRow, endColumn)); */
 
         console.log(this.state.traffic);
+        console.log(this.state.walls);
 
         
     }
