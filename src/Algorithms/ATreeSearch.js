@@ -29,6 +29,7 @@ const ATreeSearch = (grid, startRow, startColumn, endRow, endColumn) => {
         for(var a = 0; a < childrens.length; a++){
 
             let heuristic = manhattanDistance(childrens[a].row, childrens[a].column, endRow, endColumn);
+            let currentDistance;
 
             console.log(heuristic);
 
@@ -69,10 +70,12 @@ const ATreeSearch = (grid, startRow, startColumn, endRow, endColumn) => {
             //Add distance
             if(grid[childrens[a].row][childrens[a].column].isWeight){
                 //We're taking the current child's prevNode's distance and adding it to the current child's distance
-                grid[childrens[a].row][childrens[a].column].distance = 10 + grid[grid[childrens[a].row][childrens[a].column].prevNode.row][grid[childrens[a].row][childrens[a].column].prevNode.column].distance
+                currentDistance = 10 + grid[grid[childrens[a].row][childrens[a].column].prevNode.row][grid[childrens[a].row][childrens[a].column].prevNode.column].distance;
+                grid[childrens[a].row][childrens[a].column].distance = currentDistance;
             }
             else {
-                grid[childrens[a].row][childrens[a].column].distance = 1 + grid[grid[childrens[a].row][childrens[a].column].prevNode.row][grid[childrens[a].row][childrens[a].column].prevNode.column].distance
+                currentDistance = 1 + grid[grid[childrens[a].row][childrens[a].column].prevNode.row][grid[childrens[a].row][childrens[a].column].prevNode.column].distance;
+                grid[childrens[a].row][childrens[a].column].distance = currentDistance;
             }
 
             if(currentNode.row === endRow && currentNode.column === endColumn){

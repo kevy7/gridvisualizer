@@ -320,6 +320,7 @@ class Grid extends Component {
                                             isWall={node.isWall}
                                             distance={node.distance}
                                             isWeight={node.isWeight}
+                                            fValue={node.fValue}
                                         />
                                     })
 
@@ -371,7 +372,8 @@ class Grid extends Component {
             isEnd: false,
             isWall: false,
             distance: Infinity,
-            isWeight: false
+            isWeight: false,
+            fValue: Infinity //Value is used for the ATreeSearch algorithm, which relies on distance from starting node + est distance from ending node
         }
     }
 
