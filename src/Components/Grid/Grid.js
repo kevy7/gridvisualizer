@@ -259,29 +259,6 @@ class Grid extends Component {
         let endColumn = this.props.selectedGrids.endingGrid.column;
 
         let fakeValue = ATreeSearch(this.state.grid, startRow, startColumn, endRow, endColumn);
-        console.log(fakeValue);
-        //console.log(GreedyBestFirstSearch(this.state.grid, startRow, startColumn, endRow, endColumn));
-
-
-        // console.log(this.state.traffic);
-        // console.log(this.state.walls);
-
-
-        //Filter function currently doesn't work!!!
-        //Look into the link below
-        //https://stackoverflow.com/questions/31831651/javascript-filter-array-multiple-conditions
-        /* let testArray = [{row: 1, column: 2}, {row: 1, column: 3}, {row: 1, column: 4}, {row: 1, column: 5}];
-        let object1 = {
-            row: 1,
-            column: 3
-        }
-
-        let newArray = testArray.filter(function (el) {
-            return el.row !== object1.row ||
-            el.column !== object1.column
-        });
-
-        console.log(newArray); */
 
     }
 
