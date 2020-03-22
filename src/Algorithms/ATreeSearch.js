@@ -25,6 +25,7 @@ const ATreeSearch = (grid, startRow, startColumn, endRow, endColumn) => {
             });
         }
         
+        //We're looping through each children and assigning their distance and prevNode for them
         for(var a = 0; a < childrens.length; a++){
 
             //let prevDistance = grid[currentNode.row][currentNode.column].distance;
@@ -79,7 +80,7 @@ const ATreeSearch = (grid, startRow, startColumn, endRow, endColumn) => {
 
             queue.addQueue(grid[childrens[a].row][childrens[a].column]);
 
-        }
+        } //For loop
 
     }
 }
