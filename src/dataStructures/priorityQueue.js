@@ -28,6 +28,8 @@ class priorityQueue {
         }
     }
 
+    //Create an addQueue function for the ATreeSearch algorithm
+
     deQueue = () => {
         //console.log("deQueue initialized");
         let firstPriority = this.queue[0];
