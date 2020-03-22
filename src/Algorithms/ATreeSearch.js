@@ -8,12 +8,12 @@ const ATreeSearch = (grid, startRow, startColumn, endRow, endColumn) => {
     let queue = new priorityQueue();
     let visited = [];
     startingNode.distance = 0;
-    queue.addQueue(startingNode);
+    queue.addQueueFValue(startingNode);
     let currentNode;
     let childrens;
 
     while(queue.queue.length){
-        currentNode = queue.deQueue(); //Remove first priority from your array
+        currentNode = queue.deQueueFValue(); //Remove first priority from your array
         if(currentNode.isWall){continue}
 
         childrens = getChildrens(currentNode, maxRow, maxCol);
@@ -30,8 +30,6 @@ const ATreeSearch = (grid, startRow, startColumn, endRow, endColumn) => {
 
             let heuristic = manhattanDistance(childrens[a].row, childrens[a].column, endRow, endColumn);
             let currentDistance;
-
-            console.log(heuristic);
 
             //let prevDistance = grid[currentNode.row][currentNode.column].distance;
             if(grid[childrens[a].row][childrens[a].column].isVisited){continue}
@@ -72,10 +70,12 @@ const ATreeSearch = (grid, startRow, startColumn, endRow, endColumn) => {
                 //We're taking the current child's prevNode's distance and adding it to the current child's distance
                 currentDistance = 10 + grid[grid[childrens[a].row][childrens[a].column].prevNode.row][grid[childrens[a].row][childrens[a].column].prevNode.column].distance;
                 grid[childrens[a].row][childrens[a].column].distance = currentDistance;
+                grid[childrens[a].row][childrens[a].column].fValue = currentDistance + heuristic;
             }
             else {
                 currentDistance = 1 + grid[grid[childrens[a].row][childrens[a].column].prevNode.row][grid[childrens[a].row][childrens[a].column].prevNode.column].distance;
                 grid[childrens[a].row][childrens[a].column].distance = currentDistance;
+                grid[childrens[a].row][childrens[a].column].fValue = currentDistance + heuristic;
             }
 
             if(currentNode.row === endRow && currentNode.column === endColumn){
@@ -86,7 +86,7 @@ const ATreeSearch = (grid, startRow, startColumn, endRow, endColumn) => {
                 }
             }
 
-            queue.addQueue(grid[childrens[a].row][childrens[a].column]);
+            queue.addQueueFValue(grid[childrens[a].row][childrens[a].column]);
 
         } //For loop
 

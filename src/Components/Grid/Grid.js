@@ -254,7 +254,8 @@ class Grid extends Component {
         let endRow = this.props.selectedGrids.endingGrid.row;
         let endColumn = this.props.selectedGrids.endingGrid.column;
 
-        ATreeSearch(this.state.grid, startRow, startColumn, endRow, endColumn);
+        let fakeValue = ATreeSearch(this.state.grid, startRow, startColumn, endRow, endColumn);
+        console.log(fakeValue);
         //console.log(GreedyBestFirstSearch(this.state.grid, startRow, startColumn, endRow, endColumn));
 
 
