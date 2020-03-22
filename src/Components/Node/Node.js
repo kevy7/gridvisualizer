@@ -156,7 +156,8 @@ Node.propTypes = {
     isEnd: PropTypes.bool,
     isWall: PropTypes.bool,
     distance: PropTypes.number,
-    isWeight: PropTypes.bool
+    isWeight: PropTypes.bool,
+    fValue: PropTypes.number
 }
 
 const mapStateToProps = (state) => {
