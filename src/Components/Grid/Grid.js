@@ -6,6 +6,7 @@ import { BFS } from "../../Algorithms/BreadthFirstSearch";
 import { DFS } from "../../Algorithms/DebthFirstSearch";
 import Dijkstra from "../../Algorithms/Dijkstra";
 import GreedyBestFirstSearch from "../../Algorithms/GreedyBestFirstSearch";
+import ATreeSearch from "../../Algorithms/ATreeSearch";
 import { selectStartNode, selectEndNode, selectTraffic, selectWall } from '../../userActions/userActions';
 import { BreadthFS, DebthFS, DijkstraAlgo, GreedyBFS } from '../../userAlgo/userAlgo';
 import { selectAction, resetSelectedGrids } from '../../actions/index';
@@ -187,7 +188,7 @@ class Grid extends Component {
         }
 
         this.setState({grid});
-        
+
 
         //The following code is used to run our algorithms
         if(!this.props.selectedGrids.startingGrid.row || !this.props.selectedGrids.endingGrid.row){
@@ -248,15 +249,17 @@ class Grid extends Component {
     }
 
     testFunction = () => {
-        /* let startRow = this.props.selectedGrids.startingGrid.row;
+        let startRow = this.props.selectedGrids.startingGrid.row;
         let startColumn = this.props.selectedGrids.startingGrid.column;
         let endRow = this.props.selectedGrids.endingGrid.row;
         let endColumn = this.props.selectedGrids.endingGrid.column;
-        console.log(GreedyBestFirstSearch(this.state.grid, startRow, startColumn, endRow, endColumn)); */
+
+        ATreeSearch(this.state.grid, startRow, startColumn, endRow, endColumn);
+        //console.log(GreedyBestFirstSearch(this.state.grid, startRow, startColumn, endRow, endColumn));
 
 
-        console.log(this.state.traffic);
-        console.log(this.state.walls);
+        // console.log(this.state.traffic);
+        // console.log(this.state.walls);
 
 
         //Filter function currently doesn't work!!!

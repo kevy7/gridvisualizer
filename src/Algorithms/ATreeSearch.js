@@ -28,6 +28,10 @@ const ATreeSearch = (grid, startRow, startColumn, endRow, endColumn) => {
         //We're looping through each children and assigning their distance and prevNode for them
         for(var a = 0; a < childrens.length; a++){
 
+            let heuristic = manhattanDistance(childrens[a].row, childrens[a].column, endRow, endColumn);
+
+            console.log(heuristic);
+
             //let prevDistance = grid[currentNode.row][currentNode.column].distance;
             if(grid[childrens[a].row][childrens[a].column].isVisited){continue}
             //If current child node is a wall, then skip the current node
@@ -64,6 +68,7 @@ const ATreeSearch = (grid, startRow, startColumn, endRow, endColumn) => {
 
             //Add distance
             if(grid[childrens[a].row][childrens[a].column].isWeight){
+                //We're taking the current child's prevNode's distance and adding it to the current child's distance
                 grid[childrens[a].row][childrens[a].column].distance = 10 + grid[grid[childrens[a].row][childrens[a].column].prevNode.row][grid[childrens[a].row][childrens[a].column].prevNode.column].distance
             }
             else {
