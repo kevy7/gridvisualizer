@@ -258,8 +258,6 @@ class Grid extends Component {
         // let endRow = this.props.selectedGrids.endingGrid.row;
         // let endColumn = this.props.selectedGrids.endingGrid.column;
 
-        // let fakeValue = ATreeSearch(this.state.grid, startRow, startColumn, endRow, endColumn);
-
         let maxWidth = this.state.grid[0].length;
         let maxHeight = this.state.grid.length;
 
