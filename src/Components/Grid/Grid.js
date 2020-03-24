@@ -7,6 +7,7 @@ import { DFS } from "../../Algorithms/DebthFirstSearch";
 import Dijkstra from "../../Algorithms/Dijkstra";
 import GreedyBestFirstSearch from "../../Algorithms/GreedyBestFirstSearch";
 import ATreeSearch from "../../Algorithms/ATreeSearch";
+import recursiveDivision from "../../MazeAlgorithms/recursiveDivision";
 import { selectStartNode, selectEndNode, selectTraffic, selectWall } from '../../userActions/userActions';
 import { BreadthFS, DebthFS, DijkstraAlgo, GreedyBFS, ATreeSearchAlgo } from '../../userAlgo/userAlgo';
 import { selectAction, resetSelectedGrids } from '../../actions/index';
