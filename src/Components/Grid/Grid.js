@@ -52,7 +52,6 @@ class Grid extends Component {
         }
 
         if(ifContainsObject(walls, selectedNode) === true){
-            console.log("this is executed");
             /*
                 New example of how to filter an array
                 
