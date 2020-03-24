@@ -13,22 +13,22 @@ const recursiveDivision = (grid, width, height, orientation) => {
     for (var a = 0; a < width; a ++){
         mazeWalls.push({
             row: 0,
-            column: a
+            column: a-1
         });
         mazeWalls.push({
             row: height,
-            column: a
+            column: a-1
         });
     }
 
     //push rows
     for (var b = 1; b < width; b++){
         mazeWalls.push({
-            row: b,
+            row: b-1,
             column: 0
         });
         mazeWalls.push({
-            row: b,
+            row: b-1,
             column: width
         })
     }

@@ -267,6 +267,10 @@ class Grid extends Component {
 
         console.log(testArray);
 
+        testArray.forEach(test => {
+            //console.log(this.state.grid[test.row][test.column]);
+            console.log(test);
+        })
 
 
 
