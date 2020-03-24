@@ -253,12 +253,22 @@ class Grid extends Component {
     }
 
     testFunction = () => {
-        let startRow = this.props.selectedGrids.startingGrid.row;
-        let startColumn = this.props.selectedGrids.startingGrid.column;
-        let endRow = this.props.selectedGrids.endingGrid.row;
-        let endColumn = this.props.selectedGrids.endingGrid.column;
+        // let startRow = this.props.selectedGrids.startingGrid.row;
+        // let startColumn = this.props.selectedGrids.startingGrid.column;
+        // let endRow = this.props.selectedGrids.endingGrid.row;
+        // let endColumn = this.props.selectedGrids.endingGrid.column;
 
-        let fakeValue = ATreeSearch(this.state.grid, startRow, startColumn, endRow, endColumn);
+        // let fakeValue = ATreeSearch(this.state.grid, startRow, startColumn, endRow, endColumn);
+
+        let maxWidth = this.state.grid[0].length;
+        let maxHeight = this.state.grid.length;
+
+        let testArray = recursiveDivision(this.state.grid, maxWidth, maxHeight);
+
+        console.log(testArray);
+
+
+
 
     }
 
