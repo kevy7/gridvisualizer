@@ -268,7 +268,7 @@ class Grid extends Component {
         testArray.forEach(test => {
             //console.log(this.state.grid[test.row][test.column]);
             console.log(test);
-        })
+        });
 
 
 
@@ -278,7 +278,7 @@ class Grid extends Component {
 
         window.onresize = () => {
             let grid = this.createInitialGrid();
-            this.setState({grid})
+            this.setState({grid});
         } 
 
         let algoButton;
