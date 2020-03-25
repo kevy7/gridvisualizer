@@ -1,9 +1,4 @@
-
-const recursiveDivision = (grid, width, height, orientation) => {
-    //orientation determines whether we want to divide our graph horizantally or vertically first
-    //width === columns
-    //height === rows
-
+const setOuterWalls = (grid, width, height) => {
     //This is going to be our helper function, we will create a recursive function, that will add walls into the array below
     let mazeWalls = []; //Set this as an empty array for now
 
@@ -33,18 +28,4 @@ const recursiveDivision = (grid, width, height, orientation) => {
         })
     }
 
-
-    
-
-
-
-
-
-
-
-    return mazeWalls;
-
-
 }
-
-export default recursiveDivision;
