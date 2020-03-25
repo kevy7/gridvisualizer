@@ -28,4 +28,7 @@ const setOuterWalls = (grid, width, height) => {
         })
     }
 
+    return mazeWalls;
 }
+
+export default setOuterWalls;

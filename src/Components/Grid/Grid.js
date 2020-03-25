@@ -7,6 +7,7 @@ import { DFS } from "../../Algorithms/DebthFirstSearch";
 import Dijkstra from "../../Algorithms/Dijkstra";
 import GreedyBestFirstSearch from "../../Algorithms/GreedyBestFirstSearch";
 import ATreeSearch from "../../Algorithms/ATreeSearch";
+import setOuterWalls from "../../MazeAlgorithms/setOuterWalls";
 import recursiveDivision from "../../MazeAlgorithms/recursiveDivision";
 import { selectStartNode, selectEndNode, selectTraffic, selectWall } from '../../userActions/userActions';
 import { BreadthFS, DebthFS, DijkstraAlgo, GreedyBFS, ATreeSearchAlgo } from '../../userAlgo/userAlgo';
@@ -261,7 +262,7 @@ class Grid extends Component {
         let maxWidth = this.state.grid[0].length;
         let maxHeight = this.state.grid.length;
         let gridCopy = this.state.grid;
-        let testArray = recursiveDivision(this.state.grid, maxWidth, maxHeight);
+        let testArray = setOuterWalls(this.state.grid, maxWidth, maxHeight);
 
         testArray.forEach(test => {
             //console.log(this.state.grid[test.row][test.column]);
