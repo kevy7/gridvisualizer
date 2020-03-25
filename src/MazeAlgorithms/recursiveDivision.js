@@ -23,7 +23,14 @@ const recursiveDivision = (grid, width, height) => {
         orientation = horizantal;
     }
     
+    //Select random row or column based on orientation
+    if(orientation === vertical){
+        //select our column, which is the same as our width
 
+        
+
+
+    }
 
 
 
@@ -46,7 +53,6 @@ const generateRandomNum = (min, max) => {
     let randomNumber = Math.random() * (max - min) + min;
 
     return Math.floor(randomNumber);
-
 
 }
 

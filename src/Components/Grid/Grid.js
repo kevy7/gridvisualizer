@@ -265,13 +265,12 @@ class Grid extends Component {
         let testArray = setOuterWalls(this.state.grid, maxWidth, maxHeight);
 
         testArray.forEach(test => {
-            //console.log(this.state.grid[test.row][test.column]);
             gridCopy[test.row][test.column].isWall = true;
-            
-            //console.log(test);
         });
 
         this.setState({grid: gridCopy});
+
+        recursiveDivision(this.state.grid, maxWidth-1, maxHeight-1);
 
 
     }
