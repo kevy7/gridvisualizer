@@ -8,30 +8,33 @@ const recursiveDivision = (grid, width, height, orientation) => {
     let mazeWalls = []; //Set this as an empty array for now
 
     //First of wall, execute a function that will loop through all the outer edges of your current graph and display them as walls
-
     //push columns
     for (var a = 0; a < width; a ++){
+        //This code works
         mazeWalls.push({
             row: 0,
-            column: a-1
+            column: a
         });
         mazeWalls.push({
-            row: height,
-            column: a-1
+            row: height-1,
+            column: a
         });
     }
 
     //push rows
-    for (var b = 1; b < width; b++){
+    for (var b = 1; b < height; b++){
         mazeWalls.push({
-            row: b-1,
+            row: b,
             column: 0
         });
         mazeWalls.push({
-            row: b-1,
-            column: width
+            row: b,
+            column: width-1
         })
     }
+
+
+
 
 
 
