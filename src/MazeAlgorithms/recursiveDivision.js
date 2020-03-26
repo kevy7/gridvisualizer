@@ -36,9 +36,10 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
     if(orientation === vertical){
         //select our column, which is the same as our width
         selectedNumber = generateRandomNum(minWidth+1, maxWidth-1); //<--- this is too static, the minWidth needs to be determined
-        //console.log(maxHeight-1);
         opening = generateRandomNum(minHeight, maxHeight-1);
         //console.log(opening);
+        console.log(selectedNumber);
+        console.log(" ");
 
         //Do something if the selected number is 
 
@@ -52,7 +53,7 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
             });
         }
         
-        recursiveDivision(grid, minWidth+1, selectedNumber-1, minHeight, maxHeight-1)
+        mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth+1, selectedNumber-1, minHeight, maxHeight-1));
     }
     else if (orientation === horizantal){
         selectedNumber = generateRandomNum(minHeight+1, maxHeight-1);
