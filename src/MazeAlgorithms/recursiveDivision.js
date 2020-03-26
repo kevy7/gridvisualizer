@@ -53,12 +53,16 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
             });
         }
         
-        mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth+1, selectedNumber-1, minHeight, maxHeight-1));
+        mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, selectedNumber, minHeight, maxHeight));
     }
     else if (orientation === horizantal){
         selectedNumber = generateRandomNum(minHeight+1, maxHeight-1);
+        opening = generateRandomNum(minWidth, maxWidth-1);
 
         for(var b = minWidth; b < maxWidth; b++){
+            if(b === opening){
+                continue;
+            }
             mazeWalls.push({
                 row: selectedNumber,
                 column: b
