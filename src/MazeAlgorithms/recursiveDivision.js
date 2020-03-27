@@ -146,7 +146,6 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
 
 
 
-
     }
 
 
