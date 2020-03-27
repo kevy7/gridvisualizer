@@ -50,6 +50,14 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
         let trueMinHeight = minHeight - 1;
         let trueMaxHeight = maxHeight + 1;
 
+
+        /*
+
+        essentially, if the [minHeight][selectedNumber].isWall = false, then do not select the selectedNumber
+        or if the [maxHeight][selectedNumber].isWall = false, then do not select the selectedNumber as well, there should be a function for this
+
+        */
+
         console.log("actual minHeight: " + trueMinHeight);
         console.log("actual maxHeight: " + trueMaxHeight);
 
@@ -58,6 +66,20 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
 
         //Everything is dependent on this function here
         selectedNumber = generateRandomNum(minWidth, maxWidth); //<--- this is too static, the minWidth needs to be determined
+
+        //While the selected column's min and max height's are not walls, re-select another random number
+
+        console.log(grid[trueMinHeight][selectedNumber]);
+        console.log("trueMaxHeight" + trueMaxHeight);
+        //console.log(grid[trueMaxHeight][selectedNumber]);
+
+
+        /* while   (
+            grid[trueMinHeight][selectedNumber].isWall === false ||
+            grid[trueMaxHeight][selectedNumber].isWall === false
+        ){
+            selectedNumber = generateRandomNum(minWidth, maxHeight);
+        } */
         
         
         
@@ -120,7 +142,7 @@ const generateRandomNum = (min, max, opening) => {
 }
 
 
-const selectWall = (min, max, opening) => {
+const selectWall = (min, max, grid) => {
     
 }
 
