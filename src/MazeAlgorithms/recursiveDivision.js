@@ -131,12 +131,7 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
             selectedNumber = generateRandomNum(minHeight+1, maxHeight-1);
         }
 
-
-
-
-
-
-        opening = generateRandomNum(minWidth, maxWidth-1);
+        opening = generateRandomNum(minWidth+1, maxWidth-1);
 
         for(var b = minWidth; b < maxWidth; b++){
             if(b === opening){
@@ -148,6 +143,10 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
             })
             grid[selectedNumber][b].isWall = true;
         }
+
+
+
+
     }
 
 
