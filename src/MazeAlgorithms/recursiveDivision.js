@@ -28,15 +28,28 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
     }
 
     console.log(orientation);
-    console.log("maxWidth" + maxWidth);
-    console.log("maxHeight" + maxHeight);
+    console.log("minWidth " + minWidth);
+    console.log("maxWidth " + maxWidth);
+    console.log("minHeight " + minHeight);
+    console.log("maxHeight " + maxHeight);
     console.log(" ");
     
     //Select random row or column based on orientation
     if(orientation === vertical){
         //select our column, which is the same as our width
-        selectedNumber = generateRandomNum(minWidth+1, maxWidth-1); //<--- this is too static, the minWidth needs to be determined
-        opening = generateRandomNum(minHeight, maxHeight-1);
+        console.log("minw " + minWidth);
+        console.log("maxw " + maxWidth);
+        console.log("minHeight " + minHeight);
+        console.log("maxHeight " + maxHeight);
+
+
+        //Everything is dependent on this function here
+        selectedNumber = generateRandomNum(minWidth, maxWidth); //<--- this is too static, the minWidth needs to be determined
+        
+        
+        
+        //We will select a random row to be our opening
+        opening = generateRandomNum(minHeight+1, maxHeight-1); //Opening cannot be the top wall or bottom wall
         //console.log(opening);
         console.log(selectedNumber);
         console.log(" ");
@@ -53,7 +66,7 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
             });
         }
         
-        mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, selectedNumber, minHeight, maxHeight));
+        //mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, selectedNumber, minHeight, maxHeight));
     }
     else if (orientation === horizantal){
         selectedNumber = generateRandomNum(minHeight+1, maxHeight-1);
@@ -79,9 +92,15 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
 }
 
 //function used to generate a random number for us
-const generateRandomNum = (min, max) => {
+const generateRandomNum = (min, max, opening) => {
 
     let randomNumber = Math.random() * (max - min) + min;
+
+    while(randomNumber === opening){
+        //re-execute code if the random number is equal to the opening number
+        console.log("this was executed");
+        randomNumber = Math.random() * (max - min) + min;
+    }
 
     return Math.floor(randomNumber);
 
