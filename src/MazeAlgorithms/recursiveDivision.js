@@ -4,6 +4,7 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
     //width === columns
     //height === rows
 
+    console.log(" ");
     console.log("executed function");
 
     //This is going to be our helper function, we will create a recursive function, that will add walls into the array below
@@ -27,12 +28,12 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
         orientation = horizantal;
     }
 
-    console.log(orientation);
+    /* console.log(orientation);
     console.log("minWidth " + minWidth);
     console.log("maxWidth " + maxWidth);
     console.log("minHeight " + minHeight);
     console.log("maxHeight " + maxHeight);
-    console.log(" ");
+    console.log(" "); */
     
     //Select random row or column based on orientation
     if(orientation === vertical){
@@ -41,6 +42,18 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
         console.log("maxw " + maxWidth);
         console.log("minHeight " + minHeight);
         console.log("maxHeight " + maxHeight);
+
+
+
+
+        //Run test codes here
+        let trueMinHeight = minHeight - 1;
+        let trueMaxHeight = maxHeight + 1;
+
+        console.log("actual minHeight: " + trueMinHeight);
+        console.log("actual maxHeight: " + trueMaxHeight);
+
+
 
 
         //Everything is dependent on this function here
@@ -104,6 +117,11 @@ const generateRandomNum = (min, max, opening) => {
 
     return Math.floor(randomNumber);
 
+}
+
+
+const selectWall = (min, max, opening) => {
+    
 }
 
 export default recursiveDivision;
