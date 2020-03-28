@@ -259,7 +259,9 @@ class Grid extends Component {
         // let endRow = this.props.selectedGrids.endingGrid.row;
         // let endColumn = this.props.selectedGrids.endingGrid.column;
 
-        let maxWidth = this.state.grid[0].length;
+
+
+        /* let maxWidth = this.state.grid[0].length;
         let maxHeight = this.state.grid.length;
         let gridCopy = this.state.grid;
         let testArray = setOuterWalls(this.state.grid, maxWidth, maxHeight);
@@ -271,13 +273,29 @@ class Grid extends Component {
         this.setState({grid: gridCopy});
 
         let testArray2 = recursiveDivision(this.state.grid, 1, maxWidth-1, 1, maxHeight-1);
-        console.log(testArray2);
-
-        //let testArray3 = recursiveDivision(this.state.grid, 1, 10, 1, 10);
 
         testArray2.forEach(value => {
             gridCopy[value.row][value.column].isWall = true;
-        })
+        }) */
+
+
+        /*
+
+        my code is doing an infinite loop because of the example below, it's not merging the two arrays correctly. 
+            Think of implementing some kind of queue to make the algorithm work.
+
+        */
+        let array = [1,2];
+        let array1 = [1,2,3,4,5,6,7];
+        let array2 = [8,9,10,11,12];
+
+        let array3 = array.concat(array1);
+        array3 = array.concat(array2);
+
+        console.log(array3);
+        
+
+
 
         //console.log(testArray2);
 
