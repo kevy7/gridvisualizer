@@ -284,16 +284,22 @@ class Grid extends Component {
         my code is doing an infinite loop because of the example below, it's not merging the two arrays correctly. 
             Think of implementing some kind of queue to make the algorithm work.
 
+            actually, you can concat two arrays at the same time
+
         */
-        let array = [1,2];
+        /* let array = [];
         let array1 = [1,2,3,4,5,6,7];
         let array2 = [8,9,10,11,12];
-
-        let array3 = array.concat(array1);
-        array3 = array.concat(array2);
-
-        console.log(array3);
         
+        let queue = [];
+
+        // let array3 = array.concat(array1);
+        // array3 = array.concat(array2);
+        array = array.concat(array1);
+        array = array.concat(array2);
+
+        console.log(array);
+         */
 
 
 
