@@ -28,6 +28,10 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
         orientation = horizantal;
     }
 
+    if(maxWidth < 2 || maxHeight < 2){
+        return;
+    }
+
     /* console.log(orientation);
     console.log("minWidth " + minWidth);
     console.log("maxWidth " + maxWidth);
@@ -144,6 +148,17 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
             grid[selectedNumber][b].isWall = true;
         }
 
+        //When we just got done dividing horizontally, our min and max height should be the following
+        /*
+            opening number -> min
+            maxHeight -> height
+
+            minHeight -> min
+            openingNumber -> height
+
+        */
+
+        mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, maxWidth, minHeight, maxHeight));
 
 
     }
