@@ -4,9 +4,6 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
     //width === columns
     //height === rows
 
-    console.log(" ");
-    console.log("executed function");
-
     //This is going to be our helper function, we will create a recursive function, that will add walls into the array below
     let mazeWalls = []; //Set this as an empty array for now
     let vertical = "vertical";
@@ -28,9 +25,19 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
         orientation = horizantal;
     }
 
-    /* if(maxWidth < 2 || maxHeight < 2){
-        return;
-    } */
+    console.log(" ");
+    console.log("______________");
+    console.log("maxWidth: " + maxWidth);
+    console.log("maxHeight: " + maxHeight);
+    console.log(" ");
+    
+    
+
+    if(maxWidth <= 2 || maxHeight <= 2){
+        console.log("reject recursion");
+        console.log(mazeWalls);
+        return mazeWalls;
+    }
 
 
 
@@ -106,8 +113,24 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
             });
             grid[a][selectedNumber].isWall = true;
         }
+
+        console.log("opening num: " + opening);
+        console.log("minWidth " + minWidth);
+        console.log("maxWidth " + selectedNumber);
+        console.log("minHeight " + minHeight);
+        console.log("maxHeight " + maxHeight);
+        console.log(" ");
+
+        console.log("minWidth " + selectedNumber);
+        console.log("maxWidth " + maxWidth);
+        console.log("minHeight " + minHeight);
+        console.log("maxHeight " + maxHeight);
+        console.log(" ");
+
+
         
-        mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, selectedNumber, minHeight, maxHeight));
+        mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, selectedNumber, minHeight, maxHeight)); //this works
+        //mazeWalls = mazeWalls.concat(recursiveDivision(grid, selectedNumber, maxWidth, minHeight, maxHeight-1)); //so when I don't subtract height by one, there is an infinite loop
     }
     else if (orientation === horizantal){
 
@@ -130,6 +153,7 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
             grid[selectedNumber][trueMaxWidth].isWall === false
         ){
             //Re-select a random number until it's parents are not walls
+            console.log("re-do executed") //this is being executed multiple times
             selectedNumber = generateRandomNum(minHeight+1, maxHeight-1);
         }
 
@@ -156,16 +180,37 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
 
         */
 
-        mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, maxWidth, selectedNumber, maxHeight));
-        //mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, maxWidth, minHeight, opening));
+
+        console.log("opening num: " + opening);
+       console.log("minWidth " + minWidth);
+       console.log("maxWidth " + maxWidth);
+       console.log("minHeight " + selectedNumber);
+       console.log("maxHeight " + maxHeight);
+       console.log(" ");
+
+       console.log("minWidth " + minWidth);
+       console.log("maxWidth " + maxWidth);
+       console.log("minHeight " + minHeight);
+       console.log("maxHeight " + selectedNumber);
+
+        //mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, maxWidth, selectedNumber, maxHeight));
+        mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, maxWidth, minHeight, selectedNumber)); //this works
 
 
     }
 
 
-
+    /* if(maxWidth < 2 || maxHeight < 2){
+        console.log("reject recursion");
+        console.log(mazeWalls);
+        return mazeWalls;
+    } else {
+        console.log("this is being returned")
+        return mazeWalls;
+    } */
 
     return mazeWalls;
+
 
 
 }

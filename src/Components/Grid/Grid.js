@@ -271,12 +271,15 @@ class Grid extends Component {
         this.setState({grid: gridCopy});
 
         let testArray2 = recursiveDivision(this.state.grid, 1, maxWidth-1, 1, maxHeight-1);
+        console.log(testArray2);
+
+        //let testArray3 = recursiveDivision(this.state.grid, 1, 10, 1, 10);
 
         testArray2.forEach(value => {
             gridCopy[value.row][value.column].isWall = true;
         })
 
-        console.log(testArray2);
+        //console.log(testArray2);
 
 
     }
@@ -344,9 +347,9 @@ class Grid extends Component {
         
         //We're going to create our grid here, and push in our node
 
-        for(var a = 0; a < 10; a++){ //height
+        for(var a = 0; a < 40; a++){ //height
             let nodeRows = [];
-            for(var b = 0; b < 12; b++){ //width
+            for(var b = 0; b < 10; b++){ //width
                 //create nodes here
                 currentNode = this.createNode(a, b);
                 nodeRows.push(currentNode);
