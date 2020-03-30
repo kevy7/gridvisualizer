@@ -16,11 +16,17 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
     //select orientation
     let orientation;
 
+    if(fieldWidth <= 4 || fieldHeight <= 4){
+        console.log("reject recursion");
+        console.log(mazeWalls);
+        return mazeWalls;
+    }
+
     //orientation will be based on the height and width of the grid
-    if(maxWidth > maxHeight){
+    if(fieldWidth > fieldHeight){ //original: maxWidth > maxHeight //fieldWidth > fieldHeight
         orientation = vertical;
     }
-    else if(maxWidth < maxHeight){
+    else if(fieldWidth < fieldHeight){ //maxWidth < maxHeight //fieldWidth < fieldHeight
         orientation = horizantal;
     }
     else {
@@ -38,12 +44,12 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
     console.log(" ");
     
     
-
-    if(fieldWidth <= 3 || fieldHeight <= 3){
+    //To remove if code works
+    /* if(fieldWidth <= 3 || fieldHeight <= 3){
         console.log("reject recursion");
         console.log(mazeWalls);
         return mazeWalls;
-    }
+    } */
 
 
 
@@ -209,7 +215,7 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
        console.log("minHeight " + minHeight);
        console.log("maxHeight " + selectedNumber);
 
-        mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, maxWidth, selectedNumber+1, maxHeight)); //this works
+        mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, maxWidth, selectedNumber+1, maxHeight)); //this is currently not working
 
         mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, maxWidth, minHeight, selectedNumber)); //this works
 
