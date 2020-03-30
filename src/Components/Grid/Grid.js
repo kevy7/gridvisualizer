@@ -259,6 +259,9 @@ class Grid extends Component {
         // let endRow = this.props.selectedGrids.endingGrid.row;
         // let endColumn = this.props.selectedGrids.endingGrid.column;
 
+        console.log("_______________");
+        console.log("executed new code");
+        console.log("_______________");
 
 
         let maxWidth = this.state.grid[0].length;

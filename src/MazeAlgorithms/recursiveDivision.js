@@ -198,10 +198,6 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
 
         */
 
-        console.log(" ");
-        console.log("trueMinWidth " + trueMinWidth);
-        console.log("trueMaxWidth " + trueMaxWidth);
-
 
         console.log("opening num: " + opening);
        console.log("minWidth " + minWidth);
