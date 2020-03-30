@@ -90,7 +90,9 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
         while(grid[trueMinHeight][selectedNumber].isWall === false ||
             grid[trueMaxHeight][selectedNumber].isWall === false    
         ){
+            console.log("re-do executed")
             selectedNumber = generateRandomNum(minWidth, maxWidth);
+            
         }
         
 
@@ -180,6 +182,10 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
 
         */
 
+        console.log(" ");
+        console.log("trueMinWidth " + trueMinWidth);
+        console.log("trueMaxWidth " + trueMaxWidth);
+
 
         console.log("opening num: " + opening);
        console.log("minWidth " + minWidth);
@@ -194,7 +200,8 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
        console.log("maxHeight " + selectedNumber);
 
         //mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, maxWidth, selectedNumber, maxHeight));
-        mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, maxWidth, minHeight, selectedNumber)); //this works
+
+        //mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, maxWidth, minHeight, selectedNumber)); //this works
 
 
     }
