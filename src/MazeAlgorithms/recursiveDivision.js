@@ -101,7 +101,7 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
         }
 
         
-
+        console.log("selected Number: " + selectedNumber);
         console.log("opening num: " + opening);
         console.log("minWidth " + minWidth);
         console.log("maxWidth " + selectedNumber);
@@ -161,17 +161,18 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
         */
 
 
+        console.log("selected Number: " + selectedNumber);
         console.log("opening num: " + opening);
-       console.log("minWidth " + minWidth);
-       console.log("maxWidth " + maxWidth);
-       console.log("minHeight " + (selectedNumber+1));
-       console.log("maxHeight " + maxHeight);
-       console.log(" ");
+        console.log("minWidth " + minWidth);
+        console.log("maxWidth " + maxWidth);
+        console.log("minHeight " + (selectedNumber+1));
+        console.log("maxHeight " + maxHeight);
+        console.log(" ");
 
-       console.log("minWidth " + minWidth);
-       console.log("maxWidth " + maxWidth);
-       console.log("minHeight " + minHeight);
-       console.log("maxHeight " + selectedNumber);
+        console.log("minWidth " + minWidth);
+        console.log("maxWidth " + maxWidth);
+        console.log("minHeight " + minHeight);
+        console.log("maxHeight " + selectedNumber);
 
         mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, maxWidth, selectedNumber+1, maxHeight)); //this is currently not working
 
