@@ -101,7 +101,7 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
         }
 
         
-        console.log("selected Number: " + selectedNumber);
+        console.log("selected column: " + selectedNumber);
         console.log("opening num: " + opening);
         console.log("minWidth " + minWidth);
         console.log("maxWidth " + selectedNumber);
@@ -161,7 +161,7 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
         */
 
 
-        console.log("selected Number: " + selectedNumber);
+        console.log("selected row: " + selectedNumber);
         console.log("opening num: " + opening);
         console.log("minWidth " + minWidth);
         console.log("maxWidth " + maxWidth);
