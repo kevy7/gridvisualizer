@@ -39,7 +39,7 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
     
     
 
-    if(fieldWidth <= 2 || fieldHeight <= 2){
+    if(fieldWidth <= 3 || fieldHeight <= 3){
         console.log("reject recursion");
         console.log(mazeWalls);
         return mazeWalls;
@@ -139,8 +139,9 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
 
 
         
-        mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, selectedNumber, minHeight, maxHeight)); //
-        //mazeWalls = mazeWalls.concat(recursiveDivision(grid, selectedNumber+1, maxWidth, minHeight, maxHeight)); //this should work
+        mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, selectedNumber, minHeight, maxHeight)); //for this function, the maxHeight is not passing in correctly
+
+        mazeWalls = mazeWalls.concat(recursiveDivision(grid, selectedNumber+1, maxWidth, minHeight, maxHeight)); //this should work
     }
     else if (orientation === horizantal){
 
@@ -157,10 +158,11 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
 
         //console.log(grid[selectedNumber][trueMinWidth]);
         //console.log(grid[selectedNumber][trueMaxWidth]);
-
+        
         while(
             grid[selectedNumber][trueMinWidth].isWall === false ||
             grid[selectedNumber][trueMaxWidth].isWall === false
+            
         ){
             //Re-select a random number until it's parents are not walls
             console.log("re-do executed") //this is being executed multiple times
@@ -198,7 +200,7 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
         console.log("opening num: " + opening);
        console.log("minWidth " + minWidth);
        console.log("maxWidth " + maxWidth);
-       console.log("minHeight " + selectedNumber);
+       console.log("minHeight " + (selectedNumber+1));
        console.log("maxHeight " + maxHeight);
        console.log(" ");
 
@@ -207,9 +209,9 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
        console.log("minHeight " + minHeight);
        console.log("maxHeight " + selectedNumber);
 
-        //mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, maxWidth, selectedNumber+1, maxHeight)); //this works
+        mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, maxWidth, selectedNumber+1, maxHeight)); //this works
 
-        //mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, maxWidth, minHeight, selectedNumber)); //this works
+        mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, maxWidth, minHeight, selectedNumber)); //this works
 
 
     }
