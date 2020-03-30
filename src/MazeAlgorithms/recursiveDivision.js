@@ -122,6 +122,8 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
             grid[a][selectedNumber].isWall = true;
         }
 
+        
+
         console.log("opening num: " + opening);
         console.log("minWidth " + minWidth);
         console.log("maxWidth " + selectedNumber);
@@ -129,7 +131,7 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
         console.log("maxHeight " + maxHeight);
         console.log(" ");
 
-        console.log("minWidth " + selectedNumber);
+        console.log("minWidth " + (selectedNumber+1));
         console.log("maxWidth " + maxWidth);
         console.log("minHeight " + minHeight);
         console.log("maxHeight " + maxHeight);
@@ -137,8 +139,8 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
 
 
         
-        mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, selectedNumber, minHeight, maxHeight)); //this works
-        //mazeWalls = mazeWalls.concat(recursiveDivision(grid, selectedNumber, maxWidth, minHeight, maxHeight-1)); //so when I don't subtract height by one, there is an infinite loop
+        mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, selectedNumber, minHeight, maxHeight)); //
+        //mazeWalls = mazeWalls.concat(recursiveDivision(grid, selectedNumber+1, maxWidth, minHeight, maxHeight)); //this should work
     }
     else if (orientation === horizantal){
 
@@ -205,9 +207,9 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
        console.log("minHeight " + minHeight);
        console.log("maxHeight " + selectedNumber);
 
-        mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, maxWidth, selectedNumber+1, maxHeight)); //this works
+        //mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, maxWidth, selectedNumber+1, maxHeight)); //this works
 
-        mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, maxWidth, minHeight, selectedNumber)); //this works
+        //mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, maxWidth, minHeight, selectedNumber)); //this works
 
 
     }
