@@ -10,6 +10,8 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
     let horizantal = "horizontal";
     let selectedNumber;
     let opening;
+    let fieldWidth = maxWidth - minWidth;
+    let fieldHeight = maxHeight - minHeight;
 
     //select orientation
     let orientation;
@@ -27,13 +29,17 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
 
     console.log(" ");
     console.log("______________");
+    console.log("minWidth: " + minWidth)
     console.log("maxWidth: " + maxWidth);
+    console.log("minHeight: " + minHeight);
     console.log("maxHeight: " + maxHeight);
+    console.log("fieldWidth: " + fieldWidth);
+    console.log("fieldHeight: " + fieldHeight);
     console.log(" ");
     
     
 
-    if(maxWidth <= 2 || maxHeight <= 2){
+    if(fieldWidth <= 2 || fieldHeight <= 2){
         console.log("reject recursion");
         console.log(mazeWalls);
         return mazeWalls;
@@ -199,9 +205,9 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
        console.log("minHeight " + minHeight);
        console.log("maxHeight " + selectedNumber);
 
-        //mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, maxWidth, selectedNumber, maxHeight));
+        mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, maxWidth, selectedNumber+1, maxHeight)); //this works
 
-        //mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, maxWidth, minHeight, selectedNumber)); //this works
+        mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, maxWidth, minHeight, selectedNumber)); //this works
 
 
     }
