@@ -43,31 +43,10 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
     console.log("fieldHeight: " + fieldHeight);
     console.log(" ");
     
-    
-    //To remove if code works
-    /* if(fieldWidth <= 3 || fieldHeight <= 3){
-        console.log("reject recursion");
-        console.log(mazeWalls);
-        return mazeWalls;
-    } */
 
-
-
-    /* console.log(orientation);
-    console.log("minWidth " + minWidth);
-    console.log("maxWidth " + maxWidth);
-    console.log("minHeight " + minHeight);
-    console.log("maxHeight " + maxHeight);
-    console.log(" "); */
     
     //Select random row or column based on orientation
     if(orientation === vertical){
-        //select our column, which is the same as our width
-        //console.log("minw " + minWidth);
-        //console.log("maxw " + maxWidth);
-        //console.log("minHeight " + minHeight);
-        //console.log("maxHeight " + maxHeight);
-
 
 
 
@@ -83,9 +62,6 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
 
         */
 
-        //console.log("actual minHeight: " + trueMinHeight);
-        //console.log("actual maxHeight: " + trueMaxHeight);
-
 
 
 
@@ -94,16 +70,12 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
 
         //While the selected column's min and max height's are not walls, re-select another random number
 
-        //console.log(grid[trueMinHeight][selectedNumber]);
-        //console.log(grid[trueMaxHeight][selectedNumber]);
-        
-        //console.log(grid[trueMaxHeight][selectedNumber]);
 
         while(grid[trueMinHeight][selectedNumber].isWall === false ||
             grid[trueMaxHeight][selectedNumber].isWall === false    
         ){
             console.log("re-do executed")
-            selectedNumber = generateRandomNum(minWidth, maxWidth);
+            selectedNumber = generateRandomNum(minWidth+1, maxWidth+1);
             
         }
         
@@ -151,19 +123,9 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
     }
     else if (orientation === horizantal){
 
-        //console.log("minWidth " + minWidth);
-        //console.log("maxWidth " + maxWidth);
-
         let trueMinWidth = minWidth - 1;
         let trueMaxWidth = maxWidth;
-
-        //console.log("true minWidth " + trueMinWidth);
-        //console.log("true maxWidth " + trueMaxWidth);
-
         selectedNumber = generateRandomNum(minHeight+1, maxHeight-1); //We add and minus 1 to make sure that we're not selecting the outer walls
-
-        //console.log(grid[selectedNumber][trueMinWidth]);
-        //console.log(grid[selectedNumber][trueMaxWidth]);
         
         while(
             grid[selectedNumber][trueMinWidth].isWall === false ||
@@ -217,16 +179,6 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
 
 
     }
-
-
-    /* if(maxWidth < 2 || maxHeight < 2){
-        console.log("reject recursion");
-        console.log(mazeWalls);
-        return mazeWalls;
-    } else {
-        console.log("this is being returned")
-        return mazeWalls;
-    } */
 
     return mazeWalls;
 
