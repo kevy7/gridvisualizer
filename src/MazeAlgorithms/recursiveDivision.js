@@ -16,7 +16,7 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
     //select orientation
     let orientation;
 
-    if(fieldWidth <= 4 || fieldHeight <= 4){
+    if(fieldWidth <= 4 || fieldHeight <= 4 || fieldWidth === undefined || fieldHeight === undefined){
         console.log("reject recursion");
         console.log(mazeWalls);
         return mazeWalls;
@@ -66,7 +66,10 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
 
 
         //Everything is dependent on this function here
-        selectedNumber = generateRandomNum(minWidth+1, maxWidth-1); //<--- this is too static, the minWidth needs to be determined
+        selectedNumber = generateRandomNum(minWidth+1, maxWidth-2); //<--- this is too static, the minWidth needs to be determined
+        console.log("min Column: " + (minWidth+1))
+        console.log("max Column: " + (maxWidth-2))
+        console.log("selected Column: " + selectedNumber);
 
         //While the selected column's min and max height's are not walls, re-select another random number
 
@@ -74,8 +77,9 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
         while(grid[trueMinHeight][selectedNumber].isWall === false ||
             grid[trueMaxHeight][selectedNumber].isWall === false    
         ){
-            console.log("re-do executed")
-            selectedNumber = generateRandomNum(minWidth+1, maxWidth+1);
+            console.log("re-do executed");
+            console.log("re-selected Column: " + selectedNumber);
+            selectedNumber = generateRandomNum(minWidth+1, maxWidth+2);
             
         }
         
@@ -101,7 +105,7 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
         }
 
         
-        console.log("selected column: " + selectedNumber);
+        //console.log("selected column: " + selectedNumber);
         console.log("opening num: " + opening);
         console.log("minWidth " + minWidth);
         console.log("maxWidth " + selectedNumber);
@@ -125,8 +129,10 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
 
         let trueMinWidth = minWidth - 1;
         let trueMaxWidth = maxWidth;
-        selectedNumber = generateRandomNum(minHeight+1, maxHeight-1); //We add and minus 1 to make sure that we're not selecting the outer walls
-        
+        selectedNumber = generateRandomNum(minHeight+1, maxHeight-2); //We add and minus 1 to make sure that we're not selecting the outer walls
+        console.log("min height: " + (minHeight+1));
+        console.log("max height: " + (maxHeight-2));
+        console.log("selected Row: " + selectedNumber)
         while(
             grid[selectedNumber][trueMinWidth].isWall === false ||
             grid[selectedNumber][trueMaxWidth].isWall === false
@@ -134,7 +140,8 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
         ){
             //Re-select a random number until it's parents are not walls
             console.log("re-do executed") //this is being executed multiple times
-            selectedNumber = generateRandomNum(minHeight+1, maxHeight-1);
+            console.log("selected Row: " + selectedNumber);
+            selectedNumber = generateRandomNum(minHeight+1, maxHeight-2);
         }
 
         opening = generateRandomNum(minWidth+1, maxWidth-1);
