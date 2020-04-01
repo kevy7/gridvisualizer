@@ -5,8 +5,28 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
     //height === rows
 
     let mazeWalls = [];
+    let vertical = "vertical";
+    let horizantal = "horizontal";
+    let orientation;
+    let fieldWidth = maxWidth - minWidth;
+    let fieldHeight = maxHeight - minHeight;
 
+    console.log("minWidth " + minWidth);
+    console.log("maxWidth " + maxWidth);
+    console.log("minHeight " + minHeight);
+    console.log("maxHeight " + maxHeight);
+    console.log("fieldWidth " + fieldWidth);
+    console.log("fieldHeight " + fieldHeight);
 
+    //Assign orientation
+    //if width is greater than height, we bisect vertically
+    if(fieldWidth > fieldHeight){
+        orientation = vertical;
+    }
+    else if(fieldWidth < fieldHeight){
+        orientation = horizantal;
+    }
+    console.log(orientation);
     
 
 
