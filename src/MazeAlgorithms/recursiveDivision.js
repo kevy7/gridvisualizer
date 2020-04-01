@@ -26,7 +26,23 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
     else if(fieldWidth < fieldHeight){
         orientation = horizantal;
     }
-    console.log(orientation);
+    //console.log(orientation);
+
+    //base case for recursive function
+    //We may need to fix this later
+    if(fieldWidth <2 || fieldHeight <2){
+        return mazeWalls;
+    }
+
+    if(orientation === vertical){
+        let selectableColumns = []; //the list of columns that we can choose and select to be a wall
+        let openingRows = [];
+
+
+    }
+    else if(orientation === horizantal){
+
+    }
     
 
 
