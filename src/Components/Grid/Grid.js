@@ -268,6 +268,8 @@ class Grid extends Component {
         console.log(maxWidth);
         console.log(" ")
         let maxHeight = this.state.grid.length;
+        console.log(maxHeight);
+        console.log(" ")
         let gridCopy = this.state.grid;
         let testArray = setOuterWalls(this.state.grid, maxWidth, maxHeight);
 

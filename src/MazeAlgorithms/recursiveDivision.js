@@ -37,6 +37,33 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
     if(orientation === vertical){
         let selectableColumns = []; //the list of columns that we can choose and select to be a wall
         let openingRows = [];
+        let randomColumnIdx;
+        let randomRowIdx;
+        let selectedColumn;
+        let selectedOpeningRow;
+
+        //add list of selectable columns into the array
+        for(let a = minWidth; a <= maxWidth; a+=2){
+            selectableColumns.push(a);
+        }
+
+        //add list of selectable opening rows into the array
+        for(let b = minHeight-1; b <= maxHeight+1; b+=2){
+            openingRows.push(b);
+        }
+
+        randomColumnIdx = Math.floor(Math.random() * selectableColumns.length);
+        randomRowIdx = Math.floor(Math.random() * openingRows.length);
+
+        selectedColumn = selectableColumns[randomColumnIdx];
+        selectedOpeningRow = openingRows[randomRowIdx];
+
+
+        console.log(selectableColumns);
+        console.log(openingRows);
+
+        console.log(selectedColumn);
+        console.log(selectedOpeningRow);
 
 
     }
