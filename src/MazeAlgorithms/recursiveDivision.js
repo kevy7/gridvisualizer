@@ -46,33 +46,21 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
 
     
     //Select random row or column based on orientation
+    /*
     if(orientation === vertical){
 
 
 
+        //Old code will be placed here
         //Run test codes here
         let trueMinHeight = minHeight - 1;
         let trueMaxHeight = maxHeight;
-
-
-        /*
-
-        essentially, if the [minHeight][selectedNumber].isWall = false, then do not select the selectedNumber
-        or if the [maxHeight][selectedNumber].isWall = false, then do not select the selectedNumber as well, there should be a function for this
-
-        */
-
-
-
 
         //Everything is dependent on this function here
         selectedNumber = generateRandomNum(minWidth+1, maxWidth-2); //<--- this is too static, the minWidth needs to be determined
         console.log("min Column: " + (minWidth+1))
         console.log("max Column: " + (maxWidth-2))
         console.log("selected Column: " + selectedNumber);
-
-        //While the selected column's min and max height's are not walls, re-select another random number
-
 
         while(grid[trueMinHeight][selectedNumber].isWall === false ||
             grid[trueMaxHeight][selectedNumber].isWall === false    
@@ -82,11 +70,6 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
             selectedNumber = generateRandomNum(minWidth+1, maxWidth+2);
             
         }
-        
-
-
-
-        
         
         //We will select a random row to be our opening
         opening = generateRandomNum(minHeight+1, maxHeight-1); //Opening cannot be the top wall or bottom wall. 
@@ -103,8 +86,6 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
             });
             grid[a][selectedNumber].isWall = true;
         }
-
-        
         //console.log("selected column: " + selectedNumber);
         console.log("opening num: " + opening);
         console.log("minWidth " + minWidth);
@@ -119,12 +100,12 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
         console.log("maxHeight " + maxHeight);
         console.log(" ");
 
-
-        
         mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, selectedNumber, minHeight, maxHeight)); //for this function, the maxHeight is not passing in correctly
 
         mazeWalls = mazeWalls.concat(recursiveDivision(grid, selectedNumber+1, maxWidth, minHeight, maxHeight)); //this should work
+        
     }
+
     else if (orientation === horizantal){
 
         let trueMinWidth = minWidth - 1;
@@ -157,16 +138,6 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
             grid[selectedNumber][b].isWall = true;
         }
 
-        //When we just got done dividing horizontally, our min and max height should be the following
-        /*
-            opening number -> min
-            maxHeight -> height
-
-            minHeight -> min
-            openingNumber -> height
-
-        */
-
 
         console.log("selected row: " + selectedNumber);
         console.log("opening num: " + opening);
@@ -187,6 +158,7 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
 
 
     }
+    */
 
     return mazeWalls;
 
