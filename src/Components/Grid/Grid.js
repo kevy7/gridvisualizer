@@ -275,7 +275,8 @@ class Grid extends Component {
 
         this.setState({grid: gridCopy});
 
-        let testArray2 = recursiveDivision(this.state.grid, 1, maxWidth-1, 1, maxHeight-1);
+        let testArray2 = recursiveDivision(this.state.grid, 2, maxWidth-3, 2, maxHeight-3); //We want to start at our max width and max height at -3 in order for the function to work
+        //We want to start at min row and min column at 2 as well
 
         /* testArray2.forEach(value => {
             gridCopy[value.row][value.column].isWall = true;

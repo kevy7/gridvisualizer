@@ -4,6 +4,19 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
     //width === columns
     //height === rows
 
+    let mazeWalls = [];
+
+
+    
+
+
+
+    return mazeWalls;
+
+
+
+    //OLD CODE
+    /*
     //This is going to be our helper function, we will create a recursive function, that will add walls into the array below
     let mazeWalls = []; //Set this as an empty array for now
     let vertical = "vertical";
@@ -16,6 +29,8 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
     //select orientation
     let orientation;
 
+
+    //This function needs to be fixed
     if(fieldWidth <= 4 || fieldHeight <= 4 || fieldWidth === undefined || fieldHeight === undefined){
         console.log("reject recursion");
         console.log(mazeWalls);
@@ -33,16 +48,7 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
         orientation = horizantal;
     }
 
-    console.log(" ");
-    console.log("______________");
-    console.log("minWidth: " + minWidth)
-    console.log("maxWidth: " + maxWidth);
-    console.log("minHeight: " + minHeight);
-    console.log("maxHeight: " + maxHeight);
-    console.log("fieldWidth: " + fieldWidth);
-    console.log("fieldHeight: " + fieldHeight);
-    console.log(" ");
-    
+    */
 
     
     //Select random row or column based on orientation
@@ -160,7 +166,7 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
     }
     */
 
-    return mazeWalls;
+    //return mazeWalls;
 
 
 
