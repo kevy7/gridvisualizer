@@ -33,6 +33,27 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
     if(fieldWidth <2 || fieldHeight <2){
         return mazeWalls;
     }
+    let selectableColumns = []; //the list of columns that we can choose and select to be a wall
+        let openingRows = []; //List of rows that we're allowed to select to be an opening
+        let randomColumnIdx;
+        let randomRowIdx;
+        let selectedColumn;
+        let selectedOpeningRow;
+
+        //add list of selectable columns into the array
+        for(let a = minWidth; a <= maxWidth; a+=2){
+            selectableColumns.push(a);
+        }
+
+        //add list of selectable opening rows into the array
+        for(let b = minHeight-1; b <= maxHeight+1; b+=2){
+            openingRows.push(b);
+        }
+
+        console.log("selectableColumns")
+        console.log(selectableColumns);
+        console.log("openingRows");
+        console.log(openingRows);
 
     if(orientation === vertical){
         let selectableColumns = []; //the list of columns that we can choose and select to be a wall
@@ -52,14 +73,14 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
             openingRows.push(b);
         }
 
+        console.log(selectableColumns);
+        console.log(openingRows);
+
         randomColumnIdx = Math.floor(Math.random() * selectableColumns.length);
         randomRowIdx = Math.floor(Math.random() * openingRows.length);
 
         selectedColumn = selectableColumns[randomColumnIdx];
         selectedOpeningRow = openingRows[randomRowIdx];
-
-        console.log(selectableColumns);
-        console.log(openingRows);
 
         console.log(selectedColumn);
         console.log(selectedOpeningRow);
@@ -94,9 +115,13 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
         let selectedRow;
         let selctedOpeningColumn;
 
-        for(let a = minHeight; minHeight <= maxHeight; a+=2){
+        console.log("minWidth: " + minWidth);
+        console.log("maxWidth: " + maxWidth);
+
+        for(let a = minHeight; a <=maxHeight; a+=2){
             selectableRows.push(a);
         }
+
         for(let b = minWidth-1; b <= maxWidth+1; b+=2){
             openingColumn.push(b);
         }
@@ -104,6 +129,13 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
         console.log("selectableRows: " + selectableRows);
         console.log("openingColumn: " + openingColumn);
 
+
+        /*
+
+        randomColumnIdx = Math.floor(Math.random() * selectableColumns.length);
+        randomRowIdx = Math.floor(Math.random() * openingRows.length);
+
+        */
 
 
     }
