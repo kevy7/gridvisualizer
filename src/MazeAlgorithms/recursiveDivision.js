@@ -11,13 +11,6 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
     let fieldWidth = (maxWidth - minWidth)+3;
     let fieldHeight = (maxHeight - minHeight)+3;
 
-    console.log("minWidth " + minWidth);
-    console.log("maxWidth " + maxWidth);
-    console.log("minHeight " + minHeight);
-    console.log("maxHeight " + maxHeight);
-    console.log("fieldWidth " + fieldWidth);
-    console.log("fieldHeight " + fieldHeight);
-
     //Assign orientation
     //if width is greater than height, we bisect vertically
     if(fieldWidth > fieldHeight){
@@ -42,6 +35,15 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
         return mazeWalls;
     }
 
+    console.log("______________________")
+    console.log("minWidth " + minWidth);
+    console.log("maxWidth " + maxWidth);
+    console.log("minHeight " + minHeight);
+    console.log("maxHeight " + maxHeight);
+    console.log("fieldWidth " + fieldWidth);
+    console.log("fieldHeight " + fieldHeight);
+    console.log("----------------------");
+
     if(orientation === vertical){
         let selectableColumns = []; //the list of columns that we can choose and select to be a wall
         let openingRows = []; //List of rows that we're allowed to select to be an opening
@@ -49,6 +51,9 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
         let randomRowIdx;
         let selectedColumn;
         let selectedOpeningRow;
+        console.log("_____");
+        console.log("Vertical Code");
+        console.log("_____");
 
         //add list of selectable columns into the array
         for(let a = minWidth; a <= maxWidth; a+=2){
@@ -93,11 +98,17 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
 
         console.log("minWidth: " + minWidth);
         console.log("maxWidth: " + (selectedColumn + 2) );
+        console.log("minHeight: " + minHeight);
+        console.log("minHeight: " + maxHeight);
+
+        console.log("____");
         console.log("minWidth: " + (selectedColumn + 2) );
         console.log("maxWidth: " + maxWidth );
+        console.log("minHeight: " + minHeight);
+        console.log("minHeight: " + maxHeight);
 
-        //mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, selectedColumn+2, minHeight, maxHeight));
-        //mazeWalls = mazeWalls.concat(recursiveDivision(grid, selectedColumn+2, maxWidth, minHeight, maxHeight));
+        mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, selectedColumn-2, minHeight, maxHeight));
+        mazeWalls = mazeWalls.concat(recursiveDivision(grid, selectedColumn+2, maxWidth, minHeight, maxHeight));
         
 
 
@@ -109,6 +120,9 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
         let randColumnIdx;
         let selectedRow;
         let selectedOpeningColumn;
+        console.log("_____");
+        console.log("Horizontal Code");
+        console.log("_____");
 
         console.log("minWidth: " + minWidth);
         console.log("maxWidth: " + maxWidth);
@@ -166,8 +180,8 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
         console.log("minHeight: " + (selectedRow+2));
         console.log("maxHeight: " + maxHeight);
 
-        //mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, maxWidth, minHeight, selectedRow+2));
-        //mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, maxWidth, selectedRow+2, maxHeight));
+        mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, maxWidth, minHeight, selectedRow-2));
+        mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, maxWidth, selectedRow+2, maxHeight));
         
 
     }
