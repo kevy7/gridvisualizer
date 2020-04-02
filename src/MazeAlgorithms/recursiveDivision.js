@@ -8,8 +8,8 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
     let vertical = "vertical";
     let horizantal = "horizontal";
     let orientation;
-    let fieldWidth = maxWidth - minWidth;
-    let fieldHeight = maxHeight - minHeight;
+    let fieldWidth = (maxWidth - minWidth)+3;
+    let fieldHeight = (maxHeight - minHeight)+3;
 
     console.log("minWidth " + minWidth);
     console.log("maxWidth " + maxWidth);
@@ -30,38 +30,17 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
 
     //base case for recursive function
     //We may need to fix this later
-    if(fieldWidth <2 || fieldHeight <2){
+    if(fieldWidth <=1 || fieldHeight <=1){
         console.log(" ");
         console.log("minWidth " + minWidth);
-    console.log("maxWidth " + maxWidth);
-    console.log("minHeight " + minHeight);
-    console.log("maxHeight " + maxHeight);
-    console.log("fieldWidth " + fieldWidth);
-    console.log("fieldHeight " + fieldHeight);
+        console.log("maxWidth " + maxWidth);
+        console.log("minHeight " + minHeight);
+        console.log("maxHeight " + maxHeight);
+        console.log("fieldWidth " + fieldWidth);
+        console.log("fieldHeight " + fieldHeight);
         console.log("reject");
         return mazeWalls;
     }
-    let selectableColumns = []; //the list of columns that we can choose and select to be a wall
-        let openingRows = []; //List of rows that we're allowed to select to be an opening
-        let randomColumnIdx;
-        let randomRowIdx;
-        let selectedColumn;
-        let selectedOpeningRow;
-
-        //add list of selectable columns into the array
-        for(let a = minWidth; a <= maxWidth; a+=2){
-            selectableColumns.push(a);
-        }
-
-        //add list of selectable opening rows into the array
-        for(let b = minHeight-1; b <= maxHeight+1; b+=2){
-            openingRows.push(b);
-        }
-
-        console.log("selectableColumns")
-        console.log(selectableColumns);
-        console.log("openingRows");
-        console.log(openingRows);
 
     if(orientation === vertical){
         let selectableColumns = []; //the list of columns that we can choose and select to be a wall
@@ -109,8 +88,16 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
             
         }
 
-        mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, selectedColumn-2, minHeight, maxHeight));
-        mazeWalls = mazeWalls.concat(recursiveDivision(grid, selectedColumn+2, maxWidth, minHeight, maxHeight));
+        console.log("____");
+        console.log("Division");
+
+        console.log("minWidth: " + minWidth);
+        console.log("maxWidth: " + (selectedColumn + 2) );
+        console.log("minWidth: " + (selectedColumn + 2) );
+        console.log("maxWidth: " + maxWidth );
+
+        //mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, selectedColumn+2, minHeight, maxHeight));
+        //mazeWalls = mazeWalls.concat(recursiveDivision(grid, selectedColumn+2, maxWidth, minHeight, maxHeight));
         
 
 
@@ -158,10 +145,29 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
         for(let a = trueMinWidth; a <= trueMaxWidth; a++){
             if(a === selectedOpeningColumn){continue}
             grid[selectedRow][a].isWall = true;
+            mazeWalls.push({
+                row: selectedRow,
+                column: a
+            });
         }
+        console.log("selected row: " + selectedRow);
 
-        // mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, maxWidth, minHeight, selectedRow-2));
-        // mazeWalls = mazeWalls.concat(recursiveDivision(grid, maxWidth, maxWidth, selectedRow+2, maxHeight));
+        console.log("____");
+        console.log("Division");
+
+        console.log("minWidth: " + minWidth);
+        console.log("maxWidth: " + maxWidth);
+        console.log("minHeight: " + minHeight);
+        console.log("maxHeight: " + (selectedRow+2));
+        console.log("_______");
+
+        console.log("minWidth: " + minWidth);
+        console.log("maxWidth: " + maxWidth);
+        console.log("minHeight: " + (selectedRow+2));
+        console.log("maxHeight: " + maxHeight);
+
+        //mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, maxWidth, minHeight, selectedRow+2));
+        //mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, maxWidth, selectedRow+2, maxHeight));
         
 
     }
