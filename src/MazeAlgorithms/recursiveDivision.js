@@ -36,7 +36,7 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
 
     if(orientation === vertical){
         let selectableColumns = []; //the list of columns that we can choose and select to be a wall
-        let openingRows = [];
+        let openingRows = []; //List of rows that we're allowed to select to be an opening
         let randomColumnIdx;
         let randomRowIdx;
         let selectedColumn;
@@ -58,16 +58,53 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
         selectedColumn = selectableColumns[randomColumnIdx];
         selectedOpeningRow = openingRows[randomRowIdx];
 
-
         console.log(selectableColumns);
         console.log(openingRows);
 
         console.log(selectedColumn);
         console.log(selectedOpeningRow);
 
+        let trueMinHeight = minHeight - 1; //Subtract by one to get our actual minHeight
+        let trueMaxHeight = maxHeight + 1;
+
+        console.log("trueMinHeight: " + trueMinHeight);
+        console.log("trueMaxHeight: " + trueMaxHeight);
+
+        for(let a = trueMinHeight; a <= trueMaxHeight; a++){
+            if(a === selectedOpeningRow){continue}
+            mazeWalls.push({
+                row: a,
+                column: selectedColumn
+            });
+            grid[a][selectedColumn].isWall = true;
+            
+        }
+
+        mazeWalls = mazeWalls.concat(recursiveDivision(grid, minWidth, selectedColumn-2, minHeight, maxHeight));
+        //mazeWalls = mazeWalls.concat(recursiveDivision(grid, selectedColumn+2, maxWidth, minHeight, maxHeight));
+        
+
 
     }
     else if(orientation === horizantal){
+        let selectableRows = [];
+        let openingColumn = [];
+        let randomColumnIdx;
+        let randomRowIdx;
+        let selectedRow;
+        let selctedOpeningColumn;
+
+        for(let a = minHeight; minHeight <= maxHeight; a+=2){
+            selectableRows.push(a);
+        }
+        for(let b = minWidth-1; b <= maxWidth+1; b+=2){
+            openingColumn.push(b);
+        }
+
+        console.log("selectableRows: " + selectableRows);
+        console.log("openingColumn: " + openingColumn);
+
+
 
     }
     
