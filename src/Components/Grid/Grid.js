@@ -282,43 +282,10 @@ class Grid extends Component {
         let testArray2 = recursiveDivision(this.state.grid, 2, maxWidth-3, 2, maxHeight-3); //We want to start at our max width and max height at -3 in order for the function to work
         //We want to start at min row and min column at 2 as well
 
-        /* testArray2.forEach(value => {
-            gridCopy[value.row][value.column].isWall = true;
-        }) */
         
         testArray = testArray.concat(testArray2);
 
         this.setState({walls: testArray});
-
-
-
-
-
-        /*
-
-        my code is doing an infinite loop because of the example below, it's not merging the two arrays correctly. 
-            Think of implementing some kind of queue to make the algorithm work.
-
-            actually, you can concat two arrays at the same time
-
-        */
-        /* let array = [];
-        let array1 = [1,2,3,4,5,6,7];
-        let array2 = [8,9,10,11,12];
-        
-        let queue = [];
-
-        // let array3 = array.concat(array1);
-        // array3 = array.concat(array2);
-        array = array.concat(array1);
-        array = array.concat(array2);
-
-        console.log(array);
-         */
-
-
-
-        //console.log(testArray2);
 
 
     }
