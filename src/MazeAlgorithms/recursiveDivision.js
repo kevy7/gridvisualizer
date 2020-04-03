@@ -27,14 +27,6 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
     //base case for recursive function
     //We may need to fix this later
     if(fieldWidth <=2 || fieldHeight <=2){
-        console.log(" ");
-        /* console.log("minWidth " + minWidth);
-        console.log("maxWidth " + maxWidth);
-        console.log("minHeight " + minHeight);
-        console.log("maxHeight " + maxHeight);
-        console.log("fieldWidth " + fieldWidth);
-        console.log("fieldHeight " + fieldHeight); */
-        console.log("reject");
         return mazeWalls;
     }
 
