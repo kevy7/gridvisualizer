@@ -159,23 +159,4 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
 
 }
 
-//function used to generate a random number for us
-const generateRandomNum = (min, max, opening) => {
-
-    let randomNumber = Math.random() * (max - min) + min;
-
-    while(randomNumber === opening){
-        //re-execute code if the random number is equal to the opening number
-        randomNumber = Math.random() * (max - min) + min;
-    }
-
-    return Math.floor(randomNumber);
-
-}
-
-
-const selectWall = (min, max, grid) => {
-    
-}
-
 export default recursiveDivision;
