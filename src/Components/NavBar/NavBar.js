@@ -69,6 +69,10 @@ class NavBar extends Component {
         this.props.selectAlgorithm(ATreeSearchAlgo);
     }
 
+    selectRecursiveDiv = () => {
+        
+    }
+
     selectTest = () => {
         this.props.selectAction(testAction);
     }
@@ -148,7 +152,7 @@ class NavBar extends Component {
                             </div>
                             <div className="navbar-item has-dropdown is-hoverable">
                                 <a className="navbar-link" >
-                                    Algorithm
+                                    Algorithms
                                 </a>
                                 <div className="navbar-dropdown is-boxed">
                                     <div
@@ -183,6 +187,21 @@ class NavBar extends Component {
                                     </div>
                                 </div>
                             </div>
+
+                            <div className="navbar-item has-dropdown is-hoverable">
+                                <a className="navbar-link" >
+                                    Maze Algorithms
+                                </a>
+                                <div className="navbar-dropdown is-boxed">
+                                    <div
+                                        className="navbar-item navItem-hover" 
+                                        onClick={this.selectBFSAlgo}
+                                    >
+                                        Recurive Division
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                         <div className="navbar-end">
                         <div className="navbar-item">

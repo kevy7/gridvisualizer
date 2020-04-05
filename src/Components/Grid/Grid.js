@@ -255,7 +255,7 @@ class Grid extends Component {
     }
 
     animateMaze = () => {
-        
+
     }
 
     testFunction = () => {
@@ -299,14 +299,20 @@ class Grid extends Component {
         } 
 
         let algoButton;
+        let mazeAlgoButton;
 
         if(this.props.selectedAlgo.selectedAlgo){
             algoButton = <button className="button" type="button" onClick={this.animatePath}>Run {this.props.selectedAlgo.selectedAlgo}</button>
         }
+        if(this.props.selectedMazeAlgo.mazeAlgorithem){
+            mazeAlgoButton = <button className="button" type="button" onClick={this.animateMaze}>Run {this.props.selectedMazeAlgo.mazeAlgorithem}</button>
+        }
+
 
         return (
             <div className="grid">
                 {algoButton}
+                {mazeAlgoButton}
                 <button className="button" type="button" onClick={this.resetGrid}>Reset Grid</button>
                 <button className="button" type="button" onClick={this.testFunction}>Test Button</button>
                 {
@@ -393,7 +399,8 @@ class Grid extends Component {
 const mapStateToProps = (state) => {
     return {
         selectedGrids: state.selectedGrids,
-        selectedAlgo: state.selectedAlgo
+        selectedAlgo: state.selectedAlgo,
+        selectedMazeAlgo: state.selectedMazeAlgo
     }
 }
 
