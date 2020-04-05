@@ -1,7 +1,8 @@
 import { SELECT_MAZE_ALGO } from "../actions/types";
+import { RecursiveDivision } from "../userAlgo/userAlgo";
 
 let initialState = {
-    mazeAlgorithem: ""
+    mazeAlgorithem: RecursiveDivision //Defaults to recursive division algorithm
 }
 
 //action.type
