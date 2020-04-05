@@ -1,6 +1,6 @@
 import { SELECT_MAZE_ALGO } from "../actions/types";
 
-initialState = {
+let initialState = {
     mazeAlgorithem: ""
 }
 
