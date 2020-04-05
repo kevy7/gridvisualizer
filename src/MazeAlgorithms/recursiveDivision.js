@@ -66,7 +66,7 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
                 row: a,
                 column: selectedColumn
             });
-            grid[a][selectedColumn].isWall = true;
+            //grid[a][selectedColumn].isWall = true;
             
         }
 
@@ -119,7 +119,7 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
 
         for(let a = trueMinWidth; a <= trueMaxWidth; a++){
             if(a === selectedOpeningColumn){continue}
-            grid[selectedRow][a].isWall = true;
+            //grid[selectedRow][a].isWall = true;
             mazeWalls.push({
                 row: selectedRow,
                 column: a

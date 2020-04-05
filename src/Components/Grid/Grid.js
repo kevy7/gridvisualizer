@@ -260,28 +260,28 @@ class Grid extends Component {
         let gridCopy = this.state.grid;
         let outerWalls = setOuterWalls(this.state.grid, maxWidth, maxHeight);
         let mazeWalls;
-        let index = 0;
+        let index = 0; //used for animation
 
-        //this.setState({grid: gridCopy});
-
-        /* testArray.forEach(test => {
-            gridCopy[test.row][test.column].isWall = true;
-        }); */
-
-
-        /* if(this.props.selectedMazeAlgo.mazeAlgorithem === RecursiveDivision){
+        if(this.props.selectedMazeAlgo.mazeAlgorithem === RecursiveDivision){
             //Assign our walls based on the recursive division algorithm
             mazeWalls = recursiveDivision(this.state.grid, 2, maxWidth-3, 2, maxHeight-3); //We want to start at our max width and max height at -3 in order for the function to work
-        } */
+        }
 
-        //outerWalls = outerWalls.concat(mazeWalls);
+        outerWalls = outerWalls.concat(mazeWalls);
 
-        console.log(outerWalls);
-
+        //used to animate the walls
         outerWalls.forEach(node => {
+            index+=1;
+            //this.state.grid[node.row][node.column].isWall = true;
             setTimeout(() => {
                 document.getElementById(`icon-${node.row}-${node.column}`).className = "node-wall";
-            }, index * 15);
+            }, index * 5);
+        })
+
+        //Animation currently does not work at the moment because of function below
+        //used to set grids as walls
+        outerWalls.forEach(node => {
+            this.state.grid[node.row][node.column].isWall = true;
         })
 
         //outerWalls = outerWalls.concat(mazeWalls);
@@ -291,7 +291,7 @@ class Grid extends Component {
 
 
 
-        //this.setState({walls: outerWalls});
+        this.setState({walls: outerWalls});
 
     }
 
