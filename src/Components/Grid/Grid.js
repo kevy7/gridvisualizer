@@ -269,27 +269,29 @@ class Grid extends Component {
         }); */
 
 
-        if(this.props.selectedMazeAlgo.mazeAlgorithem === RecursiveDivision){
+        /* if(this.props.selectedMazeAlgo.mazeAlgorithem === RecursiveDivision){
             //Assign our walls based on the recursive division algorithm
             mazeWalls = recursiveDivision(this.state.grid, 2, maxWidth-3, 2, maxHeight-3); //We want to start at our max width and max height at -3 in order for the function to work
-        }
+        } */
 
         //outerWalls = outerWalls.concat(mazeWalls);
+
+        console.log(outerWalls);
 
         outerWalls.forEach(node => {
             setTimeout(() => {
                 document.getElementById(`icon-${node.row}-${node.column}`).className = "node-wall";
-            }, index * 1);
+            }, index * 15);
         })
 
-        outerWalls = outerWalls.concat(mazeWalls);
+        //outerWalls = outerWalls.concat(mazeWalls);
 
 
         //console.log(outerWalls);
 
 
 
-        this.setState({walls: outerWalls});
+        //this.setState({walls: outerWalls});
 
     }
 
