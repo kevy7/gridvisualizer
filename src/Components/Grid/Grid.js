@@ -10,7 +10,7 @@ import ATreeSearch from "../../Algorithms/ATreeSearch";
 import setOuterWalls from "../../MazeAlgorithms/setOuterWalls";
 import recursiveDivision from "../../MazeAlgorithms/recursiveDivision";
 import { selectStartNode, selectEndNode, selectTraffic, selectWall } from '../../userActions/userActions';
-import { BreadthFS, DebthFS, DijkstraAlgo, GreedyBFS, ATreeSearchAlgo } from '../../userAlgo/userAlgo';
+import { BreadthFS, DebthFS, DijkstraAlgo, GreedyBFS, ATreeSearchAlgo, RecursiveDivision } from '../../userAlgo/userAlgo';
 import { selectAction, resetSelectedGrids } from '../../actions/index';
 import ifContainsObject from '../../functions/ifContainsObject';
 import { func } from 'prop-types';
@@ -255,6 +255,41 @@ class Grid extends Component {
     }
 
     animateMaze = () => {
+        let maxWidth = this.state.grid[0].length;
+        let maxHeight = this.state.grid.length;
+        let gridCopy = this.state.grid;
+        let outerWalls = setOuterWalls(this.state.grid, maxWidth, maxHeight);
+        let mazeWalls;
+        let index = 0;
+
+        //this.setState({grid: gridCopy});
+
+        /* testArray.forEach(test => {
+            gridCopy[test.row][test.column].isWall = true;
+        }); */
+
+
+        if(this.props.selectedMazeAlgo.mazeAlgorithem === RecursiveDivision){
+            //Assign our walls based on the recursive division algorithm
+            mazeWalls = recursiveDivision(this.state.grid, 2, maxWidth-3, 2, maxHeight-3); //We want to start at our max width and max height at -3 in order for the function to work
+        }
+
+        //outerWalls = outerWalls.concat(mazeWalls);
+
+        outerWalls.forEach(node => {
+            setTimeout(() => {
+                document.getElementById(`icon-${node.row}-${node.column}`).className = "node-wall";
+            }, index * 1);
+        })
+
+        outerWalls = outerWalls.concat(mazeWalls);
+
+
+        //console.log(outerWalls);
+
+
+
+        this.setState({walls: outerWalls});
 
     }
 
