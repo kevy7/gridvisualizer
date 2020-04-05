@@ -254,6 +254,10 @@ class Grid extends Component {
         }
     }
 
+    animateMaze = () => {
+        
+    }
+
     testFunction = () => {
         // let startRow = this.props.selectedGrids.startingGrid.row;
         // let startColumn = this.props.selectedGrids.startingGrid.column;
