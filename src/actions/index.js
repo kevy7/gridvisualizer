@@ -80,3 +80,9 @@ export const isHoverAction = (boolValue) => dispatch => {
 
 
 //action used to select a maze algorithm
+export const selectMazeAlgo = (algorithm) => dispatch => {
+    dispatch({
+        type: SELECT_MAZE_ALGO,
+        payload: algorithm
+    });
+}

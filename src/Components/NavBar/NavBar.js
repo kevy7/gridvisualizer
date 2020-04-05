@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 
 import "./NavBar.css";
 import { selectEndNode, selectTraffic, selectWall,  testAction } from '../../userActions/userActions';
-import { selectAction, selectAlgorithm } from '../../actions/index';
-import { BreadthFS, DebthFS, DijkstraAlgo, GreedyBFS, ATreeSearchAlgo } from '../../userAlgo/userAlgo';
+import { selectAction, selectAlgorithm, selectMazeAlgo } from '../../actions/index';
+import { BreadthFS, DebthFS, DijkstraAlgo, GreedyBFS, ATreeSearchAlgo, RecursiveDivision } from '../../userAlgo/userAlgo';
 
 class NavBar extends Component {
     /*
@@ -70,7 +70,7 @@ class NavBar extends Component {
     }
 
     selectRecursiveDiv = () => {
-        
+        this.props.selectMazeAlgo(RecursiveDivision);
     }
 
     selectTest = () => {
@@ -195,7 +195,7 @@ class NavBar extends Component {
                                 <div className="navbar-dropdown is-boxed">
                                     <div
                                         className="navbar-item navItem-hover" 
-                                        onClick={this.selectBFSAlgo}
+                                        onClick={this.selectRecursiveDiv}
                                     >
                                         Recurive Division
                                     </div>
@@ -236,5 +236,6 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps, {
     selectAction: selectAction,
-    selectAlgorithm: selectAlgorithm
+    selectAlgorithm: selectAlgorithm,
+    selectMazeAlgo: selectMazeAlgo
 })(NavBar);
