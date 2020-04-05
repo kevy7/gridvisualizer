@@ -4,6 +4,7 @@ import {
     SELECT_END_GRID,
     RESET_SELECTED_GRIDS,
     SELECT_ALGO,
+    SELECT_MAZE_ALGO,
     IS_HOVER
 } from './types';
 
@@ -76,3 +77,6 @@ export const isHoverAction = (boolValue) => dispatch => {
         payload: boolValue
     })
 }
+
+
+//action used to select a maze algorithm
