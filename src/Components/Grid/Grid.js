@@ -191,6 +191,7 @@ class Grid extends Component {
         this.setState({grid});
 
 
+        //This is a bad way to check if starting and ending nodes exist
         //The following code is used to run our algorithms
         if(!this.props.selectedGrids.startingGrid.row || !this.props.selectedGrids.endingGrid.row){
             alert("No Starting or End Nodes were selected. Please select a start and end node.")
