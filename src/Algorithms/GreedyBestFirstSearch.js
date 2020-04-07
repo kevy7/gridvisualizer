@@ -70,16 +70,7 @@ const GreedyBestFirstSearch = (grid, startRow, startColumn, endRow, endColumn) =
             queue.addQueue(grid[childRow][childCol]);
 
         }
-
-
-
-
     }
-
-
-
-    
-    
 }
 
 //This is our heuristic, this function will calculate the estimate distance between a node and our selected end node

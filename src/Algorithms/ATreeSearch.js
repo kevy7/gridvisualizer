@@ -31,6 +31,14 @@ const ATreeSearch = (grid, startRow, startColumn, endRow, endColumn) => {
             let heuristic = manhattanDistance(childrens[a].row, childrens[a].column, endRow, endColumn);
             let currentDistance;
 
+            if(currentNode.row === endRow && currentNode.column === endColumn){
+                let shortestPath = getShortestPath(grid, grid[endRow][endColumn]);
+                return {
+                    visited: visited,
+                    shortestPath: shortestPath
+                }
+            }
+
             //let prevDistance = grid[currentNode.row][currentNode.column].distance;
             if(grid[childrens[a].row][childrens[a].column].isVisited){continue}
             //If current child node is a wall, then skip the current node
@@ -76,14 +84,6 @@ const ATreeSearch = (grid, startRow, startColumn, endRow, endColumn) => {
                 currentDistance = 1 + grid[grid[childrens[a].row][childrens[a].column].prevNode.row][grid[childrens[a].row][childrens[a].column].prevNode.column].distance;
                 grid[childrens[a].row][childrens[a].column].distance = currentDistance;
                 grid[childrens[a].row][childrens[a].column].fValue = currentDistance + heuristic;
-            }
-
-            if(currentNode.row === endRow && currentNode.column === endColumn){
-                let shortestPath = getShortestPath(grid, grid[endRow][endColumn]);
-                return {
-                    visited: visited,
-                    shortestPath: shortestPath
-                }
             }
 
             queue.addQueueFValue(grid[childrens[a].row][childrens[a].column]);
