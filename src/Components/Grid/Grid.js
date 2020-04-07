@@ -198,7 +198,7 @@ class Grid extends Component {
         }
         else {
 
-            try{
+            //try{
             //These codes break if the algo button is pressed twice
             //This code also breaks for Dijkstra and the following alrogithms below when we select an end node with only one opening wall
 
@@ -246,10 +246,10 @@ class Grid extends Component {
                 }, index * 8); //10.5
             })
 
-            }//try
-            catch{
-                alert("Please reset the grid");
-            }
+            //}//try
+            //catch{
+                //alert("Please reset the grid");
+            //}
 
 
         }

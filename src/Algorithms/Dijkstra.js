@@ -15,7 +15,7 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
 
     while(queue.queue.length){
         currentNode = queue.deQueue(); //Remove first priority from your array
-        if(currentNode.isWall){continue}
+        if(currentNode.isWall){continue} //re-add this
 
         childrens = getChildrens(currentNode, maxRow, maxCol);
         if(currentNode.isVisited === false){
@@ -28,10 +28,23 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
         
         for(var a = 0; a < childrens.length; a++){
 
+            //It looks like adding the conditional statement here is resolving the issue
+            if(currentNode.row === endRow && currentNode.column === endColumn){
+                let shortestPath = getShortestPath(grid, grid[endRow][endColumn]);
+                //Error is occuring in this section of the code
+                return {
+                    visited: visited,
+                    shortestPath: shortestPath
+                }
+            }
+
             //let prevDistance = grid[currentNode.row][currentNode.column].distance;
             if(grid[childrens[a].row][childrens[a].column].isVisited){continue}
             //If current child node is a wall, then skip the current node
             if(grid[childrens[a].row][childrens[a].column].isWall){continue}
+
+
+            
 
             if(grid[childrens[a].row][childrens[a].column].prevNode === undefined){
                 grid[childrens[a].row][childrens[a].column].prevNode = {
@@ -70,13 +83,14 @@ const Dijkstra = (grid, startRow, startColumn, endRow, endColumn) => {
                 grid[childrens[a].row][childrens[a].column].distance = 1 + grid[grid[childrens[a].row][childrens[a].column].prevNode.row][grid[childrens[a].row][childrens[a].column].prevNode.column].distance
             }
 
-            if(currentNode.row === endRow && currentNode.column === endColumn){
+            /* if(currentNode.row === endRow && currentNode.column === endColumn){
                 let shortestPath = getShortestPath(grid, grid[endRow][endColumn]);
+                //Error is occuring in this section of the code
                 return {
                     visited: visited,
                     shortestPath: shortestPath
                 }
-            }
+            } */
 
             queue.addQueue(grid[childrens[a].row][childrens[a].column]);
 
