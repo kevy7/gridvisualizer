@@ -40,6 +40,14 @@ const GreedyBestFirstSearch = (grid, startRow, startColumn, endRow, endColumn) =
             let childCol = childrens[a].column;
             let distance = manhattanDistance(childRow, childCol, endRow, endColumn); //This is our hueristic
 
+            if(currentNode.row === endRow && currentNode.column === endColumn){
+                let shortestPath = getShortestPath(grid, grid[endRow][endColumn]);
+                return {
+                    visited: visited,
+                    shortestPath: shortestPath
+                }
+            }
+
             //Don't do anything with this node if it is a wall or already visited
             if(grid[childRow][childCol].isWall){continue}
             if(grid[childRow][childCol].isVisited){continue}
@@ -56,14 +64,6 @@ const GreedyBestFirstSearch = (grid, startRow, startColumn, endRow, endColumn) =
             }
             else {
                 grid[childRow][childCol].distance = distance 
-            }
-
-            if(currentNode.row === endRow && currentNode.column === endColumn){
-                let shortestPath = getShortestPath(grid, grid[endRow][endColumn]);
-                return {
-                    visited: visited,
-                    shortestPath: shortestPath
-                }
             }
 
             //add current child node into the queue after it has been assigned a previous node and distance
