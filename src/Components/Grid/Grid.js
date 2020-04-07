@@ -200,6 +200,7 @@ class Grid extends Component {
 
             try{
             //These codes break if the algo button is pressed twice
+            //This code also breaks for Dijkstra and the following alrogithms below when we select an end node with only one opening wall
 
             if(this.props.selectedAlgo.selectedAlgo === BreadthFS){
                 algoResult = BFS(this.state.grid, startRow, startColumn, endRow, endColumn);
