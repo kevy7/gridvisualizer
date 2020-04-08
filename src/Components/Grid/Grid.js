@@ -19,6 +19,12 @@ import dataStructureTest from '../../dataStructures/dataStructureTest';
 import { func } from 'prop-types';
 import { writeFile } from 'fs';
 
+class NodeTest {
+    constructor(val){
+        this.val = val;
+    }
+}
+
 class Grid extends Component {
     
     state = {
@@ -301,7 +307,9 @@ class Grid extends Component {
 
     testFunction = () => {
         
+        let node = new NodeTest(7);
 
+        console.log(node);
 
     }
 
