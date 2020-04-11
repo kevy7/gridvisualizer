@@ -12,7 +12,7 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
     let fieldHeight = (maxHeight - minHeight)+3;
 
     //Assign orientation
-    //if width is greater than height, we bisect vertically
+    //if width is greater than height, we disect vertically
     if(fieldWidth > fieldHeight){
         orientation = vertical;
     }
