@@ -211,22 +211,18 @@ class Grid extends Component {
 
             if(this.props.selectedAlgo.selectedAlgo === BreadthFS){
                 algoResult = BFS(this.state.grid, startRow, startColumn, endRow, endColumn);
-                //this.setState({shortestPath: algoResult.shortestPath});
                 this.setState({visited: algoResult.visited});
             }
             else if(this.props.selectedAlgo.selectedAlgo === DebthFS){
                 algoResult = DFS(this.state.grid, startRow, startColumn, endRow, endColumn);
-                //this.setState({shortestPath: algoResult.shortestPath});
                 this.setState({visited: algoResult.visited});
             }
             else if(this.props.selectedAlgo.selectedAlgo === DijkstraAlgo){
                 algoResult = Dijkstra(this.state.grid, startRow, startColumn, endRow, endColumn);
-                //this.setState({shortestPath: algoResult.shortestPath});
                 this.setState({visited: algoResult.visited});
             }
             else if(this.props.selectedAlgo.selectedAlgo === GreedyBFS){
                 algoResult = GreedyBestFirstSearch(this.state.grid, startRow, startColumn, endRow, endColumn);
-                //this.setState({shortestPath: algoResult.shortestPath});
                 this.setState({visited: algoResult.visited});
             }
             else if(this.props.selectedAlgo.selectedAlgo === ATreeSearchAlgo){
