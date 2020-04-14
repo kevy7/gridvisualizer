@@ -5,6 +5,7 @@ import "./NavBar.css";
 import { selectEndNode, selectTraffic, selectWall,  testAction } from '../../userActions/userActions';
 import { selectAction, selectAlgorithm, selectMazeAlgo } from '../../actions/index';
 import { BreadthFS, DebthFS, DijkstraAlgo, GreedyBFS, ATreeSearchAlgo, RecursiveDivision } from '../../userAlgo/userAlgo';
+import TutorialModal from "../TutorialModal/TutorialModal";
 
 class NavBar extends Component {
     /*
@@ -81,7 +82,7 @@ class NavBar extends Component {
         
         return (
             <div className="NavBar">
-
+                <TutorialModal />
                 <nav className="navbar is-transparent">
                     <div className="navbar-brand">
                         <a className="navbar-item" href="https://bulma.io">

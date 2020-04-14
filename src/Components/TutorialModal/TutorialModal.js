@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './TutorialModal.css';
 
-class TutorialModal {
+class TutorialModal extends Component {
 
     render(){
         return (
