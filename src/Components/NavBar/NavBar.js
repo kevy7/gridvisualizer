@@ -81,6 +81,7 @@ class NavBar extends Component {
     render(){
         
         return (
+            //I think the TutorialModal is defaulted to be hidden
             <div className="NavBar">
                 <TutorialModal />
                 <nav className="navbar is-transparent">
