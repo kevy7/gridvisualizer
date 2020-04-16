@@ -13,9 +13,7 @@ import { selectStartNode, selectEndNode, selectTraffic, selectWall } from '../..
 import { BreadthFS, DebthFS, DijkstraAlgo, GreedyBFS, ATreeSearchAlgo, RecursiveDivision } from '../../userAlgo/userAlgo';
 import { selectAction, resetSelectedGrids } from '../../actions/index';
 import ifContainsObject from '../../functions/ifContainsObject';
-
 import dataStructureTest from '../../dataStructures/dataStructureTest';
-
 import { func } from 'prop-types';
 import { writeFile } from 'fs';
 
