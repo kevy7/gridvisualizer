@@ -83,7 +83,7 @@ class NavBar extends Component {
         return (
             //I think the TutorialModal is defaulted to be hidden
             <div className="NavBar">
-                <TutorialModal />
+                {/*<TutorialModal />*/}
                 <nav className="navbar is-transparent">
                     <div className="navbar-brand">
                         <a className="navbar-item" href="https://bulma.io">
