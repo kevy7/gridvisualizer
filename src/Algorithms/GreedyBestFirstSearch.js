@@ -5,7 +5,7 @@ import priorityQueue from '../dataStructures/priorityQueue';
 //lower estimated distance to the end
 
 const GreedyBestFirstSearch = (grid, startRow, startColumn, endRow, endColumn) => {
-    let queue = new priorityQueue(); //Created an instance of priorityQueue class
+    let queue = new priorityQueue();
 
     //For our Greedy BFS, our heuristic (an estimate measure of how far something is to an endpoint) is going to be based on Manhattan Distance
 
