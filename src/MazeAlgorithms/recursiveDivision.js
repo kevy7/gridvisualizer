@@ -22,10 +22,8 @@ const recursiveDivision = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
     else {
         orientation = horizantal;
     }
-    //console.log(orientation);
 
     //base case for recursive function
-    //We may need to fix this later
     if(fieldWidth <=2 || fieldHeight <=2){
         return mazeWalls;
     }
