@@ -282,13 +282,6 @@ class Grid extends Component {
             this.state.grid[node.row][node.column].isWall = true;
         })
 
-        //outerWalls = outerWalls.concat(mazeWalls);
-
-
-        //console.log(outerWalls);
-
-
-
         this.setState({walls: outerWalls});
 
     }
