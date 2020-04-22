@@ -55,9 +55,7 @@ class Grid extends Component {
         if(ifContainsObject(traffic, selectedNode) === false){
             //if the traffic array doesn't contain the your object, add it into the object
             //For this reason, this won't allow us to add multiple of the same objects
-
             traffic.push(selectedNode);
-            // this.setState({traffic: traffic}); //Looks like this is not needed?
         }
 
         if(ifContainsObject(walls, selectedNode) === true){
