@@ -8,18 +8,6 @@ import { BreadthFS, DebthFS, DijkstraAlgo, GreedyBFS, ATreeSearchAlgo, Recursive
 import TutorialModal from "../TutorialModal/TutorialModal";
 
 class NavBar extends Component {
-    /*
-
-        example of initializing state with constructor(props)
-
-        constructor(props) {
-        super(props);
-        // Don't call this.setState() here!
-        this.state = { counter: 0 };
-        this.handleClick = this.handleClick.bind(this);
-        }
-
-    */
 
     constructor(props) {
         super(props);
