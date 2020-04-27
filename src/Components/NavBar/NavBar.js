@@ -34,7 +34,6 @@ class NavBar extends Component {
     }
 
     selectStartAction = () => {
-        //let node = this.startAction;
         this.props.selectAction("fa fa-play node-icon"); //replace this with the selectStartNode user action
     }
 
