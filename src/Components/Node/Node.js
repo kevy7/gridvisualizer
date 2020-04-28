@@ -13,7 +13,6 @@ class Node extends Component {
         isHovered: false
     }
 
-    //This is just a test
     clickButton = () => {
         //let message = "Row: " + this.props.row + " Column: " + this.props.column + " isVisited: " + this.props.isVisited;
 
@@ -50,8 +49,6 @@ class Node extends Component {
             console.log("Prev Node: ", this.props.prevNode);
 
         }
-        //console.log(this.props.isWall);
-
     }
 
     //check out the event listener on mousemove or onmouseenter
