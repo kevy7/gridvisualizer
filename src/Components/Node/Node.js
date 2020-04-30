@@ -14,8 +14,6 @@ class Node extends Component {
     }
 
     clickButton = () => {
-        //let message = "Row: " + this.props.row + " Column: " + this.props.column + " isVisited: " + this.props.isVisited;
-
         console.log(this.props); //Leaving this for now for testing
 
         let selectGridData = {
