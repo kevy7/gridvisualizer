@@ -14,7 +14,7 @@ class Node extends Component {
     }
 
     clickButton = () => {
-        console.log(this.props); //Leaving this for now for testing
+        console.log(this.props);
 
         let selectGridData = {
             userAction: this.props.userAction,
