@@ -73,7 +73,6 @@ class Node extends Component {
     }
 
     pressDownKey = (e) => {
-        //e.preventDefault();
         //Add traffic/weight for the user
         if(this.state.isHovered && e.key.toLowerCase() === 'w'){
             if(this.props.userAction === selectTraffic){
