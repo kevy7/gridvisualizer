@@ -10,12 +10,14 @@ class TutorialModal extends Component {
                     <div className="modal-background"></div>
                     <div className="modal-card">
                         <header className="modal-card-head">
-                            <p className="modal-card-title">Modal title</p>
+                            <p className="modal-card-title">Tutorial</p>
                             <button className="delete" aria-label="close"></button>
                         </header>
 
                         <section className="modal-card-body">
                             {/* add modal description here */}
+                            <h1>Title here</h1>
+                            <p>Hi wlecome to my page</p>
                         </section>
 
                         <footer className="modal-card-foot">
