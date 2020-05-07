@@ -16,12 +16,12 @@ class TutorialModal extends Component {
                         </header>
 
                         <section className="modal-card-body">
-                            {/* add modal description here */}
-
+                            
+                            {/* Page 1 of modal */}
                             <ModalSections 
                                 modalPara="this is my paragraph"
                             />
-                            {/* add modal description here */}
+                            {/* Page 2 of modal */}
 
 
                         </section>
