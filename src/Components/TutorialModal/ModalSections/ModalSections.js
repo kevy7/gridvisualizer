@@ -5,7 +5,7 @@ class ModalSections extends Component {
     render(){
         return (
             <div className="modalSections">
-                
+                <p>{this.props.modalPara}</p>
             </div>
         )
     }

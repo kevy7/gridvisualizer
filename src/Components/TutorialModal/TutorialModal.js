@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './TutorialModal.css';
+import ModalSections from './ModalSections/ModalSections';
 
 class TutorialModal extends Component {
 
@@ -16,8 +17,13 @@ class TutorialModal extends Component {
 
                         <section className="modal-card-body">
                             {/* add modal description here */}
-                            <h1>Title here</h1>
-                            <p>Hi wlecome to my page</p>
+
+                            <ModalSections 
+                                modalPara="this is my paragraph"
+                            />
+                            {/* add modal description here */}
+
+
                         </section>
 
                         <footer className="modal-card-foot">
