@@ -71,6 +71,7 @@ class NavBar extends Component {
             //I think the TutorialModal is defaulted to be hidden
             <div className="NavBar">
                 {/*<TutorialModal />*/}
+                <TutorialModal />
                 <nav className="navbar is-transparent">
                     <div className="navbar-brand">
                         {/*
