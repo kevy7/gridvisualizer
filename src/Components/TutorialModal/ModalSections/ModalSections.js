@@ -4,7 +4,7 @@ import './ModalSections.css';
 class ModalSections extends Component {
     render(){
         return (
-            <div className="sections">
+            <div className="sections hide-section">
                 <div className="content">
                     {/*<h2>Title</h2>*/}
                     <p>Hi, welcome to my pathfinding visualization app that was heavily inspired by Clément Mihailescu. With this website, you have three main tabs to use below.</p>
