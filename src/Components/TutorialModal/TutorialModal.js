@@ -27,8 +27,12 @@ class TutorialModal extends Component {
                         </section>
 
                         <footer className="modal-card-foot">
-                            <button className="button is-success">Save changes</button>
-                            <button className="button">Cancel</button>
+                            <div className="field is-grouped is-grouped-right">
+                                {/* <button className="button is-success">Save changes</button>
+                                <button className="button">Cancel</button> */}
+                                <button class="button">Prev</button>
+                                <button class="button">Next</button>
+                            </div>
                         </footer>
                     </div>
                 </div>
