@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './TutorialModal.css';
 import ModalSections from './ModalSections/ModalSections';
+import ModalSections2 from './ModalSections/ModalSections2'; //page 2
 
 class TutorialModal extends Component {
 
@@ -17,11 +18,10 @@ class TutorialModal extends Component {
 
                         <section className="modal-card-body">
                             
-                            {/* Page 1 of modal */}
-                            <ModalSections
-                            />
+                            {/* Page 1 of modal - best way to hide these? */}
+                            <ModalSections />
                             {/* Page 2 of modal */}
-                            
+                            <ModalSections2 />
 
 
                         </section>
