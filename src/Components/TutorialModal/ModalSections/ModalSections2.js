@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import startAndEndImg from '../tutorialImages/startAndEnd.png'; //imported image
 
 class ModalSections2 extends Component {
     render(){
@@ -13,7 +14,7 @@ class ModalSections2 extends Component {
                         Select any square to be your end destination. You will then see a stop icon displayed on your selected square.
                     </p>
                     {/* Place tutorial image here */}
-                    
+
                 </div>
             </div>
         )
