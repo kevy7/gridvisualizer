@@ -14,6 +14,16 @@ class ModalSections2 extends Component {
                         Select any square to be your end destination. You will then see a stop icon displayed on your selected square.
                     </p>
                     {/* Place tutorial image here */}
+                    {/* how to import an image
+                    <img 
+                        className={styles.projectImage}
+                        src={state.image}
+                    />
+                    */}
+                    <img
+                        className="tutorialImage"
+                        src={startAndEndImg}
+                    />
 
                 </div>
             </div>
