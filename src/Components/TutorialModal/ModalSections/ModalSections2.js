@@ -24,6 +24,7 @@ class ModalSections2 extends Component {
                         className="tutorialImage"
                         src={startAndEndImg}
                     />
+                    <p>Finally, click on the "Run (Algorithm Name Here)" button to see an animation of your selected alrogrithm.</p>
 
                 </div>
             </div>
