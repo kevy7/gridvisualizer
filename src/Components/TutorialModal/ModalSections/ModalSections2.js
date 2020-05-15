@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import startAndEndImg from '../tutorialImages/startAndEnd.png'; //imported image
+import runAlgo from '../tutorialImages/RunAlgo.png';
 
 class ModalSections2 extends Component {
     render(){
@@ -25,7 +26,10 @@ class ModalSections2 extends Component {
                         src={startAndEndImg}
                     />
                     <p>Finally, click on the "Run (Algorithm Name Here)" button to see an animation of your selected alrogrithm.</p>
-                    
+                    <img 
+                        className="tutorialImage"
+                        src={runAlgo}
+                    />
 
                 </div>
             </div>
