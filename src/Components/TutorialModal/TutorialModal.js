@@ -6,6 +6,9 @@ import ModalSections2 from './ModalSections/ModalSections2'; //page 2
 class TutorialModal extends Component {
 
     //add function for buttons here
+    pressNext = () => {
+
+    }
 
     render(){
         return (
