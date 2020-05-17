@@ -32,6 +32,7 @@ class TutorialModal extends Component {
 
         for (var a = 0; a < sections.length; a++){
             //sections[a].className = "section hide-section";
+            //find a way to just replace the className instead //.hide-section
             sections[a].style.display = "none";
             console.log(sections[a].className);
         }
