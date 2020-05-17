@@ -5,6 +5,10 @@ import ModalSections2 from './ModalSections/ModalSections2'; //page 2
 
 class TutorialModal extends Component {
 
+    state = {
+        index: 0 //index of carousel is going to start at 1
+    }
+
     //add function for buttons here
     pressNext = () => {
         //use document.getElementsByClassName("sections")
