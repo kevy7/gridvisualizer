@@ -5,7 +5,7 @@ import runAlgo from '../tutorialImages/RunAlgo.png';
 class ModalSections2 extends Component {
     render(){
         return (
-            <div className="sections">
+            <div className="sections hide-section">
                 <div className="content">
                     <h3>Getting started</h3>
                     <p> First, select and click on any square in the grid. 

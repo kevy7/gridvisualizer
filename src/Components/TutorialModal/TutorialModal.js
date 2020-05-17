@@ -10,10 +10,12 @@ class TutorialModal extends Component {
         index: 0 //index of carousel is going to start at 1
     }
 
-    //add function for buttons here
     pressPrev = () => {
         this.displaySection(this.state.index += -1); //Will either add by one or subtract by one
-        //console.log("you pressed on me");
+    }
+
+    pressNext = () => {
+        this.displaySection(this.state.index += 1);
     }
 
     displaySection = (n) => {
