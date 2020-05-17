@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './TutorialModal.css';
 import ModalSections from './ModalSections/ModalSections';
 import ModalSections2 from './ModalSections/ModalSections2'; //page 2
+import { thisTypeAnnotation } from '@babel/types';
 
 class TutorialModal extends Component {
 
@@ -15,6 +16,8 @@ class TutorialModal extends Component {
         //console.log("you pressed on me");
     }
 
+    
+
     displaySection = (n) => {
         //console.log(this.state.index);
         let sections = document.getElementsByClassName("sections");
@@ -24,8 +27,19 @@ class TutorialModal extends Component {
         }
 
         if(n > sections.length-1){
-            
+            this.state.index = 0;
         }
+
+        for (var a = 0; a < sections.length; a++){
+            //sections[a].className = "section hide-section";
+            sections[a].style.display = "none";
+            console.log(sections[a].className);
+        }
+
+        //sections[this.state.index].className = "section";
+        sections[this.state.index].style.display = "block";
+
+
     }
 
     render(){
