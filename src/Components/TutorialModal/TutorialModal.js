@@ -16,10 +16,7 @@ class TutorialModal extends Component {
         //console.log("you pressed on me");
     }
 
-    
-
     displaySection = (n) => {
-        //console.log(this.state.index);
         let sections = document.getElementsByClassName("sections");
         
         if(n < 0){
