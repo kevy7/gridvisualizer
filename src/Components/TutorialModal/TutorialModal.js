@@ -10,14 +10,22 @@ class TutorialModal extends Component {
     }
 
     //add function for buttons here
-    pressNextPrev = (n) => {
-        //use document.getElementsByClassName("sections")
-        //This should return an array of all elements with the classname sections
-        this.displaySection(state.index += n); //Will either add by one or subtract by one
+    pressPrev = () => {
+        this.displaySection(this.state.index += -1); //Will either add by one or subtract by one
+        //console.log("you pressed on me");
     }
 
     displaySection = (n) => {
+        //console.log(this.state.index);
+        let sections = document.getElementsByClassName("sections");
+        
+        if(n < 0){
+            this.state.index = sections.length-1;
+        }
 
+        if(n > sections.length-1){
+            
+        }
     }
 
     render(){
@@ -45,7 +53,7 @@ class TutorialModal extends Component {
                             <div className="field is-grouped is-grouped-right">
                                 {/* <button className="button is-success">Save changes</button>
                                 <button className="button">Cancel</button> */}
-                                <button class="button">Prev</button>
+                                <button class="button" onClick={this.pressPrev}>Prev</button>
                                 <button class="button">Next</button>
                             </div>
                         </footer>
