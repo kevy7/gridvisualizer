@@ -35,14 +35,12 @@ class TutorialModal extends Component {
 
         //sections[this.state.index].className = "section";
         sections[this.state.index].style.display = "block";
-
-
     }
 
     render(){
         return (
             <div className="tutorialModal">
-                <div className="modal is-active">
+                <div className="modal is-active"> {/* create a function to deactivate this modal */}
                     <div className="modal-background"></div>
                     <div className="modal-card">
                         <header className="modal-card-head">
