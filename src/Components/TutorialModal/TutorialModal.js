@@ -68,7 +68,7 @@ class TutorialModal extends Component {
                                 {/* <button className="button is-success">Save changes</button>
                                 <button className="button">Cancel</button> */}
                                 <button class="button" onClick={this.pressPrev}>Prev</button>
-                                <button class="button">Next</button>
+                                <button class="button" onClick={this.pressNext}>Next</button>
                             </div>
                         </footer>
                     </div>
