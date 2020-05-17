@@ -7,7 +7,8 @@ class TutorialModal extends Component {
 
     //add function for buttons here
     pressNext = () => {
-
+        //use document.getElementsByClassName("sections")
+        //This should return an array of all elements with the classname sections
     }
 
     render(){
