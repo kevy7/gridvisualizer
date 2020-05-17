@@ -6,6 +6,7 @@ class ModalSections extends Component {
         return (
             <div className="sections">
                 <div className="content">
+                    <h3>Overview</h3>
                     {/*<h2>Title</h2>*/}
                     <p>Hi, welcome to my pathfinding visualization app that was heavily inspired by Clément Mihailescu. With this website, you have three main tabs to use below.</p>
                     {/* Place image here */}

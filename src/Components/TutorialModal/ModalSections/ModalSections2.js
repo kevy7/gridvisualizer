@@ -8,10 +8,13 @@ class ModalSections2 extends Component {
             <div className="sections hide-section">
                 <div className="content">
                     <h3>Getting started</h3>
-                    <p> First, select and click on any square in the grid. 
-                        After a square is selected, you will see the start icon displayed on the grid. 
+                    <p> First, select and click on any square in the grid to be your starting node.
                         Now, after selecting a starting square, your action will automatically switch to the stop action. 
-                        Select any square to be your end destination. You will then see a stop icon displayed on your selected square.
+                    </p>
+
+                    <p>
+                        Finally, select any square to be your end destination. You will then see a stop icon displayed on your selected square.
+                        See example of the end result below.
                     </p>
                     {/* Place tutorial image here */}
                     {/* how to import an image
