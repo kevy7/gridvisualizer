@@ -10,9 +10,14 @@ class TutorialModal extends Component {
     }
 
     //add function for buttons here
-    pressNext = () => {
+    pressNextPrev = (n) => {
         //use document.getElementsByClassName("sections")
         //This should return an array of all elements with the classname sections
+        this.displaySection(state.index += n); //Will either add by one or subtract by one
+    }
+
+    displaySection = (n) => {
+
     }
 
     render(){
