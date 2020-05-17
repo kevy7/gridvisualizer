@@ -11,6 +11,11 @@ class TutorialModal extends Component {
     }
 
     pressClose = () => {
+
+        //el[0].classList.remove('newclass'); <-- used to remove a class from an element
+        let tutModal = document.getElementById("tutModal");
+        console.log(tutModal); //should return tutmodal
+        tutModal.classList.remove('is-active'); //This works
         
     }
 
@@ -44,7 +49,7 @@ class TutorialModal extends Component {
     render(){
         return (
             <div className="tutorialModal">
-                <div className="modal is-active"> {/* create a function to deactivate this modal */}
+                <div className="modal is-active" id="tutModal"> {/* create a function to deactivate this modal */}
                     <div className="modal-background"></div>
                     <div className="modal-card">
                         <header className="modal-card-head">
