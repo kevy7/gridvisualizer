@@ -10,6 +10,10 @@ class TutorialModal extends Component {
         index: 0 //index of carousel is going to start at 1
     }
 
+    pressClose = () => {
+        
+    }
+
     pressPrev = () => {
         this.displaySection(this.state.index += -1); //Will either add by one or subtract by one
     }
@@ -45,7 +49,7 @@ class TutorialModal extends Component {
                     <div className="modal-card">
                         <header className="modal-card-head">
                             <p className="modal-card-title">Tutorial</p>
-                            <button className="delete" aria-label="close"></button>
+                            <button className="delete" aria-label="close" onClick={this.pressClose}></button>
                         </header>
 
                         <section className="modal-card-body">
@@ -54,7 +58,6 @@ class TutorialModal extends Component {
                             <ModalSections />
                             {/* Page 2 of modal */}
                             <ModalSections2 />
-
 
                         </section>
 
