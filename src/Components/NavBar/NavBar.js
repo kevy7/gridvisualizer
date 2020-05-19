@@ -13,6 +13,12 @@ class NavBar extends Component {
         super(props);
     }
 
+    openTutorial = () => {
+        let tutModal = document.getElementById("tutModal");
+
+        console.log("you clicked on me");
+    }
+
     selectUserAction = () => {
 
         console.log(this.startAction.innerHTML);
@@ -200,13 +206,12 @@ class NavBar extends Component {
                         <div className="navbar-end">
                             <div className="navbar-item">
                                 <div className="buttons">
-                                    <a className="button is-primary">
+                                    <a className="button is-primary" onClick={this.openTutorial}>
                                         <strong>Tutorial</strong>
                                     </a>
                                 </div>
                             </div>
                         </div>
-
 
                     </div>
                 </nav>
