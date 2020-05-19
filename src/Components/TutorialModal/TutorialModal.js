@@ -12,9 +12,7 @@ class TutorialModal extends Component {
 
     pressClose = () => {
 
-        //el[0].classList.remove('newclass'); <-- used to remove a class from an element
         let tutModal = document.getElementById("tutModal");
-        console.log(tutModal); //should return tutmodal
         tutModal.classList.remove('is-active'); //This works
         
     }
