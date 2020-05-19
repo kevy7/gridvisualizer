@@ -16,7 +16,8 @@ class NavBar extends Component {
     openTutorial = () => {
         let tutModal = document.getElementById("tutModal");
 
-        console.log("you clicked on me");
+        tutModal.classList.add("is-active");
+
     }
 
     selectUserAction = () => {
