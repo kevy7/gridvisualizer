@@ -7,7 +7,7 @@ import { thisTypeAnnotation } from '@babel/types';
 class TutorialModal extends Component {
 
     state = {
-        index: 0 //index of carousel is going to start at 1
+        index: 0
     }
 
     pressClose = () => {
