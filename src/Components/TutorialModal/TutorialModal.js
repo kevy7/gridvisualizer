@@ -18,7 +18,7 @@ class TutorialModal extends Component {
     }
 
     pressPrev = () => {
-        this.displaySection(this.state.index += -1); //Will either add by one or subtract by one
+        this.displaySection(this.state.index += -1);
     }
 
     pressNext = () => {
