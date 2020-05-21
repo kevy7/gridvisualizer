@@ -47,7 +47,7 @@ class TutorialModal extends Component {
     render(){
         return (
             <div className="tutorialModal">
-                <div className="modal is-active" id="tutModal"> {/* create a function to deactivate this modal */}
+                <div className="modal" id="tutModal"> {/* create a function to deactivate this modal */}
                     <div className="modal-background"></div>
                     <div className="modal-card">
                         <header className="modal-card-head">

@@ -268,13 +268,12 @@ class Grid extends Component {
         outerWalls = outerWalls.concat(mazeWalls);
 
         //used to animate the walls
-        outerWalls.forEach(node => {
+        /* outerWalls.forEach(node => {
             index+=1;
-            //this.state.grid[node.row][node.column].isWall = true;
             setTimeout(() => {
                 document.getElementById(`icon-${node.row}-${node.column}`).className = "node-wall";
             }, index * 5);
-        })
+        }) */
 
         //Animation currently does not work at the moment because of function below
         //used to set grids as walls
