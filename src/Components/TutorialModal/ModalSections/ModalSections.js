@@ -10,7 +10,6 @@ class ModalSections extends Component {
                     {/*<h2>Title</h2>*/}
                     <p>Hi, welcome to my pathfinding visualization app that was heavily inspired by Clément Mihailescu. With this website, you have three main tabs to use below.</p>
                     {/* Place image here */}
-
                     <ul>
                         <li>Action</li>
                         <ul>
