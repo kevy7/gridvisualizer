@@ -276,7 +276,6 @@ class Grid extends Component {
         }) */
 
         //Animation currently does not work at the moment because of function below
-        //used to set grids as walls
         outerWalls.forEach(node => {
             this.state.grid[node.row][node.column].isWall = true;
         })
