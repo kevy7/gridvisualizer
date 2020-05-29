@@ -57,7 +57,7 @@ class TutorialModal extends Component {
 
                         <section className="modal-card-body">
                             
-                            {/* Page 1 of modal - best way to hide these? */}
+                            {/* Page 1 of modal */}
                             <ModalSections />
                             {/* Page 2 of modal */}
                             <ModalSections2 />
