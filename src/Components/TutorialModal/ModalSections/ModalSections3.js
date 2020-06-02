@@ -6,8 +6,8 @@ class ModalSections3 extends Component {
             <div className="sections">
                 <div className="content">
 
+                    <h3>Selecting Walls and Wieghted Nodes (traffic)</h3>
                     
-
                 </div>
 
             </div>
