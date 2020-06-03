@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './TutorialModal.css';
 import ModalSections from './ModalSections/ModalSections';
 import ModalSections2 from './ModalSections/ModalSections2'; //page 2
+import modalSections3 from './ModalSections/ModalSections3'; //page 3
 import { thisTypeAnnotation } from '@babel/types';
 
 class TutorialModal extends Component {
