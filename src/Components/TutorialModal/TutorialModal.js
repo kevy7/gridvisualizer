@@ -63,7 +63,7 @@ class TutorialModal extends Component {
                             {/* Page 2 of modal */}
                             <ModalSections2 />
                             {/* Page 3 of modal */}
-
+                            <ModalSections3 />
                         </section>
 
                         <footer className="modal-card-foot">
