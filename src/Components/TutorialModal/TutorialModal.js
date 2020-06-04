@@ -62,6 +62,7 @@ class TutorialModal extends Component {
                             <ModalSections />
                             {/* Page 2 of modal */}
                             <ModalSections2 />
+                            {/* Page 3 of modal */}
 
                         </section>
 
