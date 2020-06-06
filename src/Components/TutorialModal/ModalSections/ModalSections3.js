@@ -7,7 +7,7 @@ class ModalSections3 extends Component {
                 <div className="content">
 
                     <h3>Selecting Walls and Wieghted Nodes (traffic)</h3>
-                    <p>Selecting walls will stop an algorithm from using nodes as a path and can encourge alternative routes.</p>
+                    <p>Selecting walls will stop an algorithm from using nodes as a path and can encourage alternative routes.</p>
                     
 
                     <p>Selecting weighted nodes (traffic), will encourage weighted algorithms to avoid high traffic nodes.</p>
