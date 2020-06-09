@@ -11,7 +11,7 @@ class ModalSections3 extends Component {
                     
 
                     <p>Selecting weighted nodes (traffic), will encourage weighted algorithms to avoid those nodes.</p>
-                    <p>Unlike walls, alrogithms can still use traffic nodes as a path, but only if it leads to the shortest possible path.</p>
+                    <p>Unlike walls, alrogithms can still use traffic nodes as a path but only if it leads to the shortest possible path.</p>
 
                 </div>
 
