@@ -10,7 +10,7 @@ class ModalSections3 extends Component {
                     <p>Selecting walls will stop an algorithm from using nodes as a path and can encourage alternative routes. Follow the steps below to select walls.</p>
                     <ul>
                         <li>Select the Wall action.</li>
-                        <li>Then, hover over to your any nodes and press/hold down the 'e' key. While hovering, nodes will be selected as walls.</li>
+                        <li>Then, hover over to any nodes and press/hold down the 'e' key. While hovering, nodes will be selected as walls.</li>
                     </ul>
 
                     <p>Selecting weighted nodes (traffic), will encourage weighted algorithms to avoid those nodes.
