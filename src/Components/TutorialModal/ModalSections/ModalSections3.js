@@ -16,6 +16,10 @@ class ModalSections3 extends Component {
                     <p>Selecting weighted nodes (traffic), will encourage weighted algorithms to avoid those nodes.
                     Unlike walls, alrogithms can still use traffic nodes as a path but only if it leads to the shortest possible path.
                     </p>
+                    <ul>
+                        <li>Select the Traffic action.</li>
+                        <li>Then, hover over to any nodes and press/hold down the 'w' key. While hovering, nodes will be selected as traffics.</li>
+                    </ul>
 
                 </div>
 
