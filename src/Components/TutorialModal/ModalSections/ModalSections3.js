@@ -18,7 +18,7 @@ class ModalSections3 extends Component {
                     </p>
                     <ul>
                         <li>Select the Traffic action.</li>
-                        <li>Then, hover over to any nodes and press/hold down the 'w' key. While hovering, nodes will be selected as traffics.</li>
+                        <li>Then, hover over to any nodes and press/hold down the 'w' key. While hovering, nodes will be selected as traffic nodes.</li>
                     </ul>
 
                 </div>
