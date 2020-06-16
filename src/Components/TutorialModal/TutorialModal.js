@@ -19,21 +19,28 @@ class TutorialModal extends Component {
     }
 
     pressPrev = () => {
+        let idx = this.state.index;
+        this.setState({index: idx +=-1})
         this.displaySection(this.state.index += -1);
     }
 
     pressNext = () => {
+        let idx = this.state.index;
+        this.setState({index: idx += 1})
         this.displaySection(this.state.index += 1);
     }
 
     displaySection = (n) => {
         let sections = document.getElementsByClassName("sections");
+        let idx = this.state.index;
         
         if(n < 0){
+            this.setState({index: sections.length-1});
             this.state.index = sections.length-1;
         }
 
         if(n > sections.length-1){
+            this.setState({index: 0});
             this.state.index = 0;
         }
 
@@ -67,7 +74,7 @@ class TutorialModal extends Component {
 
                         <footer className="modal-card-foot mCardStyler">
                             <div className="counterElement">
-                                {this.state.index}/1
+                                {this.state.index}/2
                             </div>
                             <div className="">
                                 {/* <button className="button is-success">Save changes</button>
