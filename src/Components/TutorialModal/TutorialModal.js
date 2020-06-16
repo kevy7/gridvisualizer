@@ -57,7 +57,6 @@ class TutorialModal extends Component {
                         </header>
 
                         <section className="modal-card-body">
-                            
                             {/* Page 1 of modal */}
                             <ModalSections />
                             {/* Page 2 of modal */}
