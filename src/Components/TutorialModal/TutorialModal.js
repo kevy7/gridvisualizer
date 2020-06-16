@@ -74,7 +74,7 @@ class TutorialModal extends Component {
 
                         <footer className="modal-card-foot mCardStyler">
                             <div className="counterElement">
-                                {this.state.index}/2
+                                {this.state.index+1}/3
                             </div>
                             <div className="">
                                 {/* <button className="button is-success">Save changes</button>
