@@ -65,9 +65,9 @@ class TutorialModal extends Component {
                             <ModalSections3 />
                         </section>
 
-                        <footer className="modal-card-foot">
+                        <footer className="modal-card-foot mCardStyler">
                             <div className="counterElement">
-                                1/1
+                                {this.state.index}/1
                             </div>
                             <div className="">
                                 {/* <button className="button is-success">Save changes</button>
