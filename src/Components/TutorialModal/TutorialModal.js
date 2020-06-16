@@ -66,7 +66,10 @@ class TutorialModal extends Component {
                         </section>
 
                         <footer className="modal-card-foot">
-                            <div className="field is-grouped is-grouped-right">
+                            <div className="counterElement">
+                                1/1
+                            </div>
+                            <div className="">
                                 {/* <button className="button is-success">Save changes</button>
                                 <button className="button">Cancel</button> */}
                                 <button class="button" onClick={this.pressPrev}>Prev</button>
