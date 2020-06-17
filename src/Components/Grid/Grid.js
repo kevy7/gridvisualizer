@@ -259,6 +259,8 @@ class Grid extends Component {
             //Assign our walls based on the recursive division algorithm
             mazeWalls = recursiveDivision(this.state.grid, 2, maxWidth-3, 2, maxHeight-3); //We want to start at our max width and max height at -3 in order for the function to work
         }
+        //Else if algo === recursiveBacktracking, then run the algorithm below
+        
 
         outerWalls = outerWalls.concat(mazeWalls);
 
