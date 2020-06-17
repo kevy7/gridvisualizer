@@ -47,7 +47,6 @@ class TutorialModal extends Component {
             sections[a].style.display = "none";
         }
 
-        //sections[this.state.index].className = "section";
         sections[this.state.index].style.display = "block";
     }
 
