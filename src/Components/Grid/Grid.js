@@ -150,13 +150,8 @@ class Grid extends Component {
 
     animatePath = () => {
 
-        //used to re-run algorithm
-
         let grid = this.createInitialGrid(); //This may be inefficient. We don't always want to re-create our grid
         let nodes = this.state.visited;
-
-        //used to re-run algorithm
-
 
         let startRow = this.props.selectedGrids.startingGrid.row;
         let startColumn = this.props.selectedGrids.startingGrid.column;
