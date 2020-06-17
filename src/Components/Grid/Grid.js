@@ -286,9 +286,7 @@ class Grid extends Component {
 
     testFunction = () => {
         
-        let node = new NodeTest(7);
-
-        console.log(node);
+        
 
     }
 
