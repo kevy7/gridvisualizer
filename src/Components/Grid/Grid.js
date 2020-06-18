@@ -266,6 +266,7 @@ class Grid extends Component {
 
         //used to animate the walls
         //after this loop executes, we need to execute the this.setState function
+        /*
         outerWalls.forEach(node => {
             index+=1;
             setTimeout(() => {
@@ -273,6 +274,8 @@ class Grid extends Component {
                 this.state.grid[node.row][node.column].isWall = true;
             }, index * 5);
         })
+        */
+       this.runMaze(outerWalls, index).then(this.setState({walls: outerWalls}));
 
         //Animation currently does not work at the moment because of function below
         /*
@@ -283,6 +286,20 @@ class Grid extends Component {
 
         //this.setState({walls: outerWalls});
 
+        //using foreach with async/await
+
+        
+        
+    }
+
+    runMaze = async (arr, idx) => {
+        arr.forEach(node => {
+            idx+=1;
+            setTimeout(() => {
+                document.getElementById(`icon-${node.row}-${node.column}`).className = "node-wall";
+                this.state.grid[node.row][node.column].isWall = true;
+            }, idx * 5);
+        })
     }
 
     testFunction = () => {
