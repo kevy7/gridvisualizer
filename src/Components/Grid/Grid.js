@@ -265,19 +265,23 @@ class Grid extends Component {
         outerWalls = outerWalls.concat(mazeWalls);
 
         //used to animate the walls
-        /* outerWalls.forEach(node => {
+        //after this loop executes, we need to execute the this.setState function
+        outerWalls.forEach(node => {
             index+=1;
             setTimeout(() => {
                 document.getElementById(`icon-${node.row}-${node.column}`).className = "node-wall";
+                this.state.grid[node.row][node.column].isWall = true;
             }, index * 5);
-        }) */
+        })
 
         //Animation currently does not work at the moment because of function below
+        /*
         outerWalls.forEach(node => {
             this.state.grid[node.row][node.column].isWall = true;
-        }) //We need some kind of async await function here to show animation, both of these are running at the same time
+        })
+        */
 
-        this.setState({walls: outerWalls});
+        //this.setState({walls: outerWalls});
 
     }
 
