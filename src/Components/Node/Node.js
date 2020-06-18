@@ -58,8 +58,10 @@ class Node extends Component {
 
         //Set the hovered over node icon to whatever the current action is
         if(this.props.isWall === false && this.props.isStart === false && this.props.isEnd === false && this.props.isWeight === false){
-            console.log(this.props.isWall); //TEST
-            document.getElementById(`icon-${this.props.row}-${this.props.column}`).className = this.props.userAction;
+            if(document.getElementById(`icon-${this.props.row}-${this.props.column}`).className !== "node-wall"){
+                document.getElementById(`icon-${this.props.row}-${this.props.column}`).className = this.props.userAction;
+            }
+            //document.getElementById(`icon-${this.props.row}-${this.props.column}`).className = this.props.userAction;
         }
     }
 
@@ -68,7 +70,11 @@ class Node extends Component {
 
         //Remove the node icon if you're not hovering over a node icon
         if(this.props.isWall === false && this.props.isStart === false && this.props.isEnd === false && this.props.isWeight === false){
-            document.getElementById(`icon-${this.props.row}-${this.props.column}`).className = "";
+            //set another if condition here, if the icon does have a className called node-wall, then don't do anything
+            if(document.getElementById(`icon-${this.props.row}-${this.props.column}`).className !== "node-wall"){
+                document.getElementById(`icon-${this.props.row}-${this.props.column}`).className = "";
+            }
+            //document.getElementById(`icon-${this.props.row}-${this.props.column}`).className = "";
         }
 
     }
