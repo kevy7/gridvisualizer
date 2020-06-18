@@ -143,6 +143,8 @@ class Grid extends Component {
             document.getElementById(`node-${node.row}-${node.column}`).className = "node";
         })
 
+        //Place function to reset the walls here
+
         this.props.resetSelectedGrids();
         this.props.selectAction(selectStartNode);
         //Create an action to reset the selectGrids state
