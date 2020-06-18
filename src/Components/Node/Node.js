@@ -58,6 +58,7 @@ class Node extends Component {
 
         //Set the hovered over node icon to whatever the current action is
         if(this.props.isWall === false && this.props.isStart === false && this.props.isEnd === false && this.props.isWeight === false){
+            console.log(this.props.isWall); //TEST
             document.getElementById(`icon-${this.props.row}-${this.props.column}`).className = this.props.userAction;
         }
     }

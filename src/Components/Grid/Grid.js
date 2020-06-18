@@ -275,14 +275,17 @@ class Grid extends Component {
             }, index * 5);
         })
         */
-       this.runMaze(outerWalls, index).then(this.setState({walls: outerWalls}));
+       this.runMaze(outerWalls, index).then(
+           this.setState({walls: outerWalls})
+        );
 
         //Animation currently does not work at the moment because of function below
+        
         /*
         outerWalls.forEach(node => {
             this.state.grid[node.row][node.column].isWall = true;
-        })
-        */
+        })*/
+        
 
         //this.setState({walls: outerWalls});
 
