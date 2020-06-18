@@ -263,20 +263,8 @@ class Grid extends Component {
         }
         //Else if algo === recursiveBacktracking, then run the algorithm below
 
-
         outerWalls = outerWalls.concat(mazeWalls);
 
-        //used to animate the walls
-        //after this loop executes, we need to execute the this.setState function
-        /*
-        outerWalls.forEach(node => {
-            index+=1;
-            setTimeout(() => {
-                document.getElementById(`icon-${node.row}-${node.column}`).className = "node-wall";
-                this.state.grid[node.row][node.column].isWall = true;
-            }, index * 5);
-        })
-        */
         this.runMaze(outerWalls, index, this.state.grid).then(
            this.setState({walls: outerWalls})
         );
