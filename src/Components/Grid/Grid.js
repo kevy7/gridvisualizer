@@ -260,7 +260,7 @@ class Grid extends Component {
             mazeWalls = recursiveDivision(this.state.grid, 2, maxWidth-3, 2, maxHeight-3); //We want to start at our max width and max height at -3 in order for the function to work
         }
         //Else if algo === recursiveBacktracking, then run the algorithm below
-        
+
 
         outerWalls = outerWalls.concat(mazeWalls);
 
@@ -275,7 +275,7 @@ class Grid extends Component {
         //Animation currently does not work at the moment because of function below
         outerWalls.forEach(node => {
             this.state.grid[node.row][node.column].isWall = true;
-        })
+        }) //We need some kind of async await function here to show animation, both of these are running at the same time
 
         this.setState({walls: outerWalls});
 
