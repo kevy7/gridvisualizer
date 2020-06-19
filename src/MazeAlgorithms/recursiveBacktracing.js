@@ -5,11 +5,35 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
     let mazeWalls = [];
     let randomRow = Math.floor(Math.random() * (maxHeight - minHeight)) + minHeight; //Will select a random row within range
     let randomColumn = Math.floor(Math.random() * (maxWidth - minWidth)) + minWidth; //Will select a random column within range
+    let startingNode = grid[randomRow][randomColumn];
 
-    
+    /*
+
+    node props for reference
+
+    row: PropTypes.number,
+    column: PropTypes.number,
+    startRow: PropTypes.number,
+    startColumn: PropTypes.number,
+    isVisted: PropTypes.bool,
+    isPath: PropTypes.bool,
+    prevNode: PropTypes.object,
+    updateState: PropTypes.func,
+    isStart: PropTypes.bool,
+    isEnd: PropTypes.bool,
+    isWall: PropTypes.bool,
+    distance: PropTypes.number,
+    isWeight: PropTypes.bool,
+    fValue: PropTypes.number
+
+    */
+
+    //Set up starting node
+    startingNode.isVisited = true;
 
 
-    //Math.floor(Math.random() * 10-5) + 5; //Used to return a random number from 5 and 10
+
+
 
 }
 
