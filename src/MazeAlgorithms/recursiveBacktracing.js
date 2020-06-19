@@ -93,5 +93,4 @@ const getChildren = (node, grid, minRow, maxRow, minColumn, maxColumn) => {
     //Check bottom children
 
 
-
 }
