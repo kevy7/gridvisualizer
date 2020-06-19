@@ -43,9 +43,22 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
         let currentNode = stack.pop();
         if(currentNode.isVisited === false){
             currentNode.isVisited = true;
-
+            path.push({
+                row: currentNode.row,
+                column: currentNode.column
+            })
         }
 
+        //function should continue while there is objects in the stack
+
+
+        //execute getChildren function
+
+
+
+
+        //When pushing children into the stack, we need to find a way to check if the children is already in the stack
+        //Only push into the stack if the children is not already in there
 
     }
 
@@ -59,6 +72,26 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
 export default recursiveBacktracking;
 
 //create a function here called get children
-const getChildren = () => {
+const getChildren = (node, grid, minRow, maxRow, minColumn, maxColumn) => {
+    /*
+        bounderies are maxRow and maxColumn
+        were moving by two nodes at a time
+    */
+
+
+    //We're checking for two things
+    //If the children nodes are within bounds of the grid
+    //If the children nodes are not hitting a node that's defined as a path
+    
+
+    //Check left children
+
+    //Check right chidlren
+
+    //Check top chirdren
+
+    //Check bottom children
+
+
 
 }
