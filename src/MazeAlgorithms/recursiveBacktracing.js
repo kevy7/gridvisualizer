@@ -6,7 +6,7 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
     let path = [];
     let randomRow = Math.floor(Math.random() * (maxHeight - minHeight)) + minHeight; //Will select a random row within range
     let randomColumn = Math.floor(Math.random() * (maxWidth - minWidth)) + minWidth; //Will select a random column within range
-    let startingNode = grid[randomRow][randomColumn];
+    let startingNode = grid[2][2]; //For now, we're always starting at this node
 
     /*
 
