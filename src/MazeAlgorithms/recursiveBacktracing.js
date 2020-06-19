@@ -2,7 +2,8 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
     //Find a way to return walls, issue is we can create paths but how would we return the walls?
     //ideally, function should stop when every node was visited
     let stack = [];
-    let mazeWalls = [];
+    let visited = [];
+    let path = [];
     let randomRow = Math.floor(Math.random() * (maxHeight - minHeight)) + minHeight; //Will select a random row within range
     let randomColumn = Math.floor(Math.random() * (maxWidth - minWidth)) + minWidth; //Will select a random column within range
     let startingNode = grid[randomRow][randomColumn];
@@ -30,6 +31,20 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
 
     //Set up starting node
     startingNode.isVisited = true;
+    visited.push({
+        row: startingNode.row,
+        column: startingNode.column
+    });
+    stack.push(startingNode);
+
+    //while there is something in the stack
+    while(stack.length){
+
+        
+
+
+    }
+
 
 
 
