@@ -55,7 +55,6 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
         let currentEndNode = stack.pop();
         let currentBegNode = stack.pop(); 
 
-
         if(currentEndNode.isVisited === false && currentBegNode === false){
             currentEndNode.isVisited = true;
             currentBegNode.isVisited = true;
@@ -70,7 +69,7 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
         }
 
         //function should continue while there is objects in the stack
-
+        
 
         //execute getChildren function
 
@@ -97,6 +96,9 @@ const getChildren = (node, grid, minRow, maxRow, minColumn, maxColumn) => {
         bounderies are maxRow and maxColumn
         were moving by two nodes at a time
     */
+    let row = node.row;
+    let column = node.column;
+    let childrens = [];
 
 
     //We're checking for two things
@@ -105,12 +107,53 @@ const getChildren = (node, grid, minRow, maxRow, minColumn, maxColumn) => {
     
 
     //Check left children
+    if(column-2 > minColumn){
+        //push the beginning node first
+        childrens.push({
+            row: row,
+            column: column-1
+        })
+        //Push the end node afterwards
+        childrens.push({
+            row: row,
+            column: column-2
+        })
+    }
 
     //Check right chidlren
+    if(column+2 < maxColumn){
+        childrens.push({
+            row: row,
+            column: column+1
+        })
+        childrens.push({
+            row: row,
+            column: column+2
+        })
+    }
 
     //Check top chirdren
+    if(row-2 > minRow){
+        childrens.push({
+            row: row-1,
+            column: column
+        })
+        childrens.push({
+            row: row-2,
+            column: column
+        })
+    }
 
     //Check bottom children
-
+    if(row+2 < maxRow){
+        childrens.push({
+            row: row+1,
+            column: column
+        })
+        childrens.push({
+            row: row+2,
+            column: column
+        })
+    }
 
 }
