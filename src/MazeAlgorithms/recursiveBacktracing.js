@@ -6,7 +6,8 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
     let path = [];
     let randomRow = Math.floor(Math.random() * (maxHeight - minHeight)) + minHeight; //Will select a random row within range
     let randomColumn = Math.floor(Math.random() * (maxWidth - minWidth)) + minWidth; //Will select a random column within range
-    let startingNode = grid[2][2]; //For now, we're always starting at this node
+    let startingBegNode = grid[2][2]; //For now, we're always starting at this node
+    let startingEndNode = grid[2][3]; //starting end node, this will be the first node popped off the stack
 
     /*
 
@@ -30,11 +31,14 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
     */
 
     //Set up starting node
-    startingNode.isVisited = true;
+    startingBegNode.isVisited = true;
+    startingEndNode.isVisited = true;
+    //push beg node first
     path.push({
         row: startingNode.row,
         column: startingNode.column
     });
+
     stack.push(startingNode);
 
     //while there is something in the stack
