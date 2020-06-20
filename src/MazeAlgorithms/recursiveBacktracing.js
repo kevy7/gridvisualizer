@@ -35,21 +35,37 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
     startingEndNode.isVisited = true;
     //push beg node first
     path.push({
-        row: startingNode.row,
-        column: startingNode.column
+        row: startingBegNode.row,
+        column: startingBegNode.column
     });
+    //push end node last
+    path.push({
+        row: startingEndNode.row,
+        column: startingEndNode.column
+    })
 
-    stack.push(startingNode);
+    //Push two nodes into the stack at once
+    stack.push(startingBegNode);
+    stack.push(startingEndNode);
 
     //while there is something in the stack
     while(stack.length){
 
-        let currentNode = stack.pop();
-        if(currentNode.isVisited === false){
-            currentNode.isVisited = true;
+        //Remove two nodes from the stack at a time
+        let currentEndNode = stack.pop();
+        let currentBegNode = stack.pop(); 
+
+
+        if(currentEndNode.isVisited === false && currentBegNode === false){
+            currentEndNode.isVisited = true;
+            currentBegNode.isVisited = true;
             path.push({
-                row: currentNode.row,
-                column: currentNode.column
+                row: currentBegNode.row,
+                column: currentBegNode.column
+            })
+            path.push({
+                row: currentEndNode.row,
+                column: currentEndNode.column
             })
         }
 
