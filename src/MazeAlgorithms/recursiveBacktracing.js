@@ -123,34 +123,42 @@ const getChildren = (node, grid, minRow, maxRow, minColumn, maxColumn) => {
         })
 
         //push child into children
+        childrens.push(child);
     }
 
     //Check right chidlren
     if(column+2 < maxColumn){
-        childrens.push({
+        child = [];
+
+        child.push({
             row: row,
             column: column+1
         })
-        childrens.push({
+        child.push({
             row: row,
             column: column+2
         })
+
+        childrens.push(child);
     }
 
     //Check top chirdren
     if(row-2 > minRow){
-        childrens.push({
+        child = [];
+        child.push({
             row: row-1,
             column: column
         })
-        childrens.push({
+        child.push({
             row: row-2,
             column: column
         })
+        childrens.push(child);
     }
 
     //Check bottom children
     if(row+2 < maxRow){
+        child = [];
         childrens.push({
             row: row+1,
             column: column
@@ -159,6 +167,14 @@ const getChildren = (node, grid, minRow, maxRow, minColumn, maxColumn) => {
             row: row+2,
             column: column
         })
+        childrens.push(child);
     }
+
+    return childrens; //We will return a double array that consists of the following:
+    /*
+
+        
+
+    */
 
 }
