@@ -173,7 +173,10 @@ const getChildren = (node, grid, minRow, maxRow, minColumn, maxColumn) => {
     return childrens; //We will return a double array that consists of the following:
     /*
 
-        
+        [
+            [begNode, endNode],
+            [begNode, endNode]
+        ]
 
     */
 
