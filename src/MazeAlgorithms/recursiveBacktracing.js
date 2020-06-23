@@ -99,6 +99,7 @@ const getChildren = (node, grid, minRow, maxRow, minColumn, maxColumn) => {
     let row = node.row;
     let column = node.column;
     let childrens = [];
+    let child = [];
 
 
     //We're checking for two things
@@ -108,16 +109,20 @@ const getChildren = (node, grid, minRow, maxRow, minColumn, maxColumn) => {
 
     //Check left children
     if(column-2 > minColumn){
+        //empty the child array first/used to reset the array
+        child = [];
         //push the beginning node first
-        childrens.push({
+        child.push({
             row: row,
             column: column-1
         })
         //Push the end node afterwards
-        childrens.push({
+        child.push({
             row: row,
             column: column-2
         })
+
+        //push child into children
     }
 
     //Check right chidlren
