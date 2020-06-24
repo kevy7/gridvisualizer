@@ -77,7 +77,9 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
             //within each children is also an array that contains two childrens, they act as a pair
             for(let b = 0; b < childrens[a].length; b++){
                 //We can afford to do this double loop because there should only be 8 nodes in total, no scaling to worry about
-                
+                let child = childrens[a][b];
+
+
             }
         }
 
@@ -99,6 +101,7 @@ export default recursiveBacktracking;
 
 //create a function here called get children
 const getChildren = (node, grid, minRow, maxRow, minColumn, maxColumn) => {
+    //grid does not need to be passed as a parameter
     /*
         bounderies are maxRow and maxColumn
         were moving by two nodes at a time
