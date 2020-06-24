@@ -72,7 +72,10 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
         //return 2d array of childrens, 2-child nodes at a time
         let childrens = getChildren(currentEndNode, grid, minHeight, maxHeight, minWidth, maxWidth);
 
-        
+        //loop through each children
+        for(let a = 0; a < childrens.length; a++){
+            //within each children is also an array that contains two childrens,, they act as a pair
+        }
 
 
 
