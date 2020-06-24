@@ -70,6 +70,8 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
 
         //execute getChildren function
         //return 2d array of childrens, 2-child nodes at a time
+        let childrens = getChildren(currentEndNode, grid, minHeight, maxHeight, minWidth, maxWidth);
+
         
 
 
