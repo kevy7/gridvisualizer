@@ -66,13 +66,11 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
                 row: currentEndNode.row,
                 column: currentEndNode.column
             })
-        }
-
-        //function should continue while there is objects in the stack
-        
+        }        
 
         //execute getChildren function
-
+        //return 2d array of childrens, 2-child nodes at a time
+        
 
 
 
