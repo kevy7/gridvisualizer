@@ -79,7 +79,8 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
                 //We can afford to do this double loop because there should only be 8 nodes in total, no scaling to worry about
                 let child = childrens[a][b];
 
-
+                let row = child.row;
+                let column = child.column;
             }
         }
 
