@@ -83,8 +83,6 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
             }
         }
 
-
-
         //When pushing children into the stack, we need to find a way to check if the children is already in the stack
         //Only push into the stack if the children is not already in there
 
