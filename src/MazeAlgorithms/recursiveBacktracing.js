@@ -81,6 +81,16 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
 
                 let row = child.row;
                 let column = child.column;
+
+                if(grid[row][column].isVisited == true){
+                    continue;
+                }
+                if(grid[row][column].isWall == true){
+                    continue;
+                }
+
+                
+
             }
         }
 
