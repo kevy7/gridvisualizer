@@ -93,6 +93,8 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
                 //Push node into stack
                 stack.push(grid[row][column]);
 
+                console.log("row: " + row + ", column: " + column);
+
             }
         }
 
