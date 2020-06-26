@@ -298,9 +298,12 @@ class Grid extends Component {
     }
 
     testFunction = () => {
-        
+
+        let maxWidth = this.state.grid[0].length;
+        let maxHeight = this.state.grid.length;
+        //this.state.grid, 2, maxWidth-3, 2, maxHeight-3
         //recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight)
-        recursiveBacktracking(this.state.grid, 0, 0, 0, 0);
+        recursiveBacktracking(this.state.grid, 2, maxWidth-3, 2, maxHeight-3);
 
     }
 
