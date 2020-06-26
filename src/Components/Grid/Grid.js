@@ -9,6 +9,7 @@ import GreedyBestFirstSearch from "../../Algorithms/GreedyBestFirstSearch";
 import ATreeSearch from "../../Algorithms/ATreeSearch";
 import setOuterWalls from "../../MazeAlgorithms/setOuterWalls";
 import recursiveDivision from "../../MazeAlgorithms/recursiveDivision";
+import recursiveBacktracking from "../../MazeAlgorithms/recursiveBacktracing";
 import { selectStartNode, selectEndNode, selectTraffic, selectWall } from '../../userActions/userActions';
 import { BreadthFS, DebthFS, DijkstraAlgo, GreedyBFS, ATreeSearchAlgo, RecursiveDivision } from '../../userAlgo/userAlgo';
 import { selectAction, resetSelectedGrids } from '../../actions/index';
