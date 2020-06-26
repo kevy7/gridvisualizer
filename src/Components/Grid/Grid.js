@@ -299,7 +299,8 @@ class Grid extends Component {
 
     testFunction = () => {
         
-        
+        //recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight)
+        recursiveBacktracking(grid, 0, 0, 0, 0);
 
     }
 
