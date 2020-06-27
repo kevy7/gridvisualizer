@@ -4,7 +4,7 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
     let stack = [];
     //let visited = []; //We don't need this
     let path = [];
-    let pushedNode = {};
+    let pushedNode = {}; //Purpose of this object is to help us identify nodes that have already been pushed into the stack, if node is in stack, do not push it into it
     let randomRow = Math.floor(Math.random() * (maxHeight - minHeight)) + minHeight; //Will select a random row within range
     let randomColumn = Math.floor(Math.random() * (maxWidth - minWidth)) + minWidth; //Will select a random column within range
     let startingBegNode = grid[2][2]; //For now, we're always starting at this node
