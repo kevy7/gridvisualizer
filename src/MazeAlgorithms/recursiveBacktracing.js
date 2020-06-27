@@ -7,8 +7,8 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
     let pushedNode = {}; //Purpose of this object is to help us identify nodes that have already been pushed into the stack, if node is in stack, do not push it into it
     let randomRow = Math.floor(Math.random() * (maxHeight - minHeight)) + minHeight; //Will select a random row within range
     let randomColumn = Math.floor(Math.random() * (maxWidth - minWidth)) + minWidth; //Will select a random column within range
-    let startingBegNode = grid[2][2]; //For now, we're always starting at this node
-    let startingEndNode = grid[2][3]; //starting end node, this will be the first node popped off the stack
+    let startingBegNode = grid[5][9]; //For now, we're always starting at this node
+    let startingEndNode = grid[5][10]; //starting end node, this will be the first node popped off the stack
 
     /*
 
@@ -131,6 +131,7 @@ const getChildren = (node, grid, minRow, maxRow, minColumn, maxColumn) => {
     //If the children nodes are within bounds of the grid
     //If the children nodes are not hitting a node that's defined as a path
     
+    //We also have to check if child nodes will be hitting walls
 
     //Check left children
     if(column-2 > minColumn){
