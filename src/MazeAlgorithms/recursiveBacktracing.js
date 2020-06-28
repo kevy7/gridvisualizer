@@ -56,7 +56,7 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
         let currentEndNode = stack.pop();
         let currentBegNode = stack.pop(); 
 
-        if(currentEndNode.isVisited === false && currentBegNode === false){
+        if(currentEndNode.isVisited === false && currentBegNode.isVisited === false){
             currentEndNode.isVisited = true;
             currentBegNode.isVisited = true;
             path.push({
