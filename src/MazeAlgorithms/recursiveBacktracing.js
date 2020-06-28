@@ -72,12 +72,14 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
         //execute getChildren function
         //return 2d array of childrens, 2-child nodes at a time
         let childrens = getChildren(currentEndNode, grid, minHeight, maxHeight, minWidth, maxWidth);
+        console.log(childrens);
 
         //loop through each children
         for(let a = 0; a < childrens.length; a++){
             //within each children is also an array that contains two childrens, they act as a pair
             for(let b = 0; b < childrens[a].length; b++){
                 //We can afford to do this double loop because there should only be 8 nodes in total, no scaling to worry about
+                
                 let child = childrens[a][b];
 
                 let row = child.row;
@@ -95,9 +97,13 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
 
                 //stack.push(grid[row][column]);
 
+                console.log(a);
+                console.log(b);
+                console.log(" ");
+                /* console.log(" ");
                 console.log("row: " + row + ", column: " + column);
                 console.log(b);
-                console.log("hey!");
+                console.log("hey!"); */
 
             }
         }
@@ -187,11 +193,11 @@ const getChildren = (node, grid, minRow, maxRow, minColumn, maxColumn) => {
     //Check bottom children
     if(row+2 < maxRow){
         child = [];
-        childrens.push({
+        child.push({
             row: row+1,
             column: column
         })
-        childrens.push({
+        child.push({
             row: row+2,
             column: column
         })
