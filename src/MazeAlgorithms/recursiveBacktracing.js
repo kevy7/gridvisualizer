@@ -141,8 +141,12 @@ const getChildren = (node, grid, minRow, maxRow, minColumn, maxColumn) => {
     
     //We also have to check if child nodes will be hitting walls
 
+    //Condition to check if children is out of bounds
     //Check left children
     if(column-2 > minColumn){
+
+        //We need a condition here to chick if child is already visited
+
         //empty the child array first/used to reset the array
         child = [];
         //push the beginning node first
