@@ -134,9 +134,7 @@ const getChildren = (node, grid, minRow, maxRow, minColumn, maxColumn) => {
 
         //We need a condition here to chick if child is already visited
         //If both the nodes are not visited, then we can add them as nodes. This condition will check if we're within bound of visited nodes
-        console.log(grid[row][column-1]);
-        console.log(grid[row][column-2]);
-
+        
         if(grid[row][column-1].isVisited === false && grid[row][column-2].isVisited === false){
 
             //empty the child array first/used to reset the array
@@ -159,8 +157,7 @@ const getChildren = (node, grid, minRow, maxRow, minColumn, maxColumn) => {
 
     //Check right chidlren
     if(column+2 < maxColumn){
-        console.log(grid[row][column+1]);
-        console.log(grid[row][column+2]);
+        
         if(grid[row][column+1].isVisited === false && grid[row][column+2].isVisited === false){
             child = [];
 
@@ -179,8 +176,7 @@ const getChildren = (node, grid, minRow, maxRow, minColumn, maxColumn) => {
 
     //Check top chirdren
     if(row-2 > minRow){
-        console.log(grid[row-1][column]);
-        console.log(grid[row-2][column]);
+        
         if(grid[row-1][column].isVisited === false && grid[row-2][column].isVisited === false){
 
             child = [];
@@ -199,8 +195,7 @@ const getChildren = (node, grid, minRow, maxRow, minColumn, maxColumn) => {
 
     //Check bottom children
     if(row+2 < maxRow){
-        console.log(grid[row+1][column]);
-        console.log(grid[row+2][column]);
+        
         if(grid[row+1][column].isVisited === false && grid[row+2][column].isVisited === false){
 
             child = [];
