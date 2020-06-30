@@ -133,67 +133,87 @@ const getChildren = (node, grid, minRow, maxRow, minColumn, maxColumn) => {
     if(column-2 > minColumn){
 
         //We need a condition here to chick if child is already visited
+        //If both the nodes are not visited, then we can add them as nodes. This condition will check if we're within bound of visited nodes
+        console.log(grid[row][column-1]);
+        console.log(grid[row][column-2]);
 
+        if(grid[row][column-1].isVisited === false && grid[row][column-2].isVisited === false){
 
-        //empty the child array first/used to reset the array
-        child = [];
-        //push the beginning node first
-        child.push({
-            row: row,
-            column: column-1
-        })
-        //Push the end node afterwards
-        child.push({
-            row: row,
-            column: column-2
-        })
+            //empty the child array first/used to reset the array
+            child = [];
+            //push the beginning node first
+            child.push({
+                row: row,
+                column: column-1
+            })
+            //Push the end node afterwards
+            child.push({
+                row: row,
+                column: column-2
+            })
 
-        //push child into children
-        childrens.push(child);
+            //push child into children
+            childrens.push(child);
+        }
     }
 
     //Check right chidlren
     if(column+2 < maxColumn){
-        child = [];
+        console.log(grid[row][column+1]);
+        console.log(grid[row][column+2]);
+        if(grid[row][column+1].isVisited === false && grid[row][column+2].isVisited === false){
+            child = [];
 
-        child.push({
-            row: row,
-            column: column+1
-        })
-        child.push({
-            row: row,
-            column: column+2
-        })
+            child.push({
+                row: row,
+                column: column+1
+            })
+            child.push({
+                row: row,
+                column: column+2
+            })
 
-        childrens.push(child);
+            childrens.push(child);
+        }
     }
 
     //Check top chirdren
     if(row-2 > minRow){
-        child = [];
-        child.push({
-            row: row-1,
-            column: column
-        })
-        child.push({
-            row: row-2,
-            column: column
-        })
-        childrens.push(child);
+        console.log(grid[row-1][column]);
+        console.log(grid[row-2][column]);
+        if(grid[row-1][column].isVisited === false && grid[row-2][column].isVisited === false){
+
+            child = [];
+            child.push({
+                row: row-1,
+                column: column
+            })
+            child.push({
+                row: row-2,
+                column: column
+            })
+            childrens.push(child);
+
+        }
     }
 
     //Check bottom children
     if(row+2 < maxRow){
-        child = [];
-        child.push({
-            row: row+1,
-            column: column
-        })
-        child.push({
-            row: row+2,
-            column: column
-        })
-        childrens.push(child);
+        console.log(grid[row+1][column]);
+        console.log(grid[row+2][column]);
+        if(grid[row+1][column].isVisited === false && grid[row+2][column].isVisited === false){
+
+            child = [];
+            child.push({
+                row: row+1,
+                column: column
+            })
+            child.push({
+                row: row+2,
+                column: column
+            })
+            childrens.push(child);
+        }
     }
 
     return childrens; //We will return a double array that consists of the following:
