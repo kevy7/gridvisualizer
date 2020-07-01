@@ -70,7 +70,6 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
             })
         }        
 
-        //execute getChildren function
         //return 2d array of childrens, 2-child nodes at a time
         let childrens = getChildren(currentEndNode, grid, minHeight, maxHeight, minWidth, maxWidth);
 
@@ -126,10 +125,6 @@ const getChildren = (node, grid, minRow, maxRow, minColumn, maxColumn) => {
     //If the children nodes are within bounds of the grid
     //If the children nodes are not hitting a node that's defined as a path
     
-    //We also have to check if child nodes will be hitting walls
-
-    //Condition to check if children is out of bounds
-    //Check left children
     if(column-2 > minColumn){
 
         //We need a condition here to chick if child is already visited
