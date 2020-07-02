@@ -91,6 +91,8 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
                     continue;
                 }
 
+                //push each children pair into the stack
+
             }
         }
 
