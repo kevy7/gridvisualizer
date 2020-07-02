@@ -81,13 +81,10 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
                 let child = childrens[a][b];
                 console.log(child);
 
-                let row = child.row;
-                let column = child.column;
-
-                if(grid[row][column].isVisited == true){
+                if(grid[child.row][child.column].isVisited == true){
                     continue;
                 }
-                if(grid[row][column].isWall == true){
+                if(grid[child.row][child.column].isWall == true){
                     continue;
                 }
 
@@ -95,6 +92,8 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
 
             }
         }
+
+        console.log(path);
 
         //When pushing children into the stack, we need to find a way to check if the children is already in the stack
         //Only push into the stack if the children is not already in there
