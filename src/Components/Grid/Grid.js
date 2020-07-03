@@ -301,9 +301,21 @@ class Grid extends Component {
 
         let maxWidth = this.state.grid[0].length;
         let maxHeight = this.state.grid.length;
+        let index = 0;
         //this.state.grid, 2, maxWidth-3, 2, maxHeight-3
         //recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight)
-        recursiveBacktracking(this.state.grid, 2, maxWidth-3, 2, maxHeight-3);
+        //let path = recursiveBacktracking(this.state.grid, 2, maxWidth-3, 2, maxHeight-3); //-3
+        let path = recursiveBacktracking(this.state.grid, 0, maxWidth-1, 0, maxHeight-1); //-1
+
+        path.forEach(node => {
+            index +=1;
+
+            setTimeout(() => {
+
+                document.getElementById(`node-${node.row}-${node.column}`).className = "node node-visited";
+
+            }, index * 7);
+        });
 
     }
 

@@ -98,9 +98,6 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
     //console.log(path);
     return path;
 
-
-
-
 }
 
 export default recursiveBacktracking;
