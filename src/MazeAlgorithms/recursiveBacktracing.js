@@ -79,7 +79,6 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
             for(let b = 0; b < childrens[a].length; b++){
                 //We can afford to do this double loop because there should only be 8 nodes in total, no scaling to worry about
                 let child = childrens[a][b];
-                console.log(child);
 
                 if(grid[child.row][child.column].isVisited == true){
                     continue;
@@ -93,10 +92,6 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
 
             }
         }
-
-        console.log(path);
-
-        //Only push into the stack if the children is not already in there
 
     }
 
