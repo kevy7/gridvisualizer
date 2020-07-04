@@ -200,6 +200,7 @@ const getChildren = (node, grid, minRow, maxRow, minColumn, maxColumn) => {
         }
     }
 
+    //Is there a way to re-arrange, this array?
     return childrens; //We will return a double array that consists of the following:
     /*
 
