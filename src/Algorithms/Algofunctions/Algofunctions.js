@@ -89,3 +89,7 @@ export function getChildrensDijkstra(grid, node) {
 
     return childrens; //We will return an array of children nodes here
 }
+
+export const randomizeArray = () => {
+    
+}
