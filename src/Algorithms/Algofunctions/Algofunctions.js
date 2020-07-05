@@ -93,6 +93,6 @@ export function getChildrensDijkstra(grid, node) {
 export const randomizeArray = (array) => {
     for (let a = array.length - 1; a > 0; a--){
         let randIdx = Math.floor(Math.random() * (a + 1)); //get's random index from 0 to length of array
-        [array[a]. array[randIdx]] = [array[randIdx], array[a]];
+        [array[a], array[randIdx]] = [array[randIdx], array[a]];
     }
 }
