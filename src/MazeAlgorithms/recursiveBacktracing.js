@@ -1,3 +1,5 @@
+import { randomizeArray } from "../Algorithms/Algofunctions/Algofunctions";
+
 const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
     //Find a way to return walls, issue is we can create paths but how would we return the walls?
     //ideally, function should stop when every node was visited
@@ -98,7 +100,7 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
     //We have the path here
     //Is there a way to reverse the path and set every other component as that's not a path as a wall?
 
-    
+
     return path;
 
 }
@@ -202,6 +204,9 @@ const getChildren = (node, grid, minRow, maxRow, minColumn, maxColumn) => {
             childrens.push(child);
         }
     }
+
+    //use functiont to reverse array
+    randomizeArray(childrens);
 
     //Is there a way to re-arrange, this array?
     return childrens; //We will return a double array that consists of the following:
