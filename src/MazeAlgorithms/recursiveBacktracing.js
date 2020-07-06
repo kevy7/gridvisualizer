@@ -101,6 +101,7 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
     //Is there a way to reverse the path and set every other component as that's not a path as a wall?
     //Create a function here to create/identify walls
 
+    createWalls(grid)
     return path;
 
 }
@@ -223,11 +224,12 @@ const getChildren = (node, grid, minRow, maxRow, minColumn, maxColumn) => {
 
 //Once the paths is identified, the purpose of this function is to create walls based on the given path
 //What's the smartest way to do this?
-const createWalls = (path, grid) => {
+const createWalls = (grid) => {
     //We can loop through each node in the grid, and if a node is not a path, then make it a wall
     //If it is a path, then remove it as a path??
-
-
-
-    //test function, loop through each visited/path node
+    for(let row = grid.length+1; row < grid.length-1; row++){
+        for(let column = grid[0].length+1; column < grid[0].length-1; column++){
+            console.log(grid[row][column]);
+        }
+    }
 }
