@@ -305,7 +305,7 @@ class Grid extends Component {
         //this.state.grid, 2, maxWidth-3, 2, maxHeight-3
         //recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight)
         //let path = recursiveBacktracking(this.state.grid, 2, maxWidth-3, 2, maxHeight-3); //-3
-        let path = recursiveBacktracking(this.state.grid, 0, maxWidth, 0, maxHeight); //-1
+        let path = recursiveBacktracking(this.state.grid, 0, maxWidth-1, 0, maxHeight-1); //-1
 
         path.forEach(node => {
             index +=1;
