@@ -102,9 +102,10 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
     //Create a function here to create/identify walls
 
     //createWalls(grid);
-    createWalls(grid);
-    console.log("return path");
-    return path;
+    let mazeWalls = createWalls(grid);
+    console.log(mazeWalls);
+    //path
+    return mazeWalls;
 
 }
 
@@ -237,8 +238,14 @@ const createWalls = (grid) => {
             //if this condition is true, then push the row and column into the mazeWalls array
             if(grid[row][column].isPath != true){
                 console.log("this is a wall");
+                mazeWalls.push({
+                    row: row,
+                    column: column
+                });
             }
         }
     }
+
+    return mazeWalls;
     
 }
