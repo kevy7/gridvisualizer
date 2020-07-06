@@ -221,7 +221,7 @@ const getChildren = (node, grid, minRow, maxRow, minColumn, maxColumn) => {
 
 }
 
-
+//Once the paths is identified, the purpose of this function is to create walls based on the given path
 const createWalls = () => {
 
 }
