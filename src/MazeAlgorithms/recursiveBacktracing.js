@@ -99,7 +99,7 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
 
     //We have the path here
     //Is there a way to reverse the path and set every other component as that's not a path as a wall?
-
+    //Create a function here to create/identify walls
 
     return path;
 
@@ -218,5 +218,10 @@ const getChildren = (node, grid, minRow, maxRow, minColumn, maxColumn) => {
         ]
 
     */
+
+}
+
+
+const createWalls = () => {
 
 }
