@@ -101,7 +101,9 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
     //Is there a way to reverse the path and set every other component as that's not a path as a wall?
     //Create a function here to create/identify walls
 
-    createWalls(grid)
+    //createWalls(grid);
+    createWalls(grid);
+    console.log("return path");
     return path;
 
 }
@@ -227,9 +229,16 @@ const getChildren = (node, grid, minRow, maxRow, minColumn, maxColumn) => {
 const createWalls = (grid) => {
     //We can loop through each node in the grid, and if a node is not a path, then make it a wall
     //If it is a path, then remove it as a path??
-    for(let row = grid.length+1; row < grid.length-1; row++){
-        for(let column = grid[0].length+1; column < grid[0].length-1; column++){
-            console.log(grid[row][column]);
+    let mazeWalls = [];
+    
+    //Is this the most efficient way to do this?
+    for(let row = 1; row < grid.length-1; row++){
+        for(let column = 1; column < grid[0].length-1; column++){
+            //if this condition is true, then push the row and column into the mazeWalls array
+            if(grid[row][column].isPath != true){
+                console.log("this is a wall");
+            }
         }
     }
+    
 }
