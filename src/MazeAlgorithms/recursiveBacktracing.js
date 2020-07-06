@@ -34,8 +34,8 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
     */
 
     //Set up starting node
-    startingBegNode.isVisited = true;
-    startingEndNode.isVisited = true;
+    startingBegNode.isPath = true;
+    startingEndNode.isPath = true;
     //push beg node first
     path.push({
         row: startingBegNode.row,
@@ -59,9 +59,9 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
         let currentBegNode = stack.pop(); 
 
         //we might need to change this condition from an and to or, if one of them is already visited then don't continue marking the two nodes as visited
-        if(currentEndNode.isVisited === false && currentBegNode.isVisited === false){
-            currentEndNode.isVisited = true;
-            currentBegNode.isVisited = true;
+        if(currentEndNode.isPath === false && currentBegNode.isPath === false){
+            currentEndNode.isPath = true;
+            currentBegNode.isPath = true;
             path.push({
                 row: currentBegNode.row,
                 column: currentBegNode.column
@@ -82,7 +82,7 @@ const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) =
                 //We can afford to do this double loop because there should only be 8 nodes in total, no scaling to worry about
                 let child = childrens[a][b];
 
-                if(grid[child.row][child.column].isVisited == true){
+                if(grid[child.row][child.column].isPath == true){
                     continue;
                 }
                 if(grid[child.row][child.column].isWall == true){
@@ -129,7 +129,7 @@ const getChildren = (node, grid, minRow, maxRow, minColumn, maxColumn) => {
         //We need a condition here to chick if child is already visited
         //If both the nodes are not visited, then we can add them as nodes. This condition will check if we're within bound of visited nodes
         
-        if(grid[row][column-1].isVisited === false && grid[row][column-2].isVisited === false){
+        if(grid[row][column-1].isPath === false && grid[row][column-2].isPath === false){
 
             //empty the child array first/used to reset the array
             child = [];
@@ -152,7 +152,7 @@ const getChildren = (node, grid, minRow, maxRow, minColumn, maxColumn) => {
     //Check right chidlren
     if(column+2 < maxColumn){
         
-        if(grid[row][column+1].isVisited === false && grid[row][column+2].isVisited === false){
+        if(grid[row][column+1].isPath === false && grid[row][column+2].isPath === false){
             child = [];
 
             child.push({
@@ -171,7 +171,7 @@ const getChildren = (node, grid, minRow, maxRow, minColumn, maxColumn) => {
     //Check top chirdren
     if(row-2 > minRow){
         
-        if(grid[row-1][column].isVisited === false && grid[row-2][column].isVisited === false){
+        if(grid[row-1][column].isPath === false && grid[row-2][column].isPath === false){
 
             child = [];
             child.push({
@@ -190,7 +190,7 @@ const getChildren = (node, grid, minRow, maxRow, minColumn, maxColumn) => {
     //Check bottom children
     if(row+2 < maxRow){
         
-        if(grid[row+1][column].isVisited === false && grid[row+2][column].isVisited === false){
+        if(grid[row+1][column].isPath === false && grid[row+2][column].isPath === false){
 
             child = [];
             child.push({
@@ -222,6 +222,12 @@ const getChildren = (node, grid, minRow, maxRow, minColumn, maxColumn) => {
 }
 
 //Once the paths is identified, the purpose of this function is to create walls based on the given path
-const createWalls = () => {
+//What's the smartest way to do this?
+const createWalls = (path, grid) => {
+    //We can loop through each node in the grid, and if a node is not a path, then make it a wall
+    //If it is a path, then remove it as a path??
 
+
+
+    //test function, loop through each visited/path node
 }
