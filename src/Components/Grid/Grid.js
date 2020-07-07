@@ -264,7 +264,7 @@ class Grid extends Component {
         }
         //Else if algo === recursiveBacktracking, then run the algorithm below
         else if(this.props.selectedMazeAlgo.mazeAlgorithem === RecursiveBacktracking){
-            
+            mazeWalls = recursiveBacktracking(this.state.grid, 0, maxWidth-1, 0, maxHeight-1);
         }
 
         outerWalls = outerWalls.concat(mazeWalls);
