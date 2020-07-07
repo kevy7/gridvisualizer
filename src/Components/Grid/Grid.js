@@ -253,7 +253,7 @@ class Grid extends Component {
     animateMaze = () => {
         let maxWidth = this.state.grid[0].length;
         let maxHeight = this.state.grid.length;
-        let gridCopy = this.state.grid;
+        //let gridCopy = this.state.grid;
         let outerWalls = setOuterWalls(this.state.grid, maxWidth, maxHeight);
         let mazeWalls;
         let index = 0; //used for animation
