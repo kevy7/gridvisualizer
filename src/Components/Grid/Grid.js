@@ -11,7 +11,7 @@ import setOuterWalls from "../../MazeAlgorithms/setOuterWalls";
 import recursiveDivision from "../../MazeAlgorithms/recursiveDivision";
 import recursiveBacktracking from "../../MazeAlgorithms/recursiveBacktracing";
 import { selectStartNode, selectEndNode, selectTraffic, selectWall } from '../../userActions/userActions';
-import { BreadthFS, DebthFS, DijkstraAlgo, GreedyBFS, ATreeSearchAlgo, RecursiveDivision } from '../../userAlgo/userAlgo';
+import { BreadthFS, DebthFS, DijkstraAlgo, GreedyBFS, ATreeSearchAlgo, RecursiveDivision, RecursiveBacktracking } from '../../userAlgo/userAlgo';
 import { selectAction, resetSelectedGrids } from '../../actions/index';
 import ifContainsObject from '../../functions/ifContainsObject';
 import dataStructureTest from '../../dataStructures/dataStructureTest';
@@ -263,7 +263,7 @@ class Grid extends Component {
             mazeWalls = recursiveDivision(this.state.grid, 2, maxWidth-3, 2, maxHeight-3); //We want to start at our max width and max height at -3 in order for the function to work
         }
         //Else if algo === recursiveBacktracking, then run the algorithm below
-        else if(this.props.selectedMazeAlgo.mazeAlgorithem === ""){
+        else if(this.props.selectedMazeAlgo.mazeAlgorithem === RecursiveBacktracking){
             
         }
 
