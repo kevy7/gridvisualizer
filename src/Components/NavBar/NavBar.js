@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import "./NavBar.css";
 import { selectEndNode, selectTraffic, selectWall,  testAction } from '../../userActions/userActions';
 import { selectAction, selectAlgorithm, selectMazeAlgo } from '../../actions/index';
-import { BreadthFS, DebthFS, DijkstraAlgo, GreedyBFS, ATreeSearchAlgo, RecursiveDivision } from '../../userAlgo/userAlgo';
+import { BreadthFS, DebthFS, DijkstraAlgo, GreedyBFS, ATreeSearchAlgo, RecursiveDivision, RecursiveBacktracking } from '../../userAlgo/userAlgo';
 import TutorialModal from "../TutorialModal/TutorialModal";
 
 class NavBar extends Component {
@@ -66,6 +66,10 @@ class NavBar extends Component {
 
     selectRecursiveDiv = () => {
         this.props.selectMazeAlgo(RecursiveDivision);
+    }
+
+    selectRecursiveBackTracking = () => {
+        this.props.selectMazeAlgo(RecursiveBacktracking);
     }
 
     selectTest = () => {
@@ -197,7 +201,13 @@ class NavBar extends Component {
                                         className="navbar-item navItem-hover" 
                                         onClick={this.selectRecursiveDiv}
                                     >
-                                        Recurive Division
+                                        Recursive Division
+                                    </div>
+                                    <div
+                                        className="navbar-item navItem-hover" 
+                                        onClick={this.selectRecursiveBackTracking}
+                                    >
+                                        Recursive Backtracking
                                     </div>
                                 </div>
                             </div>
