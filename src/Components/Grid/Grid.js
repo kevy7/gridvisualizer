@@ -130,25 +130,27 @@ class Grid extends Component {
     }
 
     resetGrid = () => {
-        console.log(this.state.walls);
+        //console.log(this.state.walls);
+        let oldWalls = this.state.walls;
         let grid = this.createInitialGrid();
         this.setState({grid})
         this.setState({traffic: []})
         this.setState({walls: []});
         let nodes = this.state.visited;
-        console.log(this.state.walls);
-        
 
         /* for(var a =  0; a < this.state.visited.length; a++){
             document.getElementById(`node-${nodes[a].row}-${nodes[a].column}`).className = "node";
         } */
 
+        //reset every visited node back to original node
         this.state.visited.forEach(node => {
             document.getElementById(`node-${node.row}-${node.column}`).className = "node";
-        })
+        });
+
+        //reset every node walls back to original node
+        
 
         //Place function to reset the walls here
-
         this.props.resetSelectedGrids();
         this.props.selectAction(selectStartNode);
         //Create an action to reset the selectGrids state
