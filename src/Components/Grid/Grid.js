@@ -148,7 +148,9 @@ class Grid extends Component {
         });
 
         //reset every node walls back to original node
-        
+        oldWalls.forEach(node => {
+            document.getElementById(`icon-${node.row}-${node.column}`).className = "node"; //Set up as original node
+        })
 
         //Place function to reset the walls here
         this.props.resetSelectedGrids();
