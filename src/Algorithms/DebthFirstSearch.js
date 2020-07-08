@@ -1,6 +1,6 @@
 
 
-import { getChildrens, getShortestPath } from './Algofunctions/Algofunctions';
+import { getChildrens, getShortestPath, randomizeArray } from './Algofunctions/Algofunctions';
 
 
 export function DFS(grid, startRow, startCol, endRow, endCol){
@@ -63,6 +63,8 @@ export function DFS(grid, startRow, startCol, endRow, endCol){
 
         //Create a function to retrieve childrens
         let childrens = getChildrens(currentNode, maxRow, maxCol);
+
+        //randomizeArray(childrens);
 
         for(var a = 0; a < childrens.length; a++){
             let row = childrens[a].row;
