@@ -243,6 +243,11 @@ const createWalls = (grid) => {
                     column: column
                 });
             }
+            else {
+                //if the node is a path, let's not set it up as a path then
+                grid[row][column].isPath = false;
+
+            }
         }
     }
 
