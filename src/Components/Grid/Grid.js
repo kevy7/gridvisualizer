@@ -130,11 +130,14 @@ class Grid extends Component {
     }
 
     resetGrid = () => {
+        console.log(this.state.walls);
         let grid = this.createInitialGrid();
         this.setState({grid})
         this.setState({traffic: []})
         this.setState({walls: []});
         let nodes = this.state.visited;
+        console.log(this.state.walls);
+        
 
         /* for(var a =  0; a < this.state.visited.length; a++){
             document.getElementById(`node-${nodes[a].row}-${nodes[a].column}`).className = "node";
