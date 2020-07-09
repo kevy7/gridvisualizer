@@ -358,7 +358,6 @@ class Grid extends Component {
                         return (
                             <div key={rowidx} className={Styles.nodeRows}>
                                 {
-                                    
                                     nodeRows.map((node, columnidx) => {
                                         return <Node 
                                             key={columnidx}
