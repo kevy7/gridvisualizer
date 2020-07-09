@@ -2,7 +2,6 @@ import { randomizeArray } from "../Algorithms/Algofunctions/Algofunctions";
 
 const recursiveBacktracking = (grid, minWidth, maxWidth, minHeight, maxHeight) => {
     //Find a way to return walls, issue is we can create paths but how would we return the walls?
-    //ideally, function should stop when every node was visited
     let stack = [];
     //let visited = []; //We don't need this
     let path = [];
