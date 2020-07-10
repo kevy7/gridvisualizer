@@ -106,7 +106,6 @@ export default recursiveBacktracking;
 
 //create a function here called get children
 const getChildren = (node, grid, minRow, maxRow, minColumn, maxColumn) => {
-    //grid does not need to be passed as a parameter
     /*
         bounderies are maxRow and maxColumn
         were moving by two nodes at a time
