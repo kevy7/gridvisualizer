@@ -122,7 +122,6 @@ const getChildren = (node, grid, minRow, maxRow, minColumn, maxColumn) => {
     
     if(column-2 > minColumn){
 
-        //We need a condition here to chick if child is already visited
         //If both the nodes are not visited, then we can add them as nodes. This condition will check if we're within bound of visited nodes
         
         if(grid[row][column-1].isPath === false && grid[row][column-2].isPath === false){
