@@ -294,20 +294,7 @@ class Grid extends Component {
 
     testFunction = () => {
 
-        let maxWidth = this.state.grid[0].length;
-        let maxHeight = this.state.grid.length;
-        let index = 0;
-        let path = recursiveBacktracking(this.state.grid, 0, maxWidth-1, 0, maxHeight-1); //-1
-
-        path.forEach(node => {
-            index +=1;
-
-            setTimeout(() => {
-
-                document.getElementById(`node-${node.row}-${node.column}`).className = "node node-visited";
-
-            }, index * 7);
-        });
+        
 
     }
 
