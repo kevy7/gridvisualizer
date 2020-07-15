@@ -138,10 +138,6 @@ class Grid extends Component {
         this.setState({walls: []});
         let nodes = this.state.visited;
 
-        /* for(var a =  0; a < this.state.visited.length; a++){
-            document.getElementById(`node-${nodes[a].row}-${nodes[a].column}`).className = "node";
-        } */
-
         //reset every visited node back to original node
         this.state.visited.forEach(node => {
             document.getElementById(`node-${node.row}-${node.column}`).className = "node";
