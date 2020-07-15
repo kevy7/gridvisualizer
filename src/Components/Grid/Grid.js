@@ -260,6 +260,13 @@ class Grid extends Component {
         let mazeWalls;
         let index = 0; //used for animation
 
+        //add condition to check if state.walls is empty, if it is, then execute an alert
+        if(this.state.walls.length === 0){
+
+        }
+        else{
+
+        //else statement here
         if(this.props.selectedMazeAlgo.mazeAlgorithem === RecursiveDivision){
             //Assign our walls based on the recursive division algorithm
             mazeWalls = recursiveDivision(this.state.grid, 2, maxWidth-3, 2, maxHeight-3); //We want to start at our max width and max height at -3 in order for the function to work
@@ -274,6 +281,8 @@ class Grid extends Component {
         this.runMaze(outerWalls, index, this.state.grid).then(
            this.setState({walls: outerWalls})
         );
+
+        }
         
     }
 
