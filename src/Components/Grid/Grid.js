@@ -261,8 +261,8 @@ class Grid extends Component {
         let index = 0; //used for animation
 
         //add condition to check if state.walls is empty, if it is, then execute an alert
-        if(this.state.walls.length === 0){
-
+        if(this.state.walls.length > 0){
+            alert("Please reset the grid before animating a new maze");
         }
         else{
 
